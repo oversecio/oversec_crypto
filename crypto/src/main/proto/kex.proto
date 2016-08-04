@@ -1,0 +1,26 @@
+package io.oversec.one.crypto.proto;
+
+option java_package = "io.oversec.one.crypto.proto";
+
+
+
+message KeyTransferV0 {
+  oneof key {
+    SymmetricKeyPlainV0 symmetricKeyPlainV0 = 1;
+    SymmetricKeyEncryptedV0 symmetricKeyEncryptedV0 = 2;
+  }
+}
+
+message SymmetricKeyPlainV0 {
+  required bytes keydata = 1;
+}
+
+message SymmetricKeyEncryptedV0 {
+  required sfixed64 id = 1;
+  required string alias = 2;
+  required int64 createddate = 3;
+  required int32 cost = 4;
+  required bytes salt = 5;
+  required bytes iv = 6;	
+  required bytes ciphertext = 7;
+}

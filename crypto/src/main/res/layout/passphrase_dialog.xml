@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:orientation="vertical"
+>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" tools:ignore="UselessParent">
+
+        <TextView
+                android:id="@+id/passphrase_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:text="@string/simple_password_unlock_key"/>
+
+
+        <LinearLayout
+                android:id="@+id/orig_text_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+            <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:text="@string/simple_password_decrypt_this"/>
+
+
+            <TextView
+                    android:id="@+id/orig_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textStyle="italic"
+                    android:singleLine="true"
+                    android:ellipsize="start"
+                    android:paddingBottom="6dp"
+                    android:text="@string/simple_password_to_decrypt_this"/>
+
+        </LinearLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/passphrase_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            <EditText
+                    android:id="@+id/passphrase_passphrase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:imeOptions="actionDone"
+                    android:hint="@string/label_keystore_passphrase"
+                    android:ems="10"
+                    android:text="@string/prefill_password_fields"
+                    android:layout_gravity="center_horizontal"/>
+        </android.support.design.widget.TextInputLayout>
+
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:layout_margin="8dp"
+                android:id="@+id/remember_layout">
+
+            <!-- paddingBottom for spinner alignment -->
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/remember"
+                    android:paddingBottom="1dp"
+                    android:textAppearance="@android:style/TextAppearance.Medium"/>
+
+            <io.oversec.one.crypto.ui.util.KeystoreTTLSpinner
+                    android:id="@+id/ttl_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+            </io.oversec.one.crypto.ui.util.KeystoreTTLSpinner>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

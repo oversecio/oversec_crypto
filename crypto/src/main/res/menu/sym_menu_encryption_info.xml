@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.example.yao.tempplayground.MainActivity">
+
+
+    <item
+            android:id="@+id/action_share_encrypted"
+            android:title="@string/action_share_encrypted"
+            app:showAsAction="never"
+    />
+
+    <item
+            android:id="@+id/action_share_sym_base64"
+            android:title="@string/action_share_sym_base64"
+            app:showAsAction="never"
+    />
+
+    <item
+            android:id="@+id/action_share_decrypted"
+            android:title="@string/action_share_decrypted"
+            app:showAsAction="never"
+    />
+
+
+</menu>

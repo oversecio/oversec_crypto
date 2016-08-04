@@ -1,0 +1,22 @@
+<resources>
+
+
+    <!-- DO NOT TRANSLATE! -->
+    <string name="mainprefs_allow_screenshot_key">allow_screenshot</string>
+    <string name="tooltipid_encryptionparams_sym_general">encryptionparams_sym_general</string>
+    <string name="tooltipid_encryptionparams_simplesym_general">encryptionparams_simplesym_general</string>
+    <string name="tooltipid_encryptionparams_gpg_general">encryptionparams_gpg_general</string>
+
+    <string name="tooltipid_encryptionparams_encrypt_button">encryptionparams_fab</string>
+    <string name="tooltipid_encryptionparams_gpg_choose_own_key">encryptionparams_gpg_choose_own_key</string>
+    <string name="tooltipid_buttonhide_visible">buttonhide_visible</string>
+    <string name="tooltipid_buttonhide_hidden">buttonhide_hidden</string>
+    <string name="tooltipid_edittext_insufficientpadding">edittext_insufficientpadding</string>
+    <string name="tooltipid_edittext_encryptionparamsremembered">edittext_encryptionparamsremembered</string>
+    <string name="tooltipid_buttonencrypt_initial">buttonencrypt_initial</string>
+    <string name="tooltipid_apps_fragment">apps_fragment</string>
+    <string name="tooltipid_keys_fragment">keys_fragment</string>
+    <string name="tooltipid_pgpmessagesarehuge">pgpmessagesarehuge</string>
+    <string name="tooltipid_padders_fragment">padders_fragment</string>
+    <string name="tooltipid_onboarding">onboarding</string>
+</resources>

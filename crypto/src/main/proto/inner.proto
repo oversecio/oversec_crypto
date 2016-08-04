@@ -1,0 +1,22 @@
+package io.oversec.one.crypto.proto;
+
+
+option java_package = "io.oversec.one.crypto.proto";
+
+message InnerData {
+  oneof data {
+    TextAndPaddingV0 TextAndPaddingV0 = 1;
+    ImageV0 imageV0 = 2;
+  }
+}
+
+message TextAndPaddingV0 {
+     required string text = 1;
+     optional bytes padding = 2;
+}
+
+message ImageV0 {
+  required string mimetype = 1;
+  required bytes image = 2;
+}
+

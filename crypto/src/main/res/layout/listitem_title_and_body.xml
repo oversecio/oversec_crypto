@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    xmlns:tools="http://schemas.android.com/tools"
+                                    android:id="@+id/settings_imenotenabled"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="15dp"
+                                    card_view:cardCornerRadius="5dp"
+                                    card_view:contentPadding="5dp">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+    >
+
+
+        <ImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/md_simplelist_icon"
+                android:layout_height="@dimen/md_simplelist_icon"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginEnd="@dimen/md_simplelist_icon_margin"
+                android:layout_marginRight="@dimen/md_simplelist_icon_margin"
+                android:layout_alignParentLeft="true"
+                android:padding="16dp"
+                android:background="@drawable/gray_circle"
+                android:scaleType="fitXY"
+                tools:background="#f5f5f5"
+                tools:ignore="ContentDescription"
+                android:src="@drawable/ic_vpn_key_black_24dp"/>
+
+
+        <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/icon"
+                android:text="TextView"
+                android:textAppearance="@style/Item.Head"/>
+
+        <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv1"
+                android:layout_toRightOf="@id/icon"
+                android:text="TextView"
+                android:textAppearance="@style/Item.Sub"/>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

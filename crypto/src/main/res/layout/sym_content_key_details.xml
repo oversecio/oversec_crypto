@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            xmlns:tools="http://schemas.android.com/tools"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                                            tools:context="io.oversec.one.crypto.sym.ui.KeyDetailsActivity"
+>
+
+
+    <io.oversec.one.crypto.ui.util.SecureRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+
+        <TableLayout
+                android:id="@+id/table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:stretchColumns="2">
+
+            <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center"
+                        android:text="@string/key_details_label_alias"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+                <Space
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"/>
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                    <TextView
+                            android:id="@+id/tv_alias"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_height="wrap_content"
+                            android:text="TextView"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+                    <TextView
+                            android:id="@+id/tvAvatar"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"
+                            android:textSize="24dp"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:background="@color/colorAccent"
+                            android:textAllCaps="true"
+                            android:text="T"
+                            tools:ignore="SpUsage"/>
+                </LinearLayout>
+            </TableRow>
+
+
+            <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/key_details_label_createdate"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+                <Space
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/key_details_label_confirmeddate"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+                <Space
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            android:id="@+id/tv_confirmed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+                    <ImageView
+                            android:id="@+id/ivConfirmed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:src="@drawable/ic_done_green_a700_24dp"
+                            tools:ignore="ContentDescription"/>
+
+                    <ImageView
+                            android:id="@+id/ivUnConfirmed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:src="@drawable/ic_warning_orange_24dp"
+                            tools:ignore="ContentDescription"/>
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/key_details_label_hash"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+                <Space
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/tv_hash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:typeface="monospace"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+            </TableRow>
+
+
+        </TableLayout>
+
+
+        <ImageView
+                android:id="@+id/ivQr"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:layout_below="@+id/table"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp" tools:ignore="ContentDescription"/>
+
+        <Button
+                android:id="@+id/btRevealQr"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:layout_below="@+id/table"
+                android:gravity="center"
+                android:background="#88000000"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
+                android:text="@string/action_reveal"/>
+
+
+    </io.oversec.one.crypto.ui.util.SecureRelativeLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

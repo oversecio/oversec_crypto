@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools" package="io.oversec.one.crypto">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- for reading images (key import) shared with us through files, e.g. from whatsapp -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application>
+        <meta-data
+            android:name="android.nfc.disable_beam_default"
+            android:value="true" />
+
+        <activity
+            android:name="io.oversec.one.crypto.sym.ui.UnlockKeyActivity"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <activity
+            android:name="io.oversec.one.crypto.symsimple.ui.AddPasswordKeyActivity"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <activity
+            android:name="io.oversec.one.crypto.sym.ui.KeyImportCreateActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/import_decrypt_key_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+
+
+            <intent-filter tools:ignore="GoogleAppIndexingWarning">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="io.oversec.one.crypto.sym.ui.KeyDetailsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/key_details_header"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.oversec.one.crypto.ui.EncryptionInfoActivity"
+            android:label="@string/title_activity_encryption_info"
+            android:theme="@style/AppTheme" />
+
+        <service
+            android:name="io.oversec.one.crypto.sym.KeystoreIntentService"
+            android:exported="false" />
+
+        <receiver android:name="io.oversec.one.crypto.AppsReceiver">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_CHANGED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+                android:name="io.oversec.one.crypto.TemporaryContentProvider"
+                android:authorities="oversec_temporary_content"
+                android:grantUriPermissions="true" tools:ignore="ExportedContentProvider"/>
+
+
+    </application>
+
+</manifest>

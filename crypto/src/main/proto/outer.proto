@@ -1,0 +1,35 @@
+package io.oversec.one.crypto.proto;
+
+option java_package = "io.oversec.one.crypto.proto";
+
+message Msg {
+  oneof msgData {
+    MsgTextSymV0 msgTextSymV0 = 1; //try to keep field-id for symmetric messages <= 15 to save a byte!
+    MsgTextSymV0 msgTextSymSimpleV0 = 2; //try to keep field-id for symmetric messages <= 15 to save a byte!
+    MsgTextGpgV0 msgTextGpgV0 = 16; // using field-id >15, as pgp messages are verbose anyway
+   // KeyTransferV0 keyTransferV0 = 17;
+  }
+}
+
+message MsgTextSymV0 {
+  oneof symData {
+    MsgTextChaChaV0 msgTextChaChaV0 = 1; 
+  }
+}
+
+message MsgTextChaChaV0 {
+  required int32 cost_keyhash = 1;
+  repeated MsgTextChaChaV0_KeyAndSaltAndCiphertext perKeyCiphertext = 2;
+}
+
+
+message MsgTextChaChaV0_KeyAndSaltAndCiphertext {
+  required sfixed64 keyhash = 1;
+  required bytes salt = 2;
+  required bytes iv = 3;
+  required bytes ciphertext = 4;
+}
+
+message MsgTextGpgV0 {
+  required bytes ciphertext = 1;
+}

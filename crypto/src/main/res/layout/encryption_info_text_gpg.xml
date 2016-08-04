@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <include layout="@layout/encryption_info_text_base"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/encryption_info_padding_top"
+            android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/lbl_pgp_recipients"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/encryption_info_weight_col0"
+                android:text="@string/dialog_explore_label_allrecipients"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+        <TextView
+                android:id="@+id/tv_pgp_recipients"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/encryption_info_weight_col1"
+                android:layout_gravity="fill_horizontal"
+                android:text="foo@bar [0x1234ABCDEFFFFFFFF]}\nblafoo.com [0x12232342141342314]"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/encryption_info_padding_top"
+            android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/lbl_pgp_signature_result"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/encryption_info_weight_col0"
+                android:text="@string/dialog_explore_label_signature"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+        <TextView
+                android:id="@+id/tv_pgp_signature_result"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/encryption_info_weight_col1"
+                android:layout_gravity="fill_horizontal"
+                android:drawableRight="@drawable/ic_done_black_24dp"
+                android:text="No Signature, Foo bla,\nmaybe add some icon"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/encryption_info_padding_top"
+            android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/lbl_pgp_signature_key"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/encryption_info_weight_col0"
+                android:text="@string/dialog_explore_label_signed_by"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+        <TextView
+                android:id="@+id/tv_pgp_signature_key"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/encryption_info_weight_col1"
+                android:layout_gravity="fill_horizontal"
+                android:drawableRight="@drawable/ic_done_black_24dp"
+                android:text="[Key revoked]]"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+    </LinearLayout>
+
+    <Button
+            android:id="@+id/btnKeyActionGpg"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="TODO ACTION"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"/>
+
+    <Button
+            android:id="@+id/btnKeyDetailsGpg"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/dialog_explore_button_key_details"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"/>
+</LinearLayout>

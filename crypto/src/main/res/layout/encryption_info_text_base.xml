@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" tools:ignore="UselessParent">
+
+        <Button
+                android:id="@+id/btnPerformUserInteraction"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="TODO ACTION"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"/>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/encryption_info_padding_top">
+
+            <TextView
+                    android:id="@+id/lbl_err"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col0"
+                    android:text="@string/dialog_explore_label_problem"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+            <TextView
+                    android:id="@+id/tv_err"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col1"
+                    android:layout_gravity="fill_horizontal"
+                    android:text="Lorem Ipsum Lorem Ipsum Lorem Ipsumxx Lorem Ipsum "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/encryption_info_padding_top">
+
+            <TextView
+                    android:id="@+id/lbl_enc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col0"
+                    android:text="@string/dialog_explore_label_encryptedtext"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+            />
+
+            <com.borjabravo.readmoretextview.ReadMoreTextView
+
+                    android:id="@+id/tv_enc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col1"
+                    android:layout_gravity="fill_horizontal"
+                    android:text="@string/lorem"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    app:trimCollapsedText="@string/action_show_all_content"
+                    app:trimLength="160"
+                    app:showTrimExpandedText="false"
+                    app:colorClickableText="@color/colorAccent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/encryption_info_padding_top">
+
+            <TextView
+                    android:id="@+id/lbl_size"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col0"
+                    android:text="@string/dialog_explore_label_encryptedtextsize"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+            />
+
+            <TextView
+                    android:id="@+id/tv_size"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col1"
+                    android:layout_gravity="fill_horizontal"
+                    android:text="@string/lorem"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/encryption_info_padding_top">
+
+            <TextView
+                    android:id="@+id/lbl_dec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col0"
+                    android:text="@string/dialog_explore_label_decryptedtext"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+
+            <TextView
+                    android:id="@+id/tv_dec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col1"
+                    android:layout_gravity="fill_horizontal"
+                    android:text="@string/lorem"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/encryption_info_padding_top">
+
+            <TextView
+                    android:id="@+id/lbl_coder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col0"
+                    android:text="@string/dialog_explore_label_encoding"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+            <TextView
+                    android:id="@+id/tv_coder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col1"
+                    android:layout_gravity="fill_horizontal"
+                    android:text="@string/lorem"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/encryption_info_padding_top">
+
+            <TextView
+                    android:id="@+id/lbl_innerpadding"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col0"
+                    android:text="@string/dialog_explore_label_innerpadding"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+            <TextView
+                    android:id="@+id/tv_innerpadding"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col1"
+                    android:layout_gravity="fill_horizontal"
+                    android:text="@string/lorem"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/encryption_info_padding_top">
+
+            <TextView
+                    android:id="@+id/lbl_meth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col0"
+                    android:text="@string/dialog_explore_label_encryptionmethod"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+            <TextView
+                    android:id="@+id/tv_meth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/encryption_info_weight_col1"
+                    android:layout_gravity="fill_horizontal"
+                    android:text="@string/lorem"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

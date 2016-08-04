@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            xmlns:tools="http://schemas.android.com/tools"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                                            tools:context="io.oversec.one.crypto.sym.ui.KeyImportCreateActivity"
+                                            tools:showIn="@layout/sym_activity_createkey_random">
+
+    <io.oversec.one.crypto.ui.util.SecureRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/alias_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/createkey_body"
+                android:layout_toLeftOf="@id/fab"
+        >
+
+            <EditText
+                    android:id="@+id/et_alias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/createkey_pbe_alias_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:singleLine="true"/>
+        </android.support.design.widget.TextInputLayout>
+
+
+        <TextView
+                android:id="@+id/caption_alias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/alias_wrapper"
+
+                android:padding="4dp"
+                android:text="@string/createkey_pbe_alias_caption"
+                android:textStyle="italic"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+
+
+        <TextView
+                android:id="@+id/tvData"
+                android:layout_below="@+id/caption_alias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text=""
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+
+
+        <RelativeLayout
+                android:layout_below="@+id/caption_alias"
+                android:layout_centerHorizontal="true"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+        >
+            <com.dlazaro66.qrcodereaderview.QRCodeReaderView
+                    android:id="@+id/qrdecoderview"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            <ImageView
+                    android:id="@+id/ivQr"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="ContentDescription"/>
+            <ProgressBar
+
+                    android:id="@+id/progress"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+            />
+            <TextView
+                    android:id="@+id/progressLabel"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+        </RelativeLayout>
+
+
+        <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/alias_wrapper"
+                android:src="@drawable/ic_save_black_24dp"/>
+    </io.oversec.one.crypto.ui.util.SecureRelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      tools:context="io.oversec.one.crypto.sym.ui.KeyDetailsActivity">
+
+    <item
+            android:id="@+id/help"
+            android:title="@string/action_help"
+            android:orderInCategory="100"
+            app:showAsAction="ifRoom"/>
+
+</menu>

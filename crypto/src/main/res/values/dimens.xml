@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">6dp</dimen>
+    <dimen name="fab_margin_bottom_foo">50dp</dimen>
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+
+    <dimen name="app_bar_height">150dp</dimen>
+    <integer name="encryption_info_weight_col0">1</integer>
+    <integer name="encryption_info_weight_col1">3</integer>
+    <dimen name="encryption_info_padding_top">4dp</dimen>
+</resources>

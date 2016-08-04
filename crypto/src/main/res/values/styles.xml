@@ -1,0 +1,99 @@
+<!--suppress AndroidDomInspection -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+
+    <style name="Item" parent="Base.TextAppearance.AppCompat">
+
+    </style>
+
+    <style name="Item.Head">
+        <item name="android:textSize" tools:ignore="SpUsage">16dp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="Item.Sub">
+        <item name="android:textSize" tools:ignore="SpUsage">14dp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+    <style name="Item.Head2">
+        <item name="android:textSize" tools:ignore="SpUsage">14dp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="Item.Sub2">
+        <item name="android:textSize" tools:ignore="SpUsage">12dp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+
+    <style name="HintSmallest" parent="Base.TextAppearance.AppCompat">
+        <item name="android:textSize" tools:ignore="SpUsage">12dp</item>
+        <item name="android:textColor">?android:attr/textColorTertiary</item>
+    </style>
+
+    <style name="MyMedium" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="MySubtitle" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize" tools:ignore="SpUsage">16dp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="MySubtitle.bold" parent="MySubtitle">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="HintSmallest.Tweaks">
+        <item name="android:paddingLeft">35dp</item>
+        <item name="android:paddingBottom">6dp</item>
+
+    </style>
+
+    <style name="gotit_msg" parent="TextAppearance.AppCompat.Subhead">
+
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/md_divider_black</item>
+    </style>
+
+    <style name="ButtonStyleEvenSmaller" parent="@android:attr/buttonStyleSmall">
+        <!-- Customizations  -->
+        <item name="android:minHeight">20dp</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+
+</resources>

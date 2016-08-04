@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <include layout="@layout/encryption_info_binary_base"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/encryption_info_padding_top">
+
+
+        <TextView
+                android:id="@+id/lbl_sym_key_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/encryption_info_weight_col0"
+                android:layout_gravity="center"
+
+                android:text="@string/dialog_explore_label_password"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/encryption_info_weight_col1"
+                android:orientation="horizontal">
+            <TextView
+                    android:id="@+id/tv_sym_key_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="@integer/encryption_info_weight_col1"
+                    android:text="@string/lorem"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+            <TextView
+                    android:id="@+id/tvAvatar"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:background="@color/colorAccent"
+                    android:textAllCaps="true"
+                    android:text="T"
+                    tools:ignore="SpUsage"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

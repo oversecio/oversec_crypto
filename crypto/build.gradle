@@ -1,0 +1,104 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.google.protobuf'
+apply plugin: 'ru.tinkoff.gradle.jarjar'
+
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.7.7'
+    }
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        minSdkVersion 18
+        //noinspection OldTargetApi
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        debug {
+            resValue "string", "prefill_password_fields", "lorem ipsum sic dolet" //spare inputing passwords while developing
+        }
+        release {
+            resValue "string", "prefill_password_fields", ""
+        }
+    }
+
+}
+
+jarJar {
+    jarJarDependency 'com.googlecode.jarjar:jarjar:1.3'
+
+    // Dependencies and related JarJar rules
+    rules = ['commons-codec-1.10.jar': 'org.apache.commons.codec.** shadorg.apache.commons.codec.@1']
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.0.0-beta-2'
+    }
+    generateProtoTasks {
+        // all() returns the collection of all protoc tasks
+        all().each { task ->
+            task.builtins {
+                remove javanano
+                java {}
+            }
+        }
+    }
+
+}
+
+dependencies {
+    jarJar 'commons-codec:commons-codec:1.10'
+    compile fileTree(dir: './build/libs', include: ['*.jar']) //to pick up the jarjared jar
+
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.8@aar') {
+        transitive = true
+    }
+    compile('com.github.afollestad.material-dialogs:commons:0.8.5.8@aar') {
+        transitive = true
+    }
+
+    compile('com.dlazaro66.qrcodereaderview:qrcodereaderview:1.0.0') {
+        transitive = true
+    }
+
+
+
+    compile 'com.google.protobuf:protobuf-java:3.0.0-beta-3'
+    compile 'com.nulab-inc:zxcvbn:1.1.1'
+    compile 'com.github.rehacktive:waspdb:1.0'
+    compile 'it.sephiroth.android.library.imagezoom:imagezoom:2.2.5'
+    compile 'com.borjabravo:readmoretextview:1.1.2'
+    compile 'com.github.rtyley:spongycastle:sc-v1.54.0.0'
+    compile 'org.sufficientlysecure:openpgp-api:10.0'
+
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.android.support:support-v13:23.4.0'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:cardview-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+}
+
+
+
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+

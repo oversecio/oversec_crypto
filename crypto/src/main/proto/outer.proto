@@ -32,4 +32,5 @@ message MsgTextChaChaV0_KeyAndSaltAndCiphertext {
 
 message MsgTextGpgV0 {
   required bytes ciphertext = 1;
+  repeated fixed64 pubKeyIdV0 = 2; // contains id of *master* public key of all recipients, to make it easier for recipient to download missing keys to reply
 }

@@ -37,8 +37,8 @@ import java.util.List;
 public class GpgCryptoHandler extends AbstractCryptoHandler {
 
 
-    private static final long CACHE_MAIN_KEY_TTL =  1000 * 60 * 1;
-    private static final long CACHE_USERNAME_TTL =  1000 * 60 * 1;
+    private static final long CACHE_MAIN_KEY_TTL = 1000 * 60 * 1;
+    private static final long CACHE_USERNAME_TTL = 1000 * 60 * 1;
 
     //TODO: review caching, timeouts
     ExpiringLruCache<Long, Long> mMainKeyCache = new ExpiringLruCache<>(50, CACHE_MAIN_KEY_TTL);
@@ -93,7 +93,7 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
 
         try {
 
-            return decrypt(msg.getCiphertext().toByteArray(), actionIntent);
+            return decrypt(msg.getCiphertext().toByteArray(), msg.getPubKeyIdV0List(), actionIntent);
         } catch (OpenPGPErrorException e) {
             e.printStackTrace();
             return new GpgDecryptResult(BaseDecryptResult.DecryptError.PGP_ERROR, e.getError().getMessage());
@@ -141,8 +141,14 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
                 Outer.MsgTextGpgV0.Builder pgpMsgBuilder = builderMsg.getMsgTextGpgV0Builder();
 
                 pgpMsgBuilder.setCiphertext(ByteString.copyFrom(encrypted));
+                for (long pkId : pp.getAllPublicKeyIds()) {
+                    pgpMsgBuilder.addPubKeyIdV0(pkId);
+                }
 
                 builderMsg.setMsgTextGpgV0(pgpMsgBuilder);
+
+
+
                 Outer.Msg msg = builderMsg.build();
 
 
@@ -180,7 +186,7 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
 //    }
 
     @SuppressWarnings("RedundantThrows")
-    public GpgDecryptResult decrypt(byte[] pgpEncoded,
+    public GpgDecryptResult decrypt(byte[] pgpEncoded, List<Long> pkids,
                                     Intent actionIntent) throws OpenPGPErrorException, UserInteractionRequiredException, UnsupportedEncodingException {
 
         Intent data = new Intent();
@@ -198,7 +204,6 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
         switch (result.getIntExtra(OpenPgpApi.RESULT_CODE, OpenPgpApi.RESULT_CODE_ERROR)) {
             case OpenPgpApi.RESULT_CODE_SUCCESS: {
 
-                List<Long> pkids = parsePublicKeyIds(pgpEncoded);
 
                 OpenPgpSignatureResult sigResult = null;
                 if (result.hasExtra(OpenPgpApi.RESULT_SIGNATURE)) {
@@ -231,7 +236,6 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
             }
             case OpenPgpApi.RESULT_CODE_USER_INTERACTION_REQUIRED: {
                 PendingIntent pi = result.getParcelableExtra(OpenPgpApi.RESULT_INTENT);
-                List<Long> pkids = parsePublicKeyIds(pgpEncoded);
                 throw new UserInteractionRequiredException(pi, pkids);
             }
             case OpenPgpApi.RESULT_CODE_ERROR: {
@@ -281,13 +285,12 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
     }
 
 
-
     public String getFirstUserIDByKeyId(long keyId, Intent actionIntent) {
         String res = mUserNameCache.get(keyId);
         if (res == null) {
             List<String> r = getUserIDsByKeyId(keyId, actionIntent);
             res = r == null ? null : (r.size() > 0 ? r.get(0) : null);
-            if (res!=null) {
+            if (res != null) {
                 mUserNameCache.put(keyId, res);
             }
         }
@@ -644,64 +647,64 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
 
     public Long getMainKeyIdFromSubkeyId(Long keyId) {
 
-           Long res = mMainKeyCache.get(keyId);
-           if (res!=null) {
-               return res;
-           }
+        Long res = mMainKeyCache.get(keyId);
+        if (res != null) {
+            return res;
+        }
 
-           Intent id = new Intent();
+        Intent id = new Intent();
 
-           id.setAction(OpenPgpApi.ACTION_GET_KEY);
-           id.putExtra(OpenPgpApi.EXTRA_KEY_ID, keyId);
-           id.putExtra(OpenPgpApi.EXTRA_REQUEST_ASCII_ARMOR, true);
+        id.setAction(OpenPgpApi.ACTION_GET_KEY);
+        id.putExtra(OpenPgpApi.EXTRA_KEY_ID, keyId);
+        id.putExtra(OpenPgpApi.EXTRA_REQUEST_ASCII_ARMOR, true);
 
-           InputStream is = new ByteArrayInputStream(new byte[0]);
-           ByteArrayOutputStream os = new ByteArrayOutputStream();
-           Intent result = executeApi(id, is, os);
+        InputStream is = new ByteArrayInputStream(new byte[0]);
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        Intent result = executeApi(id, is, os);
 
-           switch (result.getIntExtra(OpenPgpApi.RESULT_CODE, OpenPgpApi.RESULT_CODE_ERROR)) {
-               case OpenPgpApi.RESULT_CODE_SUCCESS: {
+        switch (result.getIntExtra(OpenPgpApi.RESULT_CODE, OpenPgpApi.RESULT_CODE_ERROR)) {
+            case OpenPgpApi.RESULT_CODE_SUCCESS: {
 
-                   try {
-                       InputStream in = PGPUtil.getDecoderStream(new ByteArrayInputStream(os.toByteArray()));
+                try {
+                    InputStream in = PGPUtil.getDecoderStream(new ByteArrayInputStream(os.toByteArray()));
 
-                       PGPPublicKeyRingCollection pgpPub = new PGPPublicKeyRingCollection(in, new BcKeyFingerprintCalculator());
+                    PGPPublicKeyRingCollection pgpPub = new PGPPublicKeyRingCollection(in, new BcKeyFingerprintCalculator());
 
-                       Iterator rIt = pgpPub.getKeyRings();
+                    Iterator rIt = pgpPub.getKeyRings();
 
-                       if (!rIt.hasNext()) {
-                           Log.e("TAG", "failed to parse public key, no key rings found");
-                           return null;
-                       }
+                    if (!rIt.hasNext()) {
+                        Log.e("TAG", "failed to parse public key, no key rings found");
+                        return null;
+                    }
 
-                       PGPPublicKeyRing kRing = (PGPPublicKeyRing) rIt.next();
-                       Iterator kIt = kRing.getPublicKeys();
+                    PGPPublicKeyRing kRing = (PGPPublicKeyRing) rIt.next();
+                    Iterator kIt = kRing.getPublicKeys();
 
-                       if (kIt.hasNext()) {
-                           //first key
-                           PGPPublicKey kk = (PGPPublicKey) kIt.next();
-                           mMainKeyCache.put(keyId,kk.getKeyID());
-                           return kk.getKeyID();
+                    if (kIt.hasNext()) {
+                        //first key
+                        PGPPublicKey kk = (PGPPublicKey) kIt.next();
+                        mMainKeyCache.put(keyId, kk.getKeyID());
+                        return kk.getKeyID();
 
-                       }
-                       return null;
-                   } catch (Exception e) {
-                       e.printStackTrace();
-                       return null;
-                   }
+                    }
+                    return null;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return null;
+                }
 
-               }
-               case OpenPgpApi.RESULT_CODE_USER_INTERACTION_REQUIRED: {
-                   Log.e("TAG", "UserInteractionRequired ");
-                   return null;
-               }
-               case OpenPgpApi.RESULT_CODE_ERROR: {
-                   OpenPgpError error = result.getParcelableExtra(OpenPgpApi.RESULT_ERROR);
-                   Log.e("TAG", "Error: " + error.getMessage());
-                   return null;
-               }
-           }
-           return null;
+            }
+            case OpenPgpApi.RESULT_CODE_USER_INTERACTION_REQUIRED: {
+                Log.e("TAG", "UserInteractionRequired ");
+                return null;
+            }
+            case OpenPgpApi.RESULT_CODE_ERROR: {
+                OpenPgpError error = result.getParcelableExtra(OpenPgpApi.RESULT_ERROR);
+                Log.e("TAG", "Error: " + error.getMessage());
+                return null;
+            }
+        }
+        return null;
 
     }
 }

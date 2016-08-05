@@ -1,2 +1,2 @@
 # oversec_crypto
-public crypto related sources for oversec and protocol definition
+public crypto related sources and protocol definition for Oversec

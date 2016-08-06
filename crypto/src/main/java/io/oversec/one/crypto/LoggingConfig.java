@@ -4,11 +4,11 @@ import android.support.design.BuildConfig;
 import android.util.Log;
 import roboguice.util.Ln;
 
-public class Config {
+public class LoggingConfig {
     public static boolean LOG = false;
 
-    static {
-        setLog(BuildConfig.DEBUG);
+    public static void init() {
+            setLog(BuildConfig.DEBUG);
     }
 
     public static void setLog(boolean b) {

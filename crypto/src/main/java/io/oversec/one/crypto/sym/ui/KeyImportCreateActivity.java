@@ -564,7 +564,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
                         @Override
                         public void run() {
 
-
+                            d.dismiss();
                             Intent d = new Intent();
                             d.putExtra(KeysFragment.EXTRA_KEY_ID, keyId);
                             setResult(RESULT_OK, d);

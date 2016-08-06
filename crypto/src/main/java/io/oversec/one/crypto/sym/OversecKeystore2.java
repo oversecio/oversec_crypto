@@ -91,6 +91,8 @@ public final class OversecKeystore2 {
             IOException, AliasNotUniqueException {
 
         List<SymmetricKeyEncrypted> v = mSymmetricEncryptedKeys.getAllValues();
+        v=v==null?v:Collections.EMPTY_LIST;
+
         for (SymmetricKeyEncrypted k : v) {
             if (k.getName().equals(plainKey.getName())) {
                 throw new AliasNotUniqueException(plainKey.getName());
@@ -139,19 +141,16 @@ public final class OversecKeystore2 {
     }
 
 
-    public synchronized List<Long> getIds() {
-        return mSymmetricEncryptedKeys.getAllKeys();
-    }
-
-
     public synchronized Long getKeyIdByHashedKeyId(long hashedKeyId, byte[] salt, int cost) {
 
         List<Long> allIds = mSymmetricEncryptedKeys.getAllKeys();
-        for (Long id : allIds) {
-            long aSessionKeyId = KeyUtil.calcSessionKeyId(id, salt, cost);
+        if (allIds!=null) {
+            for (Long id : allIds) {
+                long aSessionKeyId = KeyUtil.calcSessionKeyId(id, salt, cost);
 
-            if (aSessionKeyId == hashedKeyId) {
-                return id;
+                if (aSessionKeyId == hashedKeyId) {
+                    return id;
+                }
             }
         }
 
@@ -302,6 +301,7 @@ public final class OversecKeystore2 {
 
     public List<SymmetricKeyEncrypted> getEncryptedKeys_sorted() {
         List<SymmetricKeyEncrypted> l = mSymmetricEncryptedKeys.getAllValues();
+        l=l==null?Collections.EMPTY_LIST:l;
         Collections.sort(l, new Comparator<SymmetricKeyEncrypted>() {
             @Override
             public int compare(SymmetricKeyEncrypted lhs, SymmetricKeyEncrypted rhs) {
@@ -312,7 +312,8 @@ public final class OversecKeystore2 {
     }
 
     public boolean isEmpty() {
-        return mSymmetricEncryptedKeys.getAllKeys().isEmpty();
+        List<Object> allKeys = mSymmetricEncryptedKeys.getAllKeys();
+        return allKeys==null||allKeys.isEmpty();
     }
 
     public boolean hasName(String name) {

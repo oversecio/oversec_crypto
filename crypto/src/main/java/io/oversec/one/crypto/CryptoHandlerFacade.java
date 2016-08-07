@@ -55,7 +55,7 @@ public class CryptoHandlerFacade implements Handler.Callback {
                 DecryptAsyncParams p = (DecryptAsyncParams) msg.obj;
                 try {
                     BaseDecryptResult tdr = decrypt(p.enc, null, p.encryptedText);
-                    p.callback.onResult(-1, tdr);
+                    p.callback.onResult(tdr);
                 } catch (UserInteractionRequiredException e) {
                     p.callback.onUserInteractionRequired();
                 }
@@ -158,12 +158,15 @@ public class CryptoHandlerFacade implements Handler.Callback {
             return null;
         }
 
-        if (mEncodedCache.containsKey(encText)) {
-            return mEncodedCache.get(encText);
+        synchronized (mEncodedCache) {
+            if (mEncodedCache.containsKey(encText)) {
+                return mEncodedCache.get(encText);
+            }
+            Outer.Msg res = XCoderFactory.getInstance(ctx).decode(encText);
+            mEncodedCache.put(encText, res);
+            return res;
         }
-        Outer.Msg res = XCoderFactory.getInstance(ctx).decode(encText);
-        mEncodedCache.put(encText, res);
-        return res;
+
     }
 
 

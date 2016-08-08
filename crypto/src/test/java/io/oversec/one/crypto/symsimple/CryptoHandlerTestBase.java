@@ -23,13 +23,12 @@ public abstract class CryptoHandlerTestBase extends TestCase {
 
 
     Context mContext;
-    KeyCache mKeyCache;
+
     AbstractCryptoHandler mHandler;
 
 
     CryptoHandlerTestBase() {
         mContext = RuntimeEnvironment.application;
-        mKeyCache = KeyCache.getInstance(mContext);
         mHandler = createHandler();
     }
 

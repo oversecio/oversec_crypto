@@ -5,31 +5,37 @@ import io.oversec.one.crypto.AbstractEncryptionParams;
 import io.oversec.one.crypto.BaseDecryptResult;
 import io.oversec.one.crypto.proto.Inner;
 import io.oversec.one.crypto.proto.Outer;
+import io.oversec.one.crypto.sym.OversecKeystore2;
+import io.oversec.one.crypto.sym.SymmetricCryptoHandler;
+import io.oversec.one.crypto.sym.SymmetricEncryptionParams;
 import io.oversec.one.crypto.sym.SymmetricKeyPlain;
-import io.oversec.one.crypto.symbase.KeyCache;
 import io.oversec.one.crypto.symbase.KeyUtil;
+import io.oversec.one.crypto.symbase.OversecKeyCacheListener;
 import org.junit.Test;
 
 import java.util.Date;
 
-public class SimpleSymmetricCryptoHandlerTest extends CryptoHandlerTestBase {
+public class SymmetricCryptoHandlerTest extends CryptoHandlerTestBase {
+    private static final char[] PASSWORD = "passwordpassword1".toCharArray();
 
-    KeyCache mKeyCache;
+    private final OversecKeystore2 mKeyStore;
 
-    public SimpleSymmetricCryptoHandlerTest() {
-        mKeyCache = KeyCache.getInstance(mContext);
+    public SymmetricCryptoHandlerTest() {
+        mKeyStore = OversecKeystore2.getInstance(mContext);
     }
 
     @Test
     public void testEncryptDecrypt() throws Exception {
-        final long key_id = 12345L;
+        long key_id = 12345L;
         final byte[] rawKeyBytes = KeyUtil.getRandomBytes(32);
 
-        SymmetricKeyPlain plainKey = new SymmetricKeyPlain(0, "foobar", new Date(), rawKeyBytes);
+        SymmetricKeyPlain plainKey = new SymmetricKeyPlain(key_id, "foobar", new Date(), rawKeyBytes);
 
-        mKeyCache.doCacheKey(plainKey, Integer.MAX_VALUE);
+        key_id = mKeyStore.addKey__longoperation(plainKey,PASSWORD);
 
-        AbstractEncryptionParams params = new SimpleSymmetricEncryptionParams(key_id, null, null);
+        mKeyStore.doCacheKey__longoperation(key_id,PASSWORD,Integer.MAX_VALUE);
+
+        AbstractEncryptionParams params = new SymmetricEncryptionParams(key_id, null, null);
 
 
         Inner.InnerData innerData = createInnerData(PLAIN_CONTENT);
@@ -47,6 +53,6 @@ public class SimpleSymmetricCryptoHandlerTest extends CryptoHandlerTestBase {
 
     @Override
     AbstractCryptoHandler createHandler() {
-        return new SimpleSymmetricCryptoHandler(mContext);
+        return new SymmetricCryptoHandler(mContext);
     }
 }

@@ -20,8 +20,8 @@ import java.util.List;
 public abstract class BaseSymmetricCryptoHandler extends AbstractCryptoHandler {
 
 
-    private static final int IV_LENGTH = 8;
-    static final int SALT_LENGTH = 16; //DO NOT CHANGE, needs to match Bcrypt.SALT_SIZE_BYTES
+    public static final int IV_LENGTH = 8;
+    public static final int SALT_LENGTH = 16; //DO NOT CHANGE, needs to match Bcrypt.SALT_SIZE_BYTES
 
     protected final KeyCache mKeyCache;
 

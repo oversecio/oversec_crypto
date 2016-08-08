@@ -96,15 +96,16 @@ dependencies {
 
 
     androidTestCompile 'junit:junit:4.12'
-    androidTestCompile 'org.mockito:mockito-core:2.0.57-beta'
+    androidTestCompile 'org.mockito:mockito-core:2.0.99-beta'
     androidTestCompile 'com.android.support.test:runner:0.3'
     androidTestCompile "com.google.dexmaker:dexmaker:1.2"
     androidTestCompile "com.google.dexmaker:dexmaker-mockito:1.2"
 
 
     testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:1.+'
-    testCompile "org.robolectric:robolectric:3.0"
+    testCompile 'org.mockito:mockito-core:2.0.99-beta'
+    testCompile "org.robolectric:robolectric:3.1.2"
+    testCompile 'org.robolectric:shadows-support-v4:3.0'
 }
 
 

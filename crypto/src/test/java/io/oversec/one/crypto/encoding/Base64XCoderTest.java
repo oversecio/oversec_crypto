@@ -17,6 +17,7 @@ public class Base64XCoderTest extends EncodingTestBase {
         Outer.Msg msgOut = mCoder.decode(encoded);
         assertEquals(msgIn, msgOut);
     }
+
     @Test
     public void testEncodeDecodeSym() throws Exception {
         Outer.Msg msgIn = createTestOuterMsgSym();

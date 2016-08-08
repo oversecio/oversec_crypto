@@ -3,7 +3,7 @@ package io.oversec.one.crypto.encoding;
 import io.oversec.one.crypto.proto.Outer;
 import org.junit.Test;
 
-public class ZeroWidthXCoderTest extends EncodingTestBase  {
+public class ZeroWidthXCoderTest extends EncodingTestBase {
 
     @Override
     AbstractXCoder createCoder() {
@@ -15,7 +15,7 @@ public class ZeroWidthXCoderTest extends EncodingTestBase  {
         Outer.Msg msgIn = createTestOuterMsgPgp();
         String encoded = mCoder.encodeInternal(msgIn);
         Outer.Msg msgOut = mCoder.decode(encoded);
-        assertEquals(msgIn,msgOut);
+        assertEquals(msgIn, msgOut);
     }
 
 
@@ -24,7 +24,7 @@ public class ZeroWidthXCoderTest extends EncodingTestBase  {
         Outer.Msg msgIn = createTestOuterMsgPgp();
         String encoded = mCoder.encodeInternal(msgIn) + "DecoyDecoyDecoy";
         Outer.Msg msgOut = mCoder.decode(encoded);
-        assertEquals(msgIn,msgOut);
+        assertEquals(msgIn, msgOut);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class ZeroWidthXCoderTest extends EncodingTestBase  {
         Outer.Msg msgIn = createTestOuterMsgSym();
         String encoded = mCoder.encodeInternal(msgIn);
         Outer.Msg msgOut = mCoder.decode(encoded);
-        assertEquals(msgIn,msgOut);
+        assertEquals(msgIn, msgOut);
     }
 
     @Test
@@ -40,6 +40,6 @@ public class ZeroWidthXCoderTest extends EncodingTestBase  {
         Outer.Msg msgIn = createTestOuterMsgSym();
         String encoded = mCoder.encodeInternal(msgIn) + "DecoyDecoyDecoy";
         Outer.Msg msgOut = mCoder.decode(encoded);
-        assertEquals(msgIn,msgOut);
+        assertEquals(msgIn, msgOut);
     }
 }

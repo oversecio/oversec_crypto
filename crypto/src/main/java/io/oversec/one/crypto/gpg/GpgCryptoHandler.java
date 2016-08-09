@@ -66,19 +66,6 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
         return OpenKeychainConnector.executeApi(data, is, os);
     }
 
-    @Override
-    public Outer.Msg encrypt(Inner.InnerData innerData, AbstractEncryptionParams params, Intent actionIntent) throws GeneralSecurityException, UserInteractionRequiredException, IOException {
-        GpgEncryptionParams p = (GpgEncryptionParams) params;
-        try {
-            return encrypt(innerData.toByteArray(), p, actionIntent);
-        } catch (OpenPGPParamsException e) {
-            e.printStackTrace();
-            return null;
-        } catch (OpenPGPErrorException e) {
-            e.printStackTrace(); //TODO wrap???
-            return null;
-        }
-    }
 
     @Override
     public BaseDecryptResult decrypt(Outer.Msg msg, Intent actionIntent, String encryptedText) throws UserInteractionRequiredException {
@@ -104,6 +91,34 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
             return null;
         }
 
+    }
+
+    @Override
+    public Outer.Msg encrypt(Inner.InnerData innerData, AbstractEncryptionParams params, Intent actionIntent) throws GeneralSecurityException, UserInteractionRequiredException, IOException {
+        GpgEncryptionParams p = (GpgEncryptionParams) params;
+        try {
+            return encrypt(innerData.toByteArray(), p, actionIntent);
+        } catch (OpenPGPParamsException e) {
+            e.printStackTrace();
+            return null;
+        } catch (OpenPGPErrorException e) {
+            e.printStackTrace(); //TODO wrap???
+            return null;
+        }
+    }
+
+    @Override
+    public Outer.Msg encrypt(String plainText, AbstractEncryptionParams params, Intent actionIntent) throws GeneralSecurityException, UserInteractionRequiredException, IOException {
+        GpgEncryptionParams p = (GpgEncryptionParams) params;
+        try {
+            return encrypt(plainText.getBytes("UTF-8"), p, actionIntent);
+        } catch (OpenPGPParamsException e) {
+            e.printStackTrace();
+            return null;
+        } catch (OpenPGPErrorException e) {
+            e.printStackTrace(); //TODO wrap???
+            return null;
+        }
     }
 
 
@@ -209,16 +224,7 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
                     sigResult = result.getParcelableExtra(OpenPgpApi.RESULT_SIGNATURE);
                 }
 
-
-                Inner.InnerData innerData; //TODO stream based
-                try {
-                    innerData = Inner.InnerData.parseFrom(os.toByteArray());
-                } catch (InvalidProtocolBufferException e) {
-                    e.printStackTrace();
-                    return null;
-                }
-
-                GpgDecryptResult res = new GpgDecryptResult(innerData, pkids);
+                GpgDecryptResult res = new GpgDecryptResult(os.toByteArray(), pkids);
 
                 if (sigResult != null) {
                     res.setSignatureResult(sigResult);
@@ -600,6 +606,7 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
             byte[] raw = data.getCiphertext().toByteArray();
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             OversecAsciiArmoredOutputStream aos = new OversecAsciiArmoredOutputStream(baos);
+            aos.setHeader("Charset","utf-8");
             try {
                 aos.write(raw);
                 aos.flush();

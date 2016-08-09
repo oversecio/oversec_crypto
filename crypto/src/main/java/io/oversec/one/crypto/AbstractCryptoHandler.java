@@ -22,6 +22,7 @@ public abstract class AbstractCryptoHandler {
 
 
     public abstract Outer.Msg encrypt(Inner.InnerData innerData, AbstractEncryptionParams params, Intent actionIntent) throws GeneralSecurityException, UserInteractionRequiredException, IOException;
+    public abstract Outer.Msg encrypt(String plainText, AbstractEncryptionParams params, Intent actionIntent) throws GeneralSecurityException, UserInteractionRequiredException, IOException;
 
     public abstract BaseDecryptResult decrypt(Outer.Msg msg, Intent actionIntent, String encryptedText) throws UserInteractionRequiredException;
 

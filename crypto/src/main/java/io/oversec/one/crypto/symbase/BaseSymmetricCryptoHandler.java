@@ -84,15 +84,15 @@ public abstract class BaseSymmetricCryptoHandler extends AbstractCryptoHandler {
                 return new SymmetricDecryptResult(getMethod(), BaseDecryptResult.DecryptError.SYM_NO_MATCHING_KEY);
             } else {
                 Ln.d("SYM: try decrypt with key %s", key.getId());
-                Inner.InnerData innerData = null;
+                byte[] rawData = null;
                 try {
-                    innerData = tryDecryptChacha(matchingPkc, key);
+                    rawData = tryDecryptChacha(matchingPkc, key);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                if (innerData != null) {
+                if (rawData != null) {
                     Ln.d("SYM: try last used key SUCCESS");
-                    return new SymmetricDecryptResult(getMethod(), innerData, key.getId());
+                    return new SymmetricDecryptResult(getMethod(), rawData, key.getId());
                 } else {
                     Ln.d("SYM: DECRYPTION FAILED");
                     return new SymmetricDecryptResult(getMethod(), BaseDecryptResult.DecryptError.SYM_DECRYPT_FAILED);
@@ -108,14 +108,21 @@ public abstract class BaseSymmetricCryptoHandler extends AbstractCryptoHandler {
     protected abstract void handleNoKeyFoundForDecryption(long[] keyHashes, byte[][] salts, int costKeyhash, String encryptedText) throws UserInteractionRequiredException;
 
 
+
     @Override
     public Outer.Msg encrypt(Inner.InnerData innerData, AbstractEncryptionParams params, Intent actionIntent) throws IOException, GeneralSecurityException, UserInteractionRequiredException {
         BaseSymmetricEncryptionParams p = (BaseSymmetricEncryptionParams) params;
-        return encrypt(innerData, p.getKeyIds());
+        return encrypt(innerData.toByteArray(), p.getKeyIds());
     }
 
 
-    private Outer.Msg encrypt(Inner.InnerData innerData, List<Long> keyIds) throws GeneralSecurityException, IOException, KeyNotCachedException {
+    @Override
+    public Outer.Msg encrypt(String plainText, AbstractEncryptionParams params, Intent actionIntent) throws GeneralSecurityException, UserInteractionRequiredException, IOException {
+        BaseSymmetricEncryptionParams p = (BaseSymmetricEncryptionParams) params;
+        return encrypt(plainText.getBytes("UTF-8"), p.getKeyIds());
+    }
+
+    private Outer.Msg encrypt(byte[] plain, List<Long> keyIds) throws GeneralSecurityException, IOException, KeyNotCachedException {
 
         int cost_key_id = KeyUtil.BCRYPT_SESSIONKEYID_COST_DEFAULT; //TODO make configurable
 
@@ -124,8 +131,6 @@ public abstract class BaseSymmetricCryptoHandler extends AbstractCryptoHandler {
         Outer.MsgTextChaChaV0.Builder chachaMsgBuilder = symMsgBuilder.getMsgTextChaChaV0Builder();
 
         chachaMsgBuilder.setCostKeyhash(cost_key_id);
-
-        byte[] plain = innerData.toByteArray();
 
         for (Long keyId : keyIds) {
 
@@ -163,7 +168,7 @@ public abstract class BaseSymmetricCryptoHandler extends AbstractCryptoHandler {
     protected abstract void setMessage(Outer.Msg.Builder builderMsg, Outer.MsgTextSymV0.Builder symMsgBuilder);
 
 
-    protected Inner.InnerData tryDecryptChacha(Outer.MsgTextChaChaV0_KeyAndSaltAndCiphertext matchingPkc, SymmetricKeyPlain key)
+    protected byte[] tryDecryptChacha(Outer.MsgTextChaChaV0_KeyAndSaltAndCiphertext matchingPkc, SymmetricKeyPlain key)
             throws IOException, GeneralSecurityException, OversecChacha20Poly1305.MacMismatchException {
 
 
@@ -173,17 +178,7 @@ public abstract class BaseSymmetricCryptoHandler extends AbstractCryptoHandler {
                 matchingPkc.getIv().toByteArray(),
                 key);
 
-        Inner.InnerData innerData;
-        try {
-            innerData = Inner.InnerData.parseFrom(plain);
-        } catch (InvalidProtocolBufferException e) {
-            e.printStackTrace();
-            return null;
-        }
-
-        KeyUtil.erase(plain);
-
-        return innerData;
+        return plain;
     }
 
 

@@ -253,7 +253,7 @@
 
     <string name="bytes_size">%1$s bytes</string>
     <string name="error_cannot_show_inner_data_of_type">Error! Can\'t show inner data of type %1$s</string>
-
+    <string name="error_cannot_show_inner_data">Error! Can\'t show encrypted data</string>
     <string name="error_image_decrypt_generic">Unexpected error when decrypting image.</string>
     <string name="error_image_decrypt_nomatchingkey">No matching key found to decrypt this image.</string>
     <string name="error_image_decrypt_noencodeddata">No encrypted data found in the source image.</string>

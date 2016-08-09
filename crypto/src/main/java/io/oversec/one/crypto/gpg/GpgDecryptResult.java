@@ -16,8 +16,8 @@ public class GpgDecryptResult extends BaseDecryptResult {
     private OpenPgpSignatureResult mSignatureResult;
     private List<Long> mPublicKeyIds;
 
-    public GpgDecryptResult(Inner.InnerData innerData, List<Long> publicKeyIds) {
-        super(EncryptionMethod.GPG, innerData);
+    public GpgDecryptResult(byte[] rawInnerData, List<Long> publicKeyIds) {
+        super(EncryptionMethod.GPG, rawInnerData);
         mPublicKeyIds = publicKeyIds;
     }
 

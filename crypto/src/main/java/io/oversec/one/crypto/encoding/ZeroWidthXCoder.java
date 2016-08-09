@@ -85,6 +85,11 @@ public class ZeroWidthXCoder extends AbstractXCoder {
     }
 
     @Override
+    public boolean isTextOnly() {
+        return false;
+    }
+
+    @Override
     protected String encodeInternal(Outer.Msg msg) throws IOException {
         ExtendedPaneStringMapperOutputStream smos = new ExtendedPaneStringMapperOutputStream(MAPPING);
         smos.write(MAGIC_BYTES);

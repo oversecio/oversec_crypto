@@ -232,28 +232,37 @@ public class CryptoHandlerFacade implements Handler.Callback {
     public String encrypt(AbstractEncryptionParams encryptionParams, String srcText, boolean appendNewLines, int innerPad, Intent actionIntent)
             throws Exception {
 
+
+
+
         AbstractCryptoHandler h = mEncryptionHandlers.get(encryptionParams.getEncryptionMethod());
         XCoderAndPadder xCoderAndPadder = XCoderAndPadderFactory.getInstance(mCtx).get(encryptionParams.getCoderId(), encryptionParams.getPadderId());
 
         if (h == null) {
             throw new IllegalArgumentException();
         } else {
+            Outer.Msg msg;
+            if (xCoderAndPadder.getXcoder().isTextOnly()) {
 
-
-            Inner.InnerData.Builder innerDataBuilder = Inner.InnerData.newBuilder();
-
-            Inner.TextAndPaddingV0.Builder textAndPaddingBuilder = innerDataBuilder.getTextAndPaddingV0Builder();
-
-            textAndPaddingBuilder.setText(srcText);
-
-            if (innerPad > 0) {
-                byte[] padding = KeyUtil.getRandomBytes(innerPad);
-                textAndPaddingBuilder.setPadding(ByteString.copyFrom(padding));
+                msg = h.encrypt(srcText, encryptionParams, actionIntent);
             }
+            else
+            {
+                Inner.InnerData.Builder innerDataBuilder = Inner.InnerData.newBuilder();
 
-            Inner.InnerData innerData = innerDataBuilder.build();
+                Inner.TextAndPaddingV0.Builder textAndPaddingBuilder = innerDataBuilder.getTextAndPaddingV0Builder();
 
-            Outer.Msg msg = h.encrypt(innerData, encryptionParams, actionIntent);
+                textAndPaddingBuilder.setText(srcText);
+
+                if (innerPad > 0) {
+                    byte[] padding = KeyUtil.getRandomBytes(innerPad);
+                    textAndPaddingBuilder.setPadding(ByteString.copyFrom(padding));
+                }
+
+                Inner.InnerData innerData = innerDataBuilder.build();
+
+                msg = h.encrypt(innerData, encryptionParams, actionIntent);
+            }
 
             String r = xCoderAndPadder.encode(msg, srcText, appendNewLines);
             return r;

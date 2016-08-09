@@ -54,5 +54,8 @@ public class AsciiArmouredGpgXCoder extends AbstractXCoder {
         return BEGIN;
     }
 
-
+    @Override
+    public boolean isTextOnly() {
+        return true;
+    }
 }

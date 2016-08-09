@@ -1,7 +1,10 @@
 package io.oversec.one.crypto;
 
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import io.oversec.one.crypto.proto.Inner;
+
+import java.io.UnsupportedEncodingException;
 
 public class BaseDecryptResult {
 
@@ -18,16 +21,16 @@ public class BaseDecryptResult {
     protected EncryptionMethod mEncryptionMethod;
 
 
-    protected Inner.InnerData mDecryptedData;
+    protected byte[] mDecryptedRawData;
     protected Result mResult;
     protected DecryptError mError;
 
     protected String mErrorMessage;
 
 
-    public BaseDecryptResult(EncryptionMethod encryptionMethod, Inner.InnerData plainData) {
+    public BaseDecryptResult(EncryptionMethod encryptionMethod, byte[] rawData) {
         mEncryptionMethod = encryptionMethod;
-        mDecryptedData = plainData;
+        mDecryptedRawData = rawData;
         mResult = Result.OK;
     }
 
@@ -94,8 +97,11 @@ public class BaseDecryptResult {
     }
 
 
-    public Inner.InnerData getDecryptedData() {
-        return mDecryptedData;
+    public Inner.InnerData getDecryptedDataAsInnerData() throws InvalidProtocolBufferException {
+        return Inner.InnerData.parseFrom(mDecryptedRawData);
+    }
+    public String getDecryptedDataAsUtf8String() throws UnsupportedEncodingException {
+        return new String(mDecryptedRawData,"UTF-8");
     }
 
     public Result getResult() {
@@ -109,7 +115,7 @@ public class BaseDecryptResult {
     @Override
     public String toString() {
         return "BaseDecryptResult{" +
-                "decryptedData='" + mDecryptedData + '\'' +
+                "decryptedData='" + mDecryptedRawData + '\'' +
                 ", result=" + mResult +
                 ", error=" + mError +
                 '}';

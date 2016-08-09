@@ -21,8 +21,8 @@ public class SymmetricDecryptResult extends BaseDecryptResult {
     }
 
 
-    public SymmetricDecryptResult(EncryptionMethod method, Inner.InnerData innerData, Long keyId) {
-        super(method, innerData);
+    public SymmetricDecryptResult(EncryptionMethod method, byte[] rawInnerData, Long keyId) {
+        super(method, rawInnerData);
         mSymmetricKeyId = keyId;
     }
 

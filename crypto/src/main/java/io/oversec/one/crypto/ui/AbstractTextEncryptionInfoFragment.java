@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.borjabravo.readmoretextview.ReadMoreTextView;
+import com.google.protobuf.InvalidProtocolBufferException;
 import io.oversec.one.crypto.*;
 import io.oversec.one.crypto.encoding.XCoderFactory;
 import io.oversec.one.crypto.proto.Inner;
@@ -104,17 +105,32 @@ public abstract class AbstractTextEncryptionInfoFragment extends Fragment {
             }
 
             if (tdr.isOk()) {
-                if (tdr.getDecryptedData().hasTextAndPaddingV0()) {
-                    Inner.TextAndPaddingV0 textAndPadding = tdr.getDecryptedData().getTextAndPaddingV0();
 
-                    tvDec.setText(textAndPadding.getText());
-                    tvInnerPadding.setText(getActivity().getString(R.string.bytes_size, textAndPadding.getPadding().size()));
+                try {
+                    Inner.InnerData innerData = tdr.getDecryptedDataAsInnerData();
+                    if (innerData.hasTextAndPaddingV0()) {
+                        Inner.TextAndPaddingV0 textAndPadding = tdr.getDecryptedDataAsInnerData().getTextAndPaddingV0();
 
-                    lblInnerPadding.setVisibility(View.VISIBLE);
-                    tvInnerPadding.setVisibility(View.VISIBLE);
-                } else {
-                    tvDec.setText(getString(R.string.error_cannot_show_inner_data_of_type, tdr.getDecryptedData().getDataCase().name()));
+                        tvDec.setText(textAndPadding.getText());
+                        tvInnerPadding.setText(getActivity().getString(R.string.bytes_size, textAndPadding.getPadding().size()));
+
+                        lblInnerPadding.setVisibility(View.VISIBLE);
+                        tvInnerPadding.setVisibility(View.VISIBLE);
+                    }
+                    else {
+                        tvDec.setText(getString(R.string.error_cannot_show_inner_data_of_type, tdr.getDecryptedDataAsInnerData().getDataCase().name()));
+                    }
+                } catch (InvalidProtocolBufferException e) {
+                    try {
+                        String innerText = tdr.getDecryptedDataAsUtf8String();
+                        lblInnerPadding.setVisibility(View.GONE);
+                        tvInnerPadding.setVisibility(View.GONE);
+                    } catch (UnsupportedEncodingException e1) {
+                        tvDec.setText(getString(R.string.error_cannot_show_inner_data));
+                    }
                 }
+
+
 
                 lblErr.setVisibility(View.GONE);
                 tvErr.setVisibility(View.GONE);
@@ -186,13 +202,24 @@ public abstract class AbstractTextEncryptionInfoFragment extends Fragment {
                     .onPositive(new MaterialDialog.SingleButtonCallback() {
                         @Override
                         public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                            if (mTdr.getDecryptedData().hasTextAndPaddingV0()) {
-                                Inner.TextAndPaddingV0 textAndPadding = mTdr.getDecryptedData().getTextAndPaddingV0();
+                            try {
+                                Inner.InnerData innerData = mTdr.getDecryptedDataAsInnerData();
+                                if (innerData.hasTextAndPaddingV0()) {
+                                    Inner.TextAndPaddingV0 textAndPadding = mTdr.getDecryptedDataAsInnerData().getTextAndPaddingV0();
 
-                                share(activity, textAndPadding.getText(), activity.getString(R.string.action_share_decrypted));
-                            } else {
-                                Ln.w("Can't share inner data of type %s", mTdr.getDecryptedData().getDataCase().name());
+                                    share(activity, textAndPadding.getText(), activity.getString(R.string.action_share_decrypted));
+                                } else {
+                                    Ln.w("Can't share inner data of type %s", mTdr.getDecryptedDataAsInnerData().getDataCase().name());
+                                }
+                            } catch (InvalidProtocolBufferException e) {
+                                try {
+                                    String innerText = mTdr.getDecryptedDataAsUtf8String();
+                                    share(activity, innerText, activity.getString(R.string.action_share_decrypted));
+                                } catch (UnsupportedEncodingException e1) {
+                                    Ln.w("Can't share inner data!");
+                                }
                             }
+
                         }
                     })
                     .show();

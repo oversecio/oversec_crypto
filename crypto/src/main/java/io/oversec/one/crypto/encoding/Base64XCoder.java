@@ -80,5 +80,8 @@ public class Base64XCoder extends AbstractXCoder {
         }
     }
 
-
+    @Override
+    public boolean isTextOnly() {
+        return false;
+    }
 }

@@ -15,5 +15,5 @@ public interface IXCoder {
 
     String getExample(AbstractPadder padder);
 
-
+    boolean isTextOnly();
 }

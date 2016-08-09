@@ -14,6 +14,12 @@ import org.spongycastle.util.Pack;
 
 import java.io.IOException;
 
+
+/**
+ * Originally from
+ * https://github.com/bcgit/bc-java/blob/master/core/src/main/java/org/bouncycastle/crypto/tls/Chacha20Poly1305.java
+ *
+ */
 public class OversecChacha20Poly1305 {
     private static final byte[] ZEROES = new byte[15];
 

@@ -21,7 +21,6 @@ import org.openintents.openpgp.OpenPgpError;
 import org.openintents.openpgp.OpenPgpSignatureResult;
 import org.openintents.openpgp.util.OpenPgpApi;
 import org.spongycastle.bcpg.ArmoredInputStream;
-import org.spongycastle.bcpg.ArmoredOutputStream;
 import org.spongycastle.openpgp.*;
 import org.spongycastle.openpgp.operator.bc.BcKeyFingerprintCalculator;
 import roboguice.util.Ln;
@@ -600,7 +599,7 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
             Outer.MsgTextGpgV0 data = msg.getMsgTextGpgV0();
             byte[] raw = data.getCiphertext().toByteArray();
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            ArmoredOutputStream aos = new ArmoredOutputStream(baos);
+            OversecAsciiArmoredOutputStream aos = new OversecAsciiArmoredOutputStream(baos);
             try {
                 aos.write(raw);
                 aos.flush();

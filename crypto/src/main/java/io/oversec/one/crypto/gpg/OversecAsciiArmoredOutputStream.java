@@ -100,10 +100,10 @@ public class OversecAsciiArmoredOutputStream
     String          nl = Strings.lineSeparator();
 
     String          type;
-    String          headerStart = "-----BEGIN PGP ";
-    String          headerTail = "-----";
-    String          footerStart = "-----END PGP ";
-    String          footerTail = "-----";
+    public static final String          headerStart = "-----BEGIN PGP ";
+    public static final String          headerTail = "-----";
+    public static final String          footerStart = "-----END PGP ";
+    public static final String          footerTail = "-----";
 
     String          version = "BCPG v@RELEASE_NAME@";
 

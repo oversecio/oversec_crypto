@@ -45,8 +45,8 @@ public class SymmetricCryptoHandlerTest extends CryptoHandlerTestBase {
 
         assertTrue(decryptResult.isOk());
 
-        assertEquals(decryptResult.getDecryptedData(), innerData);
-        assertEquals(decryptResult.getDecryptedData().getTextAndPaddingV0().getText(), PLAIN_CONTENT);
+        assertEquals(decryptResult.getDecryptedDataAsInnerData(), innerData);
+        assertEquals(decryptResult.getDecryptedDataAsInnerData().getTextAndPaddingV0().getText(), PLAIN_CONTENT);
 
     }
 

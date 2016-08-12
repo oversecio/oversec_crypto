@@ -30,6 +30,8 @@ import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 @SuppressWarnings("RedundantThrows")
@@ -712,5 +714,70 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
         }
         return null;
 
+    }
+
+    static final Pattern P_ASCII_ARMOR_BEGIN = Pattern.compile("-----BEGIN (.*)-----");
+    static final String F_ASCII_ARMOR_END = "-----END %s-----";
+    static final int LINE_LENGTH = 64;
+    public static String sanitizeAsciiArmor(String s) {
+        //remove anything before ----START ....
+        //remove anything after  ----END ....
+
+        Matcher mStart = P_ASCII_ARMOR_BEGIN.matcher(s);
+        if (mStart.find()) {
+
+
+            int posStart = mStart.start();
+
+            String g1 = mStart.group(1);
+            String end = String.format(F_ASCII_ARMOR_END,g1);
+
+            int posEnd = s.indexOf(end,posStart);
+            if (posEnd>=0) {
+                s = s.substring(posStart,posEnd+end.length());
+                StringBuilder sb = new StringBuilder();
+                //adjust line length
+
+
+                String line=null;
+                String lastLine = null;
+                int curLineLength = 0;
+                boolean inBody = false;
+                BufferedReader bufReader = new BufferedReader(new StringReader(s));
+                try {
+                    while( (line=bufReader.readLine()) != null )
+                    {
+                        if (line.startsWith(end) && curLineLength>0) {
+                            sb.append("\n");
+                        }
+                        //insert blank line after headers
+                        if (line.trim().length()>0 && lastLine!=null && lastLine.contains(": ") && !line.contains(": ")) {
+                            sb.append("\n");
+                            inBody = true;
+                        }
+
+                        sb.append(line);
+                        curLineLength+=line.length();
+                        if (!inBody || curLineLength==LINE_LENGTH) {
+                            sb.append("\n");
+                            curLineLength = 0;
+                        }
+                        if (line.trim().length()==0) {
+                            inBody = true;
+                        }
+
+
+                        lastLine = line;
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                String res = sb.toString();
+                return res;
+            }
+
+        }
+        return  null;
     }
 }

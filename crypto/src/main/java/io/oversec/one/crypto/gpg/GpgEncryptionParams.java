@@ -10,7 +10,7 @@ public class GpgEncryptionParams extends AbstractEncryptionParams {
 
 
     long mOwnPublicKey;
-    boolean mSign;
+    boolean mSign = true;
     Set<Long> mPublicKeys = new HashSet<>();
 
     public GpgEncryptionParams(List<Long> pkids, String coderId, String padderId) {

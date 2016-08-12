@@ -26,6 +26,7 @@ public abstract class AbstractBinaryEncryptionInfoFragment extends Fragment {
     private BaseDecryptResult mTmpRes;
     private ImageXCoder mTmpCoder;
     private TextView mTvCoder;
+    private TextView mLblCoder;
     private TextView mTvMeth;
     private TextView mLblMeth;
 
@@ -42,12 +43,13 @@ public abstract class AbstractBinaryEncryptionInfoFragment extends Fragment {
         }
 
         mTvCoder = (TextView) mView.findViewById(R.id.tv_coder);
+        mLblCoder = (TextView) mView.findViewById(R.id.lbl_coder);
 
         mTvMeth = (TextView) mView.findViewById(R.id.tv_meth);
         mLblMeth = (TextView) mView.findViewById(R.id.lbl_meth);
 
-        mTvMeth.setVisibility(View.GONE);
-        mLblMeth.setVisibility(View.GONE);
+        mTvCoder.setVisibility(View.GONE);
+        mLblCoder.setVisibility(View.GONE);
 
         //TODO move to a clean fragment impl with  args and state
         if (mTmpMsg != null) {
@@ -75,7 +77,7 @@ public abstract class AbstractBinaryEncryptionInfoFragment extends Fragment {
     }
 
     protected void handleSetData(Outer.Msg msg, BaseDecryptResult tdr, ImageXCoder coder) {
-        mTvCoder.setText(coder.getClass().getSimpleName());
+        //mTvCoder.setText(coder.getClass().getSimpleName());
         AbstractCryptoHandler encH = CryptoHandlerFacade.getInstance(getActivity()).getCryptoHandler(tdr);
         if (encH != null) {
             mTvMeth.setText(encH.getDisplayEncryptionMethod());

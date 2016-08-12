@@ -70,6 +70,7 @@ public class GpgBinaryEncryptionInfoFragment extends AbstractBinaryEncryptionInf
 
     @Override
     protected void handleSetData(Outer.Msg msg, BaseDecryptResult tdr, ImageXCoder coder) {
+        super.handleSetData(msg,tdr,coder);
 
         final GpgDecryptResult r = (GpgDecryptResult) tdr;
 

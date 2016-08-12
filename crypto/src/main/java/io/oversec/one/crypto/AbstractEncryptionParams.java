@@ -36,6 +36,11 @@ public abstract class AbstractEncryptionParams {
         mPadderId = padder == null ? null : padder.getId();
     }
 
+    public void setXcoderAndPadderIds(String xcoderId, String padderId) {
+        mCoderId =  xcoderId;
+        mPadderId = padderId;
+    }
+
 
     public abstract boolean isStillValid(Context ctx);
 }

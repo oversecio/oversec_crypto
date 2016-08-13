@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.InvalidProtocolBufferException;
 import io.oversec.one.common.ExpiringLruCache;
 import io.oversec.one.crypto.*;
 import io.oversec.one.crypto.gpg.ui.GpgBinaryEncryptionInfoFragment;
@@ -164,7 +163,6 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
                 builderMsg.setMsgTextGpgV0(pgpMsgBuilder);
 
 
-
                 Outer.Msg msg = builderMsg.build();
 
 
@@ -285,7 +283,7 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
             }
 
             return r;
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return r;
         }
@@ -608,7 +606,7 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
             byte[] raw = data.getCiphertext().toByteArray();
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             OversecAsciiArmoredOutputStream aos = new OversecAsciiArmoredOutputStream(baos);
-            aos.setHeader("Charset","utf-8");
+            aos.setHeader("Charset", "utf-8");
             try {
                 aos.write(raw);
                 aos.flush();
@@ -719,6 +717,7 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
     static final Pattern P_ASCII_ARMOR_BEGIN = Pattern.compile("-----BEGIN (.*)-----");
     static final String F_ASCII_ARMOR_END = "-----END %s-----";
     static final int LINE_LENGTH = 64;
+
     public static String sanitizeAsciiArmor(String s) {
         //remove anything before ----START ....
         //remove anything after  ----END ....
@@ -730,45 +729,64 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
             int posStart = mStart.start();
 
             String g1 = mStart.group(1);
-            String end = String.format(F_ASCII_ARMOR_END,g1);
+            String end = String.format(F_ASCII_ARMOR_END, g1);
 
-            int posEnd = s.indexOf(end,posStart);
-            if (posEnd>=0) {
-                s = s.substring(posStart,posEnd+end.length());
+            int posEnd = s.indexOf(end, posStart);
+            if (posEnd >= 0) {
+                s = s.substring(posStart, posEnd + end.length());
                 StringBuilder sb = new StringBuilder();
                 //adjust line length
 
 
-                String line=null;
-                String lastLine = null;
+                String line = null;
                 int curLineLength = 0;
-                boolean inBody = false;
-                BufferedReader bufReader = new BufferedReader(new StringReader(s));
                 try {
-                    while( (line=bufReader.readLine()) != null )
-                    {
-                        if (line.startsWith(end) && curLineLength>0) {
+                    BufferedReader bufReader = new BufferedReader(new StringReader(s));
+                    sb.append(bufReader.readLine()).append("\n"); //write BEGIN..
+
+                    //write headers
+                    while ((line = bufReader.readLine()) != null) {
+                        if (line.contains(": ")) {
+                            sb.append(line);
                             sb.append("\n");
                         }
-                        //insert blank line after headers
-                        if (line.trim().length()>0 && lastLine!=null && lastLine.contains(": ") && !line.contains(": ")) {
-                            sb.append("\n");
-                            inBody = true;
-                        }
 
-                        sb.append(line);
-                        curLineLength+=line.length();
-                        if (!inBody || curLineLength==LINE_LENGTH) {
-                            sb.append("\n");
-                            curLineLength = 0;
-                        }
-                        if (line.trim().length()==0) {
-                            inBody = true;
-                        }
-
-
-                        lastLine = line;
                     }
+
+                    sb.append("\n");
+
+                    //write body
+
+
+                    bufReader = new BufferedReader(new StringReader(s));
+                    bufReader.readLine(); //read BEGIN
+                    while ((line = bufReader.readLine()) != null) {
+                        if (line.startsWith(end)) {
+                            break;
+                        }
+
+                        if (line.length() > 0 && !line.contains(": ")) {
+                            curLineLength += line.length();
+
+
+                            if (curLineLength > LINE_LENGTH) {
+                                sb.append("\n");
+                                curLineLength = line.length();
+                                sb.append(line);
+                            } else if (curLineLength == LINE_LENGTH) {
+                                curLineLength = 0;
+                                sb.append(line);
+                                sb.append("\n");
+                            } else {
+                                sb.append(line);
+                            }
+                        }
+
+                    }
+                    if (curLineLength > 0) {
+                        sb.append("\n");
+                    }
+                    sb.append(end); //write END...
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -778,6 +796,6 @@ public class GpgCryptoHandler extends AbstractCryptoHandler {
             }
 
         }
-        return  null;
+        return null;
     }
 }

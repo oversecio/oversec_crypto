@@ -227,7 +227,7 @@
     <string name="warning">Warning</string>
     <string name="warning_pgp_messages_are_big">PGP encoded messages add an overhead of about 3 kilobytes or more per message. Please consider this when you have a limited data plan and possible use symmetric encryption instead!</string>
     <string name="tooltip_padders_fragment">This is the decoy content that will be shown in place of the invisible encrypted Text.</string>
-    <string name="title_activity_padder_detail">Padder</string>
+    <string name="title_activity_padder_detail">Decoy</string>
     <string name="label_padder_name">Name:</string>
     <string name="label_padder_content">Content:</string>
     <string name="simple_password_decrypt_this">to decrypt this:</string>

@@ -1,17 +1,17 @@
 <resources>
 
-    <string name="encoder_base64">Base64</string>
+    <string name="encoder_base64" translatable="false">Base64</string>
     <string name="encoder_zerowidth">Invisible</string>
-    <string name="encoder_gpg_ascii_armoured">PGP ascii armoured</string>
+    <string name="encoder_gpg_ascii_armoured" translatable="false">PGP ascii armored</string>
 
-    <string name="padder_chicken">Chicken</string>
-    <string name="padder_lorem">Lorem Ipsum</string>
+    <string name="padder_chicken" translatable="false">Chicken</string>
+    <string name="padder_lorem" translatable="false">Lorem Ipsum</string>
     <string name="padder_hansel_and_gretel">Hansel and Grethel</string>
     <string name="padder_manual">Manual</string>
-    <string name="padder_oversec">Oversec</string>
+    <string name="padder_oversec" translatable="false">Oversec</string>
 
-    <string name="paddercontent_chicken">chicken</string>
-    <string name="paddercontent_lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum, quam
+    <string name="paddercontent_chicken" translatable="false">chicken</string>
+    <string name="paddercontent_lorem" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum, quam
         rhoncus vehicula blandit, ex sem convallis dui, dictum imperdiet nunc tellus et ex. Vivamus ac sapien imperdiet,
         posuere tortor ut, sagittis lacus. Praesent erat purus, lobortis ut consequat in, interdum a est. Curabitur
         tristique odio vitae tellus ultricies tempus. Pellentesque lacinia tincidunt mauris. Vestibulum vehicula risus

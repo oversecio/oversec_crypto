@@ -33,6 +33,7 @@ import io.oversec.one.crypto.ui.NewPasswordInputDialog;
 import io.oversec.one.crypto.ui.NewPasswordInputDialogCallback;
 import io.oversec.one.crypto.ui.SecureBaseActivity;
 import io.oversec.one.crypto.ui.util.Util;
+import roboguice.util.Ln;
 
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
@@ -87,6 +88,13 @@ public class KeyDetailsActivity extends SecureBaseActivity implements OversecKey
         }
 
         mId = getIntent().getLongExtra(EXTRA_ID, 0);
+        SymmetricKeyEncrypted key = mKeystore.getSymmetricKeyEncrypted(mId);
+        if (key==null) {
+            Ln.w("couldn't find request key with id %s",mId);
+            finish();
+            return;
+        }
+
         setContentView(R.layout.sym_activity_key_details);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -117,7 +125,7 @@ public class KeyDetailsActivity extends SecureBaseActivity implements OversecKey
         });
 
 
-        SymmetricKeyEncrypted key = mKeystore.getSymmetricKeyEncrypted(mId);
+
 
         //noinspection ConstantConditions
         mTvAlias.setText(key.getName());

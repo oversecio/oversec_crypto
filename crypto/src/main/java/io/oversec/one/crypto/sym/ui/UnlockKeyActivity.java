@@ -33,6 +33,7 @@ import io.oversec.one.crypto.sym.SymmetricKeyEncrypted;
 import io.oversec.one.crypto.symbase.KeyUtil;
 import io.oversec.one.crypto.symbase.OversecChacha20Poly1305;
 import io.oversec.one.crypto.ui.util.KeystoreTTLSpinner;
+import roboguice.util.Ln;
 
 import java.io.IOException;
 
@@ -57,7 +58,6 @@ public class UnlockKeyActivity extends FragmentActivity {
     }
 
     public static void showForResult(Context ctx, long id, int rq) {
-
         Intent i = new Intent();
         i.setClass(ctx, UnlockKeyActivity.class);
         i.putExtra(EXTRA_KEY_ID, id);
@@ -68,7 +68,6 @@ public class UnlockKeyActivity extends FragmentActivity {
             i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             ((Activity) ctx).startActivityForResult(i, rq);
         }
-
     }
 
     @Override
@@ -88,6 +87,13 @@ public class UnlockKeyActivity extends FragmentActivity {
     @Override
     protected void onResumeFragments() {
         super.onResumeFragments();
+
+        SymmetricKeyEncrypted aEncryptedKey = OversecKeystore2.getInstance(this).getSymmetricKeyEncrypted(getIntent().getExtras().getLong(EXTRA_KEY_ID, 0));
+        if (aEncryptedKey==null) {
+            Ln.w("something went wrong, couldn't find request key!");
+            finish();
+            return;
+        }
 
         PassphraseDialogFragment frag = new PassphraseDialogFragment();
         frag.setArguments(getIntent().getExtras());

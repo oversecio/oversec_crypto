@@ -77,7 +77,7 @@
     <string name="decrypt_error_no_gpg_handler">Die Openkeychain App wird benötigt um dies zu entschlüsseln.</string>
     <string name="decrypt_error_proto">Oversec Fehler, bitte Oversec App updaten!</string>
     <string name="decrypt_error_user_interaction_required">Eingabe erforderlich</string>
-    <string name="decrypt_error_user_interaction_required__long">(Passwort) Eingabe erforderlich źum Entschlüsseln.</string>
+    <string name="decrypt_error_user_interaction_required__long">(Passwort) Eingabe erforderlich zum Entschlüsseln.</string>
     <string name="dialog_confirm_key_text">Bestätigen Sie diesen Schlüssel indem Sie die andere Person anrufen, und prüfen, dass der unten angezeigte Schlüssel-Fingerabdruck übereinstimmt.\n%1$s</string>
     <string name="dialog_explore_button_key_details">Schlüssel-Details anzeigen</string>
     <string name="dialog_explore_label_allrecipients">Verschlüsselt für:\n(Public Keys)</string>

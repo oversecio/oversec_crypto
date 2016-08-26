@@ -7,6 +7,8 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.*;
+import android.hardware.*;
+import android.hardware.Camera;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -30,6 +32,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.dlazaro66.qrcodereaderview.QRCodeReaderView;
 import com.google.zxing.*;
+import com.google.zxing.client.android.camera.open.OpenCameraManager;
 import com.google.zxing.common.HybridBinarizer;
 import io.oversec.one.crypto.Consts;
 import io.oversec.one.crypto.Help;
@@ -219,12 +222,12 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
                     mProgressBar.setVisibility(View.GONE);
                     mProgressLabel.setVisibility(View.GONE);
 
-                    // check Android 6 permission
-                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-                            == PackageManager.PERMISSION_GRANTED) {
-                        System.out.println("XYZZY onCreateAAAAA -> startBarcodeScan");
 
-                        startBarcodeScan();
+                    boolean canAccessCamera = checkCameraAccess();
+
+                    // check Android 6 permission
+                    if (canAccessCamera) {
+                       startBarcodeScan();
                     } else {
                         ActivityCompat.requestPermissions(this,
                                 new String[]{Manifest.permission.CAMERA},
@@ -248,6 +251,22 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
         }
 
 
+    }
+
+    private boolean checkCameraAccess() {
+        boolean ret = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                == PackageManager.PERMISSION_GRANTED;
+
+        if (ret) {
+            //we still can't be sure, android misreport permission when revoked through settings
+            try {
+                Camera xCamera = new OpenCameraManager().build().open();
+                xCamera.release();
+            } catch (RuntimeException ex) {
+                ret = false;
+            }
+        }
+        return ret;
     }
 
     private void createWithPassphrase() {
@@ -440,9 +459,10 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_CAMERA: {
                 if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // permission was granted
-                    System.out.println("XYZZY onRequestPermissionsResult -> startBarcodeScan");
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED
+
+                        && checkCameraAccess()) {
+                    // permission was granted, and we surely can acces the camera
                     startBarcodeScan();
                 } else {
                     setResult(Activity.RESULT_CANCELED);

@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.zxing.client.android.camera.open.OpenCameraManager;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -117,6 +119,7 @@ public class Util {
 //        src.startActivity(openInChooser);
     }
 
+
     private interface IPackageNameFilter {
         boolean include(String packageName);
     }
@@ -167,6 +170,15 @@ public class Util {
             }
         }
         return ret;
+    }
+
+
+    public static boolean checkExternalStorageAccess(Context ctx, IOException e) {
+        return(ContextCompat.checkSelfPermission(ctx, Manifest.permission.READ_EXTERNAL_STORAGE)
+                == PackageManager.PERMISSION_GRANTED
+                &&
+                e.getMessage().contains("App op not allowed")
+        );
     }
 
 }

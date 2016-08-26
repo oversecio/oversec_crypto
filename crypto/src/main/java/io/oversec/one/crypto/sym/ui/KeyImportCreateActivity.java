@@ -54,6 +54,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
     public static final int RQ_SHOW_DETAILS_AFTER_SAVE = 1000;
 
     public static final int MY_PERMISSIONS_REQUEST_CAMERA = 42;
+    public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 43;
 
     private static final String EXTRA_MODE = "mode";
     public static final String CREATE_MODE_RANDOM = "random";
@@ -382,6 +383,14 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
 
                     } catch (IOException e) {
                         e.printStackTrace();
+                        if (Util.checkExternalStorageAccess(KeyImportCreateActivity.this,e)) {
+                            ActivityCompat.requestPermissions(KeyImportCreateActivity.this,
+                                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                                    MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+                            return;
+                        }
+
+
                         showError(e.getMessage(), new Runnable() {
                             @Override
                             public void run() {
@@ -448,6 +457,11 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
                     setResult(Activity.RESULT_CANCELED);
                     finish();
                 }
+                break;
+            }
+            case MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE: {
+                finish(); //TODO implement retry
+                break;
             }
         }
     }

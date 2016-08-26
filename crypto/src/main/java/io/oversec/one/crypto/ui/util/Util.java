@@ -1,5 +1,6 @@
 package io.oversec.one.crypto.ui.util;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -7,9 +8,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Color;
+import android.hardware.Camera;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.zxing.client.android.camera.open.OpenCameraManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -146,6 +150,23 @@ public class Util {
 
     public static void showToast(Context ctx, String s) {
         Toast.makeText(ctx, s, Toast.LENGTH_LONG).show();
+    }
+
+
+    public static boolean checkCameraAccess(Context ctx) {
+        boolean ret = ContextCompat.checkSelfPermission(ctx, Manifest.permission.CAMERA)
+                == PackageManager.PERMISSION_GRANTED;
+
+        if (ret) {
+            //we still can't be sure, android misreport permission when revoked through settings
+            try {
+                Camera xCamera = new OpenCameraManager().build().open();
+                xCamera.release();
+            } catch (RuntimeException ex) {
+                ret = false;
+            }
+        }
+        return ret;
     }
 
 }

@@ -46,10 +46,7 @@ import io.oversec.one.crypto.symbase.OversecChacha20Poly1305;
 import io.oversec.one.crypto.ui.NewPasswordInputDialog;
 import io.oversec.one.crypto.ui.NewPasswordInputDialogCallback;
 import io.oversec.one.crypto.ui.SecureBaseActivity;
-import io.oversec.one.crypto.ui.util.ImageInfo;
-import io.oversec.one.crypto.ui.util.ImgUtil;
-import io.oversec.one.crypto.ui.util.MaterialTitleBodyAdapter;
-import io.oversec.one.crypto.ui.util.MaterialTitleBodyListItem;
+import io.oversec.one.crypto.ui.util.*;
 
 import java.io.IOException;
 
@@ -223,10 +220,8 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
                     mProgressLabel.setVisibility(View.GONE);
 
 
-                    boolean canAccessCamera = checkCameraAccess();
-
                     // check Android 6 permission
-                    if (canAccessCamera) {
+                    if ( Util.checkCameraAccess(this)) {
                        startBarcodeScan();
                     } else {
                         ActivityCompat.requestPermissions(this,
@@ -253,21 +248,6 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
 
     }
 
-    private boolean checkCameraAccess() {
-        boolean ret = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-                == PackageManager.PERMISSION_GRANTED;
-
-        if (ret) {
-            //we still can't be sure, android misreport permission when revoked through settings
-            try {
-                Camera xCamera = new OpenCameraManager().build().open();
-                xCamera.release();
-            } catch (RuntimeException ex) {
-                ret = false;
-            }
-        }
-        return ret;
-    }
 
     private void createWithPassphrase() {
         NewPasswordInputDialogCallback cb = new NewPasswordInputDialogCallback() {
@@ -461,7 +441,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED
 
-                        && checkCameraAccess()) {
+                        && Util.checkCameraAccess(this)) {
                     // permission was granted, and we surely can acces the camera
                     startBarcodeScan();
                 } else {

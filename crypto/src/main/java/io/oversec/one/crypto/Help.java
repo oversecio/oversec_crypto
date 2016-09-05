@@ -38,7 +38,7 @@ public class Help {
         input_insufficientpadding,
         input_corruptedencoding,
 
-        bossmode_active, main_padders,
+        bossmode_active, main_padders, settextfailed,
 
 
     }

@@ -27,4 +27,6 @@ public abstract class CoreContract {
 
 
     public abstract AbstractEncryptionParams getBestEncryptionParams(String packageName);
+
+    public abstract boolean isActionSetTextFailed(String packagename);
 }

@@ -224,4 +224,6 @@
         <item quantity="one">Ein gemerktes Passwort</item>
         <item quantity="other">%d gemerkte Passwörter</item>
     </plurals>
+    <string name="tooltip_settextfailed">Oversec konnte den kodierten Text nicht in die App schreiben!\n\nWahrscheinlich hat die App ein Problem mit dem unsichtbaren Text!\n\nBitte versuche eine andere (sichtbare) Kodierung!</string>
+
 </resources>

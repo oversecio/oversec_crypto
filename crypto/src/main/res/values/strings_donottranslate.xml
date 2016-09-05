@@ -24,4 +24,5 @@
     <string name="tooltipid_pgpmessagesarehuge" translatable="false">pgpmessagesarehuge</string>
     <string name="tooltipid_padders_fragment" translatable="false">padders_fragment</string>
     <string name="tooltipid_onboarding" translatable="false">onboarding</string>
+
 </resources>

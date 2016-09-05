@@ -17,6 +17,8 @@ public class XCoderAndPadderFactory {
     private ArrayList<XCoderAndPadder> mAll = new ArrayList<>();
     private ArrayList<XCoderAndPadder> mSym;
     private ArrayList<XCoderAndPadder> mGpg;
+    private ArrayList<XCoderAndPadder> mSymExcludeInvisible;
+    private ArrayList<XCoderAndPadder> mGpgExcludeInvisible;
 
     public static synchronized XCoderAndPadderFactory getInstance(Context ctx) {
         if (INSTANCE == null) {
@@ -47,14 +49,17 @@ public class XCoderAndPadderFactory {
 
         mSym = new ArrayList<>(mAll);
         mGpg = new ArrayList<>(mAll);
+        mSymExcludeInvisible = new ArrayList<>();
+        mGpgExcludeInvisible = new ArrayList<>();
 
         XCoderAndPadder l = new XCoderAndPadder(XCoderFactory.getInstance(mCtx)._Base64XCoder, null);
         mSym.add(0, l);
+        mSymExcludeInvisible.add(0, l);
         mAll.add(l);
-
 
         XCoderAndPadder l2 = new XCoderAndPadder(XCoderFactory.getInstance(mCtx)._AsciiArmouredGpgXCoder, null);
         mGpg.add(0, l2);
+        mGpgExcludeInvisible.add(0, l2);
         mAll.add(l2);
     }
 
@@ -63,15 +68,13 @@ public class XCoderAndPadderFactory {
     }
 
 
-    public ArrayList<XCoderAndPadder> getSym() {
-
-        return mSym;
+    public ArrayList<XCoderAndPadder> getSym(String packagename) {
+        return CoreContract.getInstance().isActionSetTextFailed(packagename)?mSymExcludeInvisible:mSym;
     }
 
 
-    public ArrayList<XCoderAndPadder> getGpg() {
-
-        return mGpg;
+    public ArrayList<XCoderAndPadder> getGpg(String packagename) {
+        return CoreContract.getInstance().isActionSetTextFailed(packagename)?mGpgExcludeInvisible:mGpg;
     }
 
     public XCoderAndPadder get(String coderId, String padderId) {

@@ -235,4 +235,5 @@
     <string name="dialog_explore_label_signed_by">Signed by:</string>
     <string name="simple_password_unlock_key">Unlock Key …</string>
     <string name="simple_password_to_decrypt_this">to decrypt this text:</string>
+    <string name="tooltip_settextfailed">Oversec could not write the encoded text back to the underlying app!\n\nThis is most likely due the underlying app having problems with the invisible encoding!\n\nPlease try another (visible) encoding!</string>
 </resources>

@@ -54,19 +54,17 @@ public class GotItPreferences {
         mSharedPreferences.edit().clear().commit();
     }
 
-    public boolean isTooltipConfirmed(int resId) {
-        return mSharedPreferences.getBoolean(PREF_GOTIT_PREFIX + mCtx.getString(resId), false);
-    }
-
-    public void setTooltipConfirmed(int resId) {
-        mSharedPreferences.edit().putBoolean(PREF_GOTIT_PREFIX + mCtx.getString(resId), true).commit();
-    }
-
-    public boolean isTooltipConfirmedS(String res) {
+    public boolean isTooltipConfirmed(String res) {
+        if (res==null) {
+            return  false;
+        }
         return mSharedPreferences.getBoolean(PREF_GOTIT_PREFIX + res, false);
     }
 
-    public void setTooltipConfirmedS(String res) {
+    public void setTooltipConfirmed(String res) {
+        if (res==null) {
+            return;
+        }
         mSharedPreferences.edit().putBoolean(PREF_GOTIT_PREFIX + res, true).commit();
     }
 }

@@ -66,7 +66,7 @@ public class StandaloneTooltipView extends RelativeLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        if (GotItPreferences.getPreferences(getContext()).isTooltipConfirmedS(mGotItId)) {
+        if (GotItPreferences.getPreferences(getContext()).isTooltipConfirmed(mGotItId)) {
             setVisibility(View.GONE);
         }
 
@@ -92,7 +92,7 @@ public class StandaloneTooltipView extends RelativeLayout {
             @Override
             public void onClick(View v) {
                 setVisibility(View.GONE);
-                GotItPreferences.getPreferences(getContext()).setTooltipConfirmedS(mGotItId);
+                GotItPreferences.getPreferences(getContext()).setTooltipConfirmed(mGotItId);
             }
         });
 

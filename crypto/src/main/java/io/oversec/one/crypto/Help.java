@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 
 public class Help {
     private static final String URL_BASE = "http://help.oversec.io/";
     private static final String URL_INDEX = URL_BASE + "index.html";
+
 
     public enum ANCHOR {
         encparams_pgp,
@@ -53,7 +55,10 @@ public class Help {
 
     public static void open(Context ctx, String anchor) {
         try {
-            String url = URL_INDEX + (anchor == null ? "" : "#alias_" + anchor);
+            String url =  anchor;
+            if (!url.startsWith(URL_INDEX)) {
+                url = URL_INDEX + (anchor == null ? "" : "#alias_" + anchor);
+            }
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             //if (!(ctx instanceof Activity))
@@ -66,13 +71,18 @@ public class Help {
         }
     }
 
+    public static String getAnchorForPackageInfos(Context ctx, String packagename) throws PackageManager.NameNotFoundException {
+        PackageInfo packageInfo = ctx.getPackageManager().getPackageInfo(packagename, 0);
+        int versionNumber = packageInfo.versionCode;
+        String packageNameReplaced = packagename.replace('.', '-');
+        return URL_INDEX + "#package_" + packageNameReplaced + "$" + versionNumber;
+    }
+
+
     public static void openForPackage(Context ctx, String packagename) {
         if (packagename == null) return;
         try {
-            PackageInfo packageInfo = ctx.getPackageManager().getPackageInfo(packagename, 0);
-            int versionNumber = packageInfo.versionCode;
-            String packageNameReplaced = packagename.replace('.', '-');
-            String url = URL_INDEX + "#package_" + packageNameReplaced + "$" + versionNumber;
+            String url = getAnchorForPackageInfos(ctx,packagename);
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             if (!(ctx instanceof Activity)) {

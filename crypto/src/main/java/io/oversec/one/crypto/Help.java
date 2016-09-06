@@ -40,7 +40,7 @@ public class Help {
         input_insufficientpadding,
         input_corruptedencoding,
 
-        bossmode_active, main_padders, settextfailed,
+        bossmode_active, main_padders, settextfailed,  button_compose, paste_clipboard,
 
 
     }

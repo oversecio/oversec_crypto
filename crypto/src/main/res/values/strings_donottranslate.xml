@@ -25,4 +25,7 @@
     <string name="tooltipid_padders_fragment" translatable="false">padders_fragment</string>
     <string name="tooltipid_onboarding" translatable="false">onboarding</string>
     <string name="tooltipid_issues" translatable="false">issues_</string>
+    <string name="tooltipid_buttoncompose" translatable="false">buttoncompose</string>
+    <string name="tooltipid_compose_encrypt_button" translatable="false">compose_fab</string>
+    <string name="tooltipid_paste_clipboard" translatable="false">paste_clipboardx</string>
 </resources>

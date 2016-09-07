@@ -1,9 +1,6 @@
 package io.oversec.one.crypto;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by yao on 05/09/16.
@@ -52,7 +49,17 @@ public class Issues {
         PACKAGES_THAT_NEED_TO_SCRAPE_NON_IMPRTANT_VIEWS.add("com.google.android.apps.messaging"); //new Messaging
 
     }
-    public static boolean needsIncludeNonImportantViews(String packagename) {
-        return PACKAGES_THAT_NEED_TO_SCRAPE_NON_IMPRTANT_VIEWS.contains(packagename);
+    public static Collection<String> getPackagesThatNeedIncludeNonImportantViews() {
+        return PACKAGES_THAT_NEED_TO_SCRAPE_NON_IMPRTANT_VIEWS;
     }
+
+    private static Set<String> PACKAGES_THAT_NEED_COMPOSE_BUTTON = new HashSet<>();
+    static {
+        PACKAGES_THAT_NEED_COMPOSE_BUTTON.add("com.google.android.apps.inbox");//Inbox By Gmail
+    }
+    public static Collection<String> getPackagesThatNeedComposeButton() {
+        return PACKAGES_THAT_NEED_COMPOSE_BUTTON;
+    }
+
+
 }

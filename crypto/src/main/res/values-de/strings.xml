@@ -214,7 +214,6 @@
     <string name="warning_cant_encrypt_without_simplesymkey">Bitte ein Verschlüsselungs-Passwort eingeben!</string>
     <string name="warning_cant_encrypt_without_symkey">Kein Schlüssel gewählt! Einen oder mehrere Schlüssel auswählen!</string>
     <string name="warning_encrypt_not_self">Eigener Schlüssel nicht angegeben. Du wirst die Nachricht nicht selbst entschlüsseln können!</string>
-    <string name="warning_image_encoding_no_carrier" translatable="false">TODO delete this</string>
     <string name="warning_image_encoding_no_method">Bitte Kodierung auswählen!</string>
     <string name="warning_image_resized">Bild zu gross, es wurde automatisch auf %1$d Prozent verkleinert</string>
     <string name="warning_missing_key">!Fehlender Schlüssel!</string>

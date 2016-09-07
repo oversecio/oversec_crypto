@@ -202,7 +202,6 @@
     <string name="error_image_decrypt_nomatchingkey">No matching key found to decrypt this image.</string>
     <string name="error_image_decrypt_noencodeddata">No encrypted data found in the source image.</string>
     <string name="warning_image_encoding_no_method">Please select encoding method first!</string>
-    <string name="warning_image_encoding_no_carrier" translatable="false">Please select a carrier image first!</string>
     <string name="error_image_encode_generic">Something went wrong when trying to encode this image.</string>
     <string name="error_image_encode_source_not_found">Couldn\'t read source image!\nNote that photos taken from within Oversec get auto-deleted a short time after taking them!</string>
     <string name="intent_chooser_share_unencrypted_image">Share _UN_encrypted image via…</string>

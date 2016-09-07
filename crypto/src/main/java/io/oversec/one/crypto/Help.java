@@ -3,6 +3,7 @@ package io.oversec.one.crypto;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -95,9 +96,13 @@ public class Help {
 
     }
 
-    public static String getApplicationName(Context ctx, String packagename) {
-        int stringId = ctx.getApplicationInfo().labelRes;
-        return ctx.getString(stringId);
+    public static CharSequence getApplicationName(Context ctx, String packagename) {
+        try {
+            ApplicationInfo ai = ctx.getPackageManager().getApplicationInfo(packagename, 0);
+            return  ctx.getPackageManager().getApplicationLabel(ai);
+        } catch (PackageManager.NameNotFoundException e) {
+            return packagename;
+        }
 
     }
 }

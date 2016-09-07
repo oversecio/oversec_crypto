@@ -25,8 +25,5 @@ public abstract class CoreContract {
 
     public abstract void doIfFullVersionOrShowPurchaseDialog(Fragment fragment, Runnable okRunnable, int requestCode);
 
-
     public abstract AbstractEncryptionParams getBestEncryptionParams(String packageName);
-
-    public abstract boolean isActionSetTextFailed(String packagename);
 }

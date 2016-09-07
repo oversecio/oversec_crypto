@@ -94,4 +94,10 @@ public class Help {
         }
 
     }
+
+    public static String getApplicationName(Context ctx, String packagename) {
+        int stringId = ctx.getApplicationInfo().labelRes;
+        return ctx.getString(stringId);
+
+    }
 }

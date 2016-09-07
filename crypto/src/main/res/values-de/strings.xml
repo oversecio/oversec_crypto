@@ -224,6 +224,7 @@
         <item quantity="one">Ein gemerktes Passwort</item>
         <item quantity="other">%d gemerkte Passwörter</item>
     </plurals>
-    <string name="tooltip_settextfailed">Oversec konnte den kodierten Text nicht in die App schreiben!\n\nWahrscheinlich hat die App ein Problem mit dem unsichtbaren Text!\n\nBitte versuche eine andere (sichtbare) Kodierung!</string>
+    <string name="tooltip_settextfailed">Oversec konnte den kodierten Text nicht in die App schreiben!\n\nWahrscheinlich hat die App ein Limit für die Anzahl der Zeichen im Eingabefeld.!\n\nBitte versuche es nochmals mit weniger Empfängern oder verwende symmetrische Verschlüsselung, die weniger Zeichen produziert!!</string>
+    <string name="tooltip_encodingtoolong">Der kodierte Text ist zu lang!\n\nOversec had den Text nicht in die unterliegende App geschrieben, da sie sonst abstürzen würde.\n\nnBitte versuche es nochmals mit weniger Empfängern oder verwende symmetrische Verschlüsselung, die weniger Zeichen produziert!!</string>
 
 </resources>

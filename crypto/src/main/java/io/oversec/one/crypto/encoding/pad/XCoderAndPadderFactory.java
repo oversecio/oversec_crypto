@@ -2,6 +2,7 @@ package io.oversec.one.crypto.encoding.pad;
 
 import android.content.Context;
 import io.oversec.one.common.CoreContract;
+import io.oversec.one.crypto.Issues;
 import io.oversec.one.crypto.encoding.XCoderAndPadder;
 import io.oversec.one.crypto.encoding.XCoderFactory;
 
@@ -69,12 +70,12 @@ public class XCoderAndPadderFactory {
 
 
     public ArrayList<XCoderAndPadder> getSym(String packagename) {
-        return CoreContract.getInstance().isActionSetTextFailed(packagename)?mSymExcludeInvisible:mSym;
+        return Issues.cantHandleInvisibleEncoding(packagename)?mSymExcludeInvisible:mSym;
     }
 
 
     public ArrayList<XCoderAndPadder> getGpg(String packagename) {
-        return CoreContract.getInstance().isActionSetTextFailed(packagename)?mGpgExcludeInvisible:mGpg;
+        return Issues.cantHandleInvisibleEncoding(packagename)?mGpgExcludeInvisible:mGpg;
     }
 
     public XCoderAndPadder get(String coderId, String padderId) {

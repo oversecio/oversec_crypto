@@ -125,7 +125,7 @@
     <string name="title_activity_about">Über Oversec</string>
     <string name="title_activity_appconfig">App Einstellungen</string>
     <string name="title_activity_encryption_params">Verschlüsselung</string>
-    <string name="toast_corrupted_encoding">Mist! Du hast Teile der versteckten Nachricht gelöscht\nBitte nochmal von Vorne anfangen!</string>
+    <string name="toast_corrupted_encoding">Mist! Die kodierte Nachricht ist kaputt!\nBitte nochmal von Vorne anfangen!</string>
     <string name="toast_insufficient_padding">Bitte mehr Text eingeben bis der Rahmen um das Eingabefeld grün wird!</string>
     <string name="toast_longtap_encryptionbutton">Vorherige Verschlüsselungs-Parameter werden verwendet!\nUm diese zu Ändern. den Verschlüsselungs-Button lang-berühren!</string>
     <string name="toast_no_info_nodes">Kein verschlüsselter Text auf dem Schirm!</string>

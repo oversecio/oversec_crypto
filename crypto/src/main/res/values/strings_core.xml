@@ -88,7 +88,7 @@
     <string name="toast_insufficient_padding">Please enter more text until the border around the input turns green!</string>
     <string name="action_dismiss">Dismiss</string>
     <string name="toast_longtap_encryptionbutton">Previous encryption parameters in use!\nTo change encryption parameters, long-tap the encryption button!</string>
-    <string name="toast_corrupted_encoding">Bummer! You have deleted parts of the (invisible) encrypted message\nThe only way out is to start over!</string>
+    <string name="toast_corrupted_encoding">Bummer! The encrypted message has been corrupted!\nThe only way out is to start over!</string>
     <string name="action_clear_input">Clear Input</string>
     <string name="crash_email" translatable="false">crashreport@oversec.io</string>
     <string name="crash_report_via_title">Select email app to send crash report</string>

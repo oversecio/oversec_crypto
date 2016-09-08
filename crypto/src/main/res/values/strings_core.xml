@@ -159,10 +159,11 @@
     <string name="overlaypermissionswarning_title">Permission Required</string>
     <string name="overlaypermissionswarning_text">Oversec currently doesn\'t have permission to draw over other Apps.\n\nOversec can not function without this permission!\n\nPlease tap on \"Settings\" and then permit drawing over other apps.</string>
     <string name="action_settings">Settings</string>
-    <string name="tooltip_app_issues">There is additional information available for using Oversec with %1$s</string>
+    <string name="tooltip_app_issues">There is additional information for using Oversec with %1$s in the online help</string>
     <string name="tooltip_buttoncompose">Tap here to enter and encrypt a text to the clipboard</string>
     <string name="activity_compose_title">Compose Text For Clipboard</string>
     <string name="compose_text_hint">Enter text to encrypt and put into clipboard</string>
     <string name="tooltip_compose_fab">Tap here to encrypt and put encrypted text into clipboard.</string>
     <string name="tooltip_paste_clipboard">Encrypted text in Clipboard!\n\nNow long-tap on the target field and select PASTE to enter the encrypted text.</string>
+    <string name="action_show_onlinehelp">Show Help</string>
 </resources>

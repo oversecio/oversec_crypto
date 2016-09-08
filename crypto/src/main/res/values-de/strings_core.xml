@@ -150,10 +150,10 @@
     <string name="overlaypermissionswarning_title">Keine Berechtigung</string>
     <string name="overlaypermissionswarning_text">Oversec hat keine Berechtigung um sich über anderen Apps einzublenden.\n\nOversec funktioniert ohne diese Berechtigung nicht!\n\nBitte berühre \"Einstellungen\" und erlaube dann Einblenden über anderen Apps.</string>
     <string name="action_settings">Einstellungen</string>
-    <string name="tooltip_app_issues">Es sind zusätzliche Informationen zur Verwendung von Oversec mit %1$s verfügbar!</string>
+    <string name="tooltip_app_issues">In der Online-Hilfe gibt es zusätzliche Informationen zur Verwendung von Oversec mit %1$s !</string>
     <string name="tooltip_buttoncompose">Hier berühren, um Text einzugeben und verschlüsselt in die Zwischenablage zu legen.</string>
     <string name="tooltip_compose_fab">Tap berühren um zu verschlüsseln und in die Zwischenablage legen.</string>
     <string name="activity_compose_title">Texteingabe für Zwischenablage</string>
     <string name="tooltip_paste_clipboard">Verschlüsselter Text in der Zwischenablage!\n\Berühre nun das Eingabefeld lang, und wähle dann EINFÜGEN.</string>
-
+    <string name="action_show_onlinehelp">Hilfe Anzeigen</string>
 </resources>

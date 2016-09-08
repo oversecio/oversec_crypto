@@ -9,8 +9,10 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.*;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -44,7 +46,7 @@ public class NewPasswordInputDialog {
         final Zxcvbn zxcvbn = new Zxcvbn();
 
 
-        MaterialDialog dialog = new MaterialDialog.Builder(ctx)
+        final MaterialDialog dialog = new MaterialDialog.Builder(ctx)
 
                 .customView(R.layout.new_password_input_dialog, false)
                 .positiveText(getPositiveText(mode))
@@ -92,6 +94,19 @@ public class NewPasswordInputDialog {
 
         final EditTextPasswordWithVisibilityToggle etPw1 = (EditTextPasswordWithVisibilityToggle) view.findViewById(R.id.new_password_password);
         final EditTextPasswordWithVisibilityToggle etPw2 = (EditTextPasswordWithVisibilityToggle) view.findViewById(R.id.new_password_password_again);
+
+        etPw2.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    if (handlePositive(view, callback, mode, zxcvbn)) {
+                        dialog.dismiss();
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
 
         final TextInputLayout wrapPw1 = (TextInputLayout) view.findViewById(R.id.new_password_password_wrapper);
 

@@ -101,7 +101,7 @@
     <string name="bug_report_subject">Oversec Bug Report</string>
     <string name="main_tab_keys">Keys</string>
     <string name="main_tab_settings">Settings</string>
-    <string name="tooltip_hidebutton_nothidden">Tap this button to temporarily hide the Oversec overlay.\nLong-Tap to completely exit Oversec and clear all remembered keys. (Panic-Button!)</string>
+    <string name="tooltip_hidebutton_nothidden">Tap this button to temporarily hide the Oversec overlay.\n\nLong-Tap to completely exit Oversec and clear all remembered keys. (Panic-Button!)</string>
     <string name="tooltip_hidebutton_hidden">Now tap at the same position again to bring back the Oversec overlay.</string>
     <string name="action_help_perapp">Show info for \"%1$s\"</string>
     <string name="action_send_bugreport_perapp">Report a problem for \"%1$s\"</string>

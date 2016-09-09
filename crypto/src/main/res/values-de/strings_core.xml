@@ -34,7 +34,7 @@
     <string name="controls_checkbox_hidebutton_sub">Der Verstecken-Button lässt Oversec zeitweise verschwinden</string>
     <string name="controls_checkbox_composebutton">Verfassen-Button</string>
     <string name="controls_checkbox_composebutton_sub">Dieser Button öffnet eine Seite auf der Text eingegeben und verschlüsselt in die Zwischenablage gelegt werden kann.</string>
-    <string name="controls_checkbox_infoonlongtap">Lang-Berühren, um Info anzuzeigen</string>
+    <string name="controls_checkbox_infoonlongtap">Berühren lang, um Info anzuzeigen</string>
     <string name="controls_checkbox_infoontap">Berühren, um Info anzuzeigen</string>
     <string name="controls_checkbox_newlines">Zeilenumbrüche beibehalten</string>
     <string name="controls_checkbox_notification">Benachrichtigung</string>
@@ -136,7 +136,7 @@
     <string name="tooltip_encryptionparams_simplesym_general">Einfach mit einem gemeinsamen Passwort verschlüsseln.\nDas ist gut geeignet für Anfänger, bietet aber nur geringe Sicherheit.</string>
     <string name="tooltip_encryptionparams_sym_general">Verschlüsselung mit gemeinsamen Schlüssel. Der Schlüssel muss vorher mit der anderen Person ausgetauscht werden.</string>
     <string name="tooltip_hidebutton_hidden">Berühre jetzt nochmals diese Stelle um Oversec wieder anzuzeigen.</string>
-    <string name="tooltip_hidebutton_nothidden">Berühre diesen Button um Oversec zeitweise zu verstecken.\nLang-Berühren, um Oversec zu Beenden und alle Schlüssel zu Sperren. (Panik-Funktion)</string>
+    <string name="tooltip_hidebutton_nothidden">Berühre diesen Button um Oversec zeitweise zu verstecken.\n\Berühren lang, um Oversec zu Beenden und alle Schlüssel zu Sperren. (Panik-Funktion)</string>
     <string name="tweaks_tab__colors">Optik</string>
     <string name="tweaks_tab__expert">Labor</string>
     <string name="tweaks_tab__stuff">Optionen</string>

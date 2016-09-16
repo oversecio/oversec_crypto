@@ -229,7 +229,7 @@ public class CryptoHandlerFacade implements Handler.Callback {
         }
     }
 
-    public String encrypt(AbstractEncryptionParams encryptionParams, String srcText, boolean appendNewLines, int innerPad, Intent actionIntent)
+    public String encrypt(AbstractEncryptionParams encryptionParams, String srcText, boolean appendNewLines, int innerPad, String packagename, Intent actionIntent)
             throws Exception {
 
 
@@ -264,7 +264,7 @@ public class CryptoHandlerFacade implements Handler.Callback {
                 msg = h.encrypt(innerData, encryptionParams, actionIntent);
             }
 
-            String r = xCoderAndPadder.encode(msg, srcText, appendNewLines);
+            String r = xCoderAndPadder.encode(msg, srcText, appendNewLines,packagename);
             return r;
         }
 

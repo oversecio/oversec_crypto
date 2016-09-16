@@ -33,8 +33,8 @@ public class XCoderAndPadder {
         return mCoder;
     }
 
-    public synchronized String encode(Outer.Msg msg, String srcText, boolean appendNewLines) throws Exception {
-        return mCoder.encode(msg, mPadder, srcText, appendNewLines);
+    public synchronized String encode(Outer.Msg msg, String srcText, boolean appendNewLines, String packagename) throws Exception {
+        return mCoder.encode(msg, mPadder, srcText, appendNewLines, packagename);
     }
 
     public String getCoderId() {

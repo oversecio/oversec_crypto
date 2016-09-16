@@ -17,7 +17,7 @@ public abstract class AbstractPadder {
     }
 
     public synchronized void pad(String orig, StringBuffer encoded) {
-        reset();
+
         p.getTextBounds(orig, 0, orig.length(), bounds);
         int w = bounds.width();
         int initialEncodedLength = encoded.length();//-1   :0; //skip the initial encoding less 1 for nonspacing coder
@@ -35,9 +35,9 @@ public abstract class AbstractPadder {
     }
 
 
-    abstract void reset();
+    public abstract void reset();
 
-    abstract char getNextPaddingChar();
+    public abstract char getNextPaddingChar();
 
     public String getExample() {
         reset();

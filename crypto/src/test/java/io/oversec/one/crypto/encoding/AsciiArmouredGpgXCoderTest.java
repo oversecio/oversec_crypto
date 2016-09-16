@@ -13,7 +13,7 @@ public class AsciiArmouredGpgXCoderTest extends EncodingTestBase {
     @Test
     public void testEncodeDecode() throws Exception {
         Outer.Msg msgIn = createTestOuterMsgPgp();
-        String encoded = mCoder.encodeInternal(msgIn);
+        String encoded = mCoder.encodeInternal(msgIn,null,"foo.bar");
         Outer.Msg msgOut = mCoder.decode(encoded);
 
         assertEquals(msgOut.getMsgTextGpgV0().getCiphertext().toStringUtf8(), CONTENT);

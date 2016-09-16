@@ -13,11 +13,11 @@ public class ManualPadder extends AbstractPadder {
     }
 
     @Override
-    void reset() {
+    public void reset() {
     }
 
     @Override
-    char getNextPaddingChar() {
+    public char getNextPaddingChar() {
         return 0;
     }
 

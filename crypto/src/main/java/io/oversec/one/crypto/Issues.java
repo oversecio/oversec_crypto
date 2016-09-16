@@ -18,6 +18,8 @@ public class Issues {
         PACKAGES_WITH_ISSUES.add("org.telegram.messenger");
         PACKAGES_WITH_ISSUES.add("org.thoughtcrime.securesms");
         PACKAGES_WITH_ISSUES.add("com.instagram.android");
+        PACKAGES_WITH_ISSUES.add("com.facebook.orca");
+
 
     }
     public static boolean hasKnownIssues(String packagename) {
@@ -59,6 +61,17 @@ public class Issues {
     }
     public static Collection<String> getPackagesThatNeedComposeButton() {
         return PACKAGES_THAT_NEED_COMPOSE_BUTTON;
+    }
+
+
+    private static Set<String> PACKAGES_THAT_NEED_SPREAD_INVISIBLE_ENCODING = new HashSet<>();
+    static {
+        PACKAGES_THAT_NEED_SPREAD_INVISIBLE_ENCODING.add("com.facebook.orca");//Facebook Messenger
+        PACKAGES_THAT_NEED_SPREAD_INVISIBLE_ENCODING.add("com.instagram.android"); //Instagram
+
+    }
+    public static Collection<String> getPackagesThatNeedSpreadInvisibleEncoding() {
+        return PACKAGES_THAT_NEED_SPREAD_INVISIBLE_ENCODING;
     }
 
 

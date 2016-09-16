@@ -149,4 +149,10 @@
     <string name="secretdialer_code">Gizli arama kodunuz *#*#%1$s#*#*</string>
     <string name="secretdialer_code_too_short">Uyarı: Code an az %1$s uzunluğunda rakam olmalı!</string>
 
+    <!-- pending -->
+    <!--
+    <string name="controls_checkbox_spreadinvisibleencoding" translatable="false">Spread Invisible Encoding</string>
+    <string name="controls_hint_spreadinvisibleencoding" translatable="false">Spread invisible characters within decoy text, rather than putting all of them at the beginning. This is needed for some apps like e.g. Instagram</string>
+    -->
+
 </resources>

@@ -20,7 +20,7 @@ public class AsciiArmouredGpgXCoder extends AbstractXCoder {
     }
 
     @Override
-    protected String encodeInternal(Outer.Msg msg) throws IOException {
+    protected String encodeInternal(Outer.Msg msg, AbstractPadder ignore, String packagename) throws IOException {
         return GpgCryptoHandler.getRawMessageAsciiArmoured(msg);
     }
 

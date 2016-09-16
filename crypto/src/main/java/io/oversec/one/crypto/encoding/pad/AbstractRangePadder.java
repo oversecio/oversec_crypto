@@ -12,12 +12,12 @@ public abstract class AbstractRangePadder extends AbstractPadder {
 
 
     @Override
-    void reset() {
+    public void reset() {
 
     }
 
     @Override
-    char getNextPaddingChar() {
+    public char getNextPaddingChar() {
 
         return (char) (getFirstChar() + Math.random() * (getLastChar() - getFirstChar()));
     }

@@ -2,6 +2,7 @@ package io.oversec.one.crypto.encoding;
 
 import android.content.Context;
 import android.util.SparseIntArray;
+import io.oversec.one.common.CoreContract;
 import io.oversec.one.crypto.R;
 import io.oversec.one.crypto.encoding.pad.AbstractPadder;
 import io.oversec.one.crypto.proto.Outer;
@@ -15,12 +16,14 @@ public class ZeroWidthXCoder extends AbstractXCoder {
 
     private static final String MAGIC = "OSC";
     private static final byte[] MAGIC_BYTES = MAGIC.getBytes();
+    private static final int SPREAD = 30; // Orca / Instagram fail at more than 35 consecutive inivisvle chars, let's play it safe and use 30
 
 
     private static char[][] MAPPING = new char[256][];
     private static SparseIntArray REVERSE_MAPPING = new SparseIntArray();
 
     private static String MAGIC_BYTES_ZEROWIDTH;
+
 
 
     static {
@@ -54,7 +57,7 @@ public class ZeroWidthXCoder extends AbstractXCoder {
     static {
 
         try {
-            ExtendedPaneStringMapperOutputStream os = new ExtendedPaneStringMapperOutputStream(MAPPING);
+            ExtendedPaneStringMapperOutputStream os = new ExtendedPaneStringMapperOutputStream(MAPPING, null,0);
             os.write(MAGIC_BYTES);
             MAGIC_BYTES_ZEROWIDTH = os.getEncoded();
         } catch (Exception ex) {
@@ -62,9 +65,12 @@ public class ZeroWidthXCoder extends AbstractXCoder {
         }
     }
 
+    private final CoreContract mCore;
+
 
     public ZeroWidthXCoder(Context context) {
         super(context);
+        mCore = CoreContract.getInstance();
     }
 
 
@@ -90,8 +96,9 @@ public class ZeroWidthXCoder extends AbstractXCoder {
     }
 
     @Override
-    protected String encodeInternal(Outer.Msg msg) throws IOException {
-        ExtendedPaneStringMapperOutputStream smos = new ExtendedPaneStringMapperOutputStream(MAPPING);
+    protected String encodeInternal(Outer.Msg msg, AbstractPadder padder, String packagename) throws IOException {
+        int spread = mCore.isDbSpreadInvisibleEncoding(packagename)?SPREAD:0;
+        ExtendedPaneStringMapperOutputStream smos = new ExtendedPaneStringMapperOutputStream(MAPPING,padder,spread);
         smos.write(MAGIC_BYTES);
         msg.writeDelimitedTo(smos);
         smos.flush();
@@ -104,8 +111,14 @@ public class ZeroWidthXCoder extends AbstractXCoder {
             return null;
         }
 
+        //try to find magic
+        int p = data.indexOf(MAGIC_BYTES_ZEROWIDTH);
+        if (p<0) {
+            return null;
+        }
+
         try {
-            ExtendedPaneStringMapperInputStream smis = new ExtendedPaneStringMapperInputStream(data, REVERSE_MAPPING);
+            ExtendedPaneStringMapperInputStream smis = new ExtendedPaneStringMapperInputStream(data.substring(p), REVERSE_MAPPING);
             byte[] buf = new byte[MAGIC_BYTES.length];
             //noinspection ResultOfMethodCallIgnored
             smis.read(buf);
@@ -115,7 +128,7 @@ public class ZeroWidthXCoder extends AbstractXCoder {
             Outer.Msg res = Outer.Msg.parseDelimitedFrom(smis);
             return res;
         } catch (ExtendedPaneStringMapperInputStream.UnmappedCodepointException e) {
-            if (e.getOffset() == 0) { //this simply means that the string is not encoded by us
+            if (e.getOffset() <= 1) { //this simply means that the string is not encoded by us
                 return null;
             } else {
                 throw e;

@@ -25,7 +25,7 @@ public class Base64XCoder extends AbstractXCoder {
     }
 
     @Override
-    protected String encodeInternal(Outer.Msg msg) {
+    protected String encodeInternal(Outer.Msg msg, AbstractPadder ignore, String packagename) {
         byte[] d = msg.toByteArray();
         byte[] padded = new byte[d.length + MAGIC_BYTES.length];
         System.arraycopy(MAGIC_BYTES, 0, padded, 0, MAGIC_BYTES.length);

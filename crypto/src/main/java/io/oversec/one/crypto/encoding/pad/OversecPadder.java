@@ -13,12 +13,12 @@ public class OversecPadder extends AbstractPadder {
     }
 
     @Override
-    void reset() {
+    public void reset() {
         off = 0;
     }
 
     @Override
-    char getNextPaddingChar() {
+    public char getNextPaddingChar() {
         char r = pattern.charAt(off);
         off++;
         if (off >= pattern.length()) {

@@ -14,7 +14,6 @@ public class ExtendedPaneStringMapperInputStream extends InputStream {
     public ExtendedPaneStringMapperInputStream(String src, SparseIntArray reverseMapping) {
         mSrc = src;
         mReverseMapping = reverseMapping;
-
     }
 
     @Override
@@ -23,7 +22,15 @@ public class ExtendedPaneStringMapperInputStream extends InputStream {
             int cp = mSrc.codePointAt(mOff);
             int res = mReverseMapping.get(cp, Integer.MIN_VALUE);
             if (res == Integer.MIN_VALUE) {
-                throw new UnmappedCodepointException(cp, mOff);
+
+                    //this is probably a fill character, just ignore it
+                    mOff = mSrc.offsetByCodePoints(mOff, 1);
+                    res = mReverseMapping.get(cp, Integer.MIN_VALUE);
+                    if (res == Integer.MIN_VALUE) {
+                        throw new UnmappedCodepointException(cp, mOff);
+                    }
+
+
             }
             mOff = mSrc.offsetByCodePoints(mOff, 1);
             return res;

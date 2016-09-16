@@ -15,12 +15,12 @@ public class GutenbergPadder extends AbstractPadder {
     }
 
     @Override
-    void reset() {
+    public void reset() {
         off = mPattern.indexOf(".", (int) (mPattern.length() * Math.random())) + 1;
     }
 
     @Override
-    char getNextPaddingChar() {
+    public char getNextPaddingChar() {
         if (off >= mPattern.length()) {
             off = 0;
         }

@@ -13,7 +13,7 @@ public class ZeroWidthXCoderTest extends EncodingTestBase {
     @Test
     public void testEncodeDecodeGpg() throws Exception {
         Outer.Msg msgIn = createTestOuterMsgPgp();
-        String encoded = mCoder.encodeInternal(msgIn);
+        String encoded = mCoder.encodeInternal(msgIn,null,"foo.bar");
         Outer.Msg msgOut = mCoder.decode(encoded);
         assertEquals(msgIn, msgOut);
     }
@@ -22,7 +22,7 @@ public class ZeroWidthXCoderTest extends EncodingTestBase {
     @Test
     public void testEncodeDecodeGpgWithDecoyText() throws Exception {
         Outer.Msg msgIn = createTestOuterMsgPgp();
-        String encoded = mCoder.encodeInternal(msgIn) + "DecoyDecoyDecoy";
+        String encoded = mCoder.encodeInternal(msgIn,null,"foo.bar") + "DecoyDecoyDecoy";
         Outer.Msg msgOut = mCoder.decode(encoded);
         assertEquals(msgIn, msgOut);
     }
@@ -30,7 +30,7 @@ public class ZeroWidthXCoderTest extends EncodingTestBase {
     @Test
     public void testEncodeDecodeSym() throws Exception {
         Outer.Msg msgIn = createTestOuterMsgSym();
-        String encoded = mCoder.encodeInternal(msgIn);
+        String encoded = mCoder.encodeInternal(msgIn,null,"foo.bar");
         Outer.Msg msgOut = mCoder.decode(encoded);
         assertEquals(msgIn, msgOut);
     }
@@ -38,7 +38,7 @@ public class ZeroWidthXCoderTest extends EncodingTestBase {
     @Test
     public void testEncodeDecodeSymWithDecoyText() throws Exception {
         Outer.Msg msgIn = createTestOuterMsgSym();
-        String encoded = mCoder.encodeInternal(msgIn) + "DecoyDecoyDecoy";
+        String encoded = mCoder.encodeInternal(msgIn,null,"foo.bar") + "DecoyDecoyDecoy";
         Outer.Msg msgOut = mCoder.decode(encoded);
         assertEquals(msgIn, msgOut);
     }

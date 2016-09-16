@@ -58,6 +58,9 @@
     <string name="controls_hint_hqscrape" translatable="false">Performs more frequent and deeper screen reading. Produces a smoother UX at the cost of increased battery use.</string>
     <string name="controls_checkbox_includenotimporantviews" translatable="false">Scrape All Views</string>
     <string name="controls_hint_includenotimporantviews" translatable="false">Include views that are deemed as "Not Important". This is needed for a few apps only. This slows down Oversec and uses more battery!.</string>
+    <string name="controls_checkbox_spreadinvisibleencoding" translatable="false">Spread Invisible Encoding</string>
+    <string name="controls_hint_spreadinvisibleencoding" translatable="false">Spread invisible characters within decoy text, rather than putting all of them at the beginning. This is needed for some apps like e.g. Instagram</string>
+
     <string name="controls_checkbox_voverflow">Expand decrypted text vertically</string>
     <string name="controls_hint_voverflow">Allocates more vertical space for decrypted text if it doesn\'t fit into the space used by the encrypted text. May obstruct parts of the subjacent app.</string>
     <string name="controls_checkbox_newlines">Keep Line Breaks</string>

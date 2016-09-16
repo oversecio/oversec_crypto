@@ -15,11 +15,13 @@ public class XCoderAndPadderFactory {
     private static XCoderAndPadderFactory INSTANCE;
 
     private final Context mCtx;
+    private final CoreContract mCore;
     private ArrayList<XCoderAndPadder> mAll = new ArrayList<>();
     private ArrayList<XCoderAndPadder> mSym;
     private ArrayList<XCoderAndPadder> mGpg;
     private ArrayList<XCoderAndPadder> mSymExcludeInvisible;
     private ArrayList<XCoderAndPadder> mGpgExcludeInvisible;
+    private XCoderAndPadder mManualZeroWidthXcoder;
 
     public static synchronized XCoderAndPadderFactory getInstance(Context ctx) {
         if (INSTANCE == null) {
@@ -30,6 +32,7 @@ public class XCoderAndPadderFactory {
 
     private XCoderAndPadderFactory(Context ctx) {
         mCtx = ctx;
+        mCore = CoreContract.getInstance();
         reload();
 
 
@@ -37,9 +40,7 @@ public class XCoderAndPadderFactory {
 
     public void reload() {
         mAll.clear();
-        addZeroWidthXcoder(new ManualPadder(mCtx));
-
-
+        mManualZeroWidthXcoder = addZeroWidthXcoder(new ManualPadder(mCtx));
         CoreContract contract = CoreContract.getInstance();
 
         List<PadderContent> allFromDb = contract.getAllPaddersSorted();
@@ -64,18 +65,31 @@ public class XCoderAndPadderFactory {
         mAll.add(l2);
     }
 
-    private void addZeroWidthXcoder(AbstractPadder padder) {
-        mAll.add(new XCoderAndPadder(XCoderFactory.getInstance(mCtx)._ZeroWidthXCoder, padder));
+    private XCoderAndPadder addZeroWidthXcoder(AbstractPadder padder) {
+        XCoderAndPadder res = new XCoderAndPadder(XCoderFactory.getInstance(mCtx)._ZeroWidthXCoder, padder);
+        mAll.add(res);
+        return res;
     }
 
-
     public ArrayList<XCoderAndPadder> getSym(String packagename) {
-        return Issues.cantHandleInvisibleEncoding(packagename)?mSymExcludeInvisible:mSym;
+        ArrayList<XCoderAndPadder> res = new ArrayList<>(Issues.cantHandleInvisibleEncoding(packagename) ? mSymExcludeInvisible : mSym);
+        if (mCore.isDbSpreadInvisibleEncoding(packagename)) {
+            //spreaded doesn't work with manual padding
+            res.remove(mManualZeroWidthXcoder);
+        }
+
+        return res;
     }
 
 
     public ArrayList<XCoderAndPadder> getGpg(String packagename) {
-        return Issues.cantHandleInvisibleEncoding(packagename)?mGpgExcludeInvisible:mGpg;
+        ArrayList<XCoderAndPadder> res = new ArrayList<>(Issues.cantHandleInvisibleEncoding(packagename) ? mGpgExcludeInvisible:mGpg);
+        if (mCore.isDbSpreadInvisibleEncoding(packagename)) {
+            //spreaded doesn't work with manual padding
+            res.remove(mManualZeroWidthXcoder);
+        }
+
+        return res;
     }
 
     public XCoderAndPadder get(String coderId, String padderId) {

@@ -7,7 +7,7 @@ public interface IXCoder {
 
     Outer.Msg decode(String encText) throws Exception;
 
-    String encode(Outer.Msg msg, AbstractPadder padder, String plainTextForWidthCalculation, boolean appendNewLines) throws Exception;
+    String encode(Outer.Msg msg, AbstractPadder padder, String plainTextForWidthCalculation, boolean appendNewLines, String packagename) throws Exception;
 
     String getId();
 

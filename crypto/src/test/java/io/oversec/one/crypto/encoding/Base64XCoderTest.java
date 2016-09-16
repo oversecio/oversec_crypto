@@ -13,7 +13,7 @@ public class Base64XCoderTest extends EncodingTestBase {
     @Test
     public void testEncodeDecodeGpg() throws Exception {
         Outer.Msg msgIn = createTestOuterMsgPgp();
-        String encoded = mCoder.encodeInternal(msgIn);
+        String encoded = mCoder.encodeInternal(msgIn,null,"foo.bar");
         Outer.Msg msgOut = mCoder.decode(encoded);
         assertEquals(msgIn, msgOut);
     }
@@ -21,7 +21,7 @@ public class Base64XCoderTest extends EncodingTestBase {
     @Test
     public void testEncodeDecodeSym() throws Exception {
         Outer.Msg msgIn = createTestOuterMsgSym();
-        String encoded = mCoder.encodeInternal(msgIn);
+        String encoded = mCoder.encodeInternal(msgIn,null,"foo.bar");
         Outer.Msg msgOut = mCoder.decode(encoded);
         assertEquals(msgIn, msgOut);
     }

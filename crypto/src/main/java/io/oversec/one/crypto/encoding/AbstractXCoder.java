@@ -12,7 +12,7 @@ public abstract class AbstractXCoder implements IXCoder {
 
     protected final Context mCtx;
 
-    protected abstract String encodeInternal(Outer.Msg msg) throws IOException;
+    protected abstract String encodeInternal(Outer.Msg msg, AbstractPadder padder, String packagename) throws IOException;
 
 
     // public abstract String getEncodedTextOnly(String encText) throws IOException;
@@ -22,9 +22,12 @@ public abstract class AbstractXCoder implements IXCoder {
     }
 
     @Override
-    public String encode(Outer.Msg msg, AbstractPadder padder, String plainTextForWidthCalculation, boolean appendNewLines) throws IOException {
+    public String encode(Outer.Msg msg, AbstractPadder padder, String plainTextForWidthCalculation, boolean appendNewLines, String packagename) throws IOException {
+        if (padder!=null) {
+            padder.reset();
+        }
         int nn = appendNewLines ? countNewLines(plainTextForWidthCalculation) : 0;
-        String internal = encodeInternal(msg);
+        String internal = encodeInternal(msg,padder,packagename);
         StringBuffer r = new StringBuffer(internal);
         //prependPrefix(r);
         if (nn > 0) {

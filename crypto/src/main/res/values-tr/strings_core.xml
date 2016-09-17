@@ -147,12 +147,20 @@
     <string name="iab_listheader">Lütfen size uygun olanı seçin:</string>
     <string name="toast_panicmode_disabled">Oversec sonlandı, Panik Modu!</string>
     <string name="secretdialer_code">Gizli arama kodunuz *#*#%1$s#*#*</string>
-    <string name="secretdialer_code_too_short">Uyarı: Code an az %1$s uzunluğunda rakam olmalı!</string>
+    <string name="secretdialer_code_too_short">Code an az %1$s uzunluğunda rakam olmalı!</string>
 
     <!-- pending -->
     <!--
     <string name="controls_checkbox_spreadinvisibleencoding" translatable="false">Spread Invisible Encoding</string>
     <string name="controls_hint_spreadinvisibleencoding" translatable="false">Spread invisible characters within decoy text, rather than putting all of them at the beginning. This is needed for some apps like e.g. Instagram</string>
+
+        <string name="secretdialer_code_initial_confirm">Please dial this code once to confirm!</string>
+    <string name="secretdialer_code_initial_confirm_samsung">You have a samsung phone which is known to have problem
+        with the secret dialer code mechanism.\nYou may still give it a try but don\'t blame us if it doesn\'t work!</string>
+    <string name="action_show_dialer">Open Dialer</string>
+    <string name="secretdialer_code_initial_confirmed">Hooray! The secret dialer code works.\nYou can now enable \"Hide launcher icon in panic mode\"</string>
+    <string name="secretdialer_code_needs_to_be_set_up">Please set up the Secret Dialer Code first!</string>
+
     -->
 
 </resources>

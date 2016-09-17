@@ -158,7 +158,14 @@
     <string name="iab_listheader">Please select what suits you best:</string>
     <string name="toast_panicmode_disabled">Oversec exited Panic Mode!</string>
     <string name="secretdialer_code">Your secret dialer code is *#*#%1$s#*#*</string>
-    <string name="secretdialer_code_too_short">Warning: The code should be at least %1$s digits long!</string>
+    <string name="secretdialer_code_too_short">The code should be at least %1$s digits long!</string>
+    <string name="secretdialer_code_initial_confirm">Please dial this code once to confirm!</string>
+    <string name="secretdialer_code_initial_confirm_samsung">You have a samsung phone which is known to have problem
+        with the secret dialer code mechanism.\nYou may still give it a try but don\'t blame us if it doesn\'t work!</string>
+    <string name="action_show_dialer">Open Dialer</string>
+    <string name="secretdialer_code_initial_confirmed">Hooray! The secret dialer code works.\nYou can now enable \"Hide launcher icon in panic mode\"</string>
+    <string name="secretdialer_code_needs_to_be_set_up">Please set up the Secret Dialer Code first!</string>
+
     <string name="overlaypermissionswarning_title">Permission Required</string>
     <string name="overlaypermissionswarning_text">Oversec currently doesn\'t have permission to draw over other Apps.\n\nOversec can not function without this permission!\n\nPlease tap on \"Settings\" and then permit drawing over other apps.</string>
     <string name="action_settings">Settings</string>

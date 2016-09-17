@@ -27,4 +27,13 @@ public class MainPreferences {
         ctx.getSharedPreferences(FILENAME, 0).edit().
                 putString(ctx.getString(R.string.mainprefs_launchersecretcode_key),value).commit();
     }
+
+    public static boolean isDialerSecretCodeBroadcastConfirmedWorking(Context ctx) {
+        return ctx.getSharedPreferences(FILENAME, 0).getBoolean(ctx.getString(R.string.mainprefs_dialersecretcodebroadcastworking_key), false);
+    }
+
+    public static void setDialerSecretCodeBroadcastConfirmedWorking(Context ctx) {
+        ctx.getSharedPreferences(FILENAME, 0).edit().
+                putBoolean(ctx.getString(R.string.mainprefs_dialersecretcodebroadcastworking_key),true).commit();
+    }
 }

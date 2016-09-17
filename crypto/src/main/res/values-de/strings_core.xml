@@ -146,7 +146,13 @@
     <string name="upgrade_overlay_msg">Bitte unterstütze Oversec indem du auf die die Vollversion upgradest!</string>
     <string name="upgrade_visual_settings">Bitte Upgraden um die Farbeinstellungen zu aktivieren!</string>
     <string name="secretdialer_code">Dein geheimer Wähl-Code ist *#*#%1$s#*#*</string>
-    <string name="secretdialer_code_too_short">Warnung: Der Code sollte mindestens %1$s Ziffern haben!</string>
+    <string name="secretdialer_code_too_short">Der Code muss mindestens %1$s Ziffern haben!</string>
+    <string name="secretdialer_code_initial_confirm">Bitte wähle nun diesen Code zur Bestätigung!</string>
+    <string name="secretdialer_code_initial_confirm_samsung">Auf Samsung Geräten funktioniert der geheime Wähl-Code normalerweise leider nicht.\nDu kannst es trotzdem versuchen, aber bitte beschuldige uns nicht wenn es nicht funktioniert!</string>
+    <string name="action_show_dialer">Wählscheibe öffnen</string>
+    <string name="secretdialer_code_initial_confirmed">Hurra! Der geheime Wähl-Code funktioniert!.\nDu kannst nun die Option \"Oversec Icon verstecken im Panik Modus\" aktivieren.</string>
+    <string name="secretdialer_code_needs_to_be_set_up">Bitte lege zuerst den geheimen Wähl-Code fest!</string>
+
     <string name="overlaypermissionswarning_title">Keine Berechtigung</string>
     <string name="overlaypermissionswarning_text">Oversec hat keine Berechtigung um sich über anderen Apps einzublenden.\n\nOversec funktioniert ohne diese Berechtigung nicht!\n\nBitte berühre \"Einstellungen\" und erlaube dann Einblenden über anderen Apps.</string>
     <string name="action_settings">Einstellungen</string>

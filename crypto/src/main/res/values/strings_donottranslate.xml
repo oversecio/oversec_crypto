@@ -7,6 +7,7 @@
     <string name="mainprefs_hidelauncheronpanic_key" translatable="false">hidelauncheronpanic</string>
     <string name="mainprefs_launchersecretcode_key" translatable="false">launchersecretcode0</string>
     <string name="mainprefs_launchersecretcode_default" translatable="false"></string>
+    <string name="mainprefs_dialersecretcodebroadcastworking_key" translatable="false">dialersecretcodebroadcastworking5</string>
 
     <string name="tooltipid_encryptionparams_sym_general" translatable="false">encryptionparams_sym_general</string>
     <string name="tooltipid_encryptionparams_simplesym_general" translatable="false">encryptionparams_simplesym_general</string>

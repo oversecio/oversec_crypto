@@ -176,4 +176,6 @@
     <string name="tooltip_compose_fab">Tap here to encrypt and put encrypted text into clipboard.</string>
     <string name="tooltip_paste_clipboard">Encrypted text in Clipboard!\n\nNow long-tap on the target field and select PASTE to enter the encrypted text.</string>
     <string name="action_show_onlinehelp">Show Help</string>
+
+    <string name="action_later">Later</string>
 </resources>

@@ -162,4 +162,6 @@
     <string name="activity_compose_title">Texteingabe für Zwischenablage</string>
     <string name="tooltip_paste_clipboard">Verschlüsselter Text in der Zwischenablage!\n\Berühre nun das Eingabefeld lang, und wähle dann EINFÜGEN.</string>
     <string name="action_show_onlinehelp">Hilfe Anzeigen</string>
+
+    <string name="action_later">Später</string>
 </resources>

@@ -161,6 +161,7 @@
     <string name="secretdialer_code_initial_confirmed">Hooray! The secret dialer code works.\nYou can now enable \"Hide launcher icon in panic mode\"</string>
     <string name="secretdialer_code_needs_to_be_set_up">Please set up the Secret Dialer Code first!</string>
 
+    <string name="action_later">Later</string>
     -->
 
 </resources>

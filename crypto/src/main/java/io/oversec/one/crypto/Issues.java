@@ -19,7 +19,7 @@ public class Issues {
         PACKAGES_WITH_ISSUES.add("org.thoughtcrime.securesms");
         PACKAGES_WITH_ISSUES.add("com.instagram.android");
         PACKAGES_WITH_ISSUES.add("com.facebook.orca");
-
+        PACKAGES_WITH_ISSUES.add("com.google.android.apps.fireball"); //allo
 
     }
     public static boolean hasKnownIssues(String packagename) {
@@ -49,6 +49,7 @@ public class Issues {
     static {
         PACKAGES_THAT_NEED_TO_SCRAPE_NON_IMPRTANT_VIEWS.add("com.google.android.talk");//Hangouts
         PACKAGES_THAT_NEED_TO_SCRAPE_NON_IMPRTANT_VIEWS.add("com.google.android.apps.messaging"); //new Messaging
+        PACKAGES_THAT_NEED_TO_SCRAPE_NON_IMPRTANT_VIEWS.add("com.google.android.apps.fireball"); //Allo
 
     }
     public static Collection<String> getPackagesThatNeedIncludeNonImportantViews() {

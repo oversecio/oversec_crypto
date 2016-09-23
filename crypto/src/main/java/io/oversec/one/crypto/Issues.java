@@ -30,6 +30,7 @@ public class Issues {
     static {
         PACKAGES_WHERE_INVISIBLE_ENCODING_DOESNT_WORK.add("com.google.android.apps.inbox"); //Inbox by Gmail
         PACKAGES_WHERE_INVISIBLE_ENCODING_DOESNT_WORK.add("com.google.android.gm"); //Gmail
+        PACKAGES_WHERE_INVISIBLE_ENCODING_DOESNT_WORK.add(" com.moez.QKSMS"); //QKSMS
 
     }
     public static boolean cantHandleInvisibleEncoding(String packagename) {

@@ -3,6 +3,7 @@ package io.oversec.one.crypto.sym;
 import android.content.Context;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.zxing.aztec.decoder.Decoder;
 import io.oversec.one.crypto.proto.Kex;
 import io.oversec.one.crypto.symbase.KeyCache;
 import io.oversec.one.crypto.symbase.KeyUtil;
@@ -12,6 +13,7 @@ import net.rehacktive.waspdb.WaspDb;
 import net.rehacktive.waspdb.WaspFactory;
 import net.rehacktive.waspdb.WaspHash;
 import org.spongycastle.util.encoders.Base64;
+import org.spongycastle.util.encoders.DecoderException;
 import roboguice.util.Ln;
 
 import java.io.IOException;
@@ -193,9 +195,14 @@ public final class OversecKeystore2 {
 
     }
 
-    public static SymmetricKeyEncrypted getEncryptedKeyFromBase64Text(String text) {
-        byte[] data = Base64.decode(text);
-        return getEncryptedKeyFromTransferBytes(data);
+    public static SymmetricKeyEncrypted getEncryptedKeyFromBase64Text(String text) throws Base64DecodingException {
+        try {
+            byte[] data = Base64.decode(text);
+            return getEncryptedKeyFromTransferBytes(data);
+        }
+        catch (DecoderException ex) {
+            throw new Base64DecodingException(ex);
+        }
     }
 
     public static SymmetricKeyEncrypted getEncryptedKeyFromTransferBytes(byte[] data) {
@@ -225,9 +232,14 @@ public final class OversecKeystore2 {
         }
     }
 
-    public static SymmetricKeyPlain getPlainKeyFromBase64Text(String text) {
-        byte[] data = Base64.decode(text);
-        return getPlainKeyFromTransferBytes(data);
+    public static SymmetricKeyPlain getPlainKeyFromBase64Text(String text) throws Base64DecodingException {
+        try {
+            byte[] data = Base64.decode(text);
+            return getPlainKeyFromTransferBytes(data);
+        }
+        catch (DecoderException ex) {
+            throw new Base64DecodingException(ex);
+        }
     }
 
 
@@ -397,5 +409,11 @@ public final class OversecKeystore2 {
 
         void onKeyStoreChanged();
 
+    }
+
+    public static class Base64DecodingException extends Exception {
+        public Base64DecodingException(DecoderException ex) {
+            super(ex);
+        }
     }
 }

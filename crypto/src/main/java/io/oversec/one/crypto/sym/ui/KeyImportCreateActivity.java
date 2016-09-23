@@ -372,6 +372,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
                             Result result = reader.decode(bBitmap);
                             handleImportQR(result);
                         } catch (NotFoundException e) {
+                            mQRCodeReaderView.getCameraManager().stopPreview();
                             showError(getString(R.string.importimage_nothing_found), new Runnable() {
                                 @Override
                                 public void run() {
@@ -390,7 +391,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
                             return;
                         }
 
-
+                        mQRCodeReaderView.getCameraManager().stopPreview();
                         showError(e.getMessage(), new Runnable() {
                             @Override
                             public void run() {
@@ -432,7 +433,21 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
     // "points" : points where QR control points are placed
     @Override
     public void onQRCodeRead(String text, PointF[] points) {
-        handleImportQr(text);
+        try {
+            handleImportQr(text);
+        } catch (OversecKeystore2.Base64DecodingException e) {
+            e.printStackTrace();
+            mQRCodeReaderView.getCameraManager().stopPreview();
+            showError(
+                    getString(R.string.error_invalid_barcode_content),
+                    new Runnable() {
+                        @Override
+                        public void run() {
+                            finish();
+                        }
+                    }
+            );
+        }
     }
 
 
@@ -662,7 +677,19 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
                 if (BarcodeFormat.QR_CODE.toString().equals(
                         result.getBarcodeFormat().toString())) {
                     String s = result.getText();
-                    handleImportQr(s);
+                    try {
+                        handleImportQr(s);
+                    } catch (OversecKeystore2.Base64DecodingException e) {
+                        e.printStackTrace();
+                        mQRCodeReaderView.getCameraManager().stopPreview();
+                        showError(
+                                getString(R.string.error_invalid_barcode_content), new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        finish();
+                                    }
+                                });
+                    }
                 } else {
                     showError(
                             getString(R.string.error_invalid_barcode_format), new Runnable() {
@@ -677,7 +704,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
 
     }
 
-    private void handleImportQr(final String s) {
+    private void handleImportQr(final String s) throws OversecKeystore2.Base64DecodingException {
         mImportedString = s;
 
         SymmetricKeyPlain key = OversecKeystore2.getPlainKeyFromBase64Text(s);
@@ -708,7 +735,17 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
                         .input(R.string.keystore_password_hint, R.string.prefill_password_fields, new MaterialDialog.InputCallback() {
                             @Override
                             public void onInput(@NonNull MaterialDialog dialog, CharSequence input) {
-                                handleEncryptedImport(s, input.toString().toCharArray());
+                                try {
+                                    handleEncryptedImport(s, input.toString().toCharArray());
+                                } catch (OversecKeystore2.Base64DecodingException e) {
+                                    e.printStackTrace();
+                                    showError(getString(R.string.error_invalid_barcode_content), new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            finish();
+                                        }
+                                    });
+                                }
                             }
                         }).show();
 
@@ -727,7 +764,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
         }
     }
 
-    private void handleEncryptedImport(final String s, char[] password) {
+    private void handleEncryptedImport(final String s, char[] password) throws OversecKeystore2.Base64DecodingException {
         SymmetricKeyEncrypted encryptedKey = OversecKeystore2.getEncryptedKeyFromBase64Text(s);
         try {
             SymmetricKeyPlain plainKey = mKeystore.decryptSymmetricKey(encryptedKey, password);
@@ -759,7 +796,11 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
             showError(getString(R.string.error_password_wrong), new Runnable() {
                 @Override
                 public void run() {
-                    handleImportQr(s);
+                    try {
+                        handleImportQr(s);
+                    } catch (OversecKeystore2.Base64DecodingException e1) {
+                        e1.printStackTrace();
+                    }
                 }
             });
         }

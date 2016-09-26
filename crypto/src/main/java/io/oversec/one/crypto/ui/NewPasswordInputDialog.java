@@ -267,22 +267,26 @@ public class NewPasswordInputDialog {
             CheckBox cbWeak = (CheckBox) view.findViewById(R.id.cb_accept_weak_password);
             cbWeak.setVisibility(View.GONE);
         }
-        sbStrength.getProgressDrawable().setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(sbStrength.getContext(),color), PorterDuff.Mode.MULTIPLY));
+        sbStrength.getProgressDrawable().setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(sbStrength.getContext(), color), PorterDuff.Mode.MULTIPLY));
 
 
     }
 
 
     private static int calcPasswordEntropy(CharSequence s, TextInputLayout wrapper, Zxcvbn zxcvbn) {
+        try {
+            Strength strength = zxcvbn.measure(s.toString());
 
-        Strength strength = zxcvbn.measure(s.toString());
+            Feedback feedback = strength.getFeedback();
+            wrapper.setError(feedback.getWarning());
 
-        Feedback feedback = strength.getFeedback();
-        wrapper.setError(feedback.getWarning());
-
-        int res = (int) log2(strength.getGuesses());
-        Ln.d("ENTROPY: %s", res);
-        return res;
+            int res = (int) log2(strength.getGuesses());
+            Ln.d("ENTROPY: %s", res);
+            return res;
+        } catch (Exception ex) {
+            //see https://github.com/nulab/zxcvbn4j/issues/19   -> check when issue has been resolved and maybe update zxcvbn library
+            return 0;
+        }
     }
 
     public static double log2(double n) {

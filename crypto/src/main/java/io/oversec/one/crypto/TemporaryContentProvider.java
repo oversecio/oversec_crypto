@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import io.oversec.one.crypto.sym.SymUtil;
 import io.oversec.one.crypto.symbase.KeyUtil;
+import roboguice.util.Ln;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public class TemporaryContentProvider extends ContentProvider {
 
 
     public static synchronized Uri prepare(Context ctx, String mimetype, int ttl_seconds, String tag) {
-
+        Ln.d("TCPR prepare tag=%s",tag);
         //delete all existing entries with the same tag
 
         if (tag != null) {
@@ -53,7 +54,7 @@ public class TemporaryContentProvider extends ContentProvider {
 
 
         String token = createRandomToken();
-
+        Ln.d("TCPR prepared tag=%s  token=%s",tag,token);
         mEntries.put(token, new Entry(mimetype, ttl_seconds, tag));
         return Uri.parse("content://" + AUTHORITY + "/" + token);
     }
@@ -103,6 +104,7 @@ public class TemporaryContentProvider extends ContentProvider {
                 entry.data = null;
             }
         }
+        Ln.d("TCPR expired entry token=%s",token);
         mEntries.remove(token);
     }
 
@@ -203,24 +205,27 @@ public class TemporaryContentProvider extends ContentProvider {
 
             try {
                 while ((len = mIn.read(buf)) > 0) {
-
                     baos.write(buf, 0, len);
                 }
                 baos.close();
                 Entry entry = mEntries.get(mToken);
-                entry.data = baos.toByteArray();
-
-                int ttl_seconds = mEntries.get(mToken).ttl_seconds;
-                AlarmManager am = (AlarmManager) mCtx.getSystemService(Context.ALARM_SERVICE);
-                am.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + (ttl_seconds * 1000), buildPendingIntent(mCtx, mToken));
-
-                if (!mReceiverRegistered) {
-
-                    IntentFilter filter = new IntentFilter(ACTION_EXPIRE_BUFFER);
-                    mCtx.getApplicationContext().registerReceiver(new Recv(), filter);
-                    mReceiverRegistered = true;
+                if (entry==null) {
+                    Ln.d("TCPR Entry for token %s not found, somebody has re-prepared another content with the same tag, ignoring content input stream",mToken);
                 }
+                else {
+                    entry.data = baos.toByteArray();
 
+                    int ttl_seconds = mEntries.get(mToken).ttl_seconds;
+                    AlarmManager am = (AlarmManager) mCtx.getSystemService(Context.ALARM_SERVICE);
+                    am.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + (ttl_seconds * 1000), buildPendingIntent(mCtx, mToken));
+
+                    if (!mReceiverRegistered) {
+
+                        IntentFilter filter = new IntentFilter(ACTION_EXPIRE_BUFFER);
+                        mCtx.getApplicationContext().registerReceiver(new Recv(), filter);
+                        mReceiverRegistered = true;
+                    }
+                }
 
             } catch (IOException e) {
                 try {

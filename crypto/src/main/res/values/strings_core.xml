@@ -178,4 +178,6 @@
     <string name="action_show_onlinehelp">Show Help</string>
 
     <string name="action_later">Later</string>
+
+    <string name="warning_app_with_serious_issues_enabled">The %s app has serious issues and doesn\'t work well with Oversec.\n\nPlease check the lastest infos in our online help for more details!</string>
 </resources>

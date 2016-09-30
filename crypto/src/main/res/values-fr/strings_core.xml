@@ -173,4 +173,7 @@ Le service d\'accessibilité ne fonctionne pas"
  <string name="tooltip_paste_clipboard">"Le texte est encrypté dans le presse-papiers!\n\n Maintenant faites un clic long sur le champ puis faite \"Coller\" pour y placer le texte chiffré."</string>
  <string name="action_show_onlinehelp">Afficher l\'aide</string>
  <string name="action_later">Plus tard</string>
-</resources>
+
+  <string name="warning_app_with_serious_issues_enabled">L\'application %s a des problèmes graves et ne fonctionne pas bien avec Oversec.\n\nS\'il vous plaît vérifier les dernières infos sur notre aide en ligne!</string>
+
+ </resources>

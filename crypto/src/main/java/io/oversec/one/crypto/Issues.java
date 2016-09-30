@@ -26,6 +26,18 @@ public class Issues {
         return PACKAGES_WITH_ISSUES.contains(packagename);
     }
 
+    private static Set<String> PACKAGES_WITH_SERIOUS_ISSUES = new HashSet<>();
+
+    static {
+        PACKAGES_WITH_SERIOUS_ISSUES.add("org.telegram.messenger"); //telegram
+        PACKAGES_WITH_SERIOUS_ISSUES.add("org.thoughtcrime.securesms"); //signal
+        PACKAGES_WITH_SERIOUS_ISSUES.add("com.wire"); //wire
+
+    }
+    public static boolean hasSeriousIssues(String packagename) {
+        return PACKAGES_WITH_SERIOUS_ISSUES.contains(packagename);
+    }
+
     private static Set<String> PACKAGES_WHERE_INVISIBLE_ENCODING_DOESNT_WORK = new HashSet<>();
     static {
         PACKAGES_WHERE_INVISIBLE_ENCODING_DOESNT_WORK.add("com.google.android.apps.inbox"); //Inbox by Gmail

@@ -149,6 +149,9 @@
     <string name="secretdialer_code">Gizli arama kodunuz *#*#%1$s#*#*</string>
     <string name="secretdialer_code_too_short">Code an az %1$s uzunluğunda rakam olmalı!</string>
 
+    <string name="warning_app_with_serious_issues_enabled">Uygulamanın %S ciddi sorunları vardır ve Oversec ile iyi çalışmaz.\n\nBizim online yardım hakkında en son bilgileri kontrol edin!</string>
+
+
     <!-- pending -->
     <!--
     <string name="controls_checkbox_spreadinvisibleencoding" translatable="false">Spread Invisible Encoding</string>

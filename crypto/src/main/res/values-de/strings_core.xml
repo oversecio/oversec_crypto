@@ -164,4 +164,7 @@
     <string name="action_show_onlinehelp">Hilfe Anzeigen</string>
 
     <string name="action_later">Später</string>
+
+    <string name="warning_app_with_serious_issues_enabled">Die app %s hat Probleme und Oversec funktioniert nicht richtig mir ihr.\n\nBitte lese unserer Online-Hilfe für aktuelle Infos!</string>
+
 </resources>

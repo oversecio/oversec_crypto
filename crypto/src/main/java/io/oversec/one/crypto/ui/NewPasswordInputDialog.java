@@ -284,7 +284,7 @@ public class NewPasswordInputDialog {
             Ln.d("ENTROPY: %s", res);
             return res;
         } catch (Exception ex) {
-            //see https://github.com/nulab/zxcvbn4j/issues/19   -> check when issue has been resolved and maybe update zxcvbn library
+            //see https://github.com/nulab/zxcvbn4j/issues/19   ->  issues resolved, zxcvbn lib upgraded, but leaving this in here just to be sure
             return 0;
         }
     }

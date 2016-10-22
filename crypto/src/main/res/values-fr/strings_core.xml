@@ -112,6 +112,10 @@ Le service d\'accessibilité ne fonctionne pas"
  <string name="bug_report_footer">Merci de fournir les détails du problème:\n\n</string>
  <string name="mainprefs_allow_screenshot_title">Permettre la capture d\'écran</string>
  <string name="mainprefs_allow_screenshot_summary">Autorisez la capture d\'écran du contenu sécurisé (le texte déchiffrés et les touches)</string>
+
+  <string name="mainprefs_relaxcache_title">Relax purge du cache de décryptage</string>
+  <string name="mainprefs_relaxcache_summary">Purger le cache de décryptage uniquement sur la panique et de l\'écran-off. (Recommandé pour les utilisateurs YubiKey)</string>
+
  <string name="mainprefs_screenoffpanic_title">"Mode \"panic\" (l\'écran a été éteint)"</string>
  <string name="mainprefs_screenoffpanic_summary">Passer en mode panic lorsque l\'écran est éteint</string>
  <string name="mainprefs_hidelauncheronpanic_title">Rendre invisible l\'icône Oversec en mode panique</string>

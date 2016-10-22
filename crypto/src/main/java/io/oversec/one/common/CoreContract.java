@@ -28,4 +28,6 @@ public abstract class CoreContract {
     public abstract AbstractEncryptionParams getBestEncryptionParams(String packageName);
 
     public abstract boolean isDbSpreadInvisibleEncoding(String packagename);
+
+    public abstract void clearEncryptionCache();
 }

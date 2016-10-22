@@ -11,6 +11,10 @@ public class MainPreferences {
         return ctx.getSharedPreferences(FILENAME, 0).getBoolean(ctx.getString(R.string.mainprefs_allow_screenshot_key), false);
     }
 
+    public static boolean isRelaxEncryptionCache(Context ctx) {
+        return ctx.getSharedPreferences(FILENAME, 0).getBoolean(ctx.getString(R.string.mainprefs_relaxecache_key), false);
+    }
+
     public static boolean isPanicOnScreenOff(Context ctx) {
         return ctx.getSharedPreferences(FILENAME, 0).getBoolean(ctx.getString(R.string.mainprefs_screenoffpanic_key), false);
     }

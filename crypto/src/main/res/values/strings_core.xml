@@ -112,6 +112,8 @@
     <string name="bug_report_footer">Please provide details about your problem:\n\n</string>
     <string name="mainprefs_allow_screenshot_title">Allow screenshot</string>
     <string name="mainprefs_allow_screenshot_summary">Check to allow screenshots of secure content (decrypted plain text and keys)</string>
+    <string name="mainprefs_relaxcache_title">Relax Decryption Cache Purging</string>
+    <string name="mainprefs_relaxcache_summary">Purge the decryption cache only on panic and screen-off. (Recommended for YubiKey users)</string>
     <string name="mainprefs_screenoffpanic_title">Panic when screen off</string>
     <string name="mainprefs_screenoffpanic_summary">Enter panic mode when screen turns off</string>
     <string name="mainprefs_hidelauncheronpanic_title">Hide launcher icon in Panic Mode</string>

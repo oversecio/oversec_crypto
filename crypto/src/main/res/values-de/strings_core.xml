@@ -88,6 +88,8 @@
     <string name="main_tab_settings">Einstellungen</string>
     <string name="mainprefs_allow_screenshot_summary">Screenshots von entschlüsseltem Text bzw. entsperrten Schlüsseln zulassen.</string>
     <string name="mainprefs_allow_screenshot_title">Screenshot erlauben</string>
+    <string name="mainprefs_relaxcache_title">Entschlüsselungs-Cache lockern</string>
+    <string name="mainprefs_relaxcache_summary">Löscht den Entschlüsselungs-Cache nur bei Panik und Bildschirm-Aus. (Empfohlen für YubiKey Benutzer)</string>
     <string name="mainprefs_screenoffpanic_title">Panik wenn Bildschirm aus</string>
     <string name="mainprefs_screenoffpanic_summary">Aktiviert den Panik-Modus wenn der Bildschirm aus geht</string>
     <string name="mainprefs_hidelauncheronpanic_title">Oversec Icon verstecken im Panik Modus</string>

@@ -9,6 +9,7 @@ import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import io.oversec.one.common.Consts;
+import io.oversec.one.common.CoreContract;
 import io.oversec.one.crypto.R;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class KeystoreIntentService extends IntentService {
         String action = intent.getAction();
         if (ACTION_CLEAR_ALL_CACHED_KEYS.equals(action)) {
             OversecKeystore2.getInstance(this).clearAllCaches();
+            CoreContract.getInstance().clearEncryptionCache();
             Intent it = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
             sendBroadcast(it);
         }

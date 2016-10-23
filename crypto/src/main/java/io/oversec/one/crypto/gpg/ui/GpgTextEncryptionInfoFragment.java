@@ -186,6 +186,18 @@ public class GpgTextEncryptionInfoFragment extends AbstractTextEncryptionInfoFra
                             }
                         } catch (UserInteractionRequiredException e) {
                             //should not happen here but well
+
+                            //might be an external device, so let's use existing decrypt result
+                            if (mTdr!=null) {
+                                PendingIntent pi = ((GpgDecryptResult) mTdr).getShowSignatureKeyPendingIntent();
+                                if (pi!=null) {
+                                    try {
+                                        activity.startIntentSenderForResult(pi.getIntentSender(), EncryptionInfoActivity.REQUEST_CODE_SHOW_SIGNATURE_KEY, null, 0, 0, 0);
+                                    } catch (IntentSender.SendIntentException e1) {
+                                        e1.printStackTrace();
+                                          }
+                                }
+                            }
                         }
 
                     }

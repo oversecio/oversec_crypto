@@ -3,6 +3,7 @@ package io.oversec.one.common;
 import android.app.Activity;
 import android.app.Fragment;
 import io.oversec.one.crypto.AbstractEncryptionParams;
+import io.oversec.one.crypto.BaseDecryptResult;
 import io.oversec.one.crypto.encoding.pad.PadderContent;
 
 import java.util.List;
@@ -30,4 +31,8 @@ public abstract class CoreContract {
     public abstract boolean isDbSpreadInvisibleEncoding(String packagename);
 
     public abstract void clearEncryptionCache();
+
+    public abstract void putInEncryptionCache(String encText, BaseDecryptResult r);
+
+    public abstract BaseDecryptResult getFromEncryptionCache(String encText);
 }

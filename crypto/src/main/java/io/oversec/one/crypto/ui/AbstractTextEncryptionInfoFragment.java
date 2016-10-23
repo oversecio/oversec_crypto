@@ -105,7 +105,8 @@ public abstract class AbstractTextEncryptionInfoFragment extends Fragment {
             }
 
             if (tdr.isOk()) {
-
+                lblDec.setVisibility(View.VISIBLE);
+                tvDec.setVisibility(View.VISIBLE);
                 try {
                     Inner.InnerData innerData = tdr.getDecryptedDataAsInnerData();
                     if (innerData.hasTextAndPaddingV0()) {
@@ -123,6 +124,7 @@ public abstract class AbstractTextEncryptionInfoFragment extends Fragment {
                 } catch (InvalidProtocolBufferException e) {
                     try {
                         String innerText = tdr.getDecryptedDataAsUtf8String();
+                        tvDec.setText(innerText);
                         lblInnerPadding.setVisibility(View.GONE);
                         tvInnerPadding.setVisibility(View.GONE);
                     } catch (UnsupportedEncodingException e1) {

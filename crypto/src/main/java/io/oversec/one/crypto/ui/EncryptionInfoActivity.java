@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import io.oversec.one.common.CoreContract;
 import io.oversec.one.crypto.*;
 import roboguice.util.Ln;
 
@@ -97,20 +98,37 @@ public class EncryptionInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onResumeFragments() {
-        update(null);
+        update((Intent)null);
         super.onResumeFragments();
     }
 
     public void update(final Intent actionIntent) {
+        if (actionIntent==null && mTdr!=null) {
+            return;
+        }
 
         UserInteractionRequiredException uix = null;
         try {
             mTdr = CryptoHandlerFacade.getInstance(this).decryptWithLock(mOrigText, actionIntent);
         } catch (UserInteractionRequiredException e) {
-            uix = e;
+
+            //we might be dealing with a external key, so try to use cached info first
+            BaseDecryptResult atdr = CoreContract.getInstance().getFromEncryptionCache(mOrigText);
+            if (atdr!=null) {
+                mTdr = atdr;
+            }
+            else {
+                uix = e;
+            }
         }
 
         mFragment.setData(this, mOrigText, mTdr, uix, mEncryptionHandler);
+
+    }
+
+    public void update(final BaseDecryptResult decryptResult) {
+        mTdr = decryptResult;
+        mFragment.setData(this, mOrigText, decryptResult, null, mEncryptionHandler);
 
     }
 
@@ -157,8 +175,9 @@ public class EncryptionInfoActivity extends AppCompatActivity {
                 //try to decrypt again
                 final String nodeOrigText = getIntent().getStringExtra(EXTRA_ENCRYPTED_TEXT);
                 try {
-                    CryptoHandlerFacade.getInstance(this).decryptWithLock(nodeOrigText, data);
-                    update(data);
+                    BaseDecryptResult dr = CryptoHandlerFacade.getInstance(this).decryptWithLock(nodeOrigText, data);
+                    CoreContract.getInstance().putInEncryptionCache(nodeOrigText,dr);
+                    update(dr);
                 } catch (UserInteractionRequiredException e) {
                     try {
                         startIntentSenderForResult(e.getPendingIntent().getIntentSender(), REQUEST_CODE_DECRYPT, null, 0, 0, 0);

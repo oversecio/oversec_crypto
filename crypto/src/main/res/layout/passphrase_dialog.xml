@@ -45,6 +45,7 @@
                     android:textStyle="italic"
                     android:singleLine="true"
                     android:ellipsize="start"
+                    android:paddingTop="6dp"
                     android:paddingBottom="6dp"
                     android:text="@string/simple_password_to_decrypt_this"/>
 

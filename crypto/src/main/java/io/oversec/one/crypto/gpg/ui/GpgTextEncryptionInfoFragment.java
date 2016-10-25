@@ -13,6 +13,7 @@ import android.text.style.ClickableSpan;
 import android.view.*;
 import android.widget.Button;
 import android.widget.TextView;
+import io.oversec.one.common.CoreContract;
 import io.oversec.one.crypto.*;
 import io.oversec.one.crypto.gpg.GpgCryptoHandler;
 import io.oversec.one.crypto.gpg.GpgDecryptResult;
@@ -45,7 +46,7 @@ public class GpgTextEncryptionInfoFragment extends AbstractTextEncryptionInfoFra
     }
 
     @Override
-    public void setData(final EncryptionInfoActivity activity, String encodedText, BaseDecryptResult tdr, UserInteractionRequiredException uix, final AbstractCryptoHandler encryptionHandler) {
+    public void setData(final EncryptionInfoActivity activity, final String encodedText, final BaseDecryptResult tdr, final UserInteractionRequiredException uix, final AbstractCryptoHandler encryptionHandler) {
         super.setData(activity, encodedText, tdr, uix, encryptionHandler);
 
         mCryptoHandler = (GpgCryptoHandler) encryptionHandler;
@@ -68,23 +69,23 @@ public class GpgTextEncryptionInfoFragment extends AbstractTextEncryptionInfoFra
         lblPgpSignatureKey.setVisibility(View.GONE);
         tvPgpSignatureKey.setVisibility(View.GONE);
 
+        Outer.Msg msg = CryptoHandlerFacade.getEncodedData(activity, encodedText);
+
+        if (msg.hasMsgTextGpgV0()) {
+            List<Long> pkids =  msg.getMsgTextGpgV0().getPubKeyIdV0List();
+            setPublicKeyIds(lblPgpRecipients, tvPgpRecipients, pkids, encryptionHandler,activity,encodedText,tdr,uix);
+        }
+
+
 
         if (r == null) {
 
-            lblPgpRecipients.setVisibility(View.GONE);
-            tvPgpRecipients.setVisibility(View.GONE);
+           // lblPgpRecipients.setVisibility(View.GONE);
+          //  tvPgpRecipients.setVisibility(View.GONE);
 
         } else {
 
-            Outer.Msg msg = CryptoHandlerFacade.getEncodedData(activity, encodedText);
-            byte[] raw = null;
-            if (msg.hasMsgTextGpgV0()) {
-                raw = msg.getMsgTextGpgV0().getCiphertext().toByteArray();
-            }
-            if (raw != null) {
-                List<Long> pkids = GpgCryptoHandler.parsePublicKeyIds(raw);
-                setPublicKeyIds(lblPgpRecipients, tvPgpRecipients, pkids, encryptionHandler);
-            }
+
 
 
             if (r.getSignatureResult() != null) {
@@ -238,7 +239,7 @@ public class GpgTextEncryptionInfoFragment extends AbstractTextEncryptionInfoFra
         }
     }
 
-    private void setPublicKeyIds(TextView lblPgpRecipients, TextView tvPgpRecipients, List<Long> publicKeyIds, AbstractCryptoHandler encryptionHandler) {
+    private void setPublicKeyIds(TextView lblPgpRecipients, TextView tvPgpRecipients, List<Long> publicKeyIds, final AbstractCryptoHandler encryptionHandler, final EncryptionInfoActivity activity, final String encodedText, final BaseDecryptResult tdr, final UserInteractionRequiredException uix) {
         GpgCryptoHandler pe = (GpgCryptoHandler) encryptionHandler;
 
         int okcVersion = OpenKeychainConnector.getVersion(lblPgpRecipients.getContext());
@@ -248,6 +249,7 @@ public class GpgTextEncryptionInfoFragment extends AbstractTextEncryptionInfoFra
             lblPgpRecipients.setVisibility(View.VISIBLE);
             tvPgpRecipients.setVisibility(View.VISIBLE);
             SpannableStringBuilder sb = new SpannableStringBuilder();
+
             for (final long pkid : publicKeyIds) {
                 if (sb.length() > 0) {
                     sb.append("\n\n");
@@ -279,6 +281,9 @@ public class GpgTextEncryptionInfoFragment extends AbstractTextEncryptionInfoFra
                         sb.append("[").append(SymUtil.longToPrettyHex(pkid)).append("]");
                     }
                 }
+
+
+
 
             }
             tvPgpRecipients.setText(sb);

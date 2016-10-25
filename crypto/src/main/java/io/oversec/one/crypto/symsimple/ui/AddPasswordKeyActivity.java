@@ -47,7 +47,6 @@ public class AddPasswordKeyActivity extends FragmentActivity {
     private static final String EXTRA_KEYHASH_ID = "EXTRA_KEYHASH_ID";
     private static final String EXTRA_KEYHASH_SALT = "EXTRA_KEYHASH_SALT";
     private static final String EXTRA_KEYHASH_COST = "EXTRA_KEYHASH_COST";
-    private static final String EXTRA_SHOW_IGNORE = "EXTRA_SHOW_IGNORE";
     private static final String EXTRA_ENCRYPTED_TEXT = "EXTRA_ENCRYPTED_TEXT";
 
 
@@ -64,7 +63,6 @@ public class AddPasswordKeyActivity extends FragmentActivity {
             bundle.putSerializable(EXTRA_KEYHASH_SALT, saltForSessionKeyHash);
             bundle.putLongArray(EXTRA_KEYHASH_ID, expectedSessionKeyHashes);
             bundle.putInt(EXTRA_KEYHASH_COST, costForSessionKeyHash);
-            bundle.putBoolean(EXTRA_SHOW_IGNORE, true);
             bundle.putString(EXTRA_ENCRYPTED_TEXT, encryptedText);
 
             i.putExtras(bundle);
@@ -85,7 +83,6 @@ public class AddPasswordKeyActivity extends FragmentActivity {
         Intent i = new Intent();
 
         i.setClass(frag.getActivity(), AddPasswordKeyActivity.class);
-        i.putExtra(EXTRA_SHOW_IGNORE, false);
         frag.startActivityForResult(i, rq);
 
 
@@ -214,12 +211,7 @@ public class AddPasswordKeyActivity extends FragmentActivity {
             dialog.setButton(DialogInterface.BUTTON_POSITIVE,
                     activity.getString(R.string.action_save_shared_passphrase), (DialogInterface.OnClickListener) null);
 
-            if (getActivity().getIntent().getBooleanExtra(EXTRA_SHOW_IGNORE, false)) {
 
-                dialog.setButton(DialogInterface.BUTTON_NEUTRAL
-                        ,
-                        activity.getString(R.string.action_ignore), (DialogInterface.OnClickListener) null);
-            }
             return dialog;
         }
 
@@ -264,16 +256,7 @@ public class AddPasswordKeyActivity extends FragmentActivity {
 
                 }
             });
-            if (getActivity().getIntent().getBooleanExtra(EXTRA_SHOW_IGNORE, false)) {
-                final Button neutral = ((AlertDialog) getDialog()).getButton(DialogInterface.BUTTON_NEUTRAL);
-                neutral.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        getActivity().setResult(RESULT_FIRST_USER);
-                        getActivity().finish();
-                    }
-                });
-            }
+
         }
 
         private void doOpen(final char[] aPassPhrase, final int timeToLiveSeconds, final long[] expectedKeyIdHashes, final byte[][] saltsForKeyHash, final int costForKeyHash) {

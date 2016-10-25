@@ -60,6 +60,8 @@
     <string name="controls_hint_includenotimporantviews" translatable="false">Include views that are deemed as "Not Important". This is needed for a few apps only. This slows down Oversec and uses more battery!.</string>
     <string name="controls_checkbox_spreadinvisibleencoding" translatable="false">Spread Invisible Encoding</string>
     <string name="controls_hint_spreadinvisibleencoding" translatable="false">Spread invisible characters within decoy text, rather than putting all of them at the beginning. This is needed for some apps like e.g. Instagram</string>
+    <string name="controls_checkbox_dontshowdecryptionfailed" translatable="false">Don\'t show error if no matching key</string>
+    <string name="controls_hint_dontshowdecryptionfailed" translatable="false">Don\'t show \"decryption failed\" overlay, when a message can not be decrypted (because there is no matching key).</string>
 
     <string name="controls_checkbox_voverflow">Expand decrypted text vertically</string>
     <string name="controls_hint_voverflow">Allocates more vertical space for decrypted text if it doesn\'t fit into the space used by the encrypted text. May obstruct parts of the subjacent app.</string>
@@ -152,7 +154,7 @@
     <string name="settings_acs_post_enable_btn_configure">Enable other apps</string>
     <string name="onboarding_title">Welcome to Oversec</string>
     <string name="checkbox_add_oversec_link">Add a link to the Oversec app</string>
-    <string name="action_clear_ignored_keys">clear %1$s ignored keys</string>
+    <string name="action_clear_ignored_keys">clear %1$s ignored texts</string>
     <string name="settings_upgrade">"You're running plain vanilla Oversec.\nUpgrade now to enable additional features!"</string>
     <string name="iab_header">Upgrade Oversec</string>
     <string name="iab_body">Upgrading supports ongoing development and enables those additional features:\n\n* Customize colors\n* Custom decoy content\n* Decrypt photos and images</string>
@@ -182,4 +184,7 @@
     <string name="action_later">Later</string>
 
     <string name="warning_app_with_serious_issues_enabled">The %s app has serious issues and doesn\'t work well with Oversec.\n\nPlease check the lastest infos in our online help for more details!</string>
+
+    <string name="question_ignore_text">Do you want to ignore this text from now on?</string>
+    <string name="action_ignore_text">Ignore this text</string>
 </resources>

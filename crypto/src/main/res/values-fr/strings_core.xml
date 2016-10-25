@@ -152,7 +152,7 @@ Le service d\'accessibilité ne fonctionne pas"
  <string name="settings_acs_post_enable_btn_configure">Activer Oversec avec d\'autres applications</string>
  <string name="onboarding_title">Bienvenue à Oversec</string>
  <string name="checkbox_add_oversec_link">Ajouter un lien vers l\'appli Oversec</string>
- <string name="action_clear_ignored_keys">Effacer %1$s clés ignorées</string>
+ <string name="action_clear_ignored_keys">Effacer %1$s textes ignorées</string>
  <string name="settings_upgrade">"Vous avez la version de base d\'Oversec.\nUpgradez maintenant pour activer toutes les fonctionnalités supplémentaires!"</string>
  <string name="iab_header">Upgradez Oversec</string>
  <string name="iab_body">L’upgrade est la seule façon de permettre le développement régulier de fonctionnalités supplémentaires:\n\n* Personnaliser les couleurs\n* Personnaliser le contenu du texte leurre\n* Décryption de photos et d’images</string>
@@ -179,5 +179,8 @@ Le service d\'accessibilité ne fonctionne pas"
  <string name="action_later">Plus tard</string>
 
   <string name="warning_app_with_serious_issues_enabled">L\'application %s a des problèmes graves et ne fonctionne pas bien avec Oversec.\n\nS\'il vous plaît vérifier les dernières infos sur notre aide en ligne!</string>
+
+  <string name="question_ignore_text">Voulez-vous ignorer ce texte à partir de maintenant?</string>
+  <string name="action_ignore_text">Ignorer ce texte</string>
 
  </resources>

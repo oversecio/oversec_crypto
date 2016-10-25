@@ -236,4 +236,5 @@
     <string name="simple_password_to_decrypt_this">to decrypt this text:</string>
     <string name="tooltip_settextfailed">Oversec could not write the encoded text back to the underlying app!\n\nThis is most likely due the underlying app only allowing a limited number of characters in the input field!\n\nPlease try a using less recipients or use symmetric encryption, which is more compact!</string>
     <string name="tooltip_encodingtoolong">The encrypted / encoded message is too long!\n\nOversec didn\'t write back the message, as otherwise the underlying app would crash!\n\nPlease try a using less recipients or use symmetric encryption, which is more compact!</string>
+
 </resources>

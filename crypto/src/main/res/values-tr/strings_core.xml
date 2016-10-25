@@ -139,7 +139,7 @@
     <string name="settings_acs_post_enable_btn_configure">Diğer uygulamaları etkinleştir</string>
     <string name="onboarding_title">Oversec e hoşgeldin</string>
     <string name="checkbox_add_oversec_link">Oversec uygulamasına bir link ekle</string>
-    <string name="action_clear_ignored_keys">%1$s ignore edilen anahtarları temizle</string>
+
     <string name="settings_upgrade">"Sade Oversec uygulamasına sahipsiniz\nEk özelliklere sahip olmak için uygulamanızı yükseltin!"</string>
     <string name="iab_header">Oversec i yükselt</string>
     <string name="iab_body">Yükseltme uygulamayı geliştirmemizi destekler ve ek olarak şu özellikleri size sunar:\n\n* Renkleri özelleştirme\n* Özel sahte içerik\n* Fotoğrafları ve resimleri deşifre etme.</string>
@@ -150,6 +150,10 @@
     <string name="secretdialer_code_too_short">Code an az %1$s uzunluğunda rakam olmalı!</string>
 
     <string name="warning_app_with_serious_issues_enabled">Uygulamanın %S ciddi sorunları vardır ve Oversec ile iyi çalışmaz.\n\nBizim online yardım hakkında en son bilgileri kontrol edin!</string>
+
+    <string name="question_ignore_text">Şu andan itibaren bu metni göz ardı istiyor musunuz?</string>
+    <string name="action_ignore_text">metin görmezden</string>
+
 
 
     <!-- pending -->
@@ -168,7 +172,7 @@
 
         <string name="mainprefs_relaxcache_title">Relax Decryption Cache Purging</string>
     <string name="mainprefs_relaxcache_summary">Purge the decryption cache only on panic and screen-off. (Recommended for YubiKey users)</string>
-
+    <string name="action_clear_ignored_keys">clear %1$s ignored texts</string>
     -->
 
 </resources>

@@ -27,6 +27,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.Theme;
 import io.oversec.one.common.MainPreferences;
 import io.oversec.one.crypto.R;
+import io.oversec.one.crypto.encoding.ZeroWidthXCoder;
 import io.oversec.one.crypto.sym.SymPreferences;
 import io.oversec.one.crypto.sym.SymmetricKeyPlain;
 import io.oversec.one.crypto.symbase.KeyCache;
@@ -156,7 +157,7 @@ public class AddPasswordKeyActivity extends FragmentActivity {
 
             String encryptedText = getActivity().getIntent().getStringExtra(EXTRA_ENCRYPTED_TEXT);
             if (encryptedText != null) {
-                ((TextView) mLayout.findViewById(R.id.orig_text)).setText(encryptedText);
+                ((TextView) mLayout.findViewById(R.id.orig_text)).setText(ZeroWidthXCoder.stripInvisible(encryptedText));
                 mLayout.findViewById(R.id.orig_text_container).setVisibility(View.VISIBLE);
             }
 

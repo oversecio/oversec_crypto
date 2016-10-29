@@ -6,6 +6,7 @@ import io.oversec.one.common.CoreContract;
 import io.oversec.one.crypto.R;
 import io.oversec.one.crypto.encoding.pad.AbstractPadder;
 import io.oversec.one.crypto.proto.Outer;
+import roboguice.util.Ln;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -139,4 +140,25 @@ public class ZeroWidthXCoder extends AbstractXCoder {
     }
 
 
+    public static String stripInvisible(String s) {
+        int off = 0;
+        try {
+            for (;;) {
+                int cp = s.codePointAt(off);
+                int res = REVERSE_MAPPING.get(cp, Integer.MIN_VALUE);
+                if (res == Integer.MIN_VALUE) {
+                    break;
+                }
+                off = s.offsetByCodePoints(off, 1);
+            }
+
+            return s.substring(off);
+        }
+        catch (IndexOutOfBoundsException ex) {
+            Ln.e(ex,"UUUUU problem stripping [%s]",s);
+            return "";
+        }
+
+
+    }
 }

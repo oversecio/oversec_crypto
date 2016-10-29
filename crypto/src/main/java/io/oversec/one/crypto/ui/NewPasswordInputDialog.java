@@ -303,7 +303,7 @@ public class NewPasswordInputDialog {
         Editable editablePw2 = etPw2.getText();
 
         if (!editablePw1.toString().equals(editablePw2.toString())) {
-            wrapPw2.setError(view.getContext().getString(R.string.error_passwords_dont_match));
+            wrapPw1.setError(view.getContext().getString(R.string.error_passwords_dont_match));
             return false;
         }
 

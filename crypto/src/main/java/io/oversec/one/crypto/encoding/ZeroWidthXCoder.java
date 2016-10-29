@@ -152,6 +152,7 @@ public class ZeroWidthXCoder extends AbstractXCoder {
                 off = s.offsetByCodePoints(off, 1);
             }
 
+
             return s.substring(off);
         }
         catch (IndexOutOfBoundsException ex) {

@@ -16,6 +16,7 @@ import io.oversec.one.crypto.proto.Outer;
 import io.oversec.one.crypto.sym.SymmetricCryptoHandler;
 import io.oversec.one.crypto.symbase.KeyUtil;
 import io.oversec.one.crypto.symsimple.SimpleSymmetricCryptoHandler;
+import io.oversec.one.crypto.ui.util.Util;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -218,6 +219,7 @@ public class CryptoHandlerFacade implements Handler.Callback {
 
     public Outer.Msg encrypt(Inner.InnerData inner, AbstractEncryptionParams encryptionParams, Intent actionIntent)
             throws GeneralSecurityException, IOException, UserInteractionRequiredException {
+
         if (encryptionParams == null) {
             throw new IllegalArgumentException("no encryption params found");
         }
@@ -229,11 +231,8 @@ public class CryptoHandlerFacade implements Handler.Callback {
         }
     }
 
-    public String encrypt(AbstractEncryptionParams encryptionParams, String srcText, boolean appendNewLines, int innerPad, String packagename, Intent actionIntent)
+    public String encrypt(AbstractEncryptionParams encryptionParams, String srcText, boolean appendNewLines, byte[] padding, String packagename, Intent actionIntent)
             throws Exception {
-
-
-
 
         AbstractCryptoHandler h = mEncryptionHandlers.get(encryptionParams.getEncryptionMethod());
         XCoderAndPadder xCoderAndPadder = XCoderAndPadderFactory.getInstance(mCtx).get(encryptionParams.getCoderId(), encryptionParams.getPadderId());
@@ -254,14 +253,13 @@ public class CryptoHandlerFacade implements Handler.Callback {
 
                 textAndPaddingBuilder.setText(srcText);
 
-                if (innerPad > 0) {
-                    byte[] padding = KeyUtil.getRandomBytes(innerPad);
+                if (padding !=null && padding.length>0) {
                     textAndPaddingBuilder.setPadding(ByteString.copyFrom(padding));
                 }
 
                 Inner.InnerData innerData = innerDataBuilder.build();
 
-                msg = h.encrypt(innerData, encryptionParams, actionIntent);
+                 msg = h.encrypt(innerData, encryptionParams, actionIntent);
             }
 
             String r = xCoderAndPadder.encode(msg, srcText, appendNewLines,packagename);

@@ -49,7 +49,7 @@ public class AddPasswordKeyActivity extends FragmentActivity {
     private static final String EXTRA_KEYHASH_SALT = "EXTRA_KEYHASH_SALT";
     private static final String EXTRA_KEYHASH_COST = "EXTRA_KEYHASH_COST";
     private static final String EXTRA_ENCRYPTED_TEXT = "EXTRA_ENCRYPTED_TEXT";
-
+    private static final String EXTRA_SHOW_IGNORE = "EXTRA_SHOW_IGNORE";
 
     public static PendingIntent buildPendingIntent(
             Context ctx,
@@ -65,7 +65,7 @@ public class AddPasswordKeyActivity extends FragmentActivity {
             bundle.putLongArray(EXTRA_KEYHASH_ID, expectedSessionKeyHashes);
             bundle.putInt(EXTRA_KEYHASH_COST, costForSessionKeyHash);
             bundle.putString(EXTRA_ENCRYPTED_TEXT, encryptedText);
-
+            bundle.putBoolean(EXTRA_SHOW_IGNORE, true);
             i.putExtras(bundle);
 
         }
@@ -82,7 +82,7 @@ public class AddPasswordKeyActivity extends FragmentActivity {
     public static void showForResult(Fragment frag, int rq) {
 
         Intent i = new Intent();
-
+        i.putExtra(EXTRA_SHOW_IGNORE, false);
         i.setClass(frag.getActivity(), AddPasswordKeyActivity.class);
         frag.startActivityForResult(i, rq);
 
@@ -213,6 +213,12 @@ public class AddPasswordKeyActivity extends FragmentActivity {
                     activity.getString(R.string.action_save_shared_passphrase), (DialogInterface.OnClickListener) null);
 
 
+            if (getActivity().getIntent().getBooleanExtra(EXTRA_SHOW_IGNORE, false)) {
+
+                dialog.setButton(DialogInterface.BUTTON_NEUTRAL,
+                        activity.getString(R.string.action_ignore), (DialogInterface.OnClickListener) null);
+            }
+
             return dialog;
         }
 
@@ -257,7 +263,16 @@ public class AddPasswordKeyActivity extends FragmentActivity {
 
                 }
             });
-
+            if (getActivity().getIntent().getBooleanExtra(EXTRA_SHOW_IGNORE, false)) {
+                final Button neutral = ((AlertDialog) getDialog()).getButton(DialogInterface.BUTTON_NEUTRAL);
+                neutral.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        getActivity().setResult(RESULT_FIRST_USER);
+                        getActivity().finish();
+                    }
+                });
+            }
         }
 
         private void doOpen(final char[] aPassPhrase, final int timeToLiveSeconds, final long[] expectedKeyIdHashes, final byte[][] saltsForKeyHash, final int costForKeyHash) {

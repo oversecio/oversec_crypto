@@ -230,7 +230,7 @@
     <string name="label_padder_name">Name:</string>
     <string name="label_padder_content">Content:</string>
     <string name="simple_password_decrypt_this">to decrypt this:</string>
-    <string name="action_ignore">Ignore</string>
+    <string name="action_ignore">Ignore Text</string>
     <string name="dialog_explore_label_signed_by">Signed by:</string>
     <string name="simple_password_unlock_key">Unlock Key …</string>
     <string name="simple_password_to_decrypt_this">to decrypt this text:</string>

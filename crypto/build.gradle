@@ -82,7 +82,7 @@ dependencies {
 
     compile 'com.google.protobuf:protobuf-java:3.0.0-beta-3'
     compile 'com.nulab-inc:zxcvbn:1.1.6'
-    compile 'com.github.rehacktive:waspdb:1.1.1'
+    compile 'com.github.rehacktive:waspdb:1.0'
     compile 'it.sephiroth.android.library.imagezoom:imagezoom:2.2.5'
     compile 'com.borjabravo:readmoretextview:1.1.2'
     compile 'com.github.rtyley:spongycastle:sc-v1.54.0.0'

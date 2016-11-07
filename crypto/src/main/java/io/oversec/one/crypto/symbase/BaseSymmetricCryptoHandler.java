@@ -3,7 +3,6 @@ package io.oversec.one.crypto.symbase;
 import android.content.Context;
 import android.content.Intent;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.InvalidProtocolBufferException;
 import io.oversec.one.crypto.*;
 import io.oversec.one.crypto.proto.Inner;
 import io.oversec.one.crypto.proto.Outer;

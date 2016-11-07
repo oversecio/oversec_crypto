@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import io.oversec.one.common.CoreContract;
 import io.oversec.one.crypto.*;
 import io.oversec.one.crypto.gpg.GpgCryptoHandler;
 import io.oversec.one.crypto.gpg.GpgDecryptResult;

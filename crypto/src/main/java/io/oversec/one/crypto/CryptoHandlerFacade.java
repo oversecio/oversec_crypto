@@ -14,9 +14,7 @@ import io.oversec.one.crypto.gpg.GpgCryptoHandler;
 import io.oversec.one.crypto.proto.Inner;
 import io.oversec.one.crypto.proto.Outer;
 import io.oversec.one.crypto.sym.SymmetricCryptoHandler;
-import io.oversec.one.crypto.symbase.KeyUtil;
 import io.oversec.one.crypto.symsimple.SimpleSymmetricCryptoHandler;
-import io.oversec.one.crypto.ui.util.Util;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;

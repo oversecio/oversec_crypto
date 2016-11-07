@@ -2,8 +2,6 @@ package io.oversec.one.crypto.ui.util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.text.TextPaint;
 
 import java.io.IOException;
 import java.io.InputStream;

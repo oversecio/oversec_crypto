@@ -2,7 +2,6 @@ package io.oversec.one.crypto.ui;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;

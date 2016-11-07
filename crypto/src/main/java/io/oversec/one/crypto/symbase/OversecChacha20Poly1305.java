@@ -12,8 +12,6 @@ import org.spongycastle.crypto.params.ParametersWithIV;
 import org.spongycastle.util.Arrays;
 import org.spongycastle.util.Pack;
 
-import java.io.IOException;
-
 
 /**
  * Originally from

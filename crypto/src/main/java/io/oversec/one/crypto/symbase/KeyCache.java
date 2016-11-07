@@ -13,7 +13,6 @@ import io.oversec.one.crypto.sym.SymmetricKeyPlain;
 import io.oversec.one.crypto.sym.ui.UnlockKeyActivity;
 import roboguice.util.Ln;
 
-import java.io.IOException;
 import java.util.*;
 
 public class KeyCache {

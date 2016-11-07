@@ -10,7 +10,6 @@ import io.oversec.one.crypto.sym.SymmetricCryptoHandler;
 import io.oversec.one.crypto.sym.SymmetricEncryptionParams;
 import io.oversec.one.crypto.sym.SymmetricKeyPlain;
 import io.oversec.one.crypto.symbase.KeyUtil;
-import io.oversec.one.crypto.symbase.OversecKeyCacheListener;
 import org.junit.Test;
 
 import java.util.Date;

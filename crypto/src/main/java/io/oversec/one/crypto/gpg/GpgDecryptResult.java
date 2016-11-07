@@ -3,7 +3,6 @@ package io.oversec.one.crypto.gpg;
 import android.app.PendingIntent;
 import io.oversec.one.crypto.BaseDecryptResult;
 import io.oversec.one.crypto.EncryptionMethod;
-import io.oversec.one.crypto.proto.Inner;
 import org.openintents.openpgp.OpenPgpSignatureResult;
 
 import java.util.List;

@@ -2,7 +2,6 @@ package io.oversec.one.crypto.symbase;
 
 import io.oversec.one.crypto.BaseDecryptResult;
 import io.oversec.one.crypto.EncryptionMethod;
-import io.oversec.one.crypto.proto.Inner;
 
 
 public class SymmetricDecryptResult extends BaseDecryptResult {

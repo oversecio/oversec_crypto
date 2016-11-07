@@ -3,7 +3,6 @@ package io.oversec.one.crypto.sym;
 import android.content.Context;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.google.zxing.aztec.decoder.Decoder;
 import io.oversec.one.crypto.proto.Kex;
 import io.oversec.one.crypto.symbase.KeyCache;
 import io.oversec.one.crypto.symbase.KeyUtil;

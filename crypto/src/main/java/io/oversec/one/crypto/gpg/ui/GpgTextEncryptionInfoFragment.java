@@ -13,7 +13,6 @@ import android.text.style.ClickableSpan;
 import android.view.*;
 import android.widget.Button;
 import android.widget.TextView;
-import io.oversec.one.common.CoreContract;
 import io.oversec.one.crypto.*;
 import io.oversec.one.crypto.gpg.GpgCryptoHandler;
 import io.oversec.one.crypto.gpg.GpgDecryptResult;

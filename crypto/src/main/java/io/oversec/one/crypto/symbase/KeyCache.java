@@ -33,7 +33,7 @@ public class KeyCache {
 
     public static synchronized KeyCache getInstance(Context ctx) {
         if (INSTANCE == null) {
-            INSTANCE = new KeyCache(ctx);
+            INSTANCE = new KeyCache(ctx.getApplicationContext());
         }
         return INSTANCE;
     }

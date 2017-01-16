@@ -30,16 +30,15 @@ public class GotItPreferences {
     private static final String PREF_GOTIT_PREFIX = "gotit_";
 
     private static GotItPreferences mPreferences;
-    private static Context mCtx;
+
     private SharedPreferences mSharedPreferences;
 
     private static String PREF_FILE_NAME = GotItPreferences.class.getSimpleName() + "1";
 
 
     public static synchronized GotItPreferences getPreferences(Context context) {
-        mCtx = context;
         if (mPreferences == null) {
-            mPreferences = new GotItPreferences(context);
+            mPreferences = new GotItPreferences(context.getApplicationContext());
         }
         return mPreferences;
     }

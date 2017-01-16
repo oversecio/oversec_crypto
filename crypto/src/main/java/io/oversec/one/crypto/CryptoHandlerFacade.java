@@ -84,7 +84,7 @@ public class CryptoHandlerFacade implements Handler.Callback {
 
     public synchronized static CryptoHandlerFacade getInstance(Context ctx) {
         if (INSTANCE == null) {
-            INSTANCE = new CryptoHandlerFacade(ctx);
+            INSTANCE = new CryptoHandlerFacade(ctx.getApplicationContext());
         }
         return INSTANCE;
     }

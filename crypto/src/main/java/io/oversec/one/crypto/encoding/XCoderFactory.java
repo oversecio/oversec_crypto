@@ -19,7 +19,7 @@ public class XCoderFactory {
 
     public static synchronized XCoderFactory getInstance(Context ctx) {
         if (INSTANCE == null) {
-            INSTANCE = new XCoderFactory(ctx);
+            INSTANCE = new XCoderFactory(ctx.getApplicationContext());
         }
         return INSTANCE;
     }

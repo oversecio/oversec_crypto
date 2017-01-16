@@ -25,7 +25,7 @@ public class XCoderAndPadderFactory {
 
     public static synchronized XCoderAndPadderFactory getInstance(Context ctx) {
         if (INSTANCE == null) {
-            INSTANCE = new XCoderAndPadderFactory(ctx);
+            INSTANCE = new XCoderAndPadderFactory(ctx.getApplicationContext());
         }
         return INSTANCE;
     }

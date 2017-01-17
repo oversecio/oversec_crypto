@@ -70,7 +70,11 @@
                 android:authorities="oversec_temporary_content"
                 android:grantUriPermissions="true" tools:ignore="ExportedContentProvider"/>
 
-
+        <service
+                android:name=".ZxcvbnService"
+                android:exported="false"
+                android:process="io.oversec.one.crypto.zxcvbn"
+        />
     </application>
 
 </manifest>

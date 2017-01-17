@@ -1,9 +1,10 @@
 package io.oversec.one.crypto.ui;
 
-import android.content.Context;
-import android.content.DialogInterface;
+import android.content.*;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.os.IBinder;
+import android.os.RemoteException;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
@@ -16,10 +17,9 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.*;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.nulabinc.zxcvbn.Feedback;
-import com.nulabinc.zxcvbn.Strength;
-import com.nulabinc.zxcvbn.Zxcvbn;
+import io.oversec.one.crypto.IZxcvbnService;
 import io.oversec.one.crypto.R;
+import io.oversec.one.crypto.ZxcvbnResult;
 import io.oversec.one.crypto.ui.util.EditTextPasswordWithVisibilityToggle;
 import roboguice.util.Ln;
 import uk.co.biddell.diceware.dictionaries.DiceWare;
@@ -43,8 +43,22 @@ public class NewPasswordInputDialog {
     }
 
     public static void show(final Context ctx, final MODE mode, final NewPasswordInputDialogCallback callback) {
-        final Zxcvbn zxcvbn = new Zxcvbn();
+        Intent serviceIntent = new Intent()
+                .setComponent(new ComponentName(ctx, "io.oversec.one.crypto.ZxcvbnService")); //do NOT reference by CLASS
+        ctx.startService(serviceIntent);
+        final IZxcvbnService[] mZxcvbnService = new IZxcvbnService[1];
+        final ServiceConnection mConnection = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                mZxcvbnService[0] = IZxcvbnService.Stub.asInterface(service);
+            }
 
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+                mZxcvbnService[0] = null;
+            }
+        };
+        ctx.bindService(serviceIntent, mConnection, Context.BIND_ALLOW_OOM_MANAGEMENT);
 
         final MaterialDialog dialog = new MaterialDialog.Builder(ctx)
 
@@ -52,6 +66,19 @@ public class NewPasswordInputDialog {
                 .positiveText(getPositiveText(mode))
                 .neutralText(R.string.common_cancel)
                 .autoDismiss(false)
+                .dismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        try {
+                            if (mZxcvbnService[0]!=null) {
+                                mZxcvbnService[0].exit();
+                            }
+                        } catch (RemoteException e) {
+                            e.printStackTrace();
+                        }
+                        ctx.unbindService(mConnection);
+                    }
+                })
                 .cancelListener(new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialog) {
@@ -64,7 +91,7 @@ public class NewPasswordInputDialog {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                         View view = dialog.getCustomView();
-                        if (handlePositive(view, callback, mode, zxcvbn)) {
+                        if (handlePositive(view, callback, mode, mZxcvbnService[0])) {
                             dialog.dismiss();
                         }
                     }
@@ -99,7 +126,7 @@ public class NewPasswordInputDialog {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    if (handlePositive(view, callback, mode, zxcvbn)) {
+                    if (handlePositive(view, callback, mode, mZxcvbnService[0])) {
                         dialog.dismiss();
                         return true;
                     }
@@ -151,7 +178,7 @@ public class NewPasswordInputDialog {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                int entropy = calcPasswordEntropy(s, wrapPw1, zxcvbn);
+                int entropy = calcPasswordEntropy(s, wrapPw1, mZxcvbnService[0]);
                 updateSeekBar(view, sbStrength, entropy, mode);
             }
 
@@ -273,27 +300,31 @@ public class NewPasswordInputDialog {
     }
 
 
-    private static int calcPasswordEntropy(CharSequence s, TextInputLayout wrapper, Zxcvbn zxcvbn) {
+    private static int calcPasswordEntropy(CharSequence s, TextInputLayout wrapper, IZxcvbnService zxcvbn) {
+        if (zxcvbn==null) {
+            Ln.d("Aargh, service not bound?");
+            return 0;
+        }
         try {
-            Strength strength = zxcvbn.measure(s.toString());
 
-            Feedback feedback = strength.getFeedback();
-            wrapper.setError(feedback.getWarning());
+            Ln.d("calcPasswordEntropy....");
+            ZxcvbnResult r = zxcvbn.calcEntropy(s.toString());
+            Ln.d("...calcPasswordEntropy");
 
-            int res = (int) log2(strength.getGuesses());
+            wrapper.setError(r.getWarning());
+
+            int res = r.getEntropy();
             Ln.d("ENTROPY: %s", res);
             return res;
-        } catch (Exception ex) {
-            //see https://github.com/nulab/zxcvbn4j/issues/19   ->  issues resolved, zxcvbn lib upgraded, but leaving this in here just to be sure
+        } catch (RemoteException ex) {
+            Ln.e(ex);
             return 0;
         }
     }
 
-    public static double log2(double n) {
-        return Math.log(n) / Math.log(2);
-    }
 
-    private static boolean handlePositive(View view, NewPasswordInputDialogCallback callback, MODE mode, Zxcvbn zxcvbn) {
+
+    private static boolean handlePositive(View view, NewPasswordInputDialogCallback callback, MODE mode, IZxcvbnService zxcvbn) {
         EditText etPw1 = (EditText) view.findViewById(R.id.new_password_password);
         EditText etPw2 = (EditText) view.findViewById(R.id.new_password_password_again);
         TextInputLayout wrapPw1 = (TextInputLayout) view.findViewById(R.id.new_password_password_wrapper);

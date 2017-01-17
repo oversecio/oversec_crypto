@@ -7,8 +7,8 @@ import roboguice.util.Ln;
 public class LoggingConfig {
     public static boolean LOG = false;
 
-    public static void init() {
-            setLog(BuildConfig.DEBUG);
+    public static void init(boolean debug) {
+            setLog(debug);
     }
 
     public static void setLog(boolean b) {

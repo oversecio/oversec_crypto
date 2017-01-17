@@ -62,7 +62,7 @@ public final class OversecKeystore2 {
 
     public static synchronized OversecKeystore2 getInstance(Context ctx) {
         if (mINSTANCE == null) {
-            init(ctx);
+            init(ctx.getApplicationContext());
         }
 
         return mINSTANCE;

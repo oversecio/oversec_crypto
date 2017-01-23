@@ -105,7 +105,7 @@ public class OpenKeychainConnector {
 
 
     private static synchronized void bindToService(Context ctx) {
-        Ln.w("OKCS: bindToService...");
+        Ln.d(new Exception(),"DAMNIT OKCS: bindToService...");
         // if not already bound...
         if (mService == null) {
 

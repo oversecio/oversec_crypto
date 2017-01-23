@@ -21,7 +21,6 @@ import io.oversec.one.crypto.IZxcvbnService;
 import io.oversec.one.crypto.R;
 import io.oversec.one.crypto.ZxcvbnResult;
 import io.oversec.one.crypto.ui.util.EditTextPasswordWithVisibilityToggle;
-import roboguice.util.Ln;
 import uk.co.biddell.diceware.dictionaries.DiceWare;
 import uk.co.biddell.diceware.dictionaries.DiceWords;
 
@@ -302,22 +301,18 @@ public class NewPasswordInputDialog {
 
     private static int calcPasswordEntropy(CharSequence s, TextInputLayout wrapper, IZxcvbnService zxcvbn) {
         if (zxcvbn==null) {
-            Ln.d("Aargh, service not bound?");
+            //service not bound?
             return 0;
         }
         try {
-
-            Ln.d("calcPasswordEntropy....");
             ZxcvbnResult r = zxcvbn.calcEntropy(s.toString());
-            Ln.d("...calcPasswordEntropy");
 
             wrapper.setError(r.getWarning());
 
             int res = r.getEntropy();
-            Ln.d("ENTROPY: %s", res);
             return res;
         } catch (RemoteException ex) {
-            Ln.e(ex);
+            ex.printStackTrace();
             return 0;
         }
     }

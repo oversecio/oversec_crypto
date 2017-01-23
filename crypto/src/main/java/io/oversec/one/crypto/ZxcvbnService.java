@@ -38,13 +38,13 @@ public class ZxcvbnService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Ln.d("Received start command.");
+       // Ln.d("Received start command.");
         return START_NOT_STICKY;
     }
 
     @Override
     public IBinder onBind(Intent intent) {
-        Ln.d("Received binding.");
+       // Ln.d("Received binding.");
         return mBinder;
     }
 
@@ -52,7 +52,7 @@ public class ZxcvbnService extends Service {
 
         @Override
         public ZxcvbnResult calcEntropy(String aString) throws RemoteException {
-            Ln.d("calcEntropy");
+           // Ln.d("calcEntropy");
             Strength strength = mZxcvbn.measure(aString);
             Feedback feedback = strength.getFeedback();
             int entropy = (int) log2(strength.getGuesses());

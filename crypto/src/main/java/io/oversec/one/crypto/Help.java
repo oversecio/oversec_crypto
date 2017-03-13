@@ -41,7 +41,7 @@ public class Help {
         input_insufficientpadding,
         input_corruptedencoding,
 
-        bossmode_active, main_padders, settextfailed,  button_compose, paste_clipboard,
+        bossmode_active, main_padders, settextfailed,  button_compose, paste_clipboard, main_help_accessibilitysettingsnotresolvable,
 
 
     }

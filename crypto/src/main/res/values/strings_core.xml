@@ -187,4 +187,7 @@
 
     <string name="question_ignore_text">Do you want to ignore this text from now on?</string>
     <string name="action_ignore_text">Ignore this text</string>
+
+    <string name="actionaccessibilitysettingsnotresolvable_text">Oversec needs to be enabled as an Accessibility Service on your phone, but we couldn\'t automatically open the Android Settings \"Accessibility\" page.\n\nPlease manually locate and open the \"Accessibility\" page in your phone\'s settings, then locate \"Oversec\" and enable it.\n\nOversec can not function unless it\'s enabled as an Accessibility Service!</string>
+
 </resources>

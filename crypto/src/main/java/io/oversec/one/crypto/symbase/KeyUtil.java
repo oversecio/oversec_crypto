@@ -5,6 +5,7 @@ import io.oversec.one.crypto.sym.KeyNotCachedException;
 import io.oversec.one.crypto.sym.SymUtil;
 import io.oversec.one.crypto.sym.SymmetricKeyPlain;
 import org.spongycastle.crypto.generators.BCrypt;
+import roboguice.util.Ln;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -137,6 +138,19 @@ public class KeyUtil {
 
         byte[] chars = toBytes(plain);
         erase(plain);
+
+
+        //Note: we can't simply pre-hash everything now, since many users/messages out there have been encrypted with non-prehashes passwords (though all of the passwords are huaranteed to be <72 bytes, 'cause Oversec crashed on longer passwords!
+        if (chars.length>72) { //bcrypt's input is limited to 72 bytes max!
+            try {
+                MessageDigest md = MessageDigest.getInstance("SHA-512");
+                byte[] hashedChars = md.digest(chars);
+                erase(chars);
+                chars = hashedChars;
+            } catch (NoSuchAlgorithmException ex) {
+                ex.printStackTrace();
+            }
+        }
 
         byte[] hash = BCrypt.generate(chars, salt, cost);
 

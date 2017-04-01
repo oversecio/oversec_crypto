@@ -72,6 +72,7 @@ public class Issues {
     private static Set<String> PACKAGES_THAT_NEED_COMPOSE_BUTTON = new HashSet<>();
     static {
         PACKAGES_THAT_NEED_COMPOSE_BUTTON.add("com.google.android.apps.inbox");//Inbox By Gmail
+        PACKAGES_THAT_NEED_COMPOSE_BUTTON.add("com.evernote");//Inbox By Gmail
     }
     public static Collection<String> getPackagesThatNeedComposeButton() {
         return PACKAGES_THAT_NEED_COMPOSE_BUTTON;

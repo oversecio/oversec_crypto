@@ -154,7 +154,7 @@
     <string name="settings_acs_post_enable_btn_configure">Enable other apps</string>
     <string name="onboarding_title">Welcome to Oversec</string>
     <string name="checkbox_add_oversec_link">Add a link to the Oversec app</string>
-    <string name="action_clear_ignored_keys">clear %1$s ignored texts</string>
+    <string name="action_clear_ignored_keys">clear %1$d ignored texts</string>
     <string name="settings_upgrade">"You're running plain vanilla Oversec.\nUpgrade now to enable additional features!"</string>
     <string name="iab_header">Upgrade Oversec</string>
     <string name="iab_body">Upgrading supports ongoing development and enables those additional features:\n\n* Customize colors\n* Custom decoy content\n* Decrypt photos and images</string>

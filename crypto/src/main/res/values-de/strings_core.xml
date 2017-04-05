@@ -5,7 +5,7 @@
     <string name="about_tab_purchases">Einkäufe</string>
     <string name="acs_description">Wenn Oversec als Bedienungshilfe aktiviert wird, kann es den Bildschirminhalt auslesen und entschlüsseln.</string>
     <string name="action_about">über</string>
-    <string name="action_clear_ignored_keys">Vergesse %1$s ignorierte Texte.</string>
+    <string name="action_clear_ignored_keys">Vergesse %1$d ignorierte Texte.</string>
     <string name="action_clear_input">Eingabe löschen</string>
     <string name="action_configure">Konfigurieren</string>
     <string name="action_dismiss">Verwerfen</string>

@@ -14,6 +14,7 @@ public class Issues {
         PACKAGES_WITH_ISSUES.add("com.google.android.apps.inbox");
         PACKAGES_WITH_ISSUES.add("com.google.android.apps.messaging");
         PACKAGES_WITH_ISSUES.add("com.google.android.gm");
+        PACKAGES_WITH_ISSUES.add("com.evernote");
         PACKAGES_WITH_ISSUES.add("com.google.android.talk");
         PACKAGES_WITH_ISSUES.add("org.telegram.messenger");
         PACKAGES_WITH_ISSUES.add("org.thoughtcrime.securesms");
@@ -42,6 +43,7 @@ public class Issues {
     static {
         PACKAGES_WHERE_INVISIBLE_ENCODING_DOESNT_WORK.add("com.google.android.apps.inbox"); //Inbox by Gmail
         PACKAGES_WHERE_INVISIBLE_ENCODING_DOESNT_WORK.add("com.google.android.gm"); //Gmail
+        PACKAGES_WHERE_INVISIBLE_ENCODING_DOESNT_WORK.add("com.evernote"); //Evernote
         PACKAGES_WHERE_INVISIBLE_ENCODING_DOESNT_WORK.add(" com.moez.QKSMS"); //QKSMS
 
     }
@@ -71,6 +73,7 @@ public class Issues {
 
     private static Set<String> PACKAGES_THAT_NEED_COMPOSE_BUTTON = new HashSet<>();
     static {
+        PACKAGES_THAT_NEED_COMPOSE_BUTTON.add("com.google.android.gm"); //Gmail
         PACKAGES_THAT_NEED_COMPOSE_BUTTON.add("com.google.android.apps.inbox");//Inbox By Gmail
         PACKAGES_THAT_NEED_COMPOSE_BUTTON.add("com.evernote");//Inbox By Gmail
     }

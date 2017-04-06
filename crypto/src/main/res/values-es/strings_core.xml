@@ -73,7 +73,7 @@
     <string name="controls_hint_overlayaboveinput">Mostrar el texto descifrado justo *arriba* de un campo de entrada activo, lo que facilita revisar o editar manualmente el texto señuelo.</string>
     <string name="controls_spinner_innerpadding" >Añadir relleno antes de cifrar</string>
     <string name="controls_hint_innerpadding">Añadir (como máximo) este número de bytes aleatorios antes de encriptar. Esto evita que un atacante pueda adivinar el mensaje original por el número de caracteres </string>
-    <string name="title_activity_appconfig">Configuración aplicación</string>
+    <string name="title_activity_appconfig">Confi. aplicación</string>
     <string name="title_activity_encryption_params">Encriptación</string>
     <string name="msg_is_temp_hidden">¡Oversec está temporalmente oculta para esta aplicación!</string>
     <string name="action_unhide">Mostrar Oversec sobre esta aplicación</string>

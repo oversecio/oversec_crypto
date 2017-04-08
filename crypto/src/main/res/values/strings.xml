@@ -13,7 +13,7 @@
     <string name="keystore_password_confirm_hint">Confirmation</string>
     <string name="error_passwords_dont_match">Password mismatch</string>
     <string name="error_password_length">The password is too weak!</string>
-    <string name="error_password_wrong">The passphrase is wrong!</string>
+    <string name="error_password_wrong">The password is wrong!</string>
     <string name="error_alias_length">The alias must be at least %1$s characters long!</string>
     <string name="error_alias_exists">You already have a key with that alias!</string>
     <string name="action_addkey_importqr_title" translatable="false">QR-Code</string>

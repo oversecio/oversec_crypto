@@ -223,8 +223,7 @@
     <string name="tooltip_keys_fragment">Estas são suas chaves simétricas.\nVocê não precisa delas se usa a criptografia de senha simples ou PGP.</string>
     <string name="warning">Aviso</string>
     <string name="warning_pgp_messages_are_big">Mensagens codificadas por PGP adicionam uma sobrecarga de cerca de 3 kilobytes ou mais por mensagem. Lembre-se disso quando seu plano de dados for limitado e, se possível, use a criptografia simétrica!</string>
-    <string name="tooltip_padders_fragment">Este é o conteúdo
- de decoy que será mostrado no lugar do texto criptografado invisível.</string>
+    <string name="tooltip_padders_fragment">Este é o conteúdo de chamariz que será mostrado no lugar do texto criptografado invisível.</string>
     <string name="title_activity_padder_detail">Decoy</string>
     <string name="label_padder_name">Nome:</string>
     <string name="label_padder_content">Conteúdo:</string>

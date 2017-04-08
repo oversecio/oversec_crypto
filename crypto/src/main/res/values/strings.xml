@@ -1,5 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+        <!ENTITY % ents SYSTEM "entities.dtd">
+        %ents;
+        ]>
+
+
 <resources>
-    <string name="app_name" translatable="false">Oversec</string>
+    <string name="app_name" translatable="false">&appname;</string>
     <string name="title_activity_keys">Keys</string>
     <string name="common_ok">OK</string>
     <string name="common_cancel">Cancel</string>
@@ -157,9 +164,9 @@
     <string name="title_activity_encryption_info">Encryption Info</string>
     <string name="decrypt_error_user_interaction_required">Input required</string>
     <string name="decrypt_error_user_interaction_required__long">(Password) Input required to decrypt!</string>
-    <string name="decrypt_error_common">Oversec Error</string>
+    <string name="decrypt_error_common">&appname; Error</string>
     <string name="decrypt_error_gpg">PGP decryption failed</string>
-    <string name="decrypt_error_proto">Oversec Error, try updating the Oversec app!</string>
+    <string name="decrypt_error_proto">&appname; Error, try updating the &appname; app!</string>
     <string name="decrypt_error_generic">Decryption failed</string>
     <string name="decrypt_error_no_gpg_handler">Openkeychain is required to decrypt this</string>
     <string name="compose_pgp_lbl_ownkey">Myself</string>
@@ -203,7 +210,7 @@
     <string name="error_image_decrypt_noencodeddata">No encrypted data found in the source image.</string>
     <string name="warning_image_encoding_no_method">Please select encoding method first!</string>
     <string name="error_image_encode_generic">Something went wrong when trying to encode this image.</string>
-    <string name="error_image_encode_source_not_found">Couldn\'t read source image!\nNote that photos taken from within Oversec get auto-deleted a short time after taking them!</string>
+    <string name="error_image_encode_source_not_found">Couldn\'t read source image!\nNote that photos taken from within &appname; get auto-deleted a short time after taking them!</string>
     <string name="intent_chooser_share_unencrypted_image">Share _UN_encrypted image via…</string>
     <string name="warning_image_resized">Input image too big, automatically resized to %1$d percent</string>
     <string name="action_encrypt_image">Encrypt Image</string>
@@ -215,7 +222,7 @@
     <string name="okc_installed_but_too_old">Your OpenKeychain App is of version %1$s and not supported. Please update!</string>
     <string name="key_created">Key created</string>
     <string name="action_gotit">Got It</string>
-    <string name="tooltip_apps_fragment">Configure your apps for use with Oversec.\n\nWe have preselected some apps for you, please review!</string>
+    <string name="tooltip_apps_fragment">Configure your apps for use with &appname;.\n\nWe have preselected some apps for you, please review!</string>
     <string name="action_moreinfo">More info</string>
     <string name="action_help">Help</string>
     <string name="accept_insecure_password">I understand that this password is weak, but I want to use it anyway!</string>
@@ -234,7 +241,7 @@
     <string name="dialog_explore_label_signed_by">Signed by:</string>
     <string name="simple_password_unlock_key">Unlock Key …</string>
     <string name="simple_password_to_decrypt_this">to decrypt this text:</string>
-    <string name="tooltip_settextfailed">Oversec could not write the encoded text back to the underlying app!\n\nThis is most likely due the underlying app only allowing a limited number of characters in the input field!\n\nPlease try a using less recipients or use symmetric encryption, which is more compact!</string>
-    <string name="tooltip_encodingtoolong">The encrypted / encoded message is too long!\n\nOversec didn\'t write back the message, as otherwise the underlying app would crash!\n\nPlease try a using less recipients or use symmetric encryption, which is more compact!</string>
+    <string name="tooltip_settextfailed">&appname; could not write the encoded text back to the underlying app!\n\nThis is most likely due the underlying app only allowing a limited number of characters in the input field!\n\nPlease try a using less recipients or use symmetric encryption, which is more compact!</string>
+    <string name="tooltip_encodingtoolong">The encrypted / encoded message is too long!\n\n&appname; didn\'t write back the message, as otherwise the underlying app would crash!\n\nPlease try a using less recipients or use symmetric encryption, which is more compact!</string>
 
 </resources>

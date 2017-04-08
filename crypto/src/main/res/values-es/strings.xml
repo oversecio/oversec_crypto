@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources [
+        <!ENTITY % ents SYSTEM "entities.dtd">
+        %ents;
+        ]>
 <resources>
     <string name="title_activity_keys">Claves</string>
     <string name="common_ok">OK</string>
@@ -155,9 +159,9 @@
     <string name="title_activity_encryption_info">Información de encriptación</string>
     <string name="decrypt_error_user_interaction_required">Se requiere entrada</string>
     <string name="decrypt_error_user_interaction_required__long">(Contraseña) ¡Se requiere una entrada para descifrar!</string>
-    <string name="decrypt_error_common">Error de Oversec</string>
+    <string name="decrypt_error_common">Error de &appname;</string>
     <string name="decrypt_error_gpg">El descifrado PGP falló.&#13;</string>
-    <string name="decrypt_error_proto">Error de Oversec, ¡intenta actualizar la aplicación!</string>
+    <string name="decrypt_error_proto">Error de &appname;, ¡intenta actualizar la aplicación!</string>
     <string name="decrypt_error_generic">Fallo al descifrar&#13;</string>
     <string name="decrypt_error_no_gpg_handler">Se requiere Openkeychain para descifrar esto</string>
     <string name="compose_pgp_lbl_ownkey">Yo</string>
@@ -201,7 +205,7 @@
     <string name="error_image_decrypt_noencodeddata">No se encontraron datos encriptados en la imagen de origen.</string>
     <string name="warning_image_encoding_no_method">Por favor, seleccione el método de codificación primero.</string>
     <string name="error_image_encode_generic">Algo salió mal al tratar de codificar esta imagen.</string>
-    <string name="error_image_encode_source_not_found">La imagen de origen no\ puede ser leída&#13;\n¡Tome en cuenta que las fotos tomadas desde Oversec se eliminan automáticamente en un corto tiempo!</string>
+    <string name="error_image_encode_source_not_found">La imagen de origen no\ puede ser leída&#13;\n¡Tome en cuenta que las fotos tomadas desde &appname; se eliminan automáticamente en un corto tiempo!</string>
     <string name="intent_chooser_share_unencrypted_image">Compartir imagen _SIN_encriptar a través de...</string>
     <string name="warning_image_resized">La imagen de entrada es demasiado grande, cambia de tamaño automáticamente a %1$d por ciento.</string>
     <string name="action_encrypt_image">Encriptar imagen</string>
@@ -213,7 +217,7 @@
     <string name="okc_installed_but_too_old">La verisón de su aplicación OpenKeychain es %1$s ya no se admite. ¡Por favor, actualícela!</string>
     <string name="key_created">Clave creada</string>
     <string name="action_gotit">Lo tengo</string>
-    <string name="tooltip_apps_fragment">Configure sus aplicaciones para usarlas con Oversec.\n\nHemos preseleccionado algunas aplicaciones para usted, ¡por favor, revíselas!</string>
+    <string name="tooltip_apps_fragment">Configure sus aplicaciones para usarlas con &appname;.\n\nHemos preseleccionado algunas aplicaciones para usted, ¡por favor, revíselas!</string>
     <string name="action_moreinfo">Más Información</string>
     <string name="action_help">Ayuda</string>
     <string name="accept_insecure_password">Entiendo que esta contraseña es débil, pero aún así quiero usarla.</string>
@@ -231,7 +235,7 @@
     <string name="dialog_explore_label_signed_by">Firmado por:</string>
     <string name="simple_password_unlock_key">Clave de desbloqueo...</string>
     <string name="simple_password_to_decrypt_this">para descifrar este texto:</string>
-    <string name="tooltip_settextfailed">¡Oversec no puede escribir el texto codificado de nuevo en la aplicación subyacente!\n\nEs probable que se deba a que la aplicación subyacente solo permite un número limitado de caracteres en el campo de entrada.\n\nPor favor, intente reducir el número de destinatarios o utilizar el cifrado simétrico, que es más compacto.</string>
-    <string name="tooltip_encodingtoolong">¡El mensaje encriptado/codificado es demasiado largo!\n\nOversec no\ pudo escribir de nuevo el mensaje porque la aplicación subyacente podría colapsar.\n\nPor favor, intente reducir el número de destinatarios o utilizar el cifrado simétrico, que es más compacto.</string>
+    <string name="tooltip_settextfailed">¡&appname; no puede escribir el texto codificado de nuevo en la aplicación subyacente!\n\nEs probable que se deba a que la aplicación subyacente solo permite un número limitado de caracteres en el campo de entrada.\n\nPor favor, intente reducir el número de destinatarios o utilizar el cifrado simétrico, que es más compacto.</string>
+    <string name="tooltip_encodingtoolong">¡El mensaje encriptado/codificado es demasiado largo!\n\n&appname; no\ pudo escribir de nuevo el mensaje porque la aplicación subyacente podría colapsar.\n\nPor favor, intente reducir el número de destinatarios o utilizar el cifrado simétrico, que es más compacto.</string>
 
 </resources>

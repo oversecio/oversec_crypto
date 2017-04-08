@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources [
+        <!ENTITY % ents SYSTEM "entities.dtd">
+        %ents;
+        ]>
 <resources>
     <string name="title_activity_keys">Ключи</string>
     <string name="common_ok">ОК</string>
@@ -155,9 +159,9 @@
     <string name="title_activity_encryption_info">Информация о шифровании</string>
     <string name="decrypt_error_user_interaction_required">Требуется ввод</string>
     <string name="decrypt_error_user_interaction_required__long">(Пароль) Требуется ввод данных для расшифровки!</string>
-    <string name="decrypt_error_common">Ошибка Oversec</string>
+    <string name="decrypt_error_common">Ошибка &appname;</string>
     <string name="decrypt_error_gpg">Расшифровка PGP не удалась</string>
-    <string name="decrypt_error_proto">Ошибка Oversec, попробуйте обновить приложение Oversec!</string>
+    <string name="decrypt_error_proto">Ошибка &appname;, попробуйте обновить приложение &appname;!</string>
     <string name="decrypt_error_generic">Расшифровка не удалась</string>
     <string name="decrypt_error_no_gpg_handler">Требуется Openkeychain, чтобы это расшифровать</string>
     <string name="compose_pgp_lbl_ownkey">Себя</string>
@@ -201,7 +205,7 @@
     <string name="error_image_decrypt_noencodeddata">Не найдены зашифрованные данные в исходном изображении.</string>
     <string name="warning_image_encoding_no_method">Сначала выберите способ кодирования!</string>
     <string name="error_image_encode_generic">Что-то пошло не так при попытке кодирования этого изображения.</string>
-    <string name="error_image_encode_source_not_found">Не удалось прочитать исходное изображение!\nИмейте в виду, что фотографии, сделанные в Oversec, автоматически удаляются через короткое время после их съемки!</string>
+    <string name="error_image_encode_source_not_found">Не удалось прочитать исходное изображение!\nИмейте в виду, что фотографии, сделанные в &appname;, автоматически удаляются через короткое время после их съемки!</string>
     <string name="intent_chooser_share_unencrypted_image">Поделиться _UN_зашифрованными изображениями через ...</string>
     <string name="warning_image_resized">Слишком большое входное изображение, автоматически измененное по размеру до %1$d процентов</string>
     <string name="action_encrypt_image">Зашифровать изображение</string>
@@ -213,7 +217,7 @@
     <string name="okc_installed_but_too_old">Ваше приложение OpenKeychain имеет версию %1$s и не поддерживается. Выполните обновление!</string>
     <string name="key_created">Ключ создан</string>
     <string name="action_gotit">Получен</string>
-    <string name="tooltip_apps_fragment">Настройте ваше приложения для использования с Oversec.\n\nМы предварительно выбрали для вас некоторые приложения, ознакомьтесь!</string>
+    <string name="tooltip_apps_fragment">Настройте ваше приложения для использования с &appname;.\n\nМы предварительно выбрали для вас некоторые приложения, ознакомьтесь!</string>
     <string name="action_moreinfo">Допо. инфо</string>
     <string name="action_help">Справка</string>
     <string name="accept_insecure_password">Я понимаю, что этот пароль ненадежный, но я все равно хочу его использовать!</string>
@@ -231,7 +235,7 @@
     <string name="dialog_explore_label_signed_by">Подписано:</string>
     <string name="simple_password_unlock_key"> Разблокировать ключ …</string>
     <string name="simple_password_to_decrypt_this">расшифровать этот текст:</string>
-    <string name="tooltip_settextfailed">Oversec не может перезаписать закодированный текст в расположенное ниже приложение!\n\nЭто наиболее вероятно из-за расположенного ниже приложения, допускающего лишь ограниченное количество символов в поле ввода!\n\nПопробуйте использовать меньшее количество получателей или используйте симметричное шифрование, которое является более компактным!</string>
-    <string name="tooltip_encodingtoolong">Зашифрованное/закодированное сообщение является слишком длинным!\n\nOversec  не перезаписывает сообщение, так как в противном случае произойдет фатальный сбой расположенного ниже приложения!\n\nПопробуйте использовать меньшее количество получателей или используйте симметричное шифрование, которое является более компактным!</string>
+    <string name="tooltip_settextfailed">&appname; не может перезаписать закодированный текст в расположенное ниже приложение!\n\nЭто наиболее вероятно из-за расположенного ниже приложения, допускающего лишь ограниченное количество символов в поле ввода!\n\nПопробуйте использовать меньшее количество получателей или используйте симметричное шифрование, которое является более компактным!</string>
+    <string name="tooltip_encodingtoolong">Зашифрованное/закодированное сообщение является слишком длинным!\n\n&appname;  не перезаписывает сообщение, так как в противном случае произойдет фатальный сбой расположенного ниже приложения!\n\nПопробуйте использовать меньшее количество получателей или используйте симметричное шифрование, которое является более компактным!</string>
 
 </resources>

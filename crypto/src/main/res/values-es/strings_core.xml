@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources [
+        <!ENTITY % ents SYSTEM "entities.dtd">
+        %ents;
+        ]>
 <resources>
-    <string name="acs_description">Activar Oversec como un servicio de accesibilidad permite que Oversec lea y descifre el contenido de la pantalla.</string>
+    <string name="acs_description">Activar &appname; como un servicio de accesibilidad permite que &appname; lea y descifre el contenido de la pantalla.</string>
     <string name="action_reenable_boss">Reactivar</string>
     <string name="action_configure">Configurar</string>
     <string name="main_tab_help">Configuración</string>
     <string name="main_tab_apps">Aplicaciones</string>
-    <string name="notification_title__active">Oversec está activa</string>
-    <string name="notification_title__hidden">Oversec está oculta</string>
+    <string name="notification_title__active">&appname; está activa</string>
+    <string name="notification_title__hidden">&appname; está oculta</string>
     <string name="notification_body__active">Pulse aquí para configurar</string>
     <string name="notification_body__hidden">Pulse aquí para mostrar</string>
     <string name="notification_action_boss">ALTO</string>
     <string name="notification_action_hide">Ocultar</string>
     <string name="notification_action_show">Mostrar</string>
-    <string name="settings_acs_not_enabled">Oversec no está configurada como un servicio de accesibilidad, ¡pero debe estarlo!\mPulse\&quot;Configurar\&quot; para abrir la página de configuración y, a continuación, toque \&quot;Oversec\&quot; y seleccione \&quot;On\&quot;.</string>
-    <string name="settings_acs_enabled_ok">Oversec está configurada correctamente como un servicio de accesibilidad.</string>
+    <string name="settings_acs_not_enabled">&appname; no está configurada como un servicio de accesibilidad, ¡pero debe estarlo!\mPulse\&quot;Configurar\&quot; para abrir la página de configuración y, a continuación, toque \&quot;&appname;\&quot; y seleccione \&quot;On\&quot;.</string>
+    <string name="settings_acs_enabled_ok">&appname; está configurada correctamente como un servicio de accesibilidad.</string>
     <string name="settings_help">Ayuda en línea</string>
-    <string name="settings_boss_active">Oversec está en modo de pánico.</string>
-    <string name="controls_checkbox_enable">Activar Oversec</string>
-    <string name="controls_checkbox_enable_sub">Habilitar Oversec para %1$s</string>
+    <string name="settings_boss_active">&appname; está en modo de pánico.</string>
+    <string name="controls_checkbox_enable">Activar &appname;</string>
+    <string name="controls_checkbox_enable_sub">Habilitar &appname; para %1$s</string>
     <string name="controls_checkbox_starthidden">Iniciar oculto</string>
-    <string name="controls_checkbox_starthidden_sub">Oversec inicialmente se ocultará cuando cambie a %1$s</string>
+    <string name="controls_checkbox_starthidden_sub">&appname; inicialmente se ocultará cuando cambie a %1$s</string>
     <string name="controls_slider_corners">Esquinas</string>
     <string name="controls_slider_fontsize">Tamaño del texto</string>
     <string name="controls_slider_padding_left">Pad izquierdo</string>
     <string name="controls_slider_padding_top">Pad superior</string>
-    <string name="share_body">¡Oversec: encriptación para todas las aplicaciones!\n\nDescarga la aplicación Oversec y encripta todas las aplicaciones Android.\n\nEnvía mensajes encriptados de ojo a ojo con Whatsapp, Line, SMS, Facebook, Gmail o cualquier otra aplicación.\n\nhttp://dl.oversec.io</string>
+    <string name="share_body">¡&appname;: encriptación para todas las aplicaciones!\n\nDescarga la aplicación &appname; y encripta todas las aplicaciones Android.\n\nEnvía mensajes encriptados de ojo a ojo con Whatsapp, Line, SMS, Facebook, Gmail o cualquier otra aplicación.\n\nhttp://dl.&appname;.io</string>
     <string name="share_chooser_title">Compartir en </string>
-    <string name="share_as_suffix">¡Instala Oversec para descifrar!\nhttp://dl.oversec.io</string>
+    <string name="share_as_suffix">¡Instala &appname; para descifrar!\nhttp://dl.&appname;.io</string>
     <string name="notification_acsnotrunning_title">El servicio de accesibilidad no se está ejecutando.</string>
     <string name="notification_acsnotrunning_body">Pulse aquí para activarlo.</string>
     <string name="decrypt_in_progress">Descifrando...</string>
@@ -43,7 +47,7 @@
     <string name="controls_checkbox_infobutton">Botón de información</string>
     <string name="controls_hint_showinfobutton">En-/Desactiva el modo de información para mostrar información adicional de la encriptación.</string>
     <string name="controls_checkbox_hidebutton">Botón de ocultar</string>
-    <string name="controls_checkbox_hidebutton_sub">El botón de Ocultar permite ocultar temporalmente la superposición de Oversec.</string>
+    <string name="controls_checkbox_hidebutton_sub">El botón de Ocultar permite ocultar temporalmente la superposición de &appname;.</string>
     <string name="controls_checkbox_composebutton">Botón de componer</string>
     <string name="controls_checkbox_composebutton_sub">Este botón le permite abrir un diálogo para introducir texto y encriptarlo en el portapapeles.</string>
     <string name="controls_checkbox_decryptbutton">Botón de descifrar/borrar</string>
@@ -53,11 +57,11 @@
     <string name="controls_checkbox_configbutton">Botón de configuración</string>
     <string name="controls_hint_configbutton">Mostrar la página de configuración. También puede abrir esta página abrir a través de la barra de notificaciones o pulsando dos veces el botón de Ocultar.</string>
     <string name="controls_checkbox_notification">Notificación</string>
-    <string name="controls_hint_shownotification">Mostrar una notificación permanente para controlar Oversec.</string>
+    <string name="controls_hint_shownotification">Mostrar una notificación permanente para controlar &appname;.</string>
     <string name="controls_checkbox_hqscrape">Scraping de alta calidad</string>
     <string name="controls_hint_hqscrape">Realiza una lectura de pantalla más profunda y con más frecuencia. Produce un UX más regular a costa de un mayor consumo de batería.</string>
     <string name="controls_checkbox_includenotimporantviews">Scrape todas las vistas</string>
-    <string name="controls_hint_includenotimporantviews" >Incluir vistas consideradas como «No importante». Esto es necesario sólo para unas pocas aplicaciones. ¡Esta opción disminuye la velocidad de Oversec y consume más batería!</string>
+    <string name="controls_hint_includenotimporantviews" >Incluir vistas consideradas como «No importante». Esto es necesario sólo para unas pocas aplicaciones. ¡Esta opción disminuye la velocidad de &appname; y consume más batería!</string>
     <string name="controls_checkbox_spreadinvisibleencoding" >Difundir codificación invisible</string>
     <string name="controls_hint_spreadinvisibleencoding" >Difundir los caracteres invisibles dentro del texto señuelo, en lugar de colocarlos al principio. Esto es necesario para algunas aplicaciones, como por ejemplo Instagram.</string>
     <string name="controls_checkbox_dontshowdecryptionfailed" >No\ mostrar error si no existe una clave compatible</string>
@@ -75,8 +79,8 @@
     <string name="controls_hint_innerpadding">Añadir (como máximo) este número de bytes aleatorios antes de encriptar. Esto evita que un atacante pueda adivinar el mensaje original por el número de caracteres </string>
     <string name="title_activity_appconfig">Confi. aplicación</string>
     <string name="title_activity_encryption_params">Encriptación</string>
-    <string name="msg_is_temp_hidden">¡Oversec está temporalmente oculta para esta aplicación!</string>
-    <string name="action_unhide">Mostrar Oversec sobre esta aplicación</string>
+    <string name="msg_is_temp_hidden">¡&appname; está temporalmente oculta para esta aplicación!</string>
+    <string name="action_unhide">Mostrar &appname; sobre esta aplicación</string>
     <string name="toast_no_info_nodes">¡No hay texto encriptado en la pantalla!</string>
     <string name="controls_checkbox_infoontap">Pulse para mostrar información</string>
     <string name="controls_hint_infoontap">Al tocar un texto encriptado se mostrará información detallada sobre la encriptación.\nAdvertencia: ¡podría interferir con la UX de la aplicación subyacente! </string>
@@ -87,7 +91,7 @@
     <string name="controls_checkbox_encryptbutton">Botón de encriptación</string>
     <string name="controls_hint_showencryptbutton">Mostrar el botón de encriptación al lado del campo de entrada activo. (El botón de descifrar no\ se mostrará si no está activo el botón de encritpación).</string>
     <string name="sample_decrypted_text">Hola, mundo&#13;</string>
-    <string name="action_share_app">Compartir Oversec</string>
+    <string name="action_share_app">Compartir &appname;</string>
     <string name="exception_msg">Error inesperado: %s</string>
     <string name="action_pgp_choose_own_key">Seleccionar tu propa clave PGP</string>
     <string name="toast_insufficient_padding">Por favor, intorduzca más información hasta que el borde alrededor del campo de entrada se ponga verde.</string>
@@ -96,16 +100,16 @@
     <string name="toast_corrupted_encoding">¡Qué fastidio! ¡El mensaje encriptado se ha corrompido!\n¡La única salida es empezar de nuevo!</string>
     <string name="action_clear_input">Borrar entrada</string>
        <string name="crash_report_via_title">Seleccionar una aplicación de correo electrónico para enviar el informe de fallos.</string>
-    <string name="crash_report_subject">Informe de fallos de Oversec</string>
-    <string name="crash_title">¡Ups! Oversec colapsó.</string>
+    <string name="crash_report_subject">Informe de fallos de &appname;</string>
+    <string name="crash_title">¡Ups! &appname; colapsó.</string>
     <string name="crash_subtitle">Por favor, ayúdanos enviando este informe de errores por correo electrónico:</string>
     <string name="crash_activity_title">Informe de fallos</string>
     <string name="bug_report_via_title">Seleccionar una aplicación de correo electrónico para enviar el informe de errores</string>
-    <string name="bug_report_subject">Informe de errores Oversec</string>
+    <string name="bug_report_subject">Informe de errores &appname;</string>
     <string name="main_tab_keys">Claves</string>
     <string name="main_tab_settings">Ajustes</string>
-    <string name="tooltip_hidebutton_nothidden">Pulsa este botón para ocultar temporalmente la superposición de Oversec.\n\Manténlo presionado para salir por completo de Oversec y borrar todas las claves recordadas. (¡Botón de pánico!)</string>
-    <string name="tooltip_hidebutton_hidden">A continuación, toca la misma posición de nuevo para retornar la superposición de Oversec.</string>
+    <string name="tooltip_hidebutton_nothidden">Pulsa este botón para ocultar temporalmente la superposición de &appname;.\n\Manténlo presionado para salir por completo de &appname; y borrar todas las claves recordadas. (¡Botón de pánico!)</string>
+    <string name="tooltip_hidebutton_hidden">A continuación, toca la misma posición de nuevo para retornar la superposición de &appname;.</string>
     <string name="action_help_perapp">Mostrar información de \&quot;%1$s\&quot;</string>
     <string name="action_send_bugreport_perapp">Informar de un error de \ &quot;%1$s \&quot;</string>
     <string name="action_send_bugreport">Notificar un problema</string>
@@ -117,13 +121,13 @@
     <string name="mainprefs_screenoffpanic_title">Modo pánico con la pantalla apagada</string>
     <string name="mainprefs_screenoffpanic_summary">Entrar en modo de pánico cuando la pantalla esté apagada.</string>
     <string name="mainprefs_hidelauncheronpanic_title">Ocultar el ícono de inicio en el modo pánico</string>
-    <string name="mainprefs_hidelauncheronpanic_summary">Oculta el ícono de inicio de Oversec en modo de pánico. Para volver a activar Oversec después del modo pánico, es necesario marcar el código secreto en una aplicación de dial (teléfono).</string>
+    <string name="mainprefs_hidelauncheronpanic_summary">Oculta el ícono de inicio de &appname; en modo de pánico. Para volver a activar &appname; después del modo pánico, es necesario marcar el código secreto en una aplicación de dial (teléfono).</string>
     <string name="mainprefs_launchersecretcode_title">Código secreto de dial</string>
-    <string name="mainprefs_launchersecretcode_summary">Después del modo pánico, puedes reactivar Oversec marcando este código en tu aplicación dial.</string>
+    <string name="mainprefs_launchersecretcode_summary">Después del modo pánico, puedes reactivar &appname; marcando este código en tu aplicación dial.</string>
 
 
     <string name="tooltip_buttonencrypt_initial">Toque aquí para encriptar el texto introducido.</string>
-    <string name="title_activity_about">Sobre Oversec</string>
+    <string name="title_activity_about">Sobre &appname;</string>
     <string name="action_about">acerca de</string>
     <string name="about_tab_changelog">Registro de cambios</string>
     <string name="about_tab_about">Acerca de</string>
@@ -133,7 +137,7 @@
     <string name="main_tab_padder">Señuelo</string>
     <string name="error_padder_name_too_short">Por favor, introduzca al menos %1$d caracteres</string>
     <string name="error_padder_content_too_short">Por favor, introduzca al menos %1$d caracteres</string>
-    <string name="upgrade_overlay_msg">Por favor, apoya el desarrollo de Oversec actualizando a la versión completa.</string>
+    <string name="upgrade_overlay_msg">Por favor, apoya el desarrollo de &appname; actualizando a la versión completa.</string>
     <string name="upgrade_interstitial_title">Por favor, actualice.</string>
     <string name="upgrade_interstitial_content">¡Esta característica solo está disponible en la versión completa!</string>
     <string name="upgrade_visual_settings">Por favor, actualice para permitir los siguientes controles de color:</string>
@@ -141,24 +145,24 @@
     <string name="action_upgrade">Actualizar ahora</string>
     <string name="controls_checkbox_storeencryptionparamsperpackageonly">Parámetros de encriptación únicos</string>
     <string name="controls_hint_storeencryptionparamsperpackageonly">Guarda solo un conjunto de parámetros de encriptación por aplicación. Esta función está destinada solamente para aplicaciones de toma de notas y no debe habilitarse para aplicaciones de comunicación.</string>
-    <string name="tooltip_encryptionparams_simplesym_general">Encriptar mediante el intercambio solo de una contraseña simple.\nDe esta forma puede probar Oversec, pero no\ es muy seguro.</string>
+    <string name="tooltip_encryptionparams_simplesym_general">Encriptar mediante el intercambio solo de una contraseña simple.\nDe esta forma puede probar &appname;, pero no\ es muy seguro.</string>
     <string name="tooltip_encryptionparams_sym_general">Encriptar con claves simétricas compartidas. ¡Debe compartir la clave con el otro participante!</string>
     <string name="tooltip_encryptionparams_gpg_general">Encriptar con claves públicas/privadas PGP. ¡OpenKeychain es necesario para esta opción!</string>
     <string name="tooltip_encryptionparams_fab">Pulse aquí para encriptar y volver a la aplicación.</string>
     <string name="tooltip_encryptionparams_gpg_choose_own_key">Por favor, seleccione primero su propia clave.</string>
-    <string name="onboarding_text">Usted está a un paso de usar Oversec:\n\nEn la siguiente pantalla de ajustes, pulse \&quot;Oversec\&quot; y seleccione \&quot;Si\&quot;. \n\n(En algunos teléfonos, deberá desplazarse hacia abajo al final de la lista para ver la entrada de \&quot;Oversec\&quot;).</string>
-    <string name="settings_acs_post_enable_title">¡Oversec está lista!</string>
-    <string name="settings_acs_post_enable_msg">Ahora todo lo que debe hacer es comenzar a utilizar cualquiera de sus aplicaciones habilitadas en Oversec:</string>
+    <string name="onboarding_text">Usted está a un paso de usar &appname;:\n\nEn la siguiente pantalla de ajustes, pulse \&quot;&appname;\&quot; y seleccione \&quot;Si\&quot;. \n\n(En algunos teléfonos, deberá desplazarse hacia abajo al final de la lista para ver la entrada de \&quot;&appname;\&quot;).</string>
+    <string name="settings_acs_post_enable_title">¡&appname; está lista!</string>
+    <string name="settings_acs_post_enable_msg">Ahora todo lo que debe hacer es comenzar a utilizar cualquiera de sus aplicaciones habilitadas en &appname;:</string>
     <string name="settings_acs_post_enable_btn_configure">Habilitar otras aplicaciones</string>
-    <string name="onboarding_title">Bienvenido a Oversec</string>
-    <string name="checkbox_add_oversec_link">Añadir un enlace a la aplicación Oversec</string>
+    <string name="onboarding_title">Bienvenido a &appname;</string>
+    <string name="checkbox_add_oversec_link">Añadir un enlace a la aplicación &appname;</string>
     <string name="action_clear_ignored_keys">eliminar %1$d de los textos ignorados</string>
-    <string name="settings_upgrade">&quot;Estás ejecutando la versión sencilla de Oversec.\n¡Actualiza ahora para activar características adicionales!&quot;</string>
-    <string name="iab_header">Actualizar Oversec</string>
-    <string name="iab_body">Actualizar Oversec apoya el desarrollo continuo de la aplicación y hace posible que esas características adicionales:\n\n* Personalización de los colores\n* Contenido para los señuelos personalizado\n* Descifrar fotos e imágenes.</string>
+    <string name="settings_upgrade">&quot;Estás ejecutando la versión sencilla de &appname;.\n¡Actualiza ahora para activar características adicionales!&quot;</string>
+    <string name="iab_header">Actualizar &appname;</string>
+    <string name="iab_body">Actualizar &appname; apoya el desarrollo continuo de la aplicación y hace posible que esas características adicionales:\n\n* Personalización de los colores\n* Contenido para los señuelos personalizado\n* Descifrar fotos e imágenes.</string>
     <string name="iab_noiab">Lo sentimos, no encontramos\ ninguna aplicación con soporte para facturación en este teléfono, así que desafortunadamente no es posible actualizar en este momento.\n\n¡Estamos trabajando para poder ofrecer métodos de facturación adicionales!\n\nPor favor, inténtelo de nuevo con una próxima versión.</string>
     <string name="iab_listheader">Por favor, seleccione la opción de su conveniencia:</string>
-    <string name="toast_panicmode_disabled">¡Oversec ha salido del modo de pánico!</string>
+    <string name="toast_panicmode_disabled">¡&appname; ha salido del modo de pánico!</string>
     <string name="secretdialer_code">Su código secreto de dial es*#*#%1$s#*#*</string>
     <string name="secretdialer_code_too_short">¡El código debe tener al menos %1$s dígitos!</string>
     <string name="secretdialer_code_initial_confirm">Por favor, marque el código una vez para confirmar.</string>
@@ -168,9 +172,9 @@
     <string name="secretdialer_code_needs_to_be_set_up">Por favor, configure primero el código secreto de dial.</string>
 
     <string name="overlaypermissionswarning_title">Permiso requerido</string>
-    <string name="overlaypermissionswarning_text">Actualmente, Oversec no\ tiene permiso para extraer otras aplicaciones.\n\n¡Oversec no puede funcionar sin este permiso!\n\nPor favor, selecciones \&quot;Ajustes\&quot; y permita la extracción de otras aplicaciones.</string>
+    <string name="overlaypermissionswarning_text">Actualmente, &appname; no\ tiene permiso para extraer otras aplicaciones.\n\n¡&appname; no puede funcionar sin este permiso!\n\nPor favor, selecciones \&quot;Ajustes\&quot; y permita la extracción de otras aplicaciones.</string>
     <string name="action_settings">Ajustes</string>
-    <string name="tooltip_app_issues">Podrá encontrar información adicional sobre el funcionamiento de Oversec %1$s en la ayuda en línea.</string>
+    <string name="tooltip_app_issues">Podrá encontrar información adicional sobre el funcionamiento de &appname; %1$s en la ayuda en línea.</string>
     <string name="tooltip_buttoncompose">Pulse aquí para ingresar y encriptar un texto en el portapapeles.</string>
     <string name="activity_compose_title">Componer un texto para el portapapeles</string>
     <string name="compose_text_hint">Introducir el texto para encriptar y poner en el portapapeles</string>
@@ -180,11 +184,11 @@
 
     <string name="action_later">Más tarde</string>
 
-    <string name="warning_app_with_serious_issues_enabled">La aplicación %s tiene graves problemas y no\ funciona bien con Oversec.\n\nPor favor, consulte la información más reciente en nuestra ayuda en línea para obtener más detalles.</string>
+    <string name="warning_app_with_serious_issues_enabled">La aplicación %s tiene graves problemas y no\ funciona bien con &appname;.\n\nPor favor, consulte la información más reciente en nuestra ayuda en línea para obtener más detalles.</string>
 
     <string name="question_ignore_text">¿Desea hacer caso omiso de este texto a partir de ahora?</string>
     <string name="action_ignore_text">Ignorar este texto.</string>
 
-    <string name="actionaccessibilitysettingsnotresolvable_text">Oversec debe esta activada como un servicio de accesibilidad en su teléfono, pero no logramos\ abrir automáticamente la página de \&quot;Accesibilidad\&quot; en la configuración de Android.\n\nPor favor, abra la página de \&quot;Accesibilidad\&quot; en los ajustes de su teléfono, ubique \&quot;Oversec\&quot; y actívela.\n\n¡Oversec no puede funcionar a menos que esté habilitada como un servicio de accesibilidad!</string>
+    <string name="actionaccessibilitysettingsnotresolvable_text">&appname; debe esta activada como un servicio de accesibilidad en su teléfono, pero no logramos\ abrir automáticamente la página de \&quot;Accesibilidad\&quot; en la configuración de Android.\n\nPor favor, abra la página de \&quot;Accesibilidad\&quot; en los ajustes de su teléfono, ubique \&quot;&appname;\&quot; y actívela.\n\n¡&appname; no puede funcionar a menos que esté habilitada como un servicio de accesibilidad!</string>
 
 </resources>

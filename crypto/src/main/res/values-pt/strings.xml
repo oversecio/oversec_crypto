@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources [
+        <!ENTITY % ents SYSTEM "entities.dtd">
+        %ents;
+        ]>
 <resources>
     <string name="title_activity_keys">Chaves</string>
     <string name="common_ok">OK</string>
@@ -156,9 +160,9 @@
     <string name="title_activity_encryption_info">Informações de criptografia</string>
     <string name="decrypt_error_user_interaction_required">Entrada obrigatória</string>
     <string name="decrypt_error_user_interaction_required__long">Entrada (de senha) obrigatória para descriptografar!</string>
-    <string name="decrypt_error_common">Erro do Oversec</string>
+    <string name="decrypt_error_common">Erro do &appname;</string>
     <string name="decrypt_error_gpg">Falha na descriptografia PGP</string>
-    <string name="decrypt_error_proto">Erro do Oversec. Tente atualizar o aplicativo Oversec!</string>
+    <string name="decrypt_error_proto">Erro do &appname;. Tente atualizar o aplicativo &appname;!</string>
     <string name="decrypt_error_generic">Falha ao descriptografar</string>
     <string name="decrypt_error_no_gpg_handler">O Openkeychain é necessário para descriptografar isso</string>
     <string name="compose_pgp_lbl_ownkey">Eu</string>
@@ -202,7 +206,7 @@
     <string name="error_image_decrypt_noencodeddata">Não foram encontrados dados criptografados na imagem de origem.</string>
     <string name="warning_image_encoding_no_method">Primeiro selecione o método de codificação!</string>
     <string name="error_image_encode_generic">Algo saiu errado ao tentar codificar esta imagem.</string>
-    <string name="error_image_encode_source_not_found">Não foi possível ler a imagem de origem!\nObserve que as fotos tiradas dentro do Oversec são excluídas automaticamente pouco tempo depois!</string>
+    <string name="error_image_encode_source_not_found">Não foi possível ler a imagem de origem!\nObserve que as fotos tiradas dentro do &appname; são excluídas automaticamente pouco tempo depois!</string>
     <string name="intent_chooser_share_unencrypted_image">Compartilhar a imagem _UN_encrypted por…</string>
     <string name="warning_image_resized">A imagem da entrada é grande demais, redimensionada automaticamente a %1$d por cento</string>
     <string name="action_encrypt_image">Criptografar imagem</string>
@@ -214,7 +218,7 @@
     <string name="okc_installed_but_too_old">Você tem um aplicativo OpenKeychain versão %1$s, que não é compatível. Atualize!</string>
     <string name="key_created">Chave criada</string>
     <string name="action_gotit">Peguei</string>
-    <string name="tooltip_apps_fragment">Configure seus aplicativos para usar com o Oversec.\n\nPré-selecionamos alguns aplicativos para você. Analise!</string>
+    <string name="tooltip_apps_fragment">Configure seus aplicativos para usar com o &appname;.\n\nPré-selecionamos alguns aplicativos para você. Analise!</string>
     <string name="action_moreinfo">Mais informações</string>
     <string name="action_help">Ajuda</string>
     <string name="accept_insecure_password">Entendo que esta senha é fraca, mas quero usá-la mesmo assim!</string>
@@ -232,8 +236,8 @@
     <string name="dialog_explore_label_signed_by">Assinado por:</string>
     <string name="simple_password_unlock_key">Desbloquear chave…</string>
     <string name="simple_password_to_decrypt_this">para descriptografar este texto:</string>
-    <string name="tooltip_settextfailed">O Oversec não conseguiu escrever o texto codificado no aplicativo de base!\n\nProvavelmente, isso aconteceu porque o aplicativo de base permite apenas um número limitado de caracteres no campo de entrada!\n\nTente com menos destinatários ou use a criptografia simétrica, que é mais compacta!</string>
-    <string name="tooltip_encodingtoolong">A mensagem criptografada/codificada é longa demais!\n\nO Oversec não escreveu a mensagem no aplicativo de base. Se tivesse escrito, ele iria travar!\n\nTente com menos destinatários ou use a criptografia simétrica, que é mais compacta!</string>
+    <string name="tooltip_settextfailed">O &appname; não conseguiu escrever o texto codificado no aplicativo de base!\n\nProvavelmente, isso aconteceu porque o aplicativo de base permite apenas um número limitado de caracteres no campo de entrada!\n\nTente com menos destinatários ou use a criptografia simétrica, que é mais compacta!</string>
+    <string name="tooltip_encodingtoolong">A mensagem criptografada/codificada é longa demais!\n\nO &appname; não escreveu a mensagem no aplicativo de base. Se tivesse escrito, ele iria travar!\n\nTente com menos destinatários ou use a criptografia simétrica, que é mais compacta!</string>
 
 </resources>
 

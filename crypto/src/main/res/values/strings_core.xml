@@ -1,32 +1,36 @@
+<!DOCTYPE resources [
+        <!ENTITY % ents SYSTEM "entities.dtd">
+        %ents;
+        ]>
 <resources>
-    <string name="acs_label" translatable="false">Oversec</string>
-    <string name="acs_description">Enabling Oversec as an accessibility service allows it to read and decrypt the screen content.</string>
+    <string name="acs_label" translatable="false">&appname;</string>
+    <string name="acs_description">Enabling &appname; as an accessibility service allows it to read and decrypt the screen content.</string>
     <string name="action_reenable_boss">Reactivate</string>
     <string name="action_configure">Configure</string>
     <string name="main_tab_help">Setup</string>
     <string name="main_tab_apps">Apps</string>
-    <string name="notification_title__active">Oversec is active</string>
-    <string name="notification_title__hidden">Oversec is hidden</string>
+    <string name="notification_title__active">&appname; is active</string>
+    <string name="notification_title__hidden">&appname; is hidden</string>
     <string name="notification_body__active">Touch here to configure</string>
     <string name="notification_body__hidden">Touch here to show</string>
     <string name="notification_action_boss">STOP</string>
     <string name="notification_action_hide">Hide</string>
     <string name="notification_action_show">Show</string>
-    <string name="settings_acs_not_enabled">Oversec is not configured as Accessibility Service. but it need\'s to!\nTap \"Configure\" to open the settings page now, then tap \"Oversec\" and switch it \"On\".</string>
-    <string name="settings_acs_enabled_ok">Oversec is correctly configured as Accessibility Service.</string>
+    <string name="settings_acs_not_enabled">&appname; is not configured as Accessibility Service. but it need\'s to!\nTap \"Configure\" to open the settings page now, then tap \"&appname;\" and switch it \"On\".</string>
+    <string name="settings_acs_enabled_ok">&appname; is correctly configured as Accessibility Service.</string>
     <string name="settings_help">Online Help</string>
-    <string name="settings_boss_active">Oversec is in Panic mode.</string>
-    <string name="controls_checkbox_enable">Enable Oversec</string>
-    <string name="controls_checkbox_enable_sub">Enable Oversec for %1$s</string>
+    <string name="settings_boss_active">&appname; is in Panic mode.</string>
+    <string name="controls_checkbox_enable">Enable &appname;</string>
+    <string name="controls_checkbox_enable_sub">Enable &appname; for %1$s</string>
     <string name="controls_checkbox_starthidden">Start hidden</string>
-    <string name="controls_checkbox_starthidden_sub">Oversec will initially be hidden when switching to %1$s</string>
+    <string name="controls_checkbox_starthidden_sub">&appname; will initially be hidden when switching to %1$s</string>
     <string name="controls_slider_corners">Corners</string>
     <string name="controls_slider_fontsize">Text-size</string>
     <string name="controls_slider_padding_left">Pad left</string>
     <string name="controls_slider_padding_top">Pad top</string>
-    <string name="share_body">Oversec: Encryption for all apps!\n\nGet the Oversec app and add encryption to all Android apps.\n\nSend eye-to-eye encrypted messages with Whatsapp, Line, SMS, Facebook, Gmail or any other app.\n\nhttp://dl.oversec.io</string>
+    <string name="share_body">&appname;: Encryption for all apps!\n\nGet the &appname; app and add encryption to all Android apps.\n\nSend eye-to-eye encrypted messages with Whatsapp, Line, SMS, Facebook, Gmail or any other app.\n\nhttp://dl.&appname;.io</string>
     <string name="share_chooser_title">Share via </string>
-    <string name="share_as_suffix">Install Oversec to decrypt!\nhttp://dl.oversec.io</string>
+    <string name="share_as_suffix">Install &appname; to decrypt!\nhttp://dl.&appname;.io</string>
     <string name="notification_acsnotrunning_title">Accessibility service not running</string>
     <string name="notification_acsnotrunning_body">Tap here to enable!</string>
     <string name="decrypt_in_progress">Decrypting…</string>
@@ -43,7 +47,7 @@
     <string name="controls_checkbox_infobutton" translatable="false">Info Button</string>
     <string name="controls_hint_showinfobutton">En-/Disables Info Mode to display additional encryption information.</string>
     <string name="controls_checkbox_hidebutton">Hide Button</string>
-    <string name="controls_checkbox_hidebutton_sub">The Hide button allows you to temporarily hide the Oversec overlay.</string>
+    <string name="controls_checkbox_hidebutton_sub">The Hide button allows you to temporarily hide the &appname; overlay.</string>
     <string name="controls_checkbox_composebutton">Compose Button</string>
     <string name="controls_checkbox_composebutton_sub">This Button allows you to open a dialog to enter text and encrypt to the clipboard.</string>
     <string name="controls_checkbox_decryptbutton">Decrypt/Clear Button</string>
@@ -53,11 +57,11 @@
     <string name="controls_checkbox_configbutton">Config Button</string>
     <string name="controls_hint_configbutton">Show configuration page. This page can also be opened through the notification bar or by double-tapping the Hide-button.</string>
     <string name="controls_checkbox_notification">Notification</string>
-    <string name="controls_hint_shownotification">Show a permanent notification to control Oversec.</string>
+    <string name="controls_hint_shownotification">Show a permanent notification to control &appname;.</string>
     <string name="controls_checkbox_hqscrape" translatable="false">High Quality Scraping</string>
     <string name="controls_hint_hqscrape" translatable="false">Performs more frequent and deeper screen reading. Produces a smoother UX at the cost of increased battery use.</string>
     <string name="controls_checkbox_includenotimporantviews" translatable="false">Scrape All Views</string>
-    <string name="controls_hint_includenotimporantviews" translatable="false">Include views that are deemed as "Not Important". This is needed for a few apps only. This slows down Oversec and uses more battery!.</string>
+    <string name="controls_hint_includenotimporantviews" translatable="false">Include views that are deemed as "Not Important". This is needed for a few apps only. This slows down &appname; and uses more battery!.</string>
     <string name="controls_checkbox_spreadinvisibleencoding" translatable="false">Spread Invisible Encoding</string>
     <string name="controls_hint_spreadinvisibleencoding" translatable="false">Spread invisible characters within decoy text, rather than putting all of them at the beginning. This is needed for some apps like e.g. Instagram</string>
     <string name="controls_checkbox_dontshowdecryptionfailed" translatable="false">Don\'t show error if no matching key</string>
@@ -75,8 +79,8 @@
     <string name="controls_hint_innerpadding">Add (at max) this number of random bytes before encrypting. This prevents an attacker from guessing the original message by the number of characters </string>
     <string name="title_activity_appconfig">App Settings</string>
     <string name="title_activity_encryption_params">Encryption</string>
-    <string name="msg_is_temp_hidden">Oversec is temporarily hidden for this app!</string>
-    <string name="action_unhide">Show Oversec over this app</string>
+    <string name="msg_is_temp_hidden">&appname; is temporarily hidden for this app!</string>
+    <string name="action_unhide">Show &appname; over this app</string>
     <string name="toast_no_info_nodes">No encrypted text on screen!</string>
     <string name="controls_checkbox_infoontap">Tap to show info</string>
     <string name="controls_hint_infoontap">Tapping on an encrypted text will show detailed encryption info.\nWarning: This might interfere with the UX of the subjacent app! </string>
@@ -87,7 +91,7 @@
     <string name="controls_checkbox_encryptbutton">Encrypt Button</string>
     <string name="controls_hint_showencryptbutton">Show the encrypt button next to the active input field. (Decrypt button also won\'t show if encrypt button is not shown)</string>
     <string name="sample_decrypted_text">Hello World</string>
-    <string name="action_share_app">Share Oversec</string>
+    <string name="action_share_app">Share &appname;</string>
     <string name="exception_msg">Unexpected Error: %s</string>
     <string name="action_pgp_choose_own_key">Select your own PGP key</string>
     <string name="toast_insufficient_padding">Please enter more text until the border around the input turns green!</string>
@@ -95,19 +99,19 @@
     <string name="toast_longtap_encryptionbutton">Previous encryption parameters in use!\nTo change encryption parameters, long-tap the encryption button!</string>
     <string name="toast_corrupted_encoding">Bummer! The encrypted message has been corrupted!\nThe only way out is to start over!</string>
     <string name="action_clear_input">Clear Input</string>
-    <string name="crash_email" translatable="false">crashreport@oversec.io</string>
+    <string name="crash_email" translatable="false">crashreport@&appname;.io</string>
     <string name="crash_report_via_title">Select email app to send crash report</string>
-    <string name="crash_report_subject">Oversec Crash Report</string>
-    <string name="crash_title">Ooops! Oversec just crashed.</string>
+    <string name="crash_report_subject">&appname; Crash Report</string>
+    <string name="crash_title">Ooops! &appname; just crashed.</string>
     <string name="crash_subtitle">Please help by emailing us this bug report:</string>
     <string name="crash_activity_title">Crash Report</string>
-    <string name="bug_email" translatable="false">bugreport@oversec.io</string>
+    <string name="bug_email" translatable="false">bugreport@&appname;.io</string>
     <string name="bug_report_via_title">Select email app to send bug report</string>
-    <string name="bug_report_subject">Oversec Bug Report</string>
+    <string name="bug_report_subject">&appname; Bug Report</string>
     <string name="main_tab_keys">Keys</string>
     <string name="main_tab_settings">Settings</string>
-    <string name="tooltip_hidebutton_nothidden">Tap this button to temporarily hide the Oversec overlay.\n\nLong-Tap to completely exit Oversec and clear all remembered keys. (Panic-Button!)</string>
-    <string name="tooltip_hidebutton_hidden">Now tap at the same position again to bring back the Oversec overlay.</string>
+    <string name="tooltip_hidebutton_nothidden">Tap this button to temporarily hide the &appname; overlay.\n\nLong-Tap to completely exit &appname; and clear all remembered keys. (Panic-Button!)</string>
+    <string name="tooltip_hidebutton_hidden">Now tap at the same position again to bring back the &appname; overlay.</string>
     <string name="action_help_perapp">Show info for \"%1$s\"</string>
     <string name="action_send_bugreport_perapp">Report a problem for \"%1$s\"</string>
     <string name="action_send_bugreport">Report a problem</string>
@@ -119,13 +123,13 @@
     <string name="mainprefs_screenoffpanic_title">Panic when screen off</string>
     <string name="mainprefs_screenoffpanic_summary">Enter panic mode when screen turns off</string>
     <string name="mainprefs_hidelauncheronpanic_title">Hide launcher icon in Panic Mode</string>
-    <string name="mainprefs_hidelauncheronpanic_summary">Hides the oversec launder icon in panic mode. To reactivate Oversec after panic mode, you need to dial the secret code in the Dialer (Phone) app!</string>
+    <string name="mainprefs_hidelauncheronpanic_summary">Hides the &appname; launder icon in panic mode. To reactivate &appname; after panic mode, you need to dial the secret code in the Dialer (Phone) app!</string>
     <string name="mainprefs_launchersecretcode_title">Secret Dialer Code</string>
-    <string name="mainprefs_launchersecretcode_summary">After a panic, you can reactivate Oversec by dialing this code in your dialer app.</string>
+    <string name="mainprefs_launchersecretcode_summary">After a panic, you can reactivate &appname; by dialing this code in your dialer app.</string>
 
 
     <string name="tooltip_buttonencrypt_initial">Tap here to encrypt the text you have entered.</string>
-    <string name="title_activity_about">About Oversec</string>
+    <string name="title_activity_about">About &appname;</string>
     <string name="action_about">about</string>
     <string name="about_tab_changelog">Changelog</string>
     <string name="about_tab_about">About</string>
@@ -135,7 +139,7 @@
     <string name="main_tab_padder">Decoy</string>
     <string name="error_padder_name_too_short">Please enter at least %1$d characters</string>
     <string name="error_padder_content_too_short">Please enter at least %1$d characters</string>
-    <string name="upgrade_overlay_msg">Please support Oversec development by upgrading to the full version.</string>
+    <string name="upgrade_overlay_msg">Please support &appname; development by upgrading to the full version.</string>
     <string name="upgrade_interstitial_title">Please Upgrade</string>
     <string name="upgrade_interstitial_content">This functionality is only available in the full version!</string>
     <string name="upgrade_visual_settings">Please upgrade to enable the color controls below:</string>
@@ -143,24 +147,24 @@
     <string name="action_upgrade">Upgrade now</string>
     <string name="controls_checkbox_storeencryptionparamsperpackageonly">Singleton encryption params</string>
     <string name="controls_hint_storeencryptionparamsperpackageonly">Stores only one set of encryption parameters per app. This is intended for notes keeping apps only, it should not be enabled for communication apps.</string>
-    <string name="tooltip_encryptionparams_simplesym_general">Encrypt by sharing a simple password only.\nThis is a good way to try out Oversec, but it\'s not very secure.</string>
+    <string name="tooltip_encryptionparams_simplesym_general">Encrypt by sharing a simple password only.\nThis is a good way to try out &appname;, but it\'s not very secure.</string>
     <string name="tooltip_encryptionparams_sym_general">Encrypt with shared symmetric keys. You need to share the key with the other party!</string>
     <string name="tooltip_encryptionparams_gpg_general">Encrypt with PGP public/private keys. You need OpenKeychain to use this!</string>
     <string name="tooltip_encryptionparams_fab">Tap here to encrypt and go back to your app.</string>
     <string name="tooltip_encryptionparams_gpg_choose_own_key">Please select your own key first!</string>
-    <string name="onboarding_text">You\'re one step away from using Oversec:\n\nIn the settings screen below, tap on \"Oversec\" and then switch it "on".\n\n(On some phones, you need to scroll down to the end of the list to see the \"Oversec\" entry.)</string>
-    <string name="settings_acs_post_enable_title">Oversec is ready!</string>
-    <string name="settings_acs_post_enable_msg">Now simply start using one of your Oversec enabled apps:</string>
+    <string name="onboarding_text">You\'re one step away from using &appname;:\n\nIn the settings screen below, tap on \"&appname;\" and then switch it "on".\n\n(On some phones, you need to scroll down to the end of the list to see the \"&appname;\" entry.)</string>
+    <string name="settings_acs_post_enable_title">&appname; is ready!</string>
+    <string name="settings_acs_post_enable_msg">Now simply start using one of your &appname; enabled apps:</string>
     <string name="settings_acs_post_enable_btn_configure">Enable other apps</string>
-    <string name="onboarding_title">Welcome to Oversec</string>
-    <string name="checkbox_add_oversec_link">Add a link to the Oversec app</string>
+    <string name="onboarding_title">Welcome to &appname;</string>
+    <string name="checkbox_add_oversec_link">Add a link to the &appname; app</string>
     <string name="action_clear_ignored_keys">clear %1$d ignored texts</string>
-    <string name="settings_upgrade">"You're running plain vanilla Oversec.\nUpgrade now to enable additional features!"</string>
-    <string name="iab_header">Upgrade Oversec</string>
+    <string name="settings_upgrade">"You're running plain vanilla &appname;.\nUpgrade now to enable additional features!"</string>
+    <string name="iab_header">Upgrade &appname;</string>
     <string name="iab_body">Upgrading supports ongoing development and enables those additional features:\n\n* Customize colors\n* Custom decoy content\n* Decrypt photos and images</string>
     <string name="iab_noiab">Sorry, we couldn\'t find any supported app store for in-app billing on this phone, so unfortunately upgrading is not possible at this time.\n\nWe\'re working hard on supporting additional billing methods!\n\nPlease try again with an upcoming version.</string>
     <string name="iab_listheader">Please select what suits you best:</string>
-    <string name="toast_panicmode_disabled">Oversec exited Panic Mode!</string>
+    <string name="toast_panicmode_disabled">&appname; exited Panic Mode!</string>
     <string name="secretdialer_code">Your secret dialer code is *#*#%1$s#*#*</string>
     <string name="secretdialer_code_too_short">The code should be at least %1$s digits long!</string>
     <string name="secretdialer_code_initial_confirm">Please dial this code once to confirm!</string>
@@ -171,9 +175,9 @@
     <string name="secretdialer_code_needs_to_be_set_up">Please set up the Secret Dialer Code first!</string>
 
     <string name="overlaypermissionswarning_title">Permission Required</string>
-    <string name="overlaypermissionswarning_text">Oversec currently doesn\'t have permission to draw over other Apps.\n\nOversec can not function without this permission!\n\nPlease tap on \"Settings\" and then permit drawing over other apps.</string>
+    <string name="overlaypermissionswarning_text">&appname; currently doesn\'t have permission to draw over other Apps.\n\n&appname; can not function without this permission!\n\nPlease tap on \"Settings\" and then permit drawing over other apps.</string>
     <string name="action_settings">Settings</string>
-    <string name="tooltip_app_issues">There is additional information for using Oversec with %1$s in the online help</string>
+    <string name="tooltip_app_issues">There is additional information for using &appname; with %1$s in the online help</string>
     <string name="tooltip_buttoncompose">Tap here to enter and encrypt a text to the clipboard</string>
     <string name="activity_compose_title">Compose Text For Clipboard</string>
     <string name="compose_text_hint">Enter text to encrypt and put into clipboard</string>
@@ -183,11 +187,11 @@
 
     <string name="action_later">Later</string>
 
-    <string name="warning_app_with_serious_issues_enabled">The %s app has serious issues and doesn\'t work well with Oversec.\n\nPlease check the lastest infos in our online help for more details!</string>
+    <string name="warning_app_with_serious_issues_enabled">The %s app has serious issues and doesn\'t work well with &appname;.\n\nPlease check the lastest infos in our online help for more details!</string>
 
     <string name="question_ignore_text">Do you want to ignore this text from now on?</string>
     <string name="action_ignore_text">Ignore this text</string>
 
-    <string name="actionaccessibilitysettingsnotresolvable_text">Oversec needs to be enabled as an Accessibility Service on your phone, but we couldn\'t automatically open the Android Settings \"Accessibility\" page.\n\nPlease manually locate and open the \"Accessibility\" page in your phone\'s settings, then locate \"Oversec\" and enable it.\n\nOversec can not function unless it\'s enabled as an Accessibility Service!</string>
+    <string name="actionaccessibilitysettingsnotresolvable_text">&appname; needs to be enabled as an Accessibility Service on your phone, but we couldn\'t automatically open the Android Settings \"Accessibility\" page.\n\nPlease manually locate and open the \"Accessibility\" page in your phone\'s settings, then locate \"&appname;\" and enable it.\n\n&appname; can not function unless it\'s enabled as an Accessibility Service!</string>
 
 </resources>

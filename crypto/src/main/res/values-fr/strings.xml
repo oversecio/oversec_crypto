@@ -1,5 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources [
+        <!ENTITY % ents SYSTEM "entities.dtd">
+        %ents;
+        ]>
 <resources>
-<string name="app_name">Oversec</string>
+<string name="app_name">&appname;</string>
  <string name="title_activity_keys">Clés</string>
  <string name="common_ok">OK</string>
  <string name="common_cancel">Annuler</string>
@@ -149,9 +154,9 @@
  <string name="title_activity_encryption_info">Infos de cryptage</string>
  <string name="decrypt_error_user_interaction_required">Input required</string>
  <string name="decrypt_error_user_interaction_required__long">Saisie du mot de passe nécessaire pour déchiffrer!</string>
- <string name="decrypt_error_common">Erreur Oversec </string>
+ <string name="decrypt_error_common">Erreur &appname; </string>
  <string name="decrypt_error_gpg">Le décryptage PGP a échoué</string>
- <string name="decrypt_error_proto">"Erreur Oversec</string>
+ <string name="decrypt_error_proto">"Erreur &appname;</string>
  <string name="decrypt_error_generic">La décryption a échoué</string>
  <string name="decrypt_error_no_gpg_handler">Openkeychain est nécessaire pour décrypter ce message</string>
  <string name="compose_pgp_lbl_ownkey">Moi-même</string>
@@ -195,7 +200,7 @@
  <string name="error_image_decrypt_noencodeddata">Pas de données chiffrées n\'ont été trouvées dans l\'image source.</string>
  <string name="warning_image_encoding_no_method">Merci de sélectionner la méthode de codage d\'abord!</string>
  <string name="error_image_encode_generic">Quelque chose a mal tourné lors de la tentative de codage de cette image.</string>
- <string name="error_image_encode_source_not_found">Impossible de lire l\'image source!\nNotez que les photos prises par Oversec sont automatiquement supprimées peu de temps après avoir été prises!</string>
+ <string name="error_image_encode_source_not_found">Impossible de lire l\'image source!\nNotez que les photos prises par &appname; sont automatiquement supprimées peu de temps après avoir été prises!</string>
  <string name="intent_chooser_share_unencrypted_image">Partager une image non-cryptée via</string>
  <string name="warning_image_resized">"L\'image est trop grande</string>
  <string name="action_encrypt_image">Encryption de l\'image</string>
@@ -207,7 +212,7 @@
  <string name="okc_installed_but_too_old">Votre  application OpenKeychain est en version %1$s et donc non-supportee. Veuillez la mettre à jour!</string>
  <string name="key_created">Clé créée</string>
  <string name="action_gotit">Je l\'ai</string>
- <string name="tooltip_apps_fragment">"Configurer vos applications pour une utilisation avec Oversec.\n\nNous avons présélectionné quelques applications pour vous</string>
+ <string name="tooltip_apps_fragment">"Configurer vos applications pour une utilisation avec &appname;.\n\nNous avons présélectionné quelques applications pour vous</string>
  <string name="action_moreinfo">Plus d\'informations</string>
  <string name="action_help">Aide</string>
  <string name="accept_insecure_password">"Je comprends que ce mot de passe est faible</string>
@@ -226,8 +231,8 @@
  <string name="dialog_explore_label_signed_by">Signé par:</string>
  <string name="simple_password_unlock_key">Dévérouiller la clé ...</string>
  <string name="simple_password_to_decrypt_this">Pour décrypter ce texte:</string>
- <string name="tooltip_settextfailed">"Oversec ne pouvait pas écrire le texte codé dans l\'application sous-jacente!\n\nCeci est probablement dû à l\'application sous-jacente qui ne permet qu\'un nombre limité de caractères dans le champ de saisie!\n\nEssayer en utilisant moins de destinataires ou en utilisant le chiffrement symétrique</string>
- <string name="tooltip_encodingtoolong">Le message crypté/encodé est trop long!\n\nOversec n\'a pas écrit le message en retour, sinon l\'application sous-jacente crasherait!\n\nEssayez en utilisant moins de destinataires ou en utilisant le chiffrement symétrique</string>
+ <string name="tooltip_settextfailed">"&appname; ne pouvait pas écrire le texte codé dans l\'application sous-jacente!\n\nCeci est probablement dû à l\'application sous-jacente qui ne permet qu\'un nombre limité de caractères dans le champ de saisie!\n\nEssayer en utilisant moins de destinataires ou en utilisant le chiffrement symétrique</string>
+ <string name="tooltip_encodingtoolong">Le message crypté/encodé est trop long!\n\n&appname; n\'a pas écrit le message en retour, sinon l\'application sous-jacente crasherait!\n\nEssayez en utilisant moins de destinataires ou en utilisant le chiffrement symétrique</string>
  <plurals name="notification_cachedkeys_title">
   <item quantity="one">Un mot de passe en cache</item>
   <item quantity="other">%d mots de passe en cache</item>

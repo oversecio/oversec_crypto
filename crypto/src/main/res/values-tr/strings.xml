@@ -1,3 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources [
+        <!ENTITY % ents SYSTEM "entities.dtd">
+        %ents;
+        ]>
 <resources>
     <string name="title_activity_keys">Şifreleme Anahtarları</string>
     <string name="common_ok">Tamam</string>
@@ -153,9 +158,9 @@
     <string name="title_activity_encryption_info">Şifreleme Bilgisi</string>
     <string name="decrypt_error_user_interaction_required">Girdi gerekli</string>
     <string name="decrypt_error_user_interaction_required__long">(Parola) girdisi gerekli!</string>
-    <string name="decrypt_error_common">Oversec Hatası</string>
+    <string name="decrypt_error_common">&appname; Hatası</string>
     <string name="decrypt_error_gpg">PGP deşifre işlemi başarısız</string>
-    <string name="decrypt_error_proto">Oversec Hatası, Oversec uygulamasını güncellemeyi deneyin</string>
+    <string name="decrypt_error_proto">&appname; Hatası, &appname; uygulamasını güncellemeyi deneyin</string>
     <string name="decrypt_error_generic">Deşifre işlemi başarısız</string>
     <string name="decrypt_error_no_gpg_handler">Bunu deşifre etmek için Openkeychain gerekli</string>
     <string name="compose_pgp_lbl_ownkey">Kendi anahtarım</string>
@@ -199,7 +204,7 @@
     <string name="error_image_decrypt_noencodeddata">Kaynak imajda kriptolu veri bulunamadı.</string>
     <string name="warning_image_encoding_no_method">Lütfen şifreleme türünü seçin!</string>
     <string name="error_image_encode_generic">Bu imajı şifrelemeye çalışırken bir hata oluştu.</string>
-    <string name="error_image_encode_source_not_found">Kaynak imaj okunamıyor!\n Oversec üzerinden alınan fotoğrafların bir süre sonra otomatik silindiğini unutmayın!</string>
+    <string name="error_image_encode_source_not_found">Kaynak imaj okunamıyor!\n &appname; üzerinden alınan fotoğrafların bir süre sonra otomatik silindiğini unutmayın!</string>
     <string name="intent_chooser_share_unencrypted_image">ŞifrelenMEMİŞ imajı paylaş…</string>
     <string name="warning_image_resized">Girilen imaj çok büyük, otomatik olarak %1$d oranında tekrar boyutlandırıldı.</string>
     <string name="action_encrypt_image">İmajı Şifrele</string>
@@ -211,7 +216,7 @@
     <string name="okc_installed_but_too_old">Kullandığınız OpenKeychain versiyonu " %1$s " desteklenmiyor . Lütfen güncelleyin.</string>
     <string name="key_created">Anahtar oluşturuldu</string>
     <string name="action_gotit">Anladım</string>
-    <string name="tooltip_apps_fragment">Uygulamalarınız Oversec ile kullanmak için konfigüre edin.\n\nLütfen, Sizin için seçtiğimiz uygulamaları inceleyin!</string>
+    <string name="tooltip_apps_fragment">Uygulamalarınız &appname; ile kullanmak için konfigüre edin.\n\nLütfen, Sizin için seçtiğimiz uygulamaları inceleyin!</string>
     <string name="action_moreinfo">Daha Fazla Bilgi</string>
     <string name="action_help">Yardım</string>
     <string name="accept_insecure_password">Bu parolanın zayıf olduğunu biliyor ve buna rağmen kullanmak istiyorum!</string>

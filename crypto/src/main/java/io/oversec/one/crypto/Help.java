@@ -57,7 +57,7 @@ public class Help {
     public static void open(Context ctx, String anchor) {
         try {
             String url =  anchor;
-            if (!url.startsWith(URL_INDEX)) {
+            if (url==null || !url.startsWith(URL_INDEX)) {
                 url = URL_INDEX + (anchor == null ? "" : "#alias_" + anchor);
             }
             Intent i = new Intent(Intent.ACTION_VIEW);

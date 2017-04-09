@@ -134,7 +134,7 @@
     <string name="about_tab_purchases">Покупки</string>
     <string name="controls_checkbox_showuserinteractiondialogsimmediately">Показать немедленно входные диалоговые окна</string>
     <string name="controls_hint_showuserinteractiondialogsimmediately">Когда должно быть показано диалоговое окно ввода (пароль) для расшифровки, оно показывается немедленно, без предварительного запроса пользователя.</string>
-    <string name="main_tab_padder">Наложение</string>
+    <string name="main_tab_padder">Приманка</string>
     <string name="error_padder_name_too_short">Введите, по крайней мере, символы %1$d</string>
     <string name="error_padder_content_too_short">Введите, по крайней мере, символы %1$d</string>
     <string name="upgrade_overlay_msg">Поддержите разработку &appname;, выполнив обновление до полной версии.</string>
@@ -159,7 +159,7 @@
     <string name="action_clear_ignored_keys">очистить игнорируемые тексты %1$s</string>
     <string name="settings_upgrade">«У вас запущено простейшее приложение &appname;.\nОбновите сейчас, чтобы включить дополнительные функции!»</string>
     <string name="iab_header">Обновление &appname;</string>
-    <string name="iab_body">Обновление поддерживает постоянное развитие и включает эти дополнительные функции:\n\n* Настраиваемые цвета\n* Настраиваемый контент наложения\n* Расшифровка фотографий и изображений</string>
+    <string name="iab_body">Обновление поддерживает постоянное развитие и включает эти дополнительные функции:\n\n* Настраиваемые цвета\n* Настраиваемый контент приманкая\n* Расшифровка фотографий и изображений</string>
     <string name="iab_noiab">Извините, но мы не смогли найти какой-либо поддерживаемый магазин приложений для внутренних платежей на этом телефоне, поэтому, к сожалению, обновление в настоящее время невозможно.\n\nМы прилагаем все усилия по поддержке дополнительных способов биллинга!\n\nПовторите попытку с предстоящей версией.</string>
     <string name="iab_listheader">Выберите то, что подходит вам лучше всего:</string>
     <string name="toast_panicmode_disabled">&appname; вышло из режима тревоги!</string>

@@ -226,8 +226,8 @@
     <string name="tooltip_keys_fragment">Это ваши симметричные ключи.\nВы не нуждаетесь в них, если используете простой пароль или шифрование PGP.</string>
     <string name="warning">Предупреждение</string>
     <string name="warning_pgp_messages_are_big">Сообщения, закодированные по PGP, добавляют непроизводительные затраты около 3 килобайт или более на сообщение. Учитывайте это, если у вас ограниченный план данных и возможно использование симметричного шифрования взамен!</string>
-    <string name="tooltip_padders_fragment">Это контент наложения, который будет показываться вместо невидимого зашифрованного текста.</string>
-    <string name="title_activity_padder_detail">Наложение</string>
+    <string name="tooltip_padders_fragment">Это контент приманкая, который будет показываться вместо невидимого зашифрованного текста.</string>
+    <string name="title_activity_padder_detail">Приманка</string>
     <string name="label_padder_name">Имя:</string>
     <string name="label_padder_content">Контент:</string>
     <string name="simple_password_decrypt_this">расшифровать это:</string>

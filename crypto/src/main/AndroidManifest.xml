@@ -67,7 +67,7 @@
 
         <provider
                 android:name="io.oversec.one.crypto.TemporaryContentProvider"
-                android:authorities="oversec_temporary_content"
+                android:authorities="@string/tempcontent_authority"
                 android:grantUriPermissions="true" tools:ignore="ExportedContentProvider"/>
 
         <service

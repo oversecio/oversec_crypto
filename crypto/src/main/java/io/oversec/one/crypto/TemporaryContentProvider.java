@@ -24,7 +24,7 @@ public class TemporaryContentProvider extends ContentProvider {
     public static final int TTL_1_HOUR = 60 * 60;
 
 
-    public static final String AUTHORITY = "oversec_temporary_content";
+
     private static final String ACTION_EXPIRE_BUFFER = "OVERSEC_ACTION_EXPIRE_BUFFER";
     private static final String EXTRA_TOKEN = "token";
     public static final String TAG_ENCRYPTED_IMAGE = "ENCRYPTED_IMAGE";
@@ -56,7 +56,9 @@ public class TemporaryContentProvider extends ContentProvider {
         String token = createRandomToken();
         Ln.d("TCPR prepared tag=%s  token=%s",tag,token);
         mEntries.put(token, new Entry(mimetype, ttl_seconds, tag));
-        return Uri.parse("content://" + AUTHORITY + "/" + token);
+
+        String authority = ctx.getResources().getString(R.string.tempcontent_authority);
+        return Uri.parse("content://" + authority + "/" + token);
     }
 
     static class Entry {

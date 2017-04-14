@@ -1,0 +1,6 @@
+<resources>
+    <bool name="feature_takephoto">true</bool>
+    <!-- note: if feature_takephoto is enabled, then feature_images needs to be enabled as well! -->
+    <bool name="feature_images">true</bool>
+    <bool name="feature_enctype_sym">true</bool>
+</resources>

@@ -6,5 +6,6 @@
     <bool name="feature_enctype_pgp">true</bool>
     <bool name="feature_expert_options">true</bool>
     <bool name="feature_option_composebutton">true</bool>
+    <bool name="feature_notification">true</bool>
     <string name="feature_package"/>
 </resources>

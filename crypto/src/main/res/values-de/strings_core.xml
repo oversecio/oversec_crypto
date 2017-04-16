@@ -171,10 +171,10 @@
 
     <string name="action_later">Später</string>
 
-    <string name="warning_app_with_serious_issues_enabled">Die app %s hat Probleme und &appname; funktioniert nicht richtig mir ihr.\n\nBitte lese unserer Online-Hilfe für aktuelle Infos!</string>
+    <string name="warning_app_with_serious_issues_enabled">Die App %s hat Probleme und &appname; funktioniert nicht richtig mir ihr.\n\nBitte lese unserer Online-Hilfe für aktuelle Infos!</string>
 
     <string name="question_ignore_text">Diesen Text von nun an ignorieren?</string>
     <string name="action_ignore_text">Text ignorieren</string>
 
-
+    <string name="tooltip_encryptionparams_simplesym_general_appsec">Füge ein oder mehrere Passwörter hinzu um loszulegen!</string>
 </resources>

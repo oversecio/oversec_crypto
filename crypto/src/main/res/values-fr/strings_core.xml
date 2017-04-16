@@ -188,4 +188,5 @@ Le service d\'accessibilité ne fonctionne pas"
   <string name="question_ignore_text">Voulez-vous ignorer ce texte à partir de maintenant?</string>
   <string name="action_ignore_text">Ignorer ce texte</string>
 
+ <string name="tooltip_encryptionparams_simplesym_general_appsec">Pour commencer, ajoutez un ou plusieurs mots de passe!</string>
  </resources>

@@ -13,6 +13,7 @@
 
     <string name="tooltipid_encryptionparams_sym_general" translatable="false">encryptionparams_sym_general</string>
     <string name="tooltipid_encryptionparams_simplesym_general" translatable="false">encryptionparams_simplesym_general</string>
+    <string name="tooltipid_encryptionparams_simplesym_general_appsec" translatable="false">encryptionparams_simplesym_general_appsec</string>
     <string name="tooltipid_encryptionparams_gpg_general" translatable="false">encryptionparams_gpg_general</string>
 
     <string name="tooltipid_encryptionparams_encrypt_button" translatable="false">encryptionparams_fab</string>

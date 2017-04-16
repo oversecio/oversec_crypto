@@ -159,7 +159,7 @@
     <string name="question_ignore_text">Şu andan itibaren bu metni göz ardı istiyor musunuz?</string>
     <string name="action_ignore_text">metin görmezden</string>
 
-
+    <string name="tooltip_encryptionparams_simplesym_general_appsec">Başlamak için bir veya daha fazla şifre ekleyin!</string>
 
     <!-- pending -->
     <!--

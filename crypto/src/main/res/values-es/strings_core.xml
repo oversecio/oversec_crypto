@@ -191,4 +191,5 @@
 
     <string name="actionaccessibilitysettingsnotresolvable_text">&appname; debe esta activada como un servicio de accesibilidad en su teléfono, pero no logramos\ abrir automáticamente la página de \&quot;Accesibilidad\&quot; en la configuración de Android.\n\nPor favor, abra la página de \&quot;Accesibilidad\&quot; en los ajustes de su teléfono, ubique \&quot;&appname;\&quot; y actívela.\n\n¡&appname; no puede funcionar a menos que esté habilitada como un servicio de accesibilidad!</string>
 
+    <string name="tooltip_encryptionparams_simplesym_general_appsec">Para empezar, agregue una o más contraseñas!</string>
 </resources>

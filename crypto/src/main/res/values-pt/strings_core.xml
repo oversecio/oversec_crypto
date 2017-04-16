@@ -195,5 +195,7 @@
     <string name="actionaccessibilitysettingsnotresolvable_text">O &appname; precisa ser ativado como serviço de acessibilidade no seu telefone, mas não pudemos abrir automaticamente a página \&quot;Acessibilidade\&quot; das Configurações do Android.\n\nLocalize e abra manualmente a página \&quot;Acessibilidade\&quot; nas configurações do telefone, localize o \&quot;&appname;\&quot; e ative-o.\n\nO &appname; não funciona se não for ativado como serviço de acessibilidade!</string>
 
     <string name="tooltip_encryptionparams_simplesym_general_appsec">Para começar, adicione uma ou mais senhas!</string>
+    <string name="settings_acs_post_enable_msg_appsec">\nDesfrute de mensagens secretas em %1$s com &appname;!</string>
+    <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...mas o app «%1$s» não está instalado!</string>
 </resources>
 

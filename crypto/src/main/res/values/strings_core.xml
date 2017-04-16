@@ -196,5 +196,6 @@
 
 
     <string name="tooltip_encryptionparams_simplesym_general_appsec">To get started, add one or more passwords!</string>
-
+    <string name="settings_acs_post_enable_msg_appsec">\nEnjoy secret messages in %1$s with &appname;!</string>
+    <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...but you don\'t have «%1$s» installed!</string>
 </resources>

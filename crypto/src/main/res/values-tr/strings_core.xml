@@ -160,6 +160,8 @@
     <string name="action_ignore_text">metin görmezden</string>
 
     <string name="tooltip_encryptionparams_simplesym_general_appsec">Başlamak için bir veya daha fazla şifre ekleyin!</string>
+    <string name="settings_acs_post_enable_msg_appsec">\&appname; ile %1$s gizli mesajlar tadını çıkarın!</string>
+    <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...ancak Uygulama «%1$s» yüklü değil!</string>
 
     <!-- pending -->
     <!--

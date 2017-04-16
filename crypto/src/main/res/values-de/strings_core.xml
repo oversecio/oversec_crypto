@@ -177,4 +177,6 @@
     <string name="action_ignore_text">Text ignorieren</string>
 
     <string name="tooltip_encryptionparams_simplesym_general_appsec">Füge ein oder mehrere Passwörter hinzu um loszulegen!</string>
+    <string name="settings_acs_post_enable_msg_appsec">\nViel Spaß mit geheimen &appname; Nachrichten in %1$s !</string>
+    <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...aber die App «%1$s» ist nicht installiert!</string>
 </resources>

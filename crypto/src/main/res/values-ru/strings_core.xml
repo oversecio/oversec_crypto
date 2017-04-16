@@ -192,4 +192,6 @@
     <string name="actionaccessibilitysettingsnotresolvable_text">&appname; должен быть включен как Сервис специальных возможностей на вашем телефоне, но мы не смогли автоматически открыть страницу Настройки Android «Специальные возможности».\n\nВручную найдите и откройте страницу «Специальные возможности\ в настройках вашего телефона, затем найдите приложение «&appname;» и включите его.\n\n&appname; не может функционировать, если оно не включено как Сервис специальных возможностей!</string>
 
     <string name="tooltip_encryptionparams_simplesym_general_appsec">Для начала добавьте один или несколько паролей!</string>
+    <string name="settings_acs_post_enable_msg_appsec">\nНаслаждайтесь секретные сообщения в %1$s с &appname;!</string>
+    <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...но приложение «%1$s» не установлен!</string>
 </resources>

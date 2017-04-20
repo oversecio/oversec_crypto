@@ -28,9 +28,9 @@
     <string name="controls_slider_fontsize">Размер текста</string>
     <string name="controls_slider_padding_left">Панель слева</string>
     <string name="controls_slider_padding_top">Панель сверху</string>
-    <string name="share_body">&appname;: Шифрование для всех приложений!\n\nПолучите приложение &appname; и добавьте шифрование для всех приложений Android.\n\nОтправляйте зашифрованные сообщения «Eye-to-Eye» с помощью Whatsapp, Line, SMS, Facebook, Gmail или любого другого приложения.\n\nhttp://dl.&appname;.io</string>
+    <string name="share_body">&appname;: Шифрование для всех приложений!\n\nПолучите приложение &appname; и добавьте шифрование для всех приложений Android.\n\nОтправляйте зашифрованные сообщения «Eye-to-Eye» с помощью Whatsapp, Line, SMS, Facebook, Gmail или любого другого приложения.\n\nhttp://dl.oversec.io</string>
     <string name="share_chooser_title">Совместное использование через </string>
-    <string name="share_as_suffix">Установить &appname; для расшифровки!\nhttp://dl.&appname;.io</string>
+    <string name="share_as_suffix">Установить &appname; для расшифровки!\nhttp://dl.oversec.io</string>
     <string name="notification_acsnotrunning_title">Сервис специальных возможностей не работает</string>
     <string name="notification_acsnotrunning_body">Нажмите здесь, чтобы включить!</string>
     <string name="decrypt_in_progress">Расшифровка...</string>

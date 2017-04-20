@@ -29,9 +29,9 @@
  <string name="controls_slider_fontsize">Taille du texte</string>
  <string name="controls_slider_padding_left">Espace gauche</string>
  <string name="controls_slider_padding_top">Espace haut</string>
- <string name="share_body">"&appname;: L\'encryption pour toutes les applications!\n\nTelechargez l\'app &appname; et ajoutez  instantanément  une fonction d\'encryptage à toutes les applications Android\n\nEnvoyez des messages cryptés avec WhatsApp, Line, SMS, Facebook, Gmail ou toute autre application\n\nhttp: //dl.&appname;.io"</string>
+ <string name="share_body">"&appname;: L\'encryption pour toutes les applications!\n\nTelechargez l\'app &appname; et ajoutez  instantanément  une fonction d\'encryptage à toutes les applications Android\n\nEnvoyez des messages cryptés avec WhatsApp, Line, SMS, Facebook, Gmail ou toute autre application\n\nhttp: //dl.oversec.io"</string>
  <string name="share_chooser_title">Partager via</string>
- <string name="share_as_suffix">Installe &appname; pour decrypter!\nhttp://dl.&appname;.io</string>
+ <string name="share_as_suffix">Installe &appname; pour decrypter!\nhttp://dl.oversec.io</string>
  <string name="notification_acsnotrunning_title">"</string>
 Le service d\'accessibilité ne fonctionne pas"
  <string name="notification_acsnotrunning_body">Appuyez ici pour activer!</string>
@@ -98,13 +98,11 @@ Le service d\'accessibilité ne fonctionne pas"
  <string name="toast_longtap_encryptionbutton">Merci de renouveler les paramètres de chiffrement en cours d’utilisation! Pour modifier les paramètres de cryptage : appuie long sur le bouton de cryptage!</string>
  <string name="toast_corrupted_encoding">Le message chiffré a été corrompu!\n La seule solution est de recommencer!</string>
  <string name="action_clear_input">Effacer l\'entré</string>
- <string name="crash_email">crashreport@&appname;.io</string>
  <string name="crash_report_via_title">Sélectionnez une application d\'e-mail pour envoyer le rapport d\'incident</string>
  <string name="crash_report_subject">Rapport d\'incident &appname; </string>
  <string name="crash_title">Ooops! &appname; a planté…</string>
  <string name="crash_subtitle">Aidez-nous en nous envoyant par courriel ce rapport d\'incident:</string>
  <string name="crash_activity_title">Rapport d\'incident</string>
- <string name="bug_email">bugreport@&appname;.io</string>
  <string name="bug_report_via_title">Sélectionnez une application d\'e-mail pour envoyer le rapport d\'incident</string>
  <string name="bug_report_subject">Rapport d\'incident &appname; </string>
  <string name="main_tab_keys">Clés</string>

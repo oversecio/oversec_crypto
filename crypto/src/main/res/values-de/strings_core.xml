@@ -125,8 +125,8 @@
     <string name="settings_boss_active">&appname; ist im Panik Modus.</string>
     <string name="settings_help">Online Hilfe</string>
     <string name="settings_upgrade">Du benutzt das ganz normale &appname;.\nUpgraden um zusätzliche Features freizuschalten!</string>
-    <string name="share_as_suffix">Installiere &appname; zum entschlüsseln!\nhttp://dl.&appname;.io</string>
-    <string name="share_body">&appname;: Verschlüsselung für alle Apps!\n\nHole dir die &appname; App und verschlüssele mit allen Android Apps.\n\nSende Auge-zu-Auge verschlüsselte Nachrichten mit Whatsapp, Snapchat, Instagran, SMS, Facebook, Gmail oder jeder anderen App.\n\nhttp://dl.&appname;.io</string>
+    <string name="share_as_suffix">Installiere &appname; zum entschlüsseln!\nhttp://dl.oversec.io</string>
+    <string name="share_body">&appname;: Verschlüsselung für alle Apps!\n\nHole dir die &appname; App und verschlüssele mit allen Android Apps.\n\nSende Auge-zu-Auge verschlüsselte Nachrichten mit Whatsapp, Snapchat, Instagran, SMS, Facebook, Gmail oder jeder anderen App.\n\nhttp://dl.oversec.io</string>
     <string name="share_chooser_title">Teilen mit</string>
     <string name="title_activity_about">Über &appname;</string>
     <string name="title_activity_appconfig">App Einstellungen</string>

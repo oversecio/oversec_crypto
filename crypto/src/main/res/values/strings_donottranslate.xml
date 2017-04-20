@@ -4,7 +4,7 @@
     <!-- DO NOT TRANSLATE! -->
 
     <string name="crash_email" translatable="false">crashreport@oversec.io</string>
-    <string name="bug_email" translatable="false">bugreport@&oversec.io</string>
+    <string name="bug_email" translatable="false">bugreport@oversec.io</string>
 
 
     <string name="tempcontent_authority" translatable="false">oversec_temporary_content</string>

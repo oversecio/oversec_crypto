@@ -28,9 +28,9 @@
     <string name="controls_slider_fontsize">Tamanho do texto</string>
     <string name="controls_slider_padding_left">Preencher esquerda</string>
     <string name="controls_slider_padding_top">Preencher acima</string>
-    <string name="share_body">&appname;: criptografia para todos os aplicativos!\n\nBaixe o aplicativo &appname; para ter criptografia em todos os aplicativos Android.\n\nEnvie mensagens criptografadas olho a olho com o Whatsapp, Line, SMS, Facebook, Gmail e qualquer outro aplicativo.\n\nhttp://dl.oversec.io</string>
+    <string name="share_body">&appname;: criptografia para todos os aplicativos!\n\nBaixe o aplicativo &appname; para ter criptografia em todos os aplicativos Android.\n\nEnvie mensagens criptografadas olho a olho com o Whatsapp, Line, SMS, Facebook, Gmail e qualquer outro aplicativo.\n\n&dllink;</string>
     <string name="share_chooser_title">Compartilhe por </string>
-    <string name="share_as_suffix">Instale o &appname; para descriptografar!\nhttp://dl.oversec.io</string>
+    <string name="share_as_suffix">Instale o &appname; para descriptografar!\n&dllink;</string>
     <string name="notification_acsnotrunning_title">O serviço de acessibilidade não está funcionando</string>
     <string name="notification_acsnotrunning_body">Toque aqui para ativar!</string>
     <string name="decrypt_in_progress">Descriptografando…</string>

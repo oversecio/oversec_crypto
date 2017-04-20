@@ -28,9 +28,9 @@
     <string name="controls_slider_fontsize">Text-size</string>
     <string name="controls_slider_padding_left">Pad left</string>
     <string name="controls_slider_padding_top">Pad top</string>
-    <string name="share_body">&appname;: Encryption for all apps!\n\nGet the &appname; app and add encryption to all Android apps.\n\nSend eye-to-eye encrypted messages with Whatsapp, Line, SMS, Facebook, Gmail or any other app.\n\nhttp://dl.oversec.io</string>
+    <string name="share_body">&appname;: Encryption for all apps!\n\nGet the &appname; app and add encryption to all Android apps.\n\nSend eye-to-eye encrypted messages with Whatsapp, Line, SMS, Facebook, Gmail or any other app.\n\n&dllink;</string>
     <string name="share_chooser_title">Share via </string>
-    <string name="share_as_suffix">Install &appname; to decrypt!\nhttp://dl.oversec.io</string>
+    <string name="share_as_suffix">Install &appname; to decrypt!\n&dllink;</string>
     <string name="notification_acsnotrunning_title">Accessibility service not running</string>
     <string name="notification_acsnotrunning_body">Tap here to enable!</string>
     <string name="decrypt_in_progress">Decrypting…</string>

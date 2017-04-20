@@ -28,9 +28,9 @@
     <string name="controls_slider_fontsize">Text-size</string>
     <string name="controls_slider_padding_left">Pad left</string>
     <string name="controls_slider_padding_top">Pad top</string>
-    <string name="share_body">&appname;: Encryption for all apps!\n\nGet the &appname; app and add encryption to all Android apps.\n\nSend eye-to-eye encrypted messages with Whatsapp, Line, SMS, Facebook, Gmail or any other app.\n\nhttp://dl.&appname;.io</string>
+    <string name="share_body">&appname;: Encryption for all apps!\n\nGet the &appname; app and add encryption to all Android apps.\n\nSend eye-to-eye encrypted messages with Whatsapp, Line, SMS, Facebook, Gmail or any other app.\n\nhttp://dl.oversec.io</string>
     <string name="share_chooser_title">Share via </string>
-    <string name="share_as_suffix">Install &appname; to decrypt!\nhttp://dl.&appname;.io</string>
+    <string name="share_as_suffix">Install &appname; to decrypt!\nhttp://dl.oversec.io</string>
     <string name="notification_acsnotrunning_title">Accessibility service not running</string>
     <string name="notification_acsnotrunning_body">Tap here to enable!</string>
     <string name="decrypt_in_progress">Decrypting…</string>
@@ -99,13 +99,13 @@
     <string name="toast_longtap_encryptionbutton">Previous encryption parameters in use!\nTo change encryption parameters, long-tap the encryption button!</string>
     <string name="toast_corrupted_encoding">Bummer! The encrypted message has been corrupted!\nThe only way out is to start over!</string>
     <string name="action_clear_input">Clear Input</string>
-    <string name="crash_email" translatable="false">crashreport@&appname;.io</string>
+
     <string name="crash_report_via_title">Select email app to send crash report</string>
     <string name="crash_report_subject">&appname; Crash Report</string>
     <string name="crash_title">Ooops! &appname; just crashed.</string>
     <string name="crash_subtitle">Please help by emailing us this bug report:</string>
     <string name="crash_activity_title">Crash Report</string>
-    <string name="bug_email" translatable="false">bugreport@&appname;.io</string>
+
     <string name="bug_report_via_title">Select email app to send bug report</string>
     <string name="bug_report_subject">&appname; Bug Report</string>
     <string name="main_tab_keys">Keys</string>

@@ -8,4 +8,5 @@
     <bool name="feature_option_composebutton">true</bool>
     <bool name="feature_notification">true</bool>
     <string name="feature_package"/>
+    <string name="feature_help_host">help.oversec.io</string>
 </resources>

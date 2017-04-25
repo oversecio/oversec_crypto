@@ -9,8 +9,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 
 public class Help {
-    private static final String URL_BASE = "http://help.oversec.io/";
-    private static final String URL_INDEX = URL_BASE + "index.html";
+
 
 
     public enum ANCHOR {
@@ -57,8 +56,8 @@ public class Help {
     public static void open(Context ctx, String anchor) {
         try {
             String url =  anchor;
-            if (url==null || !url.startsWith(URL_INDEX)) {
-                url = URL_INDEX + (anchor == null ? "" : "#alias_" + anchor);
+            if (url==null || !url.startsWith(getUrlIndex(ctx))) {
+                url = getUrlIndex(ctx) + (anchor == null ? "" : "#alias_" + anchor);
             }
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
@@ -72,11 +71,15 @@ public class Help {
         }
     }
 
+    private static String getUrlIndex(Context ctx) {
+        return "http://"+ctx.getString(R.string.feature_help_host)+"/index.html";
+    }
+
     public static String getAnchorForPackageInfos(Context ctx, String packagename) throws PackageManager.NameNotFoundException {
         PackageInfo packageInfo = ctx.getPackageManager().getPackageInfo(packagename, 0);
         int versionNumber = packageInfo.versionCode;
         String packageNameReplaced = packagename.replace('.', '-');
-        return URL_INDEX + "#package_" + packageNameReplaced + "$" + versionNumber;
+        return getUrlIndex(ctx) + "#package_" + packageNameReplaced + "$" + versionNumber;
     }
 
 

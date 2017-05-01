@@ -116,7 +116,7 @@
     <string name="notification_title__hidden">&appname; ist versteckt</string>
     <string name="onboarding_title">Willkommen</string>
     <string name="sample_decrypted_text">Hallo Welt</string>
-    <string name="onboarding_text">Noch ein Schritt bis &appname; bereit ist:\n\nBerühre \"&appname;\" in der Liste im Hintergrund und schalte es dann \"An\".\n\n(Auf manchen Handys ist der \"&appname;\" Eintrag ganz am Ende der Liste, also bitte ganz runterscrollen!)</string>
+    <string name="onboarding_text">Noch ein Schritt bis &appname; bereit ist:&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Berühre \"&appname;\" in der Liste im Hintergrund und schalte es dann \"An\".&lt;/b&gt;&lt;br/&gt;(Auf manchen Handys ist der \"&appname;\" Eintrag ganz am Ende der Liste, also bitte ganz runterscrollen!)</string>
     <string name="settings_acs_enabled_ok">&appname; ist korrekt als Bedienungshilfe aktiviert.</string>
     <string name="settings_acs_not_enabled">&appname; ist nicht als Bedienungshilfe aktiviert und funktioniert deshalb nicht.\nBerühre \"Konfigurieren\" um die Einstellungs-Seite zu Öffnen, dann Berühre \"&appname;\" und schalte es \"An\"</string>
     <string name="settings_acs_post_enable_btn_configure">Andere Apps aktivieren</string>

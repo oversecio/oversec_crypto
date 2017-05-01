@@ -149,7 +149,7 @@ Le service d\'accessibilité ne fonctionne pas"
  <string name="tooltip_encryptionparams_gpg_general">Encrypter avec des clés publiques/privées PGP. Vous devez installer OpenKeychain pour faire cela!</string>
  <string name="tooltip_encryptionparams_fab">Appuyez ici pour chiffrer et revenir à votre application.</string>
  <string name="tooltip_encryptionparams_gpg_choose_own_key">Merci de sélectionner votre propre clé d\'abord!</string>
- <string name="onboarding_text">"Vous n\'êtes plus qu\'a un pas de pouvoir utiliser &appname;: Dans les paramètres écran ci-dessous, appuyez sur \"&appname;\", placez le curseur sur \"on\".\n\nNote: Sur certains téléphones, vous devez faire défiler vers le bas jusqu\'à la fin de la liste pour voir l\'entrée \"&appname; \"."</string>
+ <string name="onboarding_text">"Vous n\'êtes plus qu\'a un pas de pouvoir utiliser &appname;:&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Dans les paramètres écran ci-dessous, appuyez sur \"&appname;\", placez le curseur sur \"on\".&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Note: Sur certains téléphones, vous devez faire défiler vers le bas jusqu\'à la fin de la liste pour voir l\'entrée \"&appname; \"."</string>
  <string name="settings_acs_post_enable_title">&appname; est prêt!</string>
  <string name="settings_acs_post_enable_msg">"Maintenant, commencez à utiliser l\'une de vos applications autorisées à fonctionner avec &appname; :"</string>
  <string name="settings_acs_post_enable_btn_configure">Activer &appname; avec d\'autres applications</string>

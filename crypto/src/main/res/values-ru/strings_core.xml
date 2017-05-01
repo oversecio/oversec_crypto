@@ -150,7 +150,7 @@
     <string name="tooltip_encryptionparams_gpg_general">Шифрование с открытыми/личными ключами PGP. Для использования этого вам нужно приложение OpenKeychain!</string>
     <string name="tooltip_encryptionparams_fab">Нажмите здесь, чтобы выполнить шифрование и вернуться в ваше приложение.</string>
     <string name="tooltip_encryptionparams_gpg_choose_own_key">Сначала выберите ваш собственный ключ!</string>
-    <string name="onboarding_text">Вы находитесь в одном шаге от использования &appname;:\n\nВ настройках экрана ниже нажмите на «&appname;», а затем включите его «Вкл».\n\n(На некоторых телефонах вам нужно выполнить прокрутку вниз в конец списка, чтобы увидеть запись «&appname;».)</string>
+    <string name="onboarding_text">Вы находитесь в одном шаге от использования &appname;:&lt;br/&gt;&lt;b&gt;В настройках экрана ниже нажмите на «&appname;», а затем включите его «Вкл».&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;(На некоторых телефонах вам нужно выполнить прокрутку вниз в конец списка, чтобы увидеть запись «&appname;».)</string>
     <string name="settings_acs_post_enable_title">&appname; готово!</string>
     <string name="settings_acs_post_enable_msg">Теперь просто запустите, используя одно из ваших включенных приложений &appname;:</string>
     <string name="settings_acs_post_enable_btn_configure">Включить другие приложения</string>

@@ -150,7 +150,7 @@
     <string name="tooltip_encryptionparams_gpg_general">Encriptar con claves públicas/privadas PGP. ¡OpenKeychain es necesario para esta opción!</string>
     <string name="tooltip_encryptionparams_fab">Pulse aquí para encriptar y volver a la aplicación.</string>
     <string name="tooltip_encryptionparams_gpg_choose_own_key">Por favor, seleccione primero su propia clave.</string>
-    <string name="onboarding_text">Usted está a un paso de usar &appname;:\n\nEn la siguiente pantalla de ajustes, pulse \&quot;&appname;\&quot; y seleccione \&quot;Si\&quot;. \n\n(En algunos teléfonos, deberá desplazarse hacia abajo al final de la lista para ver la entrada de \&quot;&appname;\&quot;).</string>
+    <string name="onboarding_text">Usted está a un paso de usar &appname;:&lt;br/&gt;&lt;br/&gt;&lt;b&gt;En la siguiente pantalla de ajustes, pulse \&quot;&appname;\&quot; y seleccione \&quot;Si\&quot;. &lt;/b&gt;&lt;br/&gt;&lt;br/&gt;(En algunos teléfonos, deberá desplazarse hacia abajo al final de la lista para ver la entrada de \&quot;&appname;\&quot;).</string>
     <string name="settings_acs_post_enable_title">¡&appname; está lista!</string>
     <string name="settings_acs_post_enable_msg">Ahora todo lo que debe hacer es comenzar a utilizar cualquiera de sus aplicaciones habilitadas en &appname;:</string>
     <string name="settings_acs_post_enable_btn_configure">Habilitar otras aplicaciones</string>

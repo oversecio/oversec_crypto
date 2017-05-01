@@ -152,7 +152,7 @@
     <string name="tooltip_encryptionparams_gpg_general">Encrypt with PGP public/private keys. You need OpenKeychain to use this!</string>
     <string name="tooltip_encryptionparams_fab">Tap here to encrypt and go back to your app.</string>
     <string name="tooltip_encryptionparams_gpg_choose_own_key">Please select your own key first!</string>
-    <string name="onboarding_text">You\'re one step away from using &appname;:\n\nIn the settings screen below, tap on \"&appname;\" and then switch it "on".\n\n(On some phones, you need to scroll down to the end of the list to see the \"&appname;\" entry.)</string>
+    <string name="onboarding_text">You\'re one step away from using &appname;:&lt;br/&gt;&lt;br/&gt;&lt;b&gt;In the settings screen below, tap on \"&appname;\" and then switch it "on".&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;(On some phones, you need to scroll down to the end of the list to see the \"&appname;\" entry.)</string>
     <string name="settings_acs_post_enable_title">&appname; is ready!</string>
     <string name="settings_acs_post_enable_msg">Now simply start using one of your &appname; enabled apps:</string>
     <string name="settings_acs_post_enable_btn_configure">Enable other apps</string>

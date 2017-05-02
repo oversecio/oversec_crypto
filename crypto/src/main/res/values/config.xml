@@ -10,4 +10,5 @@
     <string name="feature_package"/>
     <string name="feature_help_host">help.oversec.io</string>
     <integer name="feature_max_num_passwords">99999</integer>
+    <string-array name="feature_activity_ignore"/>
 </resources>

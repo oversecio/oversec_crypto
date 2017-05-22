@@ -152,7 +152,7 @@
  <string name="action_download_missing_signature_key">Télécharger  la signature de la clé</string>
  <string name="action_download_missing_public_key">"[Clé manquante</string>
  <string name="title_activity_encryption_info">Infos de cryptage</string>
- <string name="decrypt_error_user_interaction_required">Input required</string>
+ <string name="decrypt_error_user_interaction_required">Entrée requise</string>
  <string name="decrypt_error_user_interaction_required__long">Saisie du mot de passe nécessaire pour déchiffrer!</string>
  <string name="decrypt_error_common">Erreur &appname; </string>
  <string name="decrypt_error_gpg">Le décryptage PGP a échoué</string>

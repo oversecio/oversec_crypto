@@ -238,8 +238,11 @@ public class UnlockKeyActivity extends FragmentActivity {
                     try {
                         aKeystore.doCacheKey__longoperation(mEncryptedKey.getId(), aPassPhrase, timeToLiveSeconds);
                         dismiss();
-                        getActivity().setResult(RESULT_OK);
-                        getActivity().finish();
+                        FragmentActivity a = getActivity();
+                        if (a!=null) {
+                            a.setResult(RESULT_OK);
+                            a.finish();
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
                     } catch (OversecChacha20Poly1305.MacMismatchException e) {

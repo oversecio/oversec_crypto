@@ -120,7 +120,7 @@ Le service d\'accessibilité ne fonctionne pas"
   <string name="mainprefs_relaxcache_summary">Purger le cache de décryptage uniquement sur la panique et de l\'écran-off. (Recommandé pour les utilisateurs YubiKey)</string>
 
  <string name="mainprefs_screenoffpanic_title">Panique lorsque l\'écran est éteint</string>
- <string name="mainprefs_screenoffpanic_summary">Entrez le mode panique lorsque l\'écran s'éteint</string>
+ <string name="mainprefs_screenoffpanic_summary">Entrez le mode panique lorsque l\'écran s\'éteint</string>
  <string name="mainprefs_hidelauncheronpanic_title">Rendre invisible l\'icône &appname; en mode panique</string>
  <string name="mainprefs_hidelauncheronpanic_summary">"Pour réactiver &appname; après être passé en mode \"panique"\, vous devez composer le code secret dans le clavier du téléphone (appli Téléphone)!"</string>
  <string name="mainprefs_launchersecretcode_title">Code secret via l\'application de numérotation</string>

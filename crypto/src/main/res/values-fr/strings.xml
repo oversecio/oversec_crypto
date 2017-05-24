@@ -211,7 +211,7 @@
  <string name="settings_okc_not_installed">"Pour utiliser le cryptage PGP</string>
  <string name="okc_installed_but_too_old">Votre  application OpenKeychain est en version %1$s et donc non-supportee. Veuillez la mettre à jour!</string>
  <string name="key_created">Clé créée</string>
- <string name="action_gotit">Je l\'ai</string>
+ <string name="action_gotit">compris</string>
  <string name="tooltip_apps_fragment">"Configurer vos applications pour une utilisation avec &appname;.\n\nNous avons présélectionné quelques applications pour vous</string>
  <string name="action_moreinfo">Plus d\'informations</string>
  <string name="action_help">Aide</string>

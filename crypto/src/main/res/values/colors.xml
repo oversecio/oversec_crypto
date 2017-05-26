@@ -13,9 +13,11 @@
     <color name="colorPrimaryDark">#E47300</color>
     <color name="colorAccent">#20B7E2</color>
 
-    <color name="colorWarning">#E87C36</color>
-    <color name="colorError">#E82F36</color>
-    <color name="colorOk">#6AE843</color>
+    
+    <color name="colorWarning">#FF7043</color>
+    <color name="colorError">#E53935</color>
+    <color name="colorOk">#64DD17</color>
+
 
     <!-- Important: When changing this value, make sure it is included in ColorSeekBar.java # mColors -->
     <color name="buttonDefaultBG">#D0FF8100</color>

@@ -229,5 +229,5 @@
     </plurals>
     <string name="tooltip_settextfailed">&appname; konnte den kodierten Text nicht in die App schreiben!\n\nWahrscheinlich hat die App ein Limit für die Anzahl der Zeichen im Eingabefeld.!\n\nBitte versuche es nochmals mit weniger Empfängern oder verwende symmetrische Verschlüsselung, die weniger Zeichen produziert!!</string>
     <string name="tooltip_encodingtoolong">Der kodierte Text ist zu lang!\n\n&appname; had den Text nicht in die unterliegende App geschrieben, da sie sonst abstürzen würde.\n\nnBitte versuche es nochmals mit weniger Empfängern oder verwende symmetrische Verschlüsselung, die weniger Zeichen produziert!!</string>
-
+    <string name="simplesym_header_passwords">Passwörter</string>
 </resources>

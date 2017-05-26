@@ -234,4 +234,5 @@
     <string name="dialog_explore_label_signed_by">İmzalayan:</string>
     <string name="simple_password_unlock_key">Anahtar Kilidini Aç …</string>
     <string name="simple_password_to_decrypt_this">Bu metni deşifre etmek için:</string>
+    <string name="simplesym_header_passwords">Şifreler</string>
 </resources>

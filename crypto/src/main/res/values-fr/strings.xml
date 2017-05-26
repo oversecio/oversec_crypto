@@ -237,4 +237,5 @@
   <item quantity="one">Un mot de passe en cache</item>
   <item quantity="other">%d mots de passe en cache</item>
  </plurals>
+ <string name="simplesym_header_passwords">Mots de passe</string>
 </resources>

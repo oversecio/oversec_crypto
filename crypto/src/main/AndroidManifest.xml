@@ -15,11 +15,11 @@
         <activity
             android:name="io.oversec.one.crypto.sym.ui.UnlockKeyActivity"
             android:excludeFromRecents="true"
-            android:theme="@android:style/Theme.NoDisplay" />
+            android:theme="@style/MyAppTheme.NoDisplay" />
         <activity
             android:name="io.oversec.one.crypto.symsimple.ui.AddPasswordKeyActivity"
             android:excludeFromRecents="true"
-            android:theme="@android:style/Theme.NoDisplay" />
+            android:theme="@style/MyAppTheme.NoDisplay" />
         <activity
             android:name="io.oversec.one.crypto.sym.ui.KeyImportCreateActivity"
             android:configChanges="orientation|keyboardHidden"

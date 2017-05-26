@@ -1,31 +1,46 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-            android:id="@android:id/text1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="foobar foobar foobar foobar"
-            android:padding="6dp"
-            android:textAppearance="@style/gotit_msg"
-            android:layout_alignParentTop="true"
-    />
 
-    <Button
-            android:id="@+id/giv_moreinfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@android:id/text1"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_alignParentLeft="true"
-            android:text="@string/action_moreinfo"/>
+        <RelativeLayout
+                android:id="@+id/content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:elevation="10dp"
+                android:background="@drawable/tooltip_bg"
+                android:theme="@style/MyAppTheme"
+        >
 
-    <Button
-            android:id="@+id/giv_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@android:id/text1"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_alignParentRight="true"
-            android:text="@string/action_gotit"/>
+
+        >
+            <TextView
+                    android:id="@android:id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="foobar foobar foobar foobar"
+                    android:padding="6dp"
+                    android:textAppearance="@style/gotit_msg"
+                    android:layout_alignParentTop="true"
+
+            />
+
+            <Button
+                    android:id="@+id/giv_moreinfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@android:id/text1"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/action_moreinfo"/>
+
+            <Button
+                    android:id="@+id/giv_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@android:id/text1"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/action_gotit"/>
+        </RelativeLayout>
 
 </merge>

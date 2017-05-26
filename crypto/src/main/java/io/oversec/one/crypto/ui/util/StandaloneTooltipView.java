@@ -3,20 +3,24 @@ package io.oversec.one.crypto.ui.util;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.graphics.Outline;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewOutlineProvider;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import io.oversec.one.crypto.Help;
 import io.oversec.one.crypto.R;
 
-public class StandaloneTooltipView extends RelativeLayout {
+public class StandaloneTooltipView extends LinearLayout {
     private static final float DEFAULT_ELEVATION = 3f;
-    public static final int DEFAULT_PADDING_DP = 10;
+    public static final int DEFAULT_PADDING_DP = 8;
     private TooltipBackgroundDrawable mTooltipBackgroundDrawable;
     private String mMsg;
     private int mArrowSide;
@@ -70,14 +74,29 @@ public class StandaloneTooltipView extends RelativeLayout {
             setVisibility(View.GONE);
         }
 
-        int padding = dipToPixels(DEFAULT_PADDING_DP);
+        final int padding = dipToPixels(DEFAULT_PADDING_DP);
         setPadding(padding, padding, padding, padding);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            setElevation(DEFAULT_ELEVATION);
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            setElevation(DEFAULT_ELEVATION);
+//        }
+
 
         mTooltipBackgroundDrawable = new TooltipBackgroundDrawable(getContext());
-        setBackground(mTooltipBackgroundDrawable);
+        findViewById(R.id.content).setBackground(mTooltipBackgroundDrawable);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() {
+                @Override
+                public void getOutline(View view, Outline outline) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+                        outline.setRect(padding,padding, view.getWidth()-padding, view.getHeight()-padding);
+                    }
+                }
+            };
+            findViewById(R.id.content).setOutlineProvider(viewOutlineProvider);
+
+        }
 
         if (mArrowSide != -1) {
             mTooltipBackgroundDrawable.setAnchor(TooltipBackgroundDrawable.ARROW_SIDE.values()[mArrowSide], padding, mArrowPos);

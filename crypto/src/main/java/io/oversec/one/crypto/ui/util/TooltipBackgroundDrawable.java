@@ -11,7 +11,7 @@ import io.oversec.one.crypto.R;
 public class TooltipBackgroundDrawable extends Drawable {
     public static final float ARROW_RATIO_DEFAULT = 1.5f;
     private static final int CORNER_RADIUS_DEFAULT_DP = 5;
-    private static final int STROKE_WIDTH_DEFAULT_DP = 2;
+    private static final int STROKE_WIDTH_DEFAULT_DP = 3;
     private final Paint mStroke;
 
 
@@ -23,7 +23,7 @@ public class TooltipBackgroundDrawable extends Drawable {
     private float mArrowRatio;
     private float mCornerRoundness;
 
-    private int mPadding = 0;
+    public int mPadding = 0;
     private int mArrowWeight = 0;
     private ARROW_SIDE mArrowSide;
     private int mArrowPos;
@@ -35,8 +35,8 @@ public class TooltipBackgroundDrawable extends Drawable {
     public TooltipBackgroundDrawable(final Context context) {
 
 
-        final int backgroundColor = ContextCompat.getColor(context,R.color.tooltipBG);
-        final int borderColor = ContextCompat.getColor(context,R.color.tooltipBorder);
+        final int backgroundColor = ContextCompat.getColor(context,R.color.colorTooltipBG);
+        final int borderColor =  ContextCompat.getColor(context,R.color.colorTooltipBorder);
 
         this.mCornerRoundness = dipToPixels(context, CORNER_RADIUS_DEFAULT_DP);
         this.mArrowRatio = ARROW_RATIO_DEFAULT;

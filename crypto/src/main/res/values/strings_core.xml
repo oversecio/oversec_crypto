@@ -4,7 +4,13 @@
         ]>
 <resources>
     <string name="acs_label" translatable="false">&appname;</string>
-    <string name="acs_description">Enabling &appname; as an accessibility service allows it to read and decrypt the screen content.</string>
+    <string name="acs_summary">Enabling &appname; as an Accessibility Service allows it to read and decrypt the screen content.</string>
+    <string name="acs_description">Enabling &appname; as an Accessibility Service allows it
+        \n\n• to observe your actions in order to update in-place decryption,
+        \n\n• to read the screen content in order to decrypt it and show it in-place,
+        \n\n• to turn on enhanced web accessibility in order to allow in-place decryption in web-sites.
+        \n\n\nPlease note that &appname; does not have Internet Permission and thus there is simply no way for the screen content and other sensitive information to leave your device - YOUR PRIVACY IS GUARANTEED!
+    </string>
     <string name="action_reenable_boss">Reactivate</string>
     <string name="action_configure">Configure</string>
     <string name="main_tab_help">Setup</string>
@@ -16,7 +22,12 @@
     <string name="notification_action_boss">STOP</string>
     <string name="notification_action_hide">Hide</string>
     <string name="notification_action_show">Show</string>
-    <string name="settings_acs_not_enabled">&appname; is not configured as Accessibility Service. but it need\'s to!\nTap \"Configure\" to open the settings page now, then tap \"&appname;\" and switch it \"On\".</string>
+    <string name="settings_acs_not_enabled">&appname; is not configured as Accessibility Service. but it need\'s to!
+        \n
+        \n&appname; needs to be enabled as an Accessibility Service so that it can read and decrypt the screen content for you:
+        \n
+        \nTap \"Configure\" to open the settings page now, then tap \"&appname;\" and switch it \"On\".
+    </string>
     <string name="settings_acs_enabled_ok">&appname; is correctly configured as Accessibility Service.</string>
     <string name="settings_help">Online Help</string>
     <string name="settings_boss_active">&appname; is in Panic mode.</string>
@@ -152,7 +163,13 @@
     <string name="tooltip_encryptionparams_gpg_general">Encrypt with PGP public/private keys. You need OpenKeychain to use this!</string>
     <string name="tooltip_encryptionparams_fab">Tap here to encrypt and go back to your app.</string>
     <string name="tooltip_encryptionparams_gpg_choose_own_key">Please select your own key first!</string>
-    <string name="onboarding_text">You\'re one step away from using &appname;:&lt;br/&gt;&lt;br/&gt;&lt;b&gt;In the settings screen below, tap on \"&appname;\" and then switch it "on".&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;(On some phones, you need to scroll down to the end of the list to see the \"&appname;\" entry.)</string>
+    <string name="onboarding_text">You\'re one step away from using &appname;
+        &lt;br/&gt;
+        &lt;br/&gt;&appname; needs to be enabled as an Accessibility Service so that it can read and decrypt the screen content for you:
+        &lt;br/&gt;&lt;b&gt;In the settings screen below, tap on \"&appname;\" and then switch it "on".&lt;/b&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;(On some phones, you need to scroll down to the end of the list to see the \"&appname;\" entry.)
+    </string>
     <string name="settings_acs_post_enable_title">&appname; is ready!</string>
     <string name="settings_acs_post_enable_msg">Now simply start using one of your &appname; enabled apps:</string>
     <string name="settings_acs_post_enable_btn_configure">Enable other apps</string>

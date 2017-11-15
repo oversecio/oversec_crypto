@@ -4,7 +4,8 @@
         %ents;
         ]>
 <resources>
-    <string name="acs_description">Ao ser ativado como serviço de acessibilidade, o &appname; pode ler e descriptografar o conteúdo da tela.</string>
+    <string name="acs_summary">Ao ser ativado como serviço de acessibilidade, o &appname; pode ler e descriptografar o conteúdo da tela.</string>
+    <!--acs_description deliberately NOT translated, at least for now until we're either booted or not -->
     <string name="action_reenable_boss">Reativar</string>
     <string name="action_configure">Configurar</string>
     <string name="main_tab_help">Instalar</string>
@@ -16,7 +17,12 @@
     <string name="notification_action_boss">INTERROMPER</string>
     <string name="notification_action_hide">Ocultar</string>
     <string name="notification_action_show">Mostrar</string>
-    <string name="settings_acs_not_enabled">O &appname; não está configurado como serviço de acessibilidade, mas precisa estar!\nToque em \&quot;Configurar\&quot; para abrir a pígina de configuraííes e, em seguida, em \&quot;&appname;\&quot; e alterne para \&quot;Ativar\&quot;.</string>
+    <string name="settings_acs_not_enabled">O &appname; não está configurado como serviço de acessibilidade, mas precisa estar!
+        \n
+        \n&appname; precisa ser ativado como um Serviço de Acessibilidade para que ele possa ler e descriptografar o conteúdo da tela:
+        \n
+        \nToque em \&quot;Configurar\&quot; para abrir a pígina de configuraííes e, em seguida, em \&quot;&appname;\&quot; e alterne para \&quot;Ativar\&quot;.
+    </string>
     <string name="settings_acs_enabled_ok">O &appname; está configurado corretamente como serviço de acessibilidade.</string>
     <string name="settings_help">Ajuda online</string>
     <string name="settings_boss_active">&appname; no modo de pânico.</string>
@@ -151,7 +157,13 @@
     <string name="tooltip_encryptionparams_gpg_general">Criptografe com chaves PGP públicas/privadas. Você precisa ter o OpenKeychain para usar isso!</string>
     <string name="tooltip_encryptionparams_fab">Toque aqui para criptografar e voltar para o aplicativo.</string>
     <string name="tooltip_encryptionparams_gpg_choose_own_key">Primeiro selecione a sua chave!</string>
-    <string name="onboarding_text">Você está a um passo de usar o &appname;:&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Na tela de configurações abaixo, toque em \&quot;&appname;\&quot; e ative-o.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;(Em alguns telefones, é preciso rolar a tela até o fim da lista para ver a entrada \&quot;&appname;\&quot;.)</string>
+    <string name="onboarding_text">Você está a um passo de usar o &appname;:
+        &lt;br/&gt;
+        &lt;br/&gt;&appname; precisa ser ativado como um Serviço de Acessibilidade para que ele possa ler e descriptografar o conteúdo da tela:
+        &lt;br/&gt;&lt;b&gt;Na tela de configurações abaixo, toque em \&quot;&appname;\&quot; e ative-o.&lt;/b&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;(Em alguns telefones, é preciso rolar a tela até o fim da lista para ver a entrada \&quot;&appname;\&quot;.)
+    </string>
     <string name="settings_acs_post_enable_title">O &appname; está pronto!</string>
     <string name="settings_acs_post_enable_msg">Agora é só começar a usar um dos aplicativos habilitados para o &appname;:</string>
     <string name="settings_acs_post_enable_btn_configure">Habilitar outros aplicativos</string>

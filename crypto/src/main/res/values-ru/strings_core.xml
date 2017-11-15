@@ -4,7 +4,8 @@
         %ents;
         ]>
 <resources>
-    <string name="acs_description">Включение &appname; в качестве сервиса специальных возможностей (Accessibility service) позволяет ему прочитывать и расшифровывать содержимое экрана.</string>
+    <string name="acs_summary">Включение &appname; в качестве сервиса специальных возможностей (Accessibility service) позволяет ему прочитывать и расшифровывать содержимое экрана.</string>
+    <!--acs_description deliberately NOT translated, at least for now until we're either booted or not -->
     <string name="action_reenable_boss">Повторно активировать</string>
     <string name="action_configure">Настроить</string>
     <string name="main_tab_help">Установка</string>
@@ -16,7 +17,12 @@
     <string name="notification_action_boss">СТОП</string>
     <string name="notification_action_hide">Скрыть</string>
     <string name="notification_action_show">Показать</string>
-    <string name="settings_acs_not_enabled">&appname; не настроено в качестве Сервиса специальных возможностей, но это нужно сделать!\nНажмите «Настроить», чтобы открыть страницу настроек, затем нажмите «&appname;» и включите его«Вкл».</string>
+    <string name="settings_acs_not_enabled">&appname; не настроено в качестве Сервиса специальных возможностей, но это нужно сделать!
+        \n
+        \n&appname; должен быть включен в качестве службы доступности, чтобы он мог читать и расшифровывать содержимое экрана:
+        \n
+        \nНажмите «Настроить», чтобы открыть страницу настроек, затем нажмите «&appname;» и включите его«Вкл».
+    </string>
     <string name="settings_acs_enabled_ok">&appname; правильно настроено в качестве Сервиса специальных возможностей.</string>
     <string name="settings_help">Онлайн-справка</string>
     <string name="settings_boss_active">&appname; находится в режиме тревоги.</string>
@@ -150,7 +156,13 @@
     <string name="tooltip_encryptionparams_gpg_general">Шифрование с открытыми/личными ключами PGP. Для использования этого вам нужно приложение OpenKeychain!</string>
     <string name="tooltip_encryptionparams_fab">Нажмите здесь, чтобы выполнить шифрование и вернуться в ваше приложение.</string>
     <string name="tooltip_encryptionparams_gpg_choose_own_key">Сначала выберите ваш собственный ключ!</string>
-    <string name="onboarding_text">Вы находитесь в одном шаге от использования &appname;:\n\nВ настройках экрана ниже нажмите на «&appname;», а затем включите его «Вкл».\n\n(На некоторых телефонах вам нужно выполнить прокрутку вниз в конец списка, чтобы увидеть запись «&appname;».)</string>
+    <string name="onboarding_text">Вы находитесь в одном шаге от использования &appname;:
+        &lt;br/&gt;
+        &lt;br/&gt;&appname; должен быть включен в качестве службы доступности, чтобы он мог читать и расшифровывать содержимое экрана:
+        &lt;br/&gt;&lt;b&gt;В настройках экрана ниже нажмите на «&appname;», а затем включите его «Вкл».&lt;/b&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;(На некоторых телефонах вам нужно выполнить прокрутку вниз в конец списка, чтобы увидеть запись «&appname;».)
+    </string>
     <string name="settings_acs_post_enable_title">&appname; готово!</string>
     <string name="settings_acs_post_enable_msg">Теперь просто запустите, используя одно из ваших включенных приложений &appname;:</string>
     <string name="settings_acs_post_enable_btn_configure">Включить другие приложения</string>

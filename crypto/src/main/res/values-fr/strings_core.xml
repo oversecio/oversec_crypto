@@ -5,7 +5,8 @@
         ]>
 <resources>
  <string name="acs_label">&appname;</string>
- <string name="acs_description">Authoriser &appname; en tant que service d\'accessibilité permettant de lire et de décrypter le contenu de l\'écran.</string>
+ <string name="acs_summary">Authoriser &appname; en tant que service d\'accessibilité permettant de lire et de décrypter le contenu de l\'écran.</string>
+ <!--acs_description deliberately NOT translated, at least for now until we're either booted or not -->
  <string name="action_reenable_boss">Réactiver</string>
  <string name="action_configure">Configurer</string>
  <string name="main_tab_help">Setup</string>
@@ -17,7 +18,12 @@
  <string name="notification_action_boss">STOP</string>
  <string name="notification_action_hide">Invisible</string>
  <string name="notification_action_show">Visible</string>
- <string name="settings_acs_not_enabled">"&appname; n\'est pas configuré en tant que service d\'accessibilité. Ceci est nécessaire, appuyer sur \"Configurer \" pour editer les paramètres, puis appuyez sur \"&appname;\" et activez-le."</string>
+ <string name="settings_acs_not_enabled">"&appname; n\'est pas configuré en tant que service d\'accessibilité.
+  \n
+  \n&appname; doit être activé en tant que service d'accessibilité afin qu'il puisse lire et décrypter le contenu de l'écran:
+  \n
+  \nAppuyer sur \"Configurer \" pour editer les paramètres, puis appuyez sur \"&appname;\" et activez-le."
+ </string>
  <string name="settings_acs_enabled_ok">&appname;  est correctement configuré en tant que service d\'accessibilité.</string>
  <string name="settings_help">Aide en ligne</string>
  <string name="settings_boss_active">&appname; est en mode Panique.</string>
@@ -149,7 +155,13 @@ Le service d\'accessibilité ne fonctionne pas"
  <string name="tooltip_encryptionparams_gpg_general">Encrypter avec des clés publiques/privées PGP. Vous devez installer OpenKeychain pour faire cela!</string>
  <string name="tooltip_encryptionparams_fab">Appuyez ici pour chiffrer et revenir à votre application.</string>
  <string name="tooltip_encryptionparams_gpg_choose_own_key">Merci de sélectionner votre propre clé d\'abord!</string>
- <string name="onboarding_text">"Vous n\'êtes plus qu\'a un pas de pouvoir utiliser &appname;: Dans les paramètres écran ci-dessous, appuyez sur \"&appname;\", placez le curseur sur \"on\".\n\nNote: Sur certains téléphones, vous devez faire défiler vers le bas jusqu\'à la fin de la liste pour voir l\'entrée \"&appname; \"."</string>
+ <string name="onboarding_text">"Vous n\'êtes plus qu\'a un pas de pouvoir utiliser &appname;:
+  &lt;br/&gt;
+  &lt;br/&gt;&appname; doit être activé en tant que service d'accessibilité afin qu'il puisse lire et décrypter le contenu de l'écran:
+  &lt;br/&gt;&lt;b&gt;Dans les paramètres écran ci-dessous, appuyez sur \"&appname;\", placez le curseur sur \"on\".&lt;/b&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;Note: Sur certains téléphones, vous devez faire défiler vers le bas jusqu\'à la fin de la liste pour voir l\'entrée \"&appname; \"."
+ </string>
  <string name="settings_acs_post_enable_title">&appname; est prêt!</string>
  <string name="settings_acs_post_enable_msg">"Maintenant, commencez à utiliser l\'une de vos applications autorisées à fonctionner avec &appname; :"</string>
  <string name="settings_acs_post_enable_btn_configure">Activer &appname; avec d\'autres applications</string>

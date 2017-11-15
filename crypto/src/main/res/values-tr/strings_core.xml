@@ -4,7 +4,8 @@
         %ents;
         ]>
 <resources>
-    <string name="acs_description">&appname;\'i Erişilebilirlik Servisi olarak aktif etmek, ekran içeriğini okuyabilme ve deşifre etme imkanı sağlar.</string>
+    <string name="acs_summary">&appname;\'i Erişilebilirlik Servisi olarak aktif etmek, ekran içeriğini okuyabilme ve deşifre etme imkanı sağlar.</string>
+    <!--acs_description deliberately NOT translated, at least for now until we're either booted or not -->
     <string name="action_reenable_boss">Tekrar Aktif Et</string>
     <string name="action_configure">Ayarla</string>
     <string name="main_tab_help">Kurulum</string>
@@ -16,7 +17,12 @@
     <string name="notification_action_boss">Durdur</string>
     <string name="notification_action_hide">Gizle</string>
     <string name="notification_action_show">Göster</string>
-    <string name="settings_acs_not_enabled">&appname; Erişilebilirlik Servisi olarak ayarlanmadı ancak ayarlanması gerekli.\n\"Ayarla\" ya tıklayarak, ayarlar sayfasını açın ve sonra \"&appname;\" e tıklayın ve \"Açık\" konumuna getirin.</string>
+    <string name="settings_acs_not_enabled">&appname; Erişilebilirlik Servisi olarak ayarlanmadı ancak ayarlanması gerekli.
+        \n
+        \n&appname; sizin için ekran içeriğini okuyup açabileceği bir Erişilebilirlik Hizmeti olarak etkinleştirilmelidir:
+        \n
+        \n\"Ayarla\" ya tıklayarak, ayarlar sayfasını açın ve sonra \"&appname;\" e tıklayın ve \"Açık\" konumuna getirin.
+    </string>
     <string name="settings_acs_enabled_ok">&appname; Erişilebilirlik Servisi olarak ayarlandı.</string>
     <string name="settings_help">Online Yardım</string>
     <string name="settings_boss_active">&appname; panik modunda.</string>
@@ -138,7 +144,14 @@
     <string name="tooltip_encryptionparams_gpg_general">PGP açık/gizli anahtarlarla şifrele. Bunu kullanmak için OpenKeychain e ihtiyacınız var.</string>
     <string name="tooltip_encryptionparams_fab">Şifreleme için buraya dokun ve uygulamaya geri dön</string>
     <string name="tooltip_encryptionparams_gpg_choose_own_key">Önce kendi anahtarını seç!</string>
-    <string name="onboarding_text">&appname; i kullanmaktan bir adım uzaktasın:\n\nAşağıdaki ayarlar ekranından, \"&appname;\" e dokun ve onu "Açık" konuma getir.\n\n(Bazı telefonlarda, \"&appname;\" kaydını görmek için aşağıya listenin sonuna kaymanız gerekmektedir.)</string>
+    <string name="onboarding_text">&appname; i kullanmaktan bir adım uzaktasın:
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;&appname; sizin için ekran içeriğini okuyup açabileceği bir Erişilebilirlik Hizmeti olarak etkinleştirilmelidir:
+        &lt;br/&gt;&lt;b&gt;Aşağıdaki ayarlar ekranından, \"&appname;\" e dokun ve onu "Açık" konuma getir.&lt;/b&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;(Bazı telefonlarda, \"&appname;\" kaydını görmek için aşağıya listenin sonuna kaymanız gerekmektedir.)
+    </string>
     <string name="settings_acs_post_enable_title">&appname; hazır!</string>
     <string name="settings_acs_post_enable_msg">Şimdi &appname; etkinleştirilmiş uygulamalarınızdan birini kullanmaya başlayın:</string>
     <string name="settings_acs_post_enable_btn_configure">Diğer uygulamaları etkinleştir</string>

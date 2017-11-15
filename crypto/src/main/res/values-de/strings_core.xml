@@ -7,7 +7,8 @@
     <string name="about_tab_about">Über</string>
     <string name="about_tab_changelog">Changelog</string>
     <string name="about_tab_purchases">Einkäufe</string>
-    <string name="acs_description">Wenn &appname; als Bedienungshilfe aktiviert wird, kann es den Bildschirminhalt auslesen und entschlüsseln.</string>
+    <string name="acs_summary">Wenn &appname; als Bedienungshilfe aktiviert wird, kann es den Bildschirminhalt auslesen und entschlüsseln.</string>
+    <!--acs_description deliberately NOT translated, at least for now until we're either booted or not -->
     <string name="action_about">über</string>
     <string name="action_clear_ignored_keys">Vergesse %1$d ignorierte Texte.</string>
     <string name="action_clear_input">Eingabe löschen</string>
@@ -116,9 +117,20 @@
     <string name="notification_title__hidden">&appname; ist versteckt</string>
     <string name="onboarding_title">Willkommen</string>
     <string name="sample_decrypted_text">Hallo Welt</string>
-    <string name="onboarding_text">Noch ein Schritt bis &appname; bereit ist:\n\nBerühre \"&appname;\" in der Liste im Hintergrund und schalte es dann \"An\".\n\n(Auf manchen Handys ist der \"&appname;\" Eintrag ganz am Ende der Liste, also bitte ganz runterscrollen!)</string>
+    <string name="onboarding_text">Noch ein Schritt bis &appname; bereit ist:
+        &lt;br/&gt;
+        &lt;br/&gt;&appname; muss als Bedienungshilfe aktiviert sein, damit es den Bildschirminhalt für dich lesen und entschlüsseln kann:
+        &lt;br/&gt;&lt;b&gt;Berühre \"&appname;\" in der Liste im Hintergrund und schalte es dann \"An\".&lt;/b&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;(Auf manchen Handys ist der \"&appname;\" Eintrag ganz am Ende der Liste, also bitte ganz runterscrollen!)
+    </string>
     <string name="settings_acs_enabled_ok">&appname; ist korrekt als Bedienungshilfe aktiviert.</string>
-    <string name="settings_acs_not_enabled">&appname; ist nicht als Bedienungshilfe aktiviert und funktioniert deshalb nicht.\nBerühre \"Konfigurieren\" um die Einstellungs-Seite zu Öffnen, dann Berühre \"&appname;\" und schalte es \"An\"</string>
+    <string name="settings_acs_not_enabled">&appname; ist nicht als Bedienungshilfe aktiviert und funktioniert deshalb nicht.
+        \n
+        \n&appname; muss als Bedienungshilfe aktiviert sein, damit es den Bildschirminhalt für dich lesen und entschlüsseln kann:
+        \n
+        \nBerühre \"Konfigurieren\" um die Einstellungs-Seite zu Öffnen, dann Berühre \"&appname;\" und schalte es \"An\"
+    </string>
     <string name="settings_acs_post_enable_btn_configure">Andere Apps aktivieren</string>
     <string name="settings_acs_post_enable_msg">Benutze nun einfach eine der Apps, die für &appname; aktiviert wurden:</string>
     <string name="settings_acs_post_enable_title">&appname; ist bereit!</string>

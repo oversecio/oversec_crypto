@@ -139,7 +139,7 @@ public class AddPasswordKeyActivity extends FragmentActivity {
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             final Activity activity = getActivity();
 
-            ContextThemeWrapper ctw = new ContextThemeWrapper(getContext(), R.style.AppTheme);
+            ContextThemeWrapper ctw = new ContextThemeWrapper(getContext(), R.style.MyAppTheme);
 
 
             AlertDialog.Builder alert = new AlertDialog.Builder(ctw);

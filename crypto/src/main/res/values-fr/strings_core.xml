@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
-<resources>
- <string name="acs_label">&appname;</string>
+    <!ENTITY appname "__appname__">
+    <!ENTITY dllink "__dllink__">
+]>
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
  <string name="acs_summary">Authoriser &appname; en tant que service d\'accessibilité permettant de lire et de décrypter le contenu de l\'écran.</string>
  <!--acs_description deliberately NOT translated, at least for now until we're either booted or not -->
  <string name="action_reenable_boss">Réactiver</string>

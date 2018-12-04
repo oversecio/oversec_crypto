@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
+<!ENTITY appname "__appname__">
+]>
 <resources>
     <string name="accept_insecure_password">OK, das Passwort ist unsicher! Ich will es aber trotzdem benutzen!</string>
     <string name="action_addkey_importqr_body">QR-Code von einem anderen Handy oder Backup-Ausdruck importieren.</string>

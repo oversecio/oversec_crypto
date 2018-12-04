@@ -1,6 +1,5 @@
 package io.oversec.one.crypto;
 
-import android.support.design.BuildConfig;
 import android.util.Log;
 import roboguice.util.Ln;
 

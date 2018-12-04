@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
+    <!ENTITY appname "__appname__">
+    <!ENTITY dllink "__dllink__">
+]>
 <resources>
     <string name="about_tab_about">Über</string>
     <string name="about_tab_changelog">Changelog</string>

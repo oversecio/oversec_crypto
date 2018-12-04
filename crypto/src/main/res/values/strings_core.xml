@@ -1,9 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
-<resources>
-    <string name="acs_label" translatable="false">&appname;</string>
+    <!ENTITY appname "__appname__">
+    <!ENTITY dllink "__dllink__">
+]>
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
     <string name="acs_summary">Enabling &appname; as an Accessibility Service allows it to read and decrypt the screen content.</string>
     <string name="acs_description">Enabling &appname; as an Accessibility Service allows it
         \n\n• to observe your actions in order to update in-place decryption,

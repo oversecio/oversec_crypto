@@ -7,7 +7,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="alertDialogTheme">@style/Base.Theme.AppCompat.Light.Dialog.Alert</item>
     </style>
+
     <!-- Base application theme. -->
     <style name="MyAppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -29,14 +32,22 @@
         <item name="md_neutral_color">#00FF00</item>
         <item name="md_negative_color">#0000FF</item>
 
-
-
+        <!--
         <item name="android:windowBackground">@null</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowAnimationStyle">@null</item>
         <item name="android:windowDisablePreview">true</item>
-        <item name="android:windowNoDisplay">true</item>
+          -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+
     </style>
 
 
@@ -99,7 +110,7 @@
         <item name="android:background">@color/md_divider_black</item>
     </style>
 
-    <style name="ButtonStyleEvenSmaller" parent="@android:attr/buttonStyleSmall">
+    <style name="ButtonStyleEvenSmaller" parent="Widget.AppCompat.Button.Small">
         <!-- Customizations  -->
         <item name="android:minHeight">20dp</item>
     </style>

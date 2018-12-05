@@ -65,16 +65,9 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation('com.github.afollestad.material-dialogs:core:0.8.5.8@aar') {
-        transitive = true
-    }
-    implementation('com.github.afollestad.material-dialogs:commons:0.8.5.8@aar') {
-        transitive = true
-    }
-
-    implementation('com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.2') {
-        transitive = true
-    }
+    implementation 'com.afollestad.material-dialogs:core:0.8.6.2'
+    implementation 'com.afollestad.material-dialogs:commons:0.8.6.2'
+    implementation'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.2'
 
 
 

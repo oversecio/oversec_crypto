@@ -73,9 +73,9 @@ dependencies {
 
     implementation 'com.google.protobuf:protobuf-java:3.6.1'
     implementation 'com.nulab-inc:zxcvbn:1.1.6' //TODO update ?
-    implementation 'com.github.rehacktive:waspdb:1.0' //TODO update ?
-    implementation 'it.sephiroth.android.library.imagezoom:imagezoom:2.2.5' //TODO update ?
-    implementation 'com.borjabravo:readmoretextview:1.1.2' //TODO update ?
+    implementation 'com.github.rehacktive:waspdb:1.0'
+    implementation 'it.sephiroth.android.library.imagezoom:imagezoom:2.3.0'
+    implementation 'com.borjabravo:readmoretextview:2.1.0'
     implementation 'com.github.rtyley:spongycastle:sc-v1.54.0.0' //TODO update ?
     implementation 'org.sufficientlysecure:openpgp-api:11.0' //TODO update ?
 

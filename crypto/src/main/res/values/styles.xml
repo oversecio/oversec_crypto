@@ -11,6 +11,8 @@
         <item name="alertDialogTheme">@style/Base.Theme.AppCompat.Light.Dialog.Alert</item>
     </style>
 
+    <style name="AppTheme" parent="MyAppTheme.NoActionBar" />
+
     <!-- Base application theme. -->
     <style name="MyAppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->

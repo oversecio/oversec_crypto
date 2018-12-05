@@ -13,7 +13,6 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.google.zxing.client.android.camera.open.OpenCameraManager;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -160,13 +159,19 @@ public class Util {
         boolean ret = ContextCompat.checkSelfPermission(ctx, Manifest.permission.CAMERA)
                 == PackageManager.PERMISSION_GRANTED;
 
+
         if (ret) {
             //we still can't be sure, android misreport permission when revoked through settings
+            Camera aCamera = null;
             try {
-                Camera xCamera = new OpenCameraManager().build().open();
-                xCamera.release();
-            } catch (RuntimeException ex) {
+                aCamera = Camera.open();
+                Camera.Parameters mParameters = aCamera.getParameters();
+                aCamera.setParameters(mParameters);
+            } catch (Exception e) {
                 ret = false;
+            }
+            if (aCamera != null) {
+                aCamera.release();
             }
         }
         return ret;

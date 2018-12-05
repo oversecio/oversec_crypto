@@ -32,7 +32,6 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.dlazaro66.qrcodereaderview.QRCodeReaderView;
 import com.google.zxing.*;
-import com.google.zxing.client.android.camera.open.OpenCameraManager;
 import com.google.zxing.common.HybridBinarizer;
 import io.oversec.one.crypto.Consts;
 import io.oversec.one.crypto.Help;
@@ -372,7 +371,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
                             Result result = reader.decode(bBitmap);
                             handleImportQR(result);
                         } catch (NotFoundException e) {
-                            mQRCodeReaderView.getCameraManager().stopPreview();
+                            mQRCodeReaderView.stopCamera();
                             showError(getString(R.string.importimage_nothing_found), new Runnable() {
                                 @Override
                                 public void run() {
@@ -391,7 +390,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
                             return;
                         }
 
-                        mQRCodeReaderView.getCameraManager().stopPreview();
+                        mQRCodeReaderView.stopCamera();
                         showError(e.getMessage(), new Runnable() {
                             @Override
                             public void run() {
@@ -409,24 +408,12 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
     private void startBarcodeScan() {
         mQRCodeReaderView.setVisibility(View.VISIBLE);
         mQRCodeReaderView.setOnQRCodeReadListener(this);
-        mQRCodeReaderView.getCameraManager().startPreview();
+        mQRCodeReaderView.setAutofocusInterval(2000L);
+        mQRCodeReaderView.startCamera();
 //        IntentIntegrator ii = new IntentIntegrator(this);
 //        ii.setPrompt(getString(R.string.app_name));
 //        ii.initiateScan(IntentIntegrator.QR_CODE_TYPES);
     }
-
-    // Called when your device have no camera
-    @Override
-    public void cameraNotFound() {
-
-    }
-
-    // Called when there's no QR codes in the camera preview image
-    @Override
-    public void QRCodeNotFoundOnCamImage() {
-
-    }
-
 
     // Called when a QR is decoded
     // "text" : the text encoded in QR
@@ -437,7 +424,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
             handleImportQr(text);
         } catch (OversecKeystore2.Base64DecodingException e) {
             e.printStackTrace();
-            mQRCodeReaderView.getCameraManager().stopPreview();
+            mQRCodeReaderView.stopCamera();
             showError(
                     getString(R.string.error_invalid_barcode_content),
                     new Runnable() {
@@ -454,7 +441,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
     @Override
     protected void onPause() {
         super.onPause();
-        mQRCodeReaderView.getCameraManager().stopPreview();
+        mQRCodeReaderView.stopCamera();
     }
 
     @Override
@@ -681,7 +668,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
                         handleImportQr(s);
                     } catch (OversecKeystore2.Base64DecodingException e) {
                         e.printStackTrace();
-                        mQRCodeReaderView.getCameraManager().stopPreview();
+                        mQRCodeReaderView.stopCamera();
                         showError(
                                 getString(R.string.error_invalid_barcode_content), new Runnable() {
                                     @Override
@@ -709,7 +696,7 @@ public class KeyImportCreateActivity extends SecureBaseActivity implements QRCod
 
         SymmetricKeyPlain key = OversecKeystore2.getPlainKeyFromBase64Text(s);
 
-        mQRCodeReaderView.getCameraManager().stopPreview();
+        mQRCodeReaderView.stopCamera();
         mQRCodeReaderView.setVisibility(View.GONE);
 
         if (key != null) {

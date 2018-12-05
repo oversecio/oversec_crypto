@@ -65,19 +65,18 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.afollestad.material-dialogs:core:0.8.6.2'
-    implementation 'com.afollestad.material-dialogs:commons:0.8.6.2'
-    implementation'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.2'
+    api 'com.google.protobuf:protobuf-java:3.6.1'
+    api 'org.sufficientlysecure:openpgp-api:11.0' //TODO update ?
+    api 'com.afollestad.material-dialogs:core:0.8.6.2'
+    api 'com.afollestad.material-dialogs:commons:0.8.6.2'
+    api 'com.github.rehacktive:waspdb:1.0'
+    api 'it.sephiroth.android.library.imagezoom:imagezoom:2.3.0'
+    api 'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.2'
 
-
-
-    implementation 'com.google.protobuf:protobuf-java:3.6.1'
     implementation 'com.nulab-inc:zxcvbn:1.1.6' //TODO update ?
-    implementation 'com.github.rehacktive:waspdb:1.0'
-    implementation 'it.sephiroth.android.library.imagezoom:imagezoom:2.3.0'
     implementation 'com.borjabravo:readmoretextview:2.1.0'
     implementation 'com.github.rtyley:spongycastle:sc-v1.54.0.0' //TODO update ?
-    implementation 'org.sufficientlysecure:openpgp-api:11.0' //TODO update ?
+
 
 
     implementation 'com.android.support:recyclerview-v7:28.0.0'

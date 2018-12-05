@@ -73,7 +73,7 @@ dependencies {
     api 'it.sephiroth.android.library.imagezoom:imagezoom:2.3.0'
     api 'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.2'
 
-    implementation 'com.nulab-inc:zxcvbn:1.1.6' //TODO update ?
+    implementation 'com.nulab-inc:zxcvbn:1.2.5'
     implementation 'com.borjabravo:readmoretextview:2.1.0'
     implementation 'com.github.rtyley:spongycastle:sc-v1.54.0.0' //TODO update ?
 

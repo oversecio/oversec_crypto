@@ -339,8 +339,11 @@ public class AddPasswordKeyActivity extends FragmentActivity {
         @Override
         public void onCancel(DialogInterface dialog) {
             super.onCancel(dialog);
-            getActivity().setResult(RESULT_CANCELED);
-            getActivity().finish();
+            FragmentActivity a = getActivity();
+            if (a!=null) {
+                getActivity().setResult(RESULT_CANCELED);
+                getActivity().finish();
+            }
         }
 
         @Override

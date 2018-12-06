@@ -13,8 +13,8 @@
     <string-array name="feature_activity_ignore_whitelist"/>
     <string-array name="feature_activity_ignore_blacklist"/>
     <integer name="default_button_encrypt_delta_x">9999</integer>
-    <integer name="default_button_encrypt_delta_y">0</integer>
+    <integer name="default_button_encrypt_delta_y">32</integer>
     <integer name="default_button_encrypt_anchor_h">1</integer>
-    <integer name="default_button_encrypt_anchor_v">1</integer>
+    <integer name="default_button_encrypt_anchor_v">0</integer>
 
 </resources>

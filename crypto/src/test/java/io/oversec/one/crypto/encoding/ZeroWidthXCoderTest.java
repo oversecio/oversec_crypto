@@ -1,9 +1,24 @@
 package io.oversec.one.crypto.encoding;
 
+import io.oversec.one.common.CoreContract;
+import io.oversec.one.crypto.CoreContractTestBase;
 import io.oversec.one.crypto.proto.Outer;
+
+import org.junit.Before;
 import org.junit.Test;
 
 public class ZeroWidthXCoderTest extends EncodingTestBase {
+
+    @Before
+    public void setUp() throws Exception {
+        CoreContract.init(new CoreContractTestBase() {
+            @Override
+            public boolean isDbSpreadInvisibleEncoding(String packagename) {
+                return true;
+            }
+        });
+        super.setUp();
+    }
 
     @Override
     AbstractXCoder createCoder() {

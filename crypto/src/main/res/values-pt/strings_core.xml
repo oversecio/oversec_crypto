@@ -139,6 +139,7 @@
     <string name="about_tab_changelog">Log de alterações</string>
     <string name="about_tab_about">Sobre</string>
     <string name="about_tab_purchases">Compras</string>
+    <string name="about_tab_donations">Doação</string>
     <string name="controls_checkbox_showuserinteractiondialogsimmediately">Mostrar diálogos de entrada imediatamente</string>
     <string name="controls_hint_showuserinteractiondialogsimmediately">Quando um diálogo de entrada (senha) estiver prestes a ser mostrado para descriptografia, mostrá-lo imediatamente, sem perguntar primeiro ao usuário.</string>
     <string name="main_tab_padder">Chamariz</string>
@@ -209,5 +210,9 @@
     <string name="tooltip_encryptionparams_simplesym_general_appsec">Para começar, adicione uma ou mais senhas!</string>
     <string name="settings_acs_post_enable_msg_appsec">\nDesfrute de mensagens secretas em %1$s com &appname;!</string>
     <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...mas o app «%1$s» não está instalado!</string>
+
+    <string name="donate_body">Por favor, considere fazer uma doação para apoiar o desenvolvimento de &appname;</string>
+    <string name="donate_clip_label">Endereço de Doação</string>
+    <string name="donate_toast_copied">Endereço copiado para a área de transferência</string>
 </resources>
 

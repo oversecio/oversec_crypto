@@ -126,6 +126,7 @@
     <string name="about_tab_changelog">Değişiklikler</string>
     <string name="about_tab_about">Hakkında</string>
     <string name="about_tab_purchases">Satın Alınanlar</string>
+    <string name="about_tab_donations">Bağış</string>
     <string name="controls_checkbox_showuserinteractiondialogsimmediately">Girdi diyaloglarını anında göster</string>
     <string name="controls_hint_showuserinteractiondialogsimmediately">Deşifre işlemi için parola girdi diyalogunu kullanıcıya sormadan hemen göster.</string>
     <string name="main_tab_padder">Yem/Tuzak</string>
@@ -175,6 +176,10 @@
     <string name="tooltip_encryptionparams_simplesym_general_appsec">Başlamak için bir veya daha fazla şifre ekleyin!</string>
     <string name="settings_acs_post_enable_msg_appsec">\&appname; ile %1$s gizli mesajlar tadını çıkarın!</string>
     <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...ancak Uygulama «%1$s» yüklü değil!</string>
+
+    <string name="donate_body">Lütfen &appname;\'ın daha da geliştirilmesini desteklemek için bir bağış yapmayı düşünün.</string>
+    <string name="donate_clip_label">Bağış Adresi</string>
+    <string name="donate_toast_copied">Adres panoya kopyalandı</string>
 
     <!-- pending -->
     <!--

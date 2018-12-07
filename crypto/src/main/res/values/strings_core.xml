@@ -145,6 +145,7 @@
     <string name="about_tab_changelog">Changelog</string>
     <string name="about_tab_about">About</string>
     <string name="about_tab_purchases">Purchases</string>
+    <string name="about_tab_donations">Donations</string>
     <string name="controls_checkbox_showuserinteractiondialogsimmediately">Show input dialogs immediately</string>
     <string name="controls_hint_showuserinteractiondialogsimmediately">When a (password) input dialog is about to be shown in order to decrypt, show it immediately without asking the user first.</string>
     <string name="main_tab_padder">Decoy</string>
@@ -215,4 +216,11 @@
     <string name="tooltip_encryptionparams_simplesym_general_appsec">To get started, add one or more passwords!</string>
     <string name="settings_acs_post_enable_msg_appsec">\nEnjoy secret messages in %1$s with &appname;!</string>
     <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...but you don\'t have «%1$s» installed!</string>
+    <string name="donate_body">Please consider making a donation to support further development of &appname;</string>
+    <string name="donate_btn_btc" translatable="false">Bitcoin</string>
+    <string name="donate_btn_eth" translatable="false">Ethereum</string>
+    <string name="donate_btn_iota" translatable="false">IOTA</string>
+    <string name="donate_btn_dash" translatable="false">Dash</string>
+    <string name="donate_clip_label">Donation Address</string>
+    <string name="donate_toast_copied">Address copied to clipboard!</string>
 </resources>

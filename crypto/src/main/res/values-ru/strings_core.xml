@@ -138,6 +138,7 @@
     <string name="about_tab_changelog">Журнал изменений</string>
     <string name="about_tab_about">О нас</string>
     <string name="about_tab_purchases">Покупки</string>
+    <string name="about_tab_donations">Пожертвование</string>
     <string name="controls_checkbox_showuserinteractiondialogsimmediately">Показать немедленно входные диалоговые окна</string>
     <string name="controls_hint_showuserinteractiondialogsimmediately">Когда должно быть показано диалоговое окно ввода (пароль) для расшифровки, оно показывается немедленно, без предварительного запроса пользователя.</string>
     <string name="main_tab_padder">Приманка</string>
@@ -206,4 +207,8 @@
     <string name="tooltip_encryptionparams_simplesym_general_appsec">Для начала добавьте один или несколько паролей!</string>
     <string name="settings_acs_post_enable_msg_appsec">\nНаслаждайтесь секретные сообщения в %1$s с &appname;!</string>
     <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...но приложение «%1$s» не установлен!</string>
+
+    <string name="donate_body">Пожалуйста, подумайте о том, чтобы сделать пожертвование для поддержки дальнейшей разработки &appname;</string>
+    <string name="donate_clip_label">Адрес пожертвования</string>
+    <string name="donate_toast_copied">Адрес скопирован в буфер обмена</string>
 </resources>

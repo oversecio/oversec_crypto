@@ -1,10 +1,10 @@
-#public crypto related sources and protocol / encoding definition for **Oversec**.
+# public crypto related sources and protocol / encoding definition for **Oversec**.
 
-###Oversec is a unique app for Android that adds secure text and image-encryption to any other Android app. Oversec is an overlay on top of other apps that transparently sends encrypted text, and shows decrypted text, in place. 
+Oversec is a unique app for Android that adds secure text and image-encryption to any other Android app. Oversec is an overlay on top of other apps that transparently sends encrypted text, and shows decrypted text, in place. 
 
-###More infos on our [Website](http://oversec.io)
+### More infos on our [website](http://oversec.io)
 
-###Download the app from the [Playstore](https://play.google.com/store/apps/details?id=io.oversec.one)
+### Download the app from the [Playstore](https://play.google.com/store/apps/details?id=io.oversec.one)
 
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=VHZ9dA5ELXE

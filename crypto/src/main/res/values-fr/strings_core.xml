@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
-<resources>
- <string name="acs_label">&appname;</string>
+    <!ENTITY appname "__appname__">
+    <!ENTITY dllink "__dllink__">
+]>
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
  <string name="acs_summary">Authoriser &appname; en tant que service d\'accessibilité permettant de lire et de décrypter le contenu de l\'écran.</string>
  <!--acs_description deliberately NOT translated, at least for now until we're either booted or not -->
  <string name="action_reenable_boss">Réactiver</string>
@@ -37,7 +36,7 @@
  <string name="controls_slider_padding_top">Espace haut</string>
  <string name="share_body">"&appname;: L\'encryption pour toutes les applications!\n\nTelechargez l\'app &appname; et ajoutez  instantanément  une fonction d\'encryptage à toutes les applications Android\n\nEnvoyez des messages cryptés avec WhatsApp, Line, SMS, Facebook, Gmail ou toute autre application\n\nhttp: //dl.oversec.io"</string>
  <string name="share_chooser_title">Partager via</string>
- <string name="share_as_suffix">Installe &appname; pour decrypter!\nhttp://dl.oversec.io</string>
+ <string name="share_as_suffix">Installe &appname; pour decrypter!\n&dllink;</string>
  <string name="notification_acsnotrunning_title">"</string>
 Le service d\'accessibilité ne fonctionne pas"
  <string name="notification_acsnotrunning_body">Appuyez ici pour activer!</string>
@@ -137,7 +136,8 @@ Le service d\'accessibilité ne fonctionne pas"
  <string name="about_tab_changelog">journal des modifications</string>
  <string name="about_tab_about">À propos</string>
  <string name="about_tab_purchases">Achats</string>
- <string name="controls_checkbox_showuserinteractiondialogsimmediately">Afficher un Dialogue de saisie immédiatement</string>
+ <string name="about_tab_donations">Donation</string>
+ <string name="controls_checkbox_showuserinteractiondialogsimmediately">Afficher la zone de saisie immédiatement</string>
  <string name="controls_hint_showuserinteractiondialogsimmediately">"Quand le mot de passe de déchiffrement doit être saisi, le faire immédiatement sans demander préalablement à l\'utilisateur."</string>
  <string name="main_tab_padder">Leurre</string>
  <string name="error_padder_name_too_short">Merci d\'entrer au moins %1$d caractères</string>
@@ -198,4 +198,11 @@ Le service d\'accessibilité ne fonctionne pas"
   <string name="question_ignore_text">Voulez-vous ignorer ce texte à partir de maintenant?</string>
   <string name="action_ignore_text">Ignorer ce texte</string>
 
+ <string name="tooltip_encryptionparams_simplesym_general_appsec">Pour commencer, ajoutez un ou plusieurs mots de passe!</string>
+ <string name="settings_acs_post_enable_msg_appsec">\nProfitez des messages secrets en %1$s avec &appname;!</string>
+ <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...mais l\'application «%1$s» est pas installé!</string>
+
+ <string name="donate_body">Veuillez envisager de faire un don pour soutenir le développement ultérieur d’&appname;</string>
+ <string name="donate_clip_label">Adresse de donation</string>
+ <string name="donate_toast_copied">Adresse copiée dans le presse-papier</string>
  </resources>

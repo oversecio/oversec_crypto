@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
+    <!ENTITY appname "__appname__">
+    <!ENTITY dllink "__dllink__">
+]>
 <resources>
     <string name="about_tab_about">Über</string>
     <string name="about_tab_changelog">Changelog</string>
     <string name="about_tab_purchases">Einkäufe</string>
+    <string name="about_tab_donations">Spenden</string>
     <string name="acs_summary">Wenn &appname; als Bedienungshilfe aktiviert wird, kann es den Bildschirminhalt auslesen und entschlüsseln.</string>
     <!--acs_description deliberately NOT translated, at least for now until we're either booted or not -->
     <string name="action_about">über</string>
@@ -137,8 +138,8 @@
     <string name="settings_boss_active">&appname; ist im Panik Modus.</string>
     <string name="settings_help">Online Hilfe</string>
     <string name="settings_upgrade">Du benutzt das ganz normale &appname;.\nUpgraden um zusätzliche Features freizuschalten!</string>
-    <string name="share_as_suffix">Installiere &appname; zum entschlüsseln!\nhttp://dl.oversec.io</string>
-    <string name="share_body">&appname;: Verschlüsselung für alle Apps!\n\nHole dir die &appname; App und verschlüssele mit allen Android Apps.\n\nSende Auge-zu-Auge verschlüsselte Nachrichten mit Whatsapp, Snapchat, Instagran, SMS, Facebook, Gmail oder jeder anderen App.\n\nhttp://dl.oversec.io</string>
+    <string name="share_as_suffix">Installiere &appname; zum entschlüsseln!\n&dllink;</string>
+    <string name="share_body">&appname;: Verschlüsselung für alle Apps!\n\nHole dir die &appname; App und verschlüssele mit allen Android Apps.\n\nSende Auge-zu-Auge verschlüsselte Nachrichten mit Whatsapp, Snapchat, Instagran, SMS, Facebook, Gmail oder jeder anderen App.\n\n&dllink;</string>
     <string name="share_chooser_title">Teilen mit</string>
     <string name="title_activity_about">Über &appname;</string>
     <string name="title_activity_appconfig">App Einstellungen</string>
@@ -183,10 +184,16 @@
 
     <string name="action_later">Später</string>
 
-    <string name="warning_app_with_serious_issues_enabled">Die app %s hat Probleme und &appname; funktioniert nicht richtig mir ihr.\n\nBitte lese unserer Online-Hilfe für aktuelle Infos!</string>
+    <string name="warning_app_with_serious_issues_enabled">Die App %s hat Probleme und &appname; funktioniert nicht richtig mir ihr.\n\nBitte lese unserer Online-Hilfe für aktuelle Infos!</string>
 
     <string name="question_ignore_text">Diesen Text von nun an ignorieren?</string>
     <string name="action_ignore_text">Text ignorieren</string>
 
+    <string name="tooltip_encryptionparams_simplesym_general_appsec">Füge ein oder mehrere Passwörter hinzu um loszulegen!</string>
+    <string name="settings_acs_post_enable_msg_appsec">\nViel Spaß mit geheimen &appname; Nachrichten in %1$s !</string>
+    <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...aber die App «%1$s» ist nicht installiert!</string>
 
+    <string name="donate_body">Bitte erwägen Sie eine Spende, um die Weiterentwicklung von &appname; zu unterstützen</string>
+    <string name="donate_clip_label">Spenden-Adresse</string>
+    <string name="donate_toast_copied">Adresse in Zwischenablage kopiert</string>
 </resources>

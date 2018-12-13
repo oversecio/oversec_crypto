@@ -17,15 +17,15 @@ public class SimpleSymmetricCryptoHandlerTest extends CryptoHandlerTestBase {
     KeyCache mKeyCache;
 
     public SimpleSymmetricCryptoHandlerTest() {
-        mKeyCache = KeyCache.getInstance(mContext);
+        mKeyCache = KeyCache.Companion.getInstance(mContext);
     }
 
     @Test
     public void testEncryptDecrypt() throws Exception {
         final long key_id = 12345L;
-        final byte[] rawKeyBytes = KeyUtil.getRandomBytes(32);
+        final byte[] rawKeyBytes = KeyUtil.INSTANCE.getRandomBytes(32);
 
-        SymmetricKeyPlain plainKey = new SymmetricKeyPlain(0, "foobar", new Date(), rawKeyBytes);
+        SymmetricKeyPlain plainKey = new SymmetricKeyPlain(key_id, "foobar", new Date(), rawKeyBytes);
 
         mKeyCache.doCacheKey(plainKey, Integer.MAX_VALUE);
 

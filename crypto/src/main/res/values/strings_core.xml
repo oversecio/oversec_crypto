@@ -1,9 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
-<resources>
-    <string name="acs_label" translatable="false">&appname;</string>
+    <!ENTITY appname "__appname__">
+    <!ENTITY dllink "__dllink__">
+]>
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
     <string name="acs_summary">Enabling &appname; as an Accessibility Service allows it to read and decrypt the screen content.</string>
     <string name="acs_description">Enabling &appname; as an Accessibility Service allows it
         \n\n• to observe your actions in order to update in-place decryption,
@@ -39,9 +39,9 @@
     <string name="controls_slider_fontsize">Text-size</string>
     <string name="controls_slider_padding_left">Pad left</string>
     <string name="controls_slider_padding_top">Pad top</string>
-    <string name="share_body">&appname;: Encryption for all apps!\n\nGet the &appname; app and add encryption to all Android apps.\n\nSend eye-to-eye encrypted messages with Whatsapp, Line, SMS, Facebook, Gmail or any other app.\n\nhttp://dl.oversec.io</string>
+    <string name="share_body">&appname;: Encryption for all apps!\n\nGet the &appname; app and add encryption to all Android apps.\n\nSend eye-to-eye encrypted messages with Whatsapp, Line, SMS, Facebook, Gmail or any other app.\n\n&dllink;</string>
     <string name="share_chooser_title">Share via </string>
-    <string name="share_as_suffix">Install &appname; to decrypt!\nhttp://dl.oversec.io</string>
+    <string name="share_as_suffix">Install &appname; to decrypt!\n&dllink;</string>
     <string name="notification_acsnotrunning_title">Accessibility service not running</string>
     <string name="notification_acsnotrunning_body">Tap here to enable!</string>
     <string name="decrypt_in_progress">Decrypting…</string>
@@ -145,6 +145,7 @@
     <string name="about_tab_changelog">Changelog</string>
     <string name="about_tab_about">About</string>
     <string name="about_tab_purchases">Purchases</string>
+    <string name="about_tab_donations">Donations</string>
     <string name="controls_checkbox_showuserinteractiondialogsimmediately">Show input dialogs immediately</string>
     <string name="controls_hint_showuserinteractiondialogsimmediately">When a (password) input dialog is about to be shown in order to decrypt, show it immediately without asking the user first.</string>
     <string name="main_tab_padder">Decoy</string>
@@ -192,7 +193,7 @@
     <string name="secretdialer_code_needs_to_be_set_up">Please set up the Secret Dialer Code first!</string>
 
     <string name="overlaypermissionswarning_title">Permission Required</string>
-    <string name="overlaypermissionswarning_text">&appname; currently doesn\'t have permission to draw over other Apps.\n\n&appname; can not function without this permission!\n\nPlease tap on \"Settings\" and then permit drawing over other apps.</string>
+    <string name="overlaypermissionswarning_text">&appname; currently doesn\'t have permission to draw over other Apps.\n\n&appname; can not function without this permission!\n\nPlease tap on \"Settings\" and then allow drawing over other apps.</string>
     <string name="action_settings">Settings</string>
     <string name="tooltip_app_issues">There is additional information for using &appname; with %1$s in the online help</string>
     <string name="tooltip_buttoncompose">Tap here to enter and encrypt a text to the clipboard</string>
@@ -211,4 +212,15 @@
 
     <string name="actionaccessibilitysettingsnotresolvable_text">&appname; needs to be enabled as an Accessibility Service on your phone, but we couldn\'t automatically open the Android Settings \"Accessibility\" page.\n\nPlease manually locate and open the \"Accessibility\" page in your phone\'s settings, then locate \"&appname;\" and enable it.\n\n&appname; can not function unless it\'s enabled as an Accessibility Service!</string>
 
+
+    <string name="tooltip_encryptionparams_simplesym_general_appsec">To get started, add one or more passwords!</string>
+    <string name="settings_acs_post_enable_msg_appsec">\nEnjoy secret messages in %1$s with &appname;!</string>
+    <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...but you don\'t have «%1$s» installed!</string>
+    <string name="donate_body">Please consider making a donation to support further development of &appname;</string>
+    <string name="donate_btn_btc" translatable="false">Bitcoin</string>
+    <string name="donate_btn_eth" translatable="false">Ethereum</string>
+    <string name="donate_btn_iota" translatable="false">IOTA</string>
+    <string name="donate_btn_dash" translatable="false">Dash</string>
+    <string name="donate_clip_label">Donation Address</string>
+    <string name="donate_toast_copied">Address copied to clipboard!</string>
 </resources>

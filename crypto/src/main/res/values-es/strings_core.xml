@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
-<resources>
+    <!ENTITY appname "__appname__">
+    <!ENTITY dllink "__dllink__">
+]>
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
     <string name="acs_summary">Activar &appname; como un servicio de accesibilidad permite que &appname; lea y descifre el contenido de la pantalla.</string>
     <!--acs_description deliberately NOT translated, at least for now until we're either booted or not -->
     <string name="action_reenable_boss">Reactivar</string>
@@ -34,9 +34,9 @@
     <string name="controls_slider_fontsize">Tamaño del texto</string>
     <string name="controls_slider_padding_left">Pad izquierdo</string>
     <string name="controls_slider_padding_top">Pad superior</string>
-    <string name="share_body">¡&appname;: encriptación para todas las aplicaciones!\n\nDescarga la aplicación &appname; y encripta todas las aplicaciones Android.\n\nEnvía mensajes encriptados de ojo a ojo con Whatsapp, Line, SMS, Facebook, Gmail o cualquier otra aplicación.\n\nhttp://dl.oversec.io</string>
+    <string name="share_body">¡&appname;: encriptación para todas las aplicaciones!\n\nDescarga la aplicación &appname; y encripta todas las aplicaciones Android.\n\nEnvía mensajes encriptados de ojo a ojo con Whatsapp, Line, SMS, Facebook, Gmail o cualquier otra aplicación.\n\n&dllink;</string>
     <string name="share_chooser_title">Compartir en </string>
-    <string name="share_as_suffix">¡Instala &appname; para descifrar!\nhttp://dl.oversec.io</string>
+    <string name="share_as_suffix">¡Instala &appname; para descifrar!\n&dllink;</string>
     <string name="notification_acsnotrunning_title">El servicio de accesibilidad no se está ejecutando.</string>
     <string name="notification_acsnotrunning_body">Pulse aquí para activarlo.</string>
     <string name="decrypt_in_progress">Descifrando...</string>
@@ -138,6 +138,7 @@
     <string name="about_tab_changelog">Registro de cambios</string>
     <string name="about_tab_about">Acerca de</string>
     <string name="about_tab_purchases">Compras</string>
+    <string name="about_tab_donations">Donación</string>
     <string name="controls_checkbox_showuserinteractiondialogsimmediately">Mostrar los cuadros de diálogo de entrada de inmediato</string>
     <string name="controls_hint_showuserinteractiondialogsimmediately">Mostrar inmediatamente un diálogo de entrada (contraseña) cuando está a punto de visualizarse para poder descifrarlo, sin preguntar al usuario primero.</string>
     <string name="main_tab_padder">Señuelo</string>
@@ -203,4 +204,11 @@
 
     <string name="actionaccessibilitysettingsnotresolvable_text">&appname; debe esta activada como un servicio de accesibilidad en su teléfono, pero no logramos\ abrir automáticamente la página de \&quot;Accesibilidad\&quot; en la configuración de Android.\n\nPor favor, abra la página de \&quot;Accesibilidad\&quot; en los ajustes de su teléfono, ubique \&quot;&appname;\&quot; y actívela.\n\n¡&appname; no puede funcionar a menos que esté habilitada como un servicio de accesibilidad!</string>
 
+    <string name="tooltip_encryptionparams_simplesym_general_appsec">Para empezar, agregue una o más contraseñas!</string>
+    <string name="settings_acs_post_enable_msg_appsec">\nDisfrutar de mensajes secretos en %1$s con &appname;!</string>
+    <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...pero la aplicación «%1$s» no está instalado!</string>
+
+    <string name="donate_body">Por favor, considere hacer una donación para apoyar un mayor desarrollo de &appname;</string>
+    <string name="donate_clip_label">Dirección de la donación</string>
+    <string name="donate_toast_copied">Dirección copiada al portapapeles</string>
 </resources>

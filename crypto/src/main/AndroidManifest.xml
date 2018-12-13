@@ -15,19 +15,22 @@
         <activity
             android:name="io.oversec.one.crypto.sym.ui.UnlockKeyActivity"
             android:excludeFromRecents="true"
-            android:theme="@android:style/Theme.NoDisplay" />
+            android:theme="@style/MyAppTheme.NoDisplay" />
         <activity
             android:name="io.oversec.one.crypto.symsimple.ui.AddPasswordKeyActivity"
             android:excludeFromRecents="true"
-            android:theme="@android:style/Theme.NoDisplay" />
+            android:theme="@style/MyAppTheme.NoDisplay" />
         <activity
             android:name="io.oversec.one.crypto.sym.ui.KeyImportCreateActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/import_decrypt_key_title"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize">
-
-
+            android:windowSoftInputMode="adjustResize"/>
+        <activity-alias
+                android:enabled="@bool/feature_enctype_sym"
+                android:name="io.oversec.one.crypto.sym.ui.KeyImportCreateActivityWithIntentFilter"
+                android:targetActivity="io.oversec.one.crypto.sym.ui.KeyImportCreateActivity"
+        >
             <intent-filter tools:ignore="GoogleAppIndexingWarning">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -40,7 +43,8 @@
 
                 <data android:mimeType="image/*" />
             </intent-filter>
-        </activity>
+        </activity-alias>
+
         <activity
             android:name="io.oversec.one.crypto.sym.ui.KeyDetailsActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -55,19 +59,9 @@
             android:name="io.oversec.one.crypto.sym.KeystoreIntentService"
             android:exported="false" />
 
-        <receiver android:name="io.oversec.one.crypto.AppsReceiver">
-            <intent-filter android:priority="999">
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
-                <action android:name="android.intent.action.PACKAGE_CHANGED" />
-
-                <data android:scheme="package" />
-            </intent-filter>
-        </receiver>
-
         <provider
                 android:name="io.oversec.one.crypto.TemporaryContentProvider"
-                android:authorities="oversec_temporary_content"
+                android:authorities="@string/tempcontent_authority"
                 android:grantUriPermissions="true" tools:ignore="ExportedContentProvider"/>
 
         <service

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
-<resources>
+    <!ENTITY appname "__appname__">
+    <!ENTITY dllink "__dllink__">
+]>
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
     <string name="acs_summary">Включение &appname; в качестве сервиса специальных возможностей (Accessibility service) позволяет ему прочитывать и расшифровывать содержимое экрана.</string>
     <!--acs_description deliberately NOT translated, at least for now until we're either booted or not -->
     <string name="action_reenable_boss">Повторно активировать</string>
@@ -34,9 +34,9 @@
     <string name="controls_slider_fontsize">Размер текста</string>
     <string name="controls_slider_padding_left">Панель слева</string>
     <string name="controls_slider_padding_top">Панель сверху</string>
-    <string name="share_body">&appname;: Шифрование для всех приложений!\n\nПолучите приложение &appname; и добавьте шифрование для всех приложений Android.\n\nОтправляйте зашифрованные сообщения «Eye-to-Eye» с помощью Whatsapp, Line, SMS, Facebook, Gmail или любого другого приложения.\n\nhttp://dl.oversec.io</string>
+    <string name="share_body">&appname;: Шифрование для всех приложений!\n\nПолучите приложение &appname; и добавьте шифрование для всех приложений Android.\n\nОтправляйте зашифрованные сообщения «Eye-to-Eye» с помощью Whatsapp, Line, SMS, Facebook, Gmail или любого другого приложения.\n\n&dllink;</string>
     <string name="share_chooser_title">Совместное использование через </string>
-    <string name="share_as_suffix">Установить &appname; для расшифровки!\nhttp://dl.oversec.io</string>
+    <string name="share_as_suffix">Установить &appname; для расшифровки!\n&dllink;</string>
     <string name="notification_acsnotrunning_title">Сервис специальных возможностей не работает</string>
     <string name="notification_acsnotrunning_body">Нажмите здесь, чтобы включить!</string>
     <string name="decrypt_in_progress">Расшифровка...</string>
@@ -138,6 +138,7 @@
     <string name="about_tab_changelog">Журнал изменений</string>
     <string name="about_tab_about">О нас</string>
     <string name="about_tab_purchases">Покупки</string>
+    <string name="about_tab_donations">Пожертвование</string>
     <string name="controls_checkbox_showuserinteractiondialogsimmediately">Показать немедленно входные диалоговые окна</string>
     <string name="controls_hint_showuserinteractiondialogsimmediately">Когда должно быть показано диалоговое окно ввода (пароль) для расшифровки, оно показывается немедленно, без предварительного запроса пользователя.</string>
     <string name="main_tab_padder">Приманка</string>
@@ -203,4 +204,11 @@
 
     <string name="actionaccessibilitysettingsnotresolvable_text">&appname; должен быть включен как Сервис специальных возможностей на вашем телефоне, но мы не смогли автоматически открыть страницу Настройки Android «Специальные возможности».\n\nВручную найдите и откройте страницу «Специальные возможности\ в настройках вашего телефона, затем найдите приложение «&appname;» и включите его.\n\n&appname; не может функционировать, если оно не включено как Сервис специальных возможностей!</string>
 
+    <string name="tooltip_encryptionparams_simplesym_general_appsec">Для начала добавьте один или несколько паролей!</string>
+    <string name="settings_acs_post_enable_msg_appsec">\nНаслаждайтесь секретные сообщения в %1$s с &appname;!</string>
+    <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...но приложение «%1$s» не установлен!</string>
+
+    <string name="donate_body">Пожалуйста, подумайте о том, чтобы сделать пожертвование для поддержки дальнейшей разработки &appname;</string>
+    <string name="donate_clip_label">Адрес пожертвования</string>
+    <string name="donate_toast_copied">Адрес скопирован в буфер обмена</string>
 </resources>

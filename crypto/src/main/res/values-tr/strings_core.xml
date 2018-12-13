@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
-<resources>
+    <!ENTITY appname "__appname__">
+    <!ENTITY dllink "__dllink__">
+]>
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
     <string name="acs_summary">&appname;\'i Erişilebilirlik Servisi olarak aktif etmek, ekran içeriğini okuyabilme ve deşifre etme imkanı sağlar.</string>
     <!--acs_description deliberately NOT translated, at least for now until we're either booted or not -->
     <string name="action_reenable_boss">Tekrar Aktif Et</string>
@@ -34,9 +34,9 @@
     <string name="controls_slider_fontsize">Metin boyutu</string>
     <string name="controls_slider_padding_left">Sol boşluk</string>
     <string name="controls_slider_padding_top">Üst boşluk</string>
-    <string name="share_body">&appname;: Bütün uygulamalar için gizlilik!\n\n&appname; bütün chat, email or diğer uygulamalarınız için gizlilik sağlar.\n\nWhatsapp, Line, SMS, Facebook, Gmail veya herhangi bir uygulama ile şifreli mesaj gönderin.\n\nhttp://dl.oversec.io</string>
+    <string name="share_body">&appname;: Bütün uygulamalar için gizlilik!\n\n&appname; bütün chat, email or diğer uygulamalarınız için gizlilik sağlar.\n\nWhatsapp, Line, SMS, Facebook, Gmail veya herhangi bir uygulama ile şifreli mesaj gönderin.\n\n&dllink;</string>
     <string name="share_chooser_title">Paylaş</string>
-    <string name="share_as_suffix">Deşifre etmek için &appname; yükleyin!\nhttp://dl.oversec.io</string>
+    <string name="share_as_suffix">Deşifre etmek için &appname; yükleyin!\n&dllink;</string>
     <string name="notification_acsnotrunning_title">Erişilebilirlik Servisi çalışmıyor</string>
     <string name="notification_acsnotrunning_body">Aktif etmek için tıklayın!</string>
     <string name="decrypt_in_progress">Deşifre ediyor…</string>
@@ -126,6 +126,7 @@
     <string name="about_tab_changelog">Değişiklikler</string>
     <string name="about_tab_about">Hakkında</string>
     <string name="about_tab_purchases">Satın Alınanlar</string>
+    <string name="about_tab_donations">Bağış</string>
     <string name="controls_checkbox_showuserinteractiondialogsimmediately">Girdi diyaloglarını anında göster</string>
     <string name="controls_hint_showuserinteractiondialogsimmediately">Deşifre işlemi için parola girdi diyalogunu kullanıcıya sormadan hemen göster.</string>
     <string name="main_tab_padder">Yem/Tuzak</string>
@@ -172,7 +173,13 @@
     <string name="question_ignore_text">Şu andan itibaren bu metni göz ardı istiyor musunuz?</string>
     <string name="action_ignore_text">metin görmezden</string>
 
+    <string name="tooltip_encryptionparams_simplesym_general_appsec">Başlamak için bir veya daha fazla şifre ekleyin!</string>
+    <string name="settings_acs_post_enable_msg_appsec">\&appname; ile %1$s gizli mesajlar tadını çıkarın!</string>
+    <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...ancak Uygulama «%1$s» yüklü değil!</string>
 
+    <string name="donate_body">Lütfen &appname;\'ın daha da geliştirilmesini desteklemek için bir bağış yapmayı düşünün.</string>
+    <string name="donate_clip_label">Bağış Adresi</string>
+    <string name="donate_toast_copied">Adres panoya kopyalandı</string>
 
     <!-- pending -->
     <!--

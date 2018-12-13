@@ -9,6 +9,7 @@ import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import io.oversec.one.crypto.AbstractCryptoHandler;
 import io.oversec.one.crypto.AbstractEncryptionParams;
+import io.oversec.one.crypto.BaseDecryptResult;
 import io.oversec.one.crypto.gpg.GpgCryptoHandler;
 import io.oversec.one.crypto.gpg.GpgEncryptionParams;
 import io.oversec.one.crypto.gpg.OpenKeychainConnector;
@@ -28,14 +29,13 @@ public class GpgCryptoHandlerTest extends CryptoHandlerTestBase {
 
     public GpgCryptoHandlerTest() {
         OpenKeychainConnector openKeychainConnector = mock(OpenKeychainConnector.class);
-
-
         //TODO: damn, somehow need to mock this stuff (non-static)
         // when(openKeychainConnector.getVersionInternal(mContext)).thenReturn(OpenKeychainConnector.V_MIN);    // Mock implementation
         mockBoundOpenPgpService();
 
     }
 
+    //TODO: see below
 //    @Test
 //    public void testEncryptDecrypt() throws Exception {
 //
@@ -52,8 +52,8 @@ public class GpgCryptoHandlerTest extends CryptoHandlerTestBase {
 //
 //        assertTrue(decryptResult.isOk());
 //
-//        assertEquals(decryptResult.getDecryptedData(), innerData);
-//        assertEquals(decryptResult.getDecryptedData().getTextAndPaddingV0().getText(), PLAIN_CONTENT);
+//        assertEquals(decryptResult.getDecryptedDataAsInnerData(), innerData);
+//        assertEquals(decryptResult.getDecryptedDataAsInnerData().getTextAndPaddingV0().getText(), PLAIN_CONTENT);
 //
 //    }
 
@@ -98,7 +98,6 @@ public class GpgCryptoHandlerTest extends CryptoHandlerTestBase {
 
         @Override
         public Intent execute(Intent intent, ParcelFileDescriptor parcelFileDescriptor, int i) throws RemoteException {
-            System.out.println("********* EXECUTE *****************");
             /**
              * TODO
              * either implement pipes and pgp enc/decryption [OVERKILL]

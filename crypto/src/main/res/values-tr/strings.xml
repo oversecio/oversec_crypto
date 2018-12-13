@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
+<!ENTITY appname "__appname__">
+]>
 <resources>
     <string name="title_activity_keys">Şifreleme Anahtarları</string>
     <string name="common_ok">Tamam</string>
@@ -234,4 +233,5 @@
     <string name="dialog_explore_label_signed_by">İmzalayan:</string>
     <string name="simple_password_unlock_key">Anahtar Kilidini Aç …</string>
     <string name="simple_password_to_decrypt_this">Bu metni deşifre etmek için:</string>
+    <string name="simplesym_header_passwords">Şifreler</string>
 </resources>

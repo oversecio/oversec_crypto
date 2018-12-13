@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
+<!ENTITY appname "__appname__">
+]>
 <resources>
-<string name="app_name">&appname;</string>
  <string name="title_activity_keys">Clés</string>
  <string name="common_ok">OK</string>
  <string name="common_cancel">Annuler</string>
@@ -237,4 +235,5 @@
   <item quantity="one">Un mot de passe en cache</item>
   <item quantity="other">%d mots de passe en cache</item>
  </plurals>
+ <string name="simplesym_header_passwords">Mots de passe</string>
 </resources>

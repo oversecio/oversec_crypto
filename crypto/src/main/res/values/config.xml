@@ -1,0 +1,20 @@
+<resources>
+    <bool name="feature_takephoto">true</bool>
+    <!-- note: if feature_takephoto is enabled, then feature_images needs to be enabled as well! -->
+    <bool name="feature_images">true</bool>
+    <bool name="feature_enctype_sym">true</bool>
+    <bool name="feature_enctype_pgp">true</bool>
+    <bool name="feature_expert_options">true</bool>
+    <bool name="feature_option_composebutton">true</bool>
+    <bool name="feature_notification">true</bool>
+    <string name="feature_package" translatable="false" />
+    <string name="feature_help_host" translatable="false">help.oversec.io</string>
+    <integer name="feature_max_num_passwords">99999</integer>
+    <string-array name="feature_activity_ignore_whitelist"/>
+    <string-array name="feature_activity_ignore_blacklist"/>
+    <integer name="default_button_encrypt_delta_x">9999</integer>
+    <integer name="default_button_encrypt_delta_y">32</integer>
+    <integer name="default_button_encrypt_anchor_h">1</integer>
+    <integer name="default_button_encrypt_anchor_v">0</integer>
+
+</resources>

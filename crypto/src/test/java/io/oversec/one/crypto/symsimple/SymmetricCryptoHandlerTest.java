@@ -21,13 +21,13 @@ public class SymmetricCryptoHandlerTest extends CryptoHandlerTestBase {
     private final OversecKeystore2 mKeyStore;
 
     public SymmetricCryptoHandlerTest() {
-        mKeyStore = OversecKeystore2.getInstance(mContext);
+        mKeyStore = OversecKeystore2.Companion.getInstance(mContext);
     }
 
     @Test
     public void testEncryptDecrypt() throws Exception {
         long key_id = 12345L;
-        final byte[] rawKeyBytes = KeyUtil.getRandomBytes(32);
+        final byte[] rawKeyBytes = KeyUtil.INSTANCE.getRandomBytes(32);
 
         SymmetricKeyPlain plainKey = new SymmetricKeyPlain(key_id, "foobar", new Date(), rawKeyBytes);
 

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
+<!ENTITY appname "__appname__">
+]>
 <resources>
     <string name="title_activity_keys">Chaves</string>
     <string name="common_ok">OK</string>
@@ -238,6 +237,6 @@
     <string name="simple_password_to_decrypt_this">para descriptografar este texto:</string>
     <string name="tooltip_settextfailed">O &appname; não conseguiu escrever o texto codificado no aplicativo de base!\n\nProvavelmente, isso aconteceu porque o aplicativo de base permite apenas um número limitado de caracteres no campo de entrada!\n\nTente com menos destinatários ou use a criptografia simétrica, que é mais compacta!</string>
     <string name="tooltip_encodingtoolong">A mensagem criptografada/codificada é longa demais!\n\nO &appname; não escreveu a mensagem no aplicativo de base. Se tivesse escrito, ele iria travar!\n\nTente com menos destinatários ou use a criptografia simétrica, que é mais compacta!</string>
-
+    <string name="simplesym_header_passwords">Senhas</string>
 </resources>
 

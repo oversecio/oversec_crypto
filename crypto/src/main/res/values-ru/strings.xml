@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources [
-        <!ENTITY % ents SYSTEM "entities.dtd">
-        %ents;
-        ]>
+<!ENTITY appname "__appname__">
+]>
 <resources>
     <string name="title_activity_keys">Ключи</string>
     <string name="common_ok">ОК</string>
@@ -237,5 +236,5 @@
     <string name="simple_password_to_decrypt_this">расшифровать этот текст:</string>
     <string name="tooltip_settextfailed">&appname; не может перезаписать закодированный текст в расположенное ниже приложение!\n\nЭто наиболее вероятно из-за расположенного ниже приложения, допускающего лишь ограниченное количество символов в поле ввода!\n\nПопробуйте использовать меньшее количество получателей или используйте симметричное шифрование, которое является более компактным!</string>
     <string name="tooltip_encodingtoolong">Зашифрованное/закодированное сообщение является слишком длинным!\n\n&appname;  не перезаписывает сообщение, так как в противном случае произойдет фатальный сбой расположенного ниже приложения!\n\nПопробуйте использовать меньшее количество получателей или используйте симметричное шифрование, которое является более компактным!</string>
-
+    <string name="simplesym_header_passwords">Пароли</string>
 </resources>

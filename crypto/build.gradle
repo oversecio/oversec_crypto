@@ -1,27 +1,27 @@
-
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.protobuf'
 apply plugin: 'ru.tinkoff.gradle.jarjar'
-
-
+apply plugin: 'witness'
 
 buildscript {
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.7.7'
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.7'
     }
 }
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "25.0.0"
+    compileSdkVersion 28
+    testOptions.unitTests.includeAndroidResources = true
 
     defaultConfig {
-        minSdkVersion 18
+        minSdkVersion 21
         //noinspection OldTargetApi
-        targetSdkVersion 22
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -45,7 +45,7 @@ jarJar {
 
 protobuf {
     protoc {
-        artifact = 'com.google.protobuf:protoc:3.0.0-beta-2'
+        artifact = 'com.google.protobuf:protoc:3.6.1'
     }
     generateProtoTasks {
         // all() returns the collection of all protoc tasks
@@ -62,53 +62,65 @@ protobuf {
 dependencies {
 
     jarJar 'commons-codec:commons-codec:1.10'
-    compile fileTree(dir: './build/libs', include: ['*.jar']) //to pick up the jarjared jar
+    implementation fileTree(dir: './build/libs', include: ['*.jar']) //to pick up the jarjared jar
 
 
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile('com.github.afollestad.material-dialogs:core:0.8.5.8@aar') {
-        transitive = true
-    }
-    compile('com.github.afollestad.material-dialogs:commons:0.8.5.8@aar') {
-        transitive = true
-    }
+    api 'com.google.protobuf:protobuf-java:3.6.1'
+    api 'org.sufficientlysecure:openpgp-api:11.0' //TODO update ?
+    api 'com.afollestad.material-dialogs:core:0.8.6.2'
+    api 'com.afollestad.material-dialogs:commons:0.8.6.2'
+    api 'com.github.rehacktive:waspdb:1.0'
+    api 'it.sephiroth.android.library.imagezoom:imagezoom:2.3.0'
+    api 'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.2'
 
-    compile('com.dlazaro66.qrcodereaderview:qrcodereaderview:1.0.0') {
-        transitive = true
-    }
+    implementation 'com.nulab-inc:zxcvbn:1.2.5'
+    implementation 'com.borjabravo:readmoretextview:2.1.0'
+    implementation 'com.madgag.spongycastle:bcpg-jdk15on:1.58.0.0'
 
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:support-v13:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
 
-
-    compile 'com.google.protobuf:protobuf-java:3.0.0-beta-3'
-    compile 'com.nulab-inc:zxcvbn:1.1.6'
-    compile 'com.github.rehacktive:waspdb:1.0'
-    compile 'it.sephiroth.android.library.imagezoom:imagezoom:2.2.5'
-    compile 'com.borjabravo:readmoretextview:1.1.2'
-    compile 'com.github.rtyley:spongycastle:sc-v1.54.0.0'
-    compile 'org.sufficientlysecure:openpgp-api:11.0'
-
-    compile 'com.android.support:recyclerview-v7:23.4.0'
-    compile 'com.android.support:support-v13:23.4.0'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:cardview-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
+    androidTestImplementation 'junit:junit:4.12'
+    androidTestImplementation 'org.mockito:mockito-core:2.0.99-beta'
+    androidTestImplementation 'com.android.support.test:runner:0.3'
+    androidTestImplementation "com.google.dexmaker:dexmaker:1.2"
+    androidTestImplementation "com.google.dexmaker:dexmaker-mockito:1.2"
 
 
-    androidTestCompile 'junit:junit:4.12'
-    androidTestCompile 'org.mockito:mockito-core:2.0.99-beta'
-    androidTestCompile 'com.android.support.test:runner:0.3'
-    androidTestCompile "com.google.dexmaker:dexmaker:1.2"
-    androidTestCompile "com.google.dexmaker:dexmaker-mockito:1.2"
-
-
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:2.0.99-beta'
-    testCompile "org.robolectric:robolectric:3.1.2"
-    testCompile 'org.robolectric:shadows-support-v4:3.0'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:2.23.4'
+    testImplementation "org.robolectric:robolectric:4.0.2"
+    testImplementation 'org.robolectric:shadows-supportv4:4.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
-
-
-
-
+//Note: update with  ./gradlew  -q calculateChecksums
+dependencyVerification {
+    verify = [
+            'com.afollestad.material-dialogs:commons:0.8.6.2:commons-0.8.6.2.aar:22b4779fa828626670b35cf7a465c4d17403b2b47da5d3efff267b7f88044a19',
+            'com.afollestad.material-dialogs:core:0.8.6.2:core-0.8.6.2.aar:4bbe57d537e91a283ab1db7792516984fc90055880d21b81e98b072da7778025',
+            'com.borjabravo:readmoretextview:2.1.0:readmoretextview-2.1.0.aar:bdc83222fe334ff15005cefc6c65f4e01fa8772a2056576adb9cde9f7d299cd2',
+            'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.2:qrcodereaderview-2.0.2.aar:3cf820b6cd0b90e4349395b16ca9c6e19a2a49d7398962529ca832dc8bcad3c0',
+            'com.esotericsoftware:kryo:3.0.3:kryo-3.0.3.jar:5c295b23480225ff6e7d6770dfa904bedcec8556c27234fea0a271fe13195f69',
+            'com.esotericsoftware:minlog:1.3.0:minlog-1.3.0.jar:f7b399d3a5478a4f3e0d98bd1c9f47766119c66414bc33aa0f6cde0066f24cc2',
+            'com.esotericsoftware:reflectasm:1.10.1:reflectasm-1.10.1.jar:94867942701229aead2b99cfbfdb68ea0afe4ec6fb943e5a10cb875f6e94f5b4',
+            'com.github.rehacktive:waspdb:1.0:waspdb-1.0.aar:8faf42877341d11307ef4c6845baade561b330acbc4881729127741e2feacb8f',
+            'com.google.protobuf:protobuf-gradle-plugin:0.8.7:protobuf-gradle-plugin-0.8.7.jar:2d20da365727e65ad1b98314b16813f4191233cac639132ad00daa3a19f78abd',
+            'com.google.protobuf:protobuf-java:3.6.1:protobuf-java-3.6.1.jar:fb66d913ff0578553b2e28a3338cbbbe2657e6cfe0e98d939f23aea219daf508',
+            'com.google.protobuf:protoc:3.6.1:protoc-3.6.1-linux-x86_64.exe:caed977a6a8c0318dfa5e67b6b03205d26905916e621c8c0f456350f7b6a6e45',
+            'com.google.zxing:core:3.2.1:core-3.2.1.jar:b4d82452e7a6bf6ec2698904b332431717ed8f9a850224f295aec89de80f2259',
+            'com.madgag.spongycastle:bcpg-jdk15on:1.58.0.0:bcpg-jdk15on-1.58.0.0.jar:1bcc1a9854f339123b4b1b52df123b786cf8c66edc9cb1dc72a108e05cb7d05c',
+            'com.madgag.spongycastle:core:1.58.0.0:core-1.58.0.0.jar:199617dd5698c5a9312b898c0a4cec7ce9dd8649d07f65d91629f58229d72728',
+            'com.madgag.spongycastle:prov:1.58.0.0:prov-1.58.0.0.jar:092fd09e7006b0814980513b013d4c2b3ffd24a49a635ab4b2d204bb51af1727',
+            'com.nulab-inc:zxcvbn:1.2.5:zxcvbn-1.2.5.jar:3acecbf5f718a04377a5732d2a74c3182f1a026c4e784cfe017e99e4e102e28c',
+            'it.sephiroth.android.library.imagezoom:imagezoom:2.3.0:imagezoom-2.3.0.aar:dae4db3630aa65fce668e018548d4ae12b2646294f11cd6ebec7ec0d9272712c',
+    ]
+}
+repositories {
+    mavenCentral()
+}

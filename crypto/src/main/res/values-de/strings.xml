@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+<!ENTITY appname "__appname__">
+]>
 <resources>
     <string name="accept_insecure_password">OK, das Passwort ist unsicher! Ich will es aber trotzdem benutzen!</string>
     <string name="action_addkey_importqr_body">QR-Code von einem anderen Handy oder Backup-Ausdruck importieren.</string>
@@ -71,11 +74,11 @@
     <string name="createkey_pbe_phrase_caption">Mindestens %1$s Buchstaben, je mehr Buchstaben desto sicherer!</string>
     <string name="createkey_pbe_phrase_hint">Passwort</string>
     <string name="createkey_pbe_title">Gemeinsames Passwort</string>
-    <string name="decrypt_error_common">Oversec Fehler</string>
+    <string name="decrypt_error_common">&appname; Fehler</string>
     <string name="decrypt_error_generic">Entschlüsselung fehlgeschlagen</string>
     <string name="decrypt_error_gpg">PGP Entschlüsselung fehlgeschlagen</string>
     <string name="decrypt_error_no_gpg_handler">Die Openkeychain App wird benötigt um dies zu entschlüsseln.</string>
-    <string name="decrypt_error_proto">Oversec Fehler, bitte Oversec App updaten!</string>
+    <string name="decrypt_error_proto">&appname; Fehler, bitte &appname; App updaten!</string>
     <string name="decrypt_error_user_interaction_required">Eingabe erforderlich</string>
     <string name="decrypt_error_user_interaction_required__long">(Passwort) Eingabe erforderlich zum Entschlüsseln.</string>
     <string name="dialog_confirm_key_text">Bestätigen Sie diesen Schlüssel indem Sie die andere Person anrufen, und prüfen, dass der unten angezeigte Schlüssel-Fingerabdruck übereinstimmt.\n%1$s</string>
@@ -109,7 +112,7 @@
     <string name="error_image_decrypt_noencodeddata">In diesem Bild wurden keine verschlüsselten Informationen gefunden.</string>
     <string name="error_image_decrypt_nomatchingkey">Kein passender Schlüssel um Bild zu entschlüsseln!</string>
     <string name="error_image_encode_generic">Fehler beim Entschlüsseln dieses Bildes.</string>
-    <string name="error_image_encode_source_not_found">Kein Zugriff auf Bildquelle!\nBitte beachten Sie, dass Bilder, die mit Oversec aufgenommen wurden, nach kurzer Zeit wieder gelöscht werden!</string>
+    <string name="error_image_encode_source_not_found">Kein Zugriff auf Bildquelle!\nBitte beachten Sie, dass Bilder, die mit &appname; aufgenommen wurden, nach kurzer Zeit wieder gelöscht werden!</string>
     <string name="error_invalid_barcode_content">Ungültige QR-Code. Kein Schlüssel gefunden!</string>
     <string name="error_invalid_barcode_format">Ungültiger Barcode, kein QR-Code!</string>
     <string name="error_key_exists">Dieser Schlüssel ist bereits vorhanden mit Alias \"%1$s\"</string>
@@ -204,7 +207,7 @@
     <string name="title_activity_keys">Schlüssel</string>
     <string name="title_activity_padder_detail">Tarnung</string>
     <string name="title_dialog_add_key">Schlüssel Hinzufügen</string>
-    <string name="tooltip_apps_fragment">Apps zur Verwendung mit Oversec konfigurieren.\n\nWir haben die gängigsten Apps bereits ausgewählt!</string>
+    <string name="tooltip_apps_fragment">Apps zur Verwendung mit &appname; konfigurieren.\n\nWir haben die gängigsten Apps bereits ausgewählt!</string>
     <string name="tooltip_keys_fragment">Dies sind deine symmetrischen Schlüssel.\nWenn du mit einfachen Passwörtern oder PGP verschlüsselst, werden diese nicht benötigt.</string>
     <string name="tooltip_padders_fragment">Das ist der Tarn-Text der anstelle des unsichtbaren, verschlüsselten Texts angezeigt wird!</string>
     <string name="unlock_key_title">Schlüssel \"%1$s\" entsperren</string>
@@ -223,7 +226,7 @@
         <item quantity="one">Ein gemerktes Passwort</item>
         <item quantity="other">%d gemerkte Passwörter</item>
     </plurals>
-    <string name="tooltip_settextfailed">Oversec konnte den kodierten Text nicht in die App schreiben!\n\nWahrscheinlich hat die App ein Limit für die Anzahl der Zeichen im Eingabefeld.!\n\nBitte versuche es nochmals mit weniger Empfängern oder verwende symmetrische Verschlüsselung, die weniger Zeichen produziert!!</string>
-    <string name="tooltip_encodingtoolong">Der kodierte Text ist zu lang!\n\nOversec had den Text nicht in die unterliegende App geschrieben, da sie sonst abstürzen würde.\n\nnBitte versuche es nochmals mit weniger Empfängern oder verwende symmetrische Verschlüsselung, die weniger Zeichen produziert!!</string>
-
+    <string name="tooltip_settextfailed">&appname; konnte den kodierten Text nicht in die App schreiben!\n\nWahrscheinlich hat die App ein Limit für die Anzahl der Zeichen im Eingabefeld.!\n\nBitte versuche es nochmals mit weniger Empfängern oder verwende symmetrische Verschlüsselung, die weniger Zeichen produziert!!</string>
+    <string name="tooltip_encodingtoolong">Der kodierte Text ist zu lang!\n\n&appname; had den Text nicht in die unterliegende App geschrieben, da sie sonst abstürzen würde.\n\nnBitte versuche es nochmals mit weniger Empfängern oder verwende symmetrische Verschlüsselung, die weniger Zeichen produziert!!</string>
+    <string name="simplesym_header_passwords">Passwörter</string>
 </resources>

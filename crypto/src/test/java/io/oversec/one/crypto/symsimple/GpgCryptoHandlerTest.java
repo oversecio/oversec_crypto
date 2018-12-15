@@ -28,16 +28,16 @@ public class GpgCryptoHandlerTest extends CryptoHandlerTestBase {
 
 
     public GpgCryptoHandlerTest() {
-        OpenKeychainConnector openKeychainConnector = mock(OpenKeychainConnector.class);
+        //OpenKeychainConnector openKeychainConnector = mock(OpenKeychainConnector.class);
         //TODO: damn, somehow need to mock this stuff (non-static)
         // when(openKeychainConnector.getVersionInternal(mContext)).thenReturn(OpenKeychainConnector.V_MIN);    // Mock implementation
-        mockBoundOpenPgpService();
+        // mockBoundOpenPgpService();
 
     }
 
     //TODO: see below
-//    @Test
-//    public void testEncryptDecrypt() throws Exception {
+    @Test
+    public void testEncryptDecrypt() throws Exception {
 //
 //        long keyId1 = 666L;
 //        long keyId2 = 777L;
@@ -55,7 +55,7 @@ public class GpgCryptoHandlerTest extends CryptoHandlerTestBase {
 //        assertEquals(decryptResult.getDecryptedDataAsInnerData(), innerData);
 //        assertEquals(decryptResult.getDecryptedDataAsInnerData().getTextAndPaddingV0().getText(), PLAIN_CONTENT);
 //
-//    }
+    }
 
 
     @Override

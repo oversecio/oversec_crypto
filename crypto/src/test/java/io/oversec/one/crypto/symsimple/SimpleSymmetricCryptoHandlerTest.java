@@ -3,6 +3,7 @@ package io.oversec.one.crypto.symsimple;
 import io.oversec.one.crypto.AbstractCryptoHandler;
 import io.oversec.one.crypto.AbstractEncryptionParams;
 import io.oversec.one.crypto.BaseDecryptResult;
+import io.oversec.one.crypto.encoding.Base64XCoder;
 import io.oversec.one.crypto.proto.Inner;
 import io.oversec.one.crypto.proto.Outer;
 import io.oversec.one.crypto.sym.SymmetricKeyPlain;
@@ -29,7 +30,7 @@ public class SimpleSymmetricCryptoHandlerTest extends CryptoHandlerTestBase {
 
         mKeyCache.doCacheKey(plainKey, Integer.MAX_VALUE);
 
-        AbstractEncryptionParams params = new SimpleSymmetricEncryptionParams(key_id, null, null);
+        AbstractEncryptionParams params = new SimpleSymmetricEncryptionParams(key_id, Base64XCoder.ID, null);
 
 
         Inner.InnerData innerData = createInnerData(PLAIN_CONTENT);
@@ -41,7 +42,6 @@ public class SimpleSymmetricCryptoHandlerTest extends CryptoHandlerTestBase {
 
         assertEquals(decryptResult.getDecryptedDataAsInnerData(), innerData);
         assertEquals(decryptResult.getDecryptedDataAsInnerData().getTextAndPaddingV0().getText(), PLAIN_CONTENT);
-
     }
 
 

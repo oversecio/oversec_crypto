@@ -3,6 +3,7 @@ package io.oversec.one.crypto.symsimple;
 import io.oversec.one.crypto.AbstractCryptoHandler;
 import io.oversec.one.crypto.AbstractEncryptionParams;
 import io.oversec.one.crypto.BaseDecryptResult;
+import io.oversec.one.crypto.encoding.Base64XCoder;
 import io.oversec.one.crypto.proto.Inner;
 import io.oversec.one.crypto.proto.Outer;
 import io.oversec.one.crypto.sym.OversecKeystore2;
@@ -35,7 +36,7 @@ public class SymmetricCryptoHandlerTest extends CryptoHandlerTestBase {
 
         mKeyStore.doCacheKey__longoperation(key_id,PASSWORD,Integer.MAX_VALUE);
 
-        AbstractEncryptionParams params = new SymmetricEncryptionParams(key_id, null, null);
+        AbstractEncryptionParams params = new SymmetricEncryptionParams(key_id, Base64XCoder.ID, null);
 
 
         Inner.InnerData innerData = createInnerData(PLAIN_CONTENT);

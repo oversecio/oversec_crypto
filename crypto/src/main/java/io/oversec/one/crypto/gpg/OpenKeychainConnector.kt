@@ -218,6 +218,7 @@ class OpenKeychainConnector(val ctx: Context) {
             ctx.startActivity(intent)
         } catch (ex: Exception) {
             ex.printStackTrace()
+            openInFdroid()
         }
 
     }

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources [
+    <!ENTITY appname "__appname__">
+    <!ENTITY dllink "__dllink__">
+]>
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
+    <string name="acs_summary">启用 &appname; 作为无障碍服务使它能够读取并解密屏幕内容。</string>
+    <string name="acs_description">启用 &appname; 作为无障碍服务使它能够
+        \n\n• 监测你的操作以原地更新已解密文本
+        \n\n• 读取屏幕内容以便解密并原地显示它，
+        \n\n• 打开增强的 web 访问权限以便在 web 站点中进行原地解密.
+        \n\n\n请注意 &appname; 没有 Internet 权限因此没有任何途径使屏幕内容和其他敏感信息离开你的设备 - 你的隐私受到保护！
+    </string>
+    <string name="action_reenable_boss">重新激活</string>
+    <string name="action_configure">设置</string>
+    <string name="main_tab_help">设置</string>
+    <string name="main_tab_apps">应用</string>
+    <string name="notification_title__active">&appname; 已激活</string>
+    <string name="notification_title__hidden">&appname; 已隐藏</string>
+    <string name="notification_body__active">点击此处设置</string>
+    <string name="notification_body__hidden">点击此处显示</string>
+    <string name="notification_action_boss">停止</string>
+    <string name="notification_action_hide">隐藏</string>
+    <string name="notification_action_show">显示</string>
+    <string name="settings_acs_not_enabled">&appname; 未被设置为无障碍服务但它需要！
+        \n
+        \n&appname; 需被启用为无障碍服务使它能够为你读取并解密屏幕内容:
+        \n
+        \n现在点击“设置”打开设置页面，然后点击 \"&appname;\" 并“启用”。
+    </string>
+    <string name="settings_acs_enabled_ok">&appname; 正确设置为无障碍服务。</string>
+    <string name="settings_help">在线帮助</string>
+    <string name="settings_boss_active">&appname; 处于紧急情况模式。</string>
+    <string name="controls_checkbox_enable">启用 &appname;</string>
+    <string name="controls_checkbox_enable_sub">对 %1$s 启用 &appname;</string>
+    <string name="controls_checkbox_starthidden">启动时隐藏</string>
+    <string name="controls_checkbox_starthidden_sub">切换到 %1$s 时 &appname; 默认隐藏</string>
+    <string name="controls_slider_corners">圆角</string>
+    <string name="controls_slider_fontsize">文字大小</string>
+    <string name="controls_slider_padding_left">左边距</string>
+    <string name="controls_slider_padding_top">上边距</string>
+    <string name="share_body">&appname;：为所有应用加密！\n\n获取 &appname; 应用并加密所用 Android 应用。\n\n通过 Whatsapp, Line, 短信, Facebook, Gmail 或任何其他应用发送端到端加密消息。\n\n&dllink;</string>
+    <string name="share_chooser_title">分享到 </string>
+    <string name="share_as_suffix">安装 &appname; 解密！\n&dllink;</string>
+    <string name="notification_acsnotrunning_title">无障碍服务未运行</string>
+    <string name="notification_acsnotrunning_body">点击此处启用！</string>
+    <string name="decrypt_in_progress">正在解密…</string>
+    <string name="notification_action_unexplore">关闭</string>
+    <string name="notification_action_explore">信息</string>
+    <string name="controls_slider_button">按钮</string>
+    <string name="controls_slider_background">文字后</string>
+    <string name="controls_slider_font">文字前</string>
+    <string name="tweaks_tab__colors">外观</string>
+    <string name="tweaks_tab__stuff">选项</string>
+    <string name="tweaks_tab__expert">实验室</string>
+    <string name="controls_checkbox_statusicon">状态图标</string>
+    <string name="controls_hint_showstatusicons">在每条已解密文字旁将加密和签名状态显示为图标。</string>
+    <string name="controls_hint_showinfobutton">启用/停用信息模式以显示额外的加密信息。</string>
+    <string name="controls_checkbox_hidebutton">隐藏按钮</string>
+    <string name="controls_checkbox_hidebutton_sub">隐藏按钮使你可以暂时隐藏 &appname; 覆盖层。</string>
+    <string name="controls_checkbox_composebutton">输入按钮</string>
+    <string name="controls_checkbox_composebutton_sub">此按钮使你可以打开对话框输入文字并加密到剪贴板。</string>
+    <string name="controls_checkbox_decryptbutton">解密/清除按钮</string>
+    <string name="controls_checkbox_decryptbutton_sub">解密或清除当前输入框内的文字。</string>
+    <string name="controls_checkbox_camerabutton">相机按钮</string>
+    <string name="controls_checkbox_camerabutton_sub">直接发送加密照片！</string>
+    <string name="controls_checkbox_configbutton">设置按钮</string>
+    <string name="controls_hint_configbutton">显示设置页面。此页面也可以通过状态栏或双击隐藏按钮打开。</string>
+    <string name="controls_checkbox_notification">通知</string>
+    <string name="controls_hint_shownotification">显示永久通知以控制 &appname; 。</string>
+    <string name="controls_checkbox_voverflow">纵向展开已解密文字</string>
+    <string name="controls_hint_voverflow">如果已加密文字使用的空间不足为已解密文字分配更多纵向空间。可能会遮挡部分下层应用。</string>
+    <string name="controls_checkbox_newlines">保留换行</string>
+    <string name="controls_hint_newlines">如果纯文本包含换行，在伪装文字中放入同样数量的换行。警告：泄露关于纯文本的部分信息。</string>
+    <string name="controls_checkbox_forceencryptionparams">总是显示加密参数</string>
+    <string name="controls_hint_forceencryptionparams">从不自动重用先前的加密参数。</string>
+    <string name="controls_checkbox_overlayaboveinput">在输入上层显示已解密文字</string>
+    <string name="controls_hint_overlayaboveinput">在活动输入框 *上层* 显示已解密文字，可以使手动检查或编辑伪装文字更容易。</string>
+    <string name="controls_hint_innerpadding">加密前添加（最大）此数量的随机字节。这可以防止攻击者根据字符数猜测原始消息。</string>
+    <string name="title_activity_appconfig">应用设置</string>
+    <string name="title_activity_encryption_params">加密</string>
+    <string name="msg_is_temp_hidden">&appname; 对于此应用暂时隐藏！</string>
+    <string name="action_unhide">在此应用上显示 &appname;</string>
+    <string name="toast_no_info_nodes">屏幕上没有已加密文字！</string>
+    <string name="controls_checkbox_infoontap">点击显示信息</string>
+    <string name="controls_hint_infoontap">在已加密文字上点击会显示详细加密信息。\n警告：这可能会影响下层应用的用户体验！</string>
+    <string name="controls_checkbox_infoonlongtap">长按显示信息</string>
+    <string name="controls_hint_infoonlongtap">在已加密文字上长按会显示详细加密信息。\n警告：这可能会影响下层应用的用户体验！</string>
+    <string name="controls_checkbox_toggleencryptonlongtap">长安切换加密按钮</string>
+    <string name="controls_hint_toggleencryptonlongtap">在输入框长按时显示或隐藏加密按钮。\n警告：这可能会影响下层应用的用户体验！</string>
+    <string name="controls_checkbox_encryptbutton">加密按钮</string>
+    <string name="controls_hint_showencryptbutton">在活动输入框旁显示加密按钮。（如果加密按钮未显示解密按钮也不会显示）</string>
+    <string name="sample_decrypted_text">Hello World</string>
+    <string name="action_share_app">分享 &appname;</string>
+    <string name="exception_msg">意外错误：%s</string>
+    <string name="action_pgp_choose_own_key">选择你自己的 PGP 密钥</string>
+    <string name="toast_insufficient_padding">请输入更多文字直到输入边框变绿！</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="toast_longtap_encryptionbutton">使用先前的加密参数！\n长按加密按钮改变加密参数！</string>
+    <string name="toast_corrupted_encoding">糟糕！加密消息已损坏！\n只能重新开始！</string>
+    <string name="action_clear_input">清除输入</string>
+
+    <string name="crash_report_via_title">选择电子邮件应用发送崩溃报告</string>
+    <string name="crash_report_subject">&appname; 崩溃报告</string>
+    <string name="crash_title">哦不！&appname; 崩溃了！</string>
+    <string name="crash_subtitle">请用电子邮件向我们发送这个错误报告：</string>
+    <string name="crash_activity_title">崩溃报告</string>
+
+    <string name="bug_report_via_title">选择电子邮件应用发送崩溃报告</string>
+    <string name="bug_report_subject">&appname; 错误报告</string>
+    <string name="main_tab_keys">密钥</string>
+    <string name="main_tab_settings">设置</string>
+    <string name="tooltip_hidebutton_nothidden">点击此按钮暂时隐藏 &appname; 覆盖层。\n\n长按完全退出 &appname; 并清空存储的密钥。（紧急按钮！）</string>
+    <string name="tooltip_hidebutton_hidden">现在再次点击同样的位置恢复 &appname; 覆盖层。</string>
+    <string name="action_help_perapp">显示 \"%1$s\" 的信息</string>
+    <string name="action_send_bugreport_perapp">报告 \"%1$s\" 的问题</string>
+    <string name="action_send_bugreport">报告问题</string>
+    <string name="bug_report_footer">请提供你的问题的细节：\n\n</string>
+    <string name="mainprefs_allow_screenshot_title">允许截屏</string>
+    <string name="mainprefs_allow_screenshot_summary">选中允许对安全内容（已解密的纯文本和密钥）截屏</string>
+    <string name="mainprefs_relaxcache_title">宽松的解密缓存清除</string>
+    <string name="mainprefs_relaxcache_summary">仅在紧急情况和屏幕关闭时清楚解密缓存。（推荐 YubiKey 用户使用）</string>
+    <string name="mainprefs_screenoffpanic_title">屏幕关闭时进入紧急情况</string>
+    <string name="mainprefs_screenoffpanic_summary">屏幕关闭时进入紧急情况模式</string>
+    <string name="mainprefs_hidelauncheronpanic_title">紧急情况模式中隐藏启动器图标</string>
+    <string name="mainprefs_hidelauncheronpanic_summary">紧急情况模式中隐藏 &appname; 启动器图标。紧急情况模式后，你需要在拨号器（电话）应用中输入密码重新激活 &appname; ！</string>
+    <string name="mainprefs_launchersecretcode_title">拨号器密码</string>
+    <string name="mainprefs_launchersecretcode_summary">紧急情况模式后，你可以在拨号器应用中输入此密码重新激活 &appname; ！</string>
+
+
+    <string name="tooltip_buttonencrypt_initial">点击此处加密你输入的文字。</string>
+    <string name="title_activity_about">关于 &appname;</string>
+    <string name="action_about">关于</string>
+    <string name="about_tab_changelog">更改日志</string>
+    <string name="about_tab_about">关于</string>
+    <string name="about_tab_purchases">购买</string>
+    <string name="about_tab_donations">捐赠</string>
+    <string name="controls_checkbox_showuserinteractiondialogsimmediately">立即显示输入对话框</string>
+    <string name="controls_hint_showuserinteractiondialogsimmediately">当（密码）输入对话框将显示以解密时，无需先询问用户立即显示。</string>
+    <string name="main_tab_padder">伪装</string>
+    <string name="error_padder_name_too_short">请输入至少 %1$d 个字符</string>
+    <string name="error_padder_content_too_short">请输入至少 %1$d 个字符</string>
+    <string name="upgrade_overlay_msg">请升级到完整版支持 &appname; 的开发。</string>
+    <string name="upgrade_interstitial_title">请升级</string>
+    <string name="upgrade_interstitial_content">此功能仅在完整版可用！</string>
+    <string name="upgrade_visual_settings">请升级以启用下面的颜色控制：</string>
+    <string name="upgrade_decrypt_image">这是已解密图像的预览。\n\n请升级以启用完整的图像解密！</string>
+    <string name="action_upgrade">现在升级</string>
+    <string name="controls_checkbox_storeencryptionparamsperpackageonly">单一加密参数</string>
+    <string name="controls_hint_storeencryptionparamsperpackageonly">每个应用仅存储一组加密参数。此功能仅适用于笔记应用，不应对社交应用启用。</string>
+    <string name="tooltip_encryptionparams_simplesym_general">仅通过分享一个简单密码加密。\n这是尝试 &appname; 的一个好方法，但并不是非常安全。</string>
+    <string name="tooltip_encryptionparams_sym_general">使用共享对称密钥加密。你需要和其他人分享此密钥！</string>
+    <string name="tooltip_encryptionparams_gpg_general">使用 PGP 公钥/私钥加密。你需要 OpenKeychain 以使用此功能！</string>
+    <string name="tooltip_encryptionparams_fab">点击这里加密并返回你的应用。</string>
+    <string name="tooltip_encryptionparams_gpg_choose_own_key">请首先选择你的密钥！</string>
+    <string name="onboarding_text">你距离使用 &appname; 只有一步
+        &lt;br/&gt;
+        &lt;br/&gt;&appname; 需被启用为无障碍服务使它能够为你读取并解密屏幕内容：
+        &lt;br/&gt;&lt;b&gt;在下面的设置页面点击 \"&appname;\" 然后“启用”。&lt;/b&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;（在一些手机上，你需要向下滚动到列表的末尾才能看到 \"&appname;\" 项）
+    </string>
+    <string name="settings_acs_post_enable_title">&appname; 已就绪！</string>
+    <string name="settings_acs_post_enable_msg">现在只需开始使用已启用 &appname; 的应用：</string>
+    <string name="settings_acs_post_enable_btn_configure">启用其他应用</string>
+    <string name="onboarding_title">欢迎使用 &appname;</string>
+    <string name="checkbox_add_oversec_link">添加 &appname; 应用的链接</string>
+    <string name="action_clear_ignored_keys">清除 %1$d 已忽略的文字</string>
+    <string name="settings_upgrade">“你正在运行基础版 &appname; 。\n现在升级启用额外的功能！”</string>
+    <string name="iab_header">升级 &appname;</string>
+    <string name="iab_body">升级支持正在进行的开发，并启用这些额外的功能:\n\n* 自定义颜色\n* 自定义伪装内容\n* 解密照片和图像</string>
+    <string name="iab_noiab">对不起，我们在此设备上找不到支持的应用商店进行应用内付费，所以很不幸目前无法升级。\n\n我们正在努力支持其他支付方式！\n\n请在即将发布的新版本重试。</string>
+    <string name="iab_listheader">请选择最适合你的：</string>
+    <string name="toast_panicmode_disabled">&appname; 已退出紧急情况模式！</string>
+    <string name="secretdialer_code">你的拨号器密码是 *#*#%1$s#*#*</string>
+    <string name="secretdialer_code_too_short">号码应该至少有 %1$s 位数！</string>
+    <string name="secretdialer_code_initial_confirm">请拨一次这个号码以确认!</string>
+    <string name="secretdialer_code_initial_confirm_samsung">你使用的三星设备在拨号器密码机制上有一个已知问题。\n你仍然可以试一试但如果他不工作请不要责怪我们！</string>
+    <string name="action_show_dialer">打开拨号器</string>
+    <string name="secretdialer_code_initial_confirmed">太好了！拨号器密码可以工作！\n现在你可以启用“紧急情况模式下隐藏启动器图标”功能了</string>
+    <string name="secretdialer_code_needs_to_be_set_up">请首先设置拨号器密码！</string>
+
+    <string name="overlaypermissionswarning_title">权限请求</string>
+    <string name="overlaypermissionswarning_text">&appname; 目前没用权限显示在其他应用的上层。\n\n&appname; 没有此权限无法正常工作！\n\n请点击“设置”然后允许显示在其他应用的上层。</string>
+    <string name="action_settings">设置</string>
+    <string name="tooltip_app_issues">在线帮助中还有其他使用 &appname; 和 %1$s 的信息</string>
+    <string name="tooltip_buttoncompose">点击这里输入文字并加密到剪贴板</string>
+    <string name="activity_compose_title">为剪贴板编写文字</string>
+    <string name="compose_text_hint">输入要加密并放入剪贴板的文字</string>
+    <string name="tooltip_compose_fab">点击这里加密，并将已加密文字放入剪贴板。</string>
+    <string name="tooltip_paste_clipboard">已加密文字已放入剪贴板！\n\n现在长按目标区域并选择粘贴以输入已加密文字。</string>
+    <string name="action_show_onlinehelp">显示帮助</string>
+
+    <string name="action_later">稍后</string>
+
+    <string name="warning_app_with_serious_issues_enabled">%s 应用有严重问题并且无法同 &appname; 工作。\n\n请查看我们的在线帮助中的最新消息以获取更多详细信息！</string>
+
+    <string name="question_ignore_text">你想从现在开始忽略这段文字吗?</string>
+    <string name="action_ignore_text">忽略此文字</string>
+
+    <string name="actionaccessibilitysettingsnotresolvable_text">&appname; 需要在你的设备上设置为无障碍服务，但我们无法自动打开 Android 设置“无障碍”页面。\n\n请在你的设备的设置中手动打开“无障碍”页面，找到 \"&appname;\" 并启用。\n\n除非 &appname; 被设置为无障碍服务否则无法正常工作！</string>
+
+
+    <string name="tooltip_encryptionparams_simplesym_general_appsec">从添加一个或多个密码开始！</string>
+    <string name="settings_acs_post_enable_msg_appsec">\n使用 &appname; 在 %1$s 中尽情发送加密消息吧！</string>
+    <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...但你没有安装 «%1$s» ！</string>
+    <string name="donate_body">请考虑捐赠以支持 &appname; 的进一步开发</string>
+    <string name="donate_clip_label">捐赠地址</string>
+    <string name="donate_toast_copied">地址已复制到剪贴板！</string>
+</resources>

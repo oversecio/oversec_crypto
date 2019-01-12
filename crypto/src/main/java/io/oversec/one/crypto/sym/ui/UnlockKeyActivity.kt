@@ -235,7 +235,7 @@ class UnlockKeyActivity : FragmentActivity() {
             inputManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
         }
 
-        override fun onEditorAction(v: TextView, actionId: Int, event: KeyEvent): Boolean {
+        override fun onEditorAction(v: TextView, actionId: Int, event: KeyEvent?): Boolean {
             // Associate the "done" button on the soft keyboard with the okay button in the view
             if (EditorInfo.IME_ACTION_DONE == actionId) {
                 val dialog = dialog as AlertDialog

@@ -14,6 +14,7 @@ import io.oversec.one.crypto.sym.SymmetricKeyPlain
 import io.oversec.one.crypto.sym.ui.UnlockKeyActivity
 import roboguice.util.Ln
 import java.util.*
+import java.util.concurrent.ConcurrentHashMap
 
 class KeyCache private constructor(private val mCtx: Context) {
 
@@ -21,8 +22,8 @@ class KeyCache private constructor(private val mCtx: Context) {
     private val mNotificationManager =
         mCtx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
     private val mKeyCacheListeners = ArrayList<OversecKeyCacheListener>()
-    private val mPendingAlarms = HashMap<Long, PendingIntent>()
-    private val mKeyMap = HashMap<Long, SymmetricKeyPlain>()
+    private val mPendingAlarms = ConcurrentHashMap<Long, PendingIntent>()
+    private val mKeyMap = ConcurrentHashMap<Long, SymmetricKeyPlain>()
     private val mExpireOnScreenOff = HashSet<Long>()
 
     private var requestCount = 0

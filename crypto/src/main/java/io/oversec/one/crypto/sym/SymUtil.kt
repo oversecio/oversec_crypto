@@ -87,7 +87,7 @@ object SymUtil {
         return byteArrayToHex(BigInteger.valueOf(v).toByteArray(), " ")
     }
 
-    fun applyAvatar(textView: TextView, name: String) {
+    fun applyAvatar(textView: TextView, name: String?) {
         val hash = name.hashCode()
         val ba = SymUtil.long2bytearray(hash.toLong())
         val red = ((ba[ba.size - 1].toInt() and 0xFF) * 0.8f).toInt()
@@ -95,7 +95,7 @@ object SymUtil {
         val blue = ((ba[ba.size - 3].toInt() and 0xFF) * 0.8f).toInt()
         val avatarColor = Color.rgb(red, green, blue)
         textView.setBackgroundColor(avatarColor)
-        textView.text = name[0].toString()
+        textView.text = (name ?: " ")[0].toString()
     }
 
     fun applyAvatar(textView: TextView, keyId: Long, name: String) {

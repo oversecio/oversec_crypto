@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources [
+    <!ENTITY appname "__appname__">
+    <!ENTITY dllink "__dllink__">
+]>
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
+    <string name="acs_summary">L\'attivazione di &appname; come servizio di accessibilità gli consente di leggere e decifrare il contenuto dello schermo.</string>
+    <string name="acs_description">L\'attivazione di &appname; come servizio di accessibilità gli consente
+        \n\n• di osservare le tue azioni in modo da aggiornare la decifrazione sul posto,
+        \n\n• di leggere il contenuto dello schermo per decifrarlo e mostrarlo sul posto,
+        \n\n• per attivare l\'accessibilità web migliorata per la decifrazione sul posto sei siti web.
+        \n\n\nSi prega di notare che &appname; non richiede l\'autorizzazione Internet e perciò in nessun modo il contenuto dello 
+schermo e altre informazioni sensibili possono uscire dal dispositivo - LA TUA PRIVACY È GARANTITA!
+    </string>
+    <string name="action_reenable_boss">Riattiva</string>
+    <string name="action_configure">Configura</string>
+    <string name="main_tab_help">Imposta</string>
+    <string name="main_tab_apps">Apps</string>
+    <string name="notification_title__active">&appname; è attivo</string>
+    <string name="notification_title__hidden">&appname; è nascosto</string>
+    <string name="notification_body__active">Tocca qui per configurare</string>
+    <string name="notification_body__hidden">Tocca qui per mostrare</string>
+    <string name="notification_action_boss">FERMA</string>
+    <string name="notification_action_hide">Nascondi</string>
+    <string name="notification_action_show">Mostra</string>
+    <string name="settings_acs_not_enabled">&appname; non è configurato come servizio di accessibilità, ma deve esserlo!
+        \n
+        \n&appname; deve essere attivato come servizio di accessibilità perchè possa leggere e decifrare per te il contenuto dello schermo:
+        \n
+        \nTocca \"Configura\" per aprire ora le impostazioni, poi tocca \"&appname;\" e mettilo su \"On\".
+    </string>
+    <string name="settings_acs_enabled_ok">&appname; è configurato correttamente come servizio di accessibilità.</string>
+    <string name="settings_help">Aiuto online</string>
+    <string name="settings_boss_active">&appname; è in modalità Panico.</string>
+    <string name="controls_checkbox_enable">Attiva &appname;</string>
+    <string name="controls_checkbox_enable_sub">Attiva &appname; per %1$s</string>
+    <string name="controls_checkbox_starthidden">Avvia nascosto</string>
+    <string name="controls_checkbox_starthidden_sub">&appname; sarà inizialmente nascosto quando si passa a %1$s</string>
+    <string name="controls_slider_corners">Angoli</string>
+    <string name="controls_slider_fontsize">Dimensione testo</string>
+    <string name="controls_slider_padding_left">Rientro sinistro</string>
+    <string name="controls_slider_padding_top">Rientro in alto</string>
+    <string name="share_body">&appname;: cifratura per tutte le app!\n\nOttieni &appname; e aggiungi la cifratura a tutte le app Android.\n\nInvia messaggi cifrati occhio-ad-occhio con Whatsapp, Line, SMS, Facebook, Gmail o qualsiasi altra app.\n\n&dllink;</string>
+    <string name="share_chooser_title">Condividi via </string>
+    <string name="share_as_suffix">Installa &appname; per decifrare!\n&dllink;</string>
+    <string name="notification_acsnotrunning_title">Servizio di accessibilità non in esecuzione</string>
+    <string name="notification_acsnotrunning_body">Tocca qui per attivare!</string>
+    <string name="decrypt_in_progress">Decifrazione…</string>
+    <string name="notification_action_unexplore">Off</string>
+    <string name="notification_action_explore">Info</string>
+    <string name="controls_slider_button">Pulsanti</string>
+    <string name="controls_slider_background">Testo-sfondo</string>
+    <string name="controls_slider_font">Caratteri</string>
+    <string name="tweaks_tab__colors">Aspetto</string>
+    <string name="tweaks_tab__stuff">Opzioni</string>
+    <string name="tweaks_tab__expert">Lab</string>
+    <string name="controls_checkbox_statusicon">Icone di stato</string>
+    <string name="controls_hint_showstatusicons">Mostra lo stato di cifratura e firma come icone accanto ad ogni testo decifrato.</string>
+    <string name="controls_checkbox_infobutton" translatable="false">Info Button</string>
+    <string name="controls_hint_showinfobutton">Attiva/disattiva modalità Info per mostrare informazioni di cifratura aggiuntive.</string>
+    <string name="controls_checkbox_hidebutton">Pulsante Nascondi</string>
+    <string name="controls_checkbox_hidebutton_sub">Il pulsante Nascondi ti permette di nascondere temporaneamente l\'overlay di &appname;.</string>
+    <string name="controls_checkbox_composebutton">Pulsante Componi</string>
+    <string name="controls_checkbox_composebutton_sub">Questo pulsante di permette di aprire una finestra per inserire testo e cifrarlo negli appunti.</string>
+    <string name="controls_checkbox_decryptbutton">Pulsante Decifra/Svuota</string>
+    <string name="controls_checkbox_decryptbutton_sub">Decifra o svuota il testo nell\'attuale campo di input.</string>
+    <string name="controls_checkbox_camerabutton">Pulsante Fotocamera</string>
+    <string name="controls_checkbox_camerabutton_sub">Invia direttamente foto cifrate!</string>
+    <string name="controls_checkbox_configbutton">Pulsante Configura</string>
+    <string name="controls_hint_configbutton">Mostra la pagina di configurazione. Può essere aperta anche tramite la barra di notifica o con un doppio tocco del pulsante Nascondi.</string>
+    <string name="controls_checkbox_notification">Notifica</string>
+    <string name="controls_hint_shownotification">Mostra una notifica permanente per controllare &appname;.</string>
+    <string name="controls_checkbox_hqscrape" translatable="false">High Quality Scraping</string>
+    <string name="controls_hint_hqscrape" translatable="false">Performs more frequent and deeper screen reading. Produces a smoother UX at the cost of increased battery use.</string>
+    <string name="controls_checkbox_includenotimporantviews" translatable="false">Scrape All Views</string>
+    <string name="controls_hint_includenotimporantviews" translatable="false">Include views that are deemed as "Not Important". This is needed for a few apps only. This slows down &appname; and uses more battery!.</string>
+    <string name="controls_checkbox_spreadinvisibleencoding" translatable="false">Spread Invisible Encoding</string>
+    <string name="controls_hint_spreadinvisibleencoding" translatable="false">Spread invisible characters within decoy text, rather than putting all of them at the beginning. This is needed for some apps like e.g. Instagram</string>
+    <string name="controls_checkbox_dontshowdecryptionfailed" translatable="false">Don\'t show error if no matching key</string>
+    <string name="controls_hint_dontshowdecryptionfailed" translatable="false">Don\'t show \"decryption failed\" overlay, when a message can not be decrypted (because there is no matching key).</string>
+
+    <string name="controls_checkbox_voverflow">Espandi testo decifrato verticalmente</string>
+    <string name="controls_hint_voverflow">Alloca più spazio verticale per il testo decifrato se non ci sta nello spazio usato dallo spazio cifrato. Può ostruire parti dell\'app sottostante.</string>
+    <string name="controls_checkbox_newlines">Mantieni interruzioni riga</string>
+    <string name="controls_hint_newlines">Se il testo contiene interruzioni di riga, metti un numero uguale di interruzioni nel testo esca. Attenzione: svela alcune informazioni sul testo in chiaro.</string>
+    <string name="controls_checkbox_forceencryptionparams">Mostra sempre parametri cifratura</string>
+    <string name="controls_hint_forceencryptionparams">Non riutilizzerà mai automaticamente parametri di cifratura precedenti.</string>
+    <string name="controls_checkbox_overlayaboveinput">Mostra testo decifrato sopra l\'input</string>
+    <string name="controls_hint_overlayaboveinput">Mostra il testo decifrato proprio *sopra* un campo di input attivo, semplificando la revisione e modifica del testo esca.</string>
+    <string name="controls_spinner_innerpadding" translatable="false">Add padding before encrypting</string>
+    <string name="controls_hint_innerpadding">Aggiungi (al massimo) questo numero di byte casuali prima di cifrare. Ciò impedisce ad un aggressore di indovinare il messaggio originale dal numero di caratteri </string>
+    <string name="title_activity_appconfig">Impostazioni app</string>
+    <string name="title_activity_encryption_params">Cifratura</string>
+    <string name="msg_is_temp_hidden">&appname; è temporaneamente nascosto per questa app!</string>
+    <string name="action_unhide">Mostra &appname; sopra questa app</string>
+    <string name="toast_no_info_nodes">Nessun testo cifrato sullo schermo!</string>
+    <string name="controls_checkbox_infoontap">Tocca per mostrare info</string>
+    <string name="controls_hint_infoontap">Toccando un testo cifrato verranno mostrate info di cifratura dettagliate.\nAttenzione: potrebbe interferire con l\'esperienza d\'uso dell\'app sottostante! </string>
+    <string name="controls_checkbox_infoonlongtap">Tocca a lungo per info</string>
+    <string name="controls_hint_infoonlongtap">Toccando a lungo un testo cifratoverranno mostrate info di cifratura dettagliate.\nAttenzione: potrebbe interferire con l\'esperienza d\'uso dell\'app sottostante!</string>
+    <string name="controls_checkbox_toggleencryptonlongtap">Cambia pulsante cifratura toccando a lungo</string>
+    <string name="controls_hint_toggleencryptonlongtap">Mostra o nasconde il pulsante di cifratura toccando a lungo un campo di input.\nAttenzione: potrebbe interferire con l\'esperienza d\'uso dell\'app sottostante!</string>
+    <string name="controls_checkbox_encryptbutton">Pulsante cifratura</string>
+    <string name="controls_hint_showencryptbutton">Mostra il pulsante di cifratura accanto al campo di input attivo. (Anche il pulsante di decifrazione non verrà mostrato se quello di cifratura è nascosto)</string>
+    <string name="sample_decrypted_text">Ciao mondo</string>
+    <string name="action_share_app">Condividi &appname;</string>
+    <string name="exception_msg">Errore inatteso: %s</string>
+    <string name="action_pgp_choose_own_key">Seleziona la tua chiave PGP</string>
+    <string name="toast_insufficient_padding">Inserisci altro testo finchè il bordo attorno all\'input diventa verde!</string>
+    <string name="action_dismiss">Annulla</string>
+    <string name="toast_longtap_encryptionbutton">Parametri di cifratura precedenti in uso!\nPer cambiare i parametri, tocca a lungo il pulsante di cifratura!</string>
+    <string name="toast_corrupted_encoding">Peccato! Il messaggio cifrato è stato rovinato!\nL\'unica soluzione è ricominciare da capo!</string>
+    <string name="action_clear_input">Svuota input</string>
+
+    <string name="crash_report_via_title">Seleziona l\'app di email per inviare la segnalazione di crash</string>
+    <string name="crash_report_subject">&appname; Crash report</string>
+    <string name="crash_title">Ops! &appname; è crashato.</string>
+    <string name="crash_subtitle">Per favore aiutaci inviandoci questa segnalazione via email:</string>
+    <string name="crash_activity_title">Segnalazione crash</string>
+
+    <string name="bug_report_via_title">Seleziona l\'app di email per inviare la segnalazione di errore</string>
+    <string name="bug_report_subject">&appname; Bug Report</string>
+    <string name="main_tab_keys">Chiavi</string>
+    <string name="main_tab_settings">Impostazioni</string>
+    <string name="tooltip_hidebutton_nothidden">Tocca questo pulsante per nascondere temporaneamente l\'overlay di &appname;.\n\nTocca a lungo per chiudere totalmente &appname; e svuotare tutte le chiavi ricordate. (Pulsante Panico!)</string>
+    <string name="tooltip_hidebutton_hidden">Ora tocca sulla stessa posizione di nuovo per rivedere l\'overlay di &appname;.</string>
+    <string name="action_help_perapp">Mostra info per \"%1$s\"</string>
+    <string name="action_send_bugreport_perapp">Segnala un problema per \"%1$s\"</string>
+    <string name="action_send_bugreport">Segnala un problema</string>
+    <string name="bug_report_footer">Per favore fornisci dettagli riguardo il problema:\n\n</string>
+    <string name="mainprefs_allow_screenshot_title">Permetti schermate</string>
+    <string name="mainprefs_allow_screenshot_summary">Seleziona per permettere schermate di contenuti sicuri (testo e chiavi decifrati)</string>
+    <string name="mainprefs_relaxcache_title">Rilassa svuotamento cache decifrazione</string>
+    <string name="mainprefs_relaxcache_summary">Svuota la cache di decifrazione solo su panico e schermo spento. (Consigliato per utenti YubiKey)</string>
+    <string name="mainprefs_screenoffpanic_title">Panico a schermo spento</string>
+    <string name="mainprefs_screenoffpanic_summary">Entra in modalità Panico quando si spegne lo schermo</string>
+    <string name="mainprefs_hidelauncheronpanic_title">Nascondi icona launcher in modalità Panico</string>
+    <string name="mainprefs_hidelauncheronpanic_summary">Nasconde l\'icona del launcher di &appname; in modalità Panico. Per riattivare &appname; dopo la modalità Panico, devi digitare il codice segreto nel tastierino (app Telefono)!</string>
+    <string name="mainprefs_launchersecretcode_title">Codice segreto tastierino</string>
+    <string name="mainprefs_launchersecretcode_summary">Dopo il panico, puoi riattivare &appname; digitando questo codice nel tastierino dell\'app Telefono.</string>
+
+
+    <string name="tooltip_buttonencrypt_initial">Tocca qui per criptare il testo che hai inserito.</string>
+    <string name="title_activity_about">Riguardo &appname;</string>
+    <string name="action_about">Al riguardo</string>
+    <string name="about_tab_changelog">Cronologia</string>
+    <string name="about_tab_about">Informazioni</string>
+    <string name="about_tab_purchases">Acquisti</string>
+    <string name="about_tab_donations">Donazioni</string>
+    <string name="controls_checkbox_showuserinteractiondialogsimmediately">Mostra finestre di input immediatamente</string>
+    <string name="controls_hint_showuserinteractiondialogsimmediately">Quando una finestra di input (password) sta per essere mostrata per decifrare, mostrala immediatamente senza chiederlo all\'utente.</string>
+    <string name="main_tab_padder">Esche</string>
+    <string name="error_padder_name_too_short">Inserisci almeno %1$d caratteri</string>
+    <string name="error_padder_content_too_short">Inserisci almeno %1$d caratteri</string>
+    <string name="upgrade_overlay_msg">Sostieni lo sviluppo di &appname; aggiornando alla versione completa.</string>
+    <string name="upgrade_interstitial_title">Per favore aggiorna</string>
+    <string name="upgrade_interstitial_content">Questa funzionalità è disponibile solo nella versione completa!</string>
+    <string name="upgrade_visual_settings">Aggiorna per attivare i controlli sui colori qua sotto:</string>
+    <string name="upgrade_decrypt_image">Questa è un\'anteprima dell\'immagine decifrata.\n\nAggiorna per attivare la decifrazione completa!</string>
+    <string name="action_upgrade">Aggiorna ora</string>
+    <string name="controls_checkbox_storeencryptionparamsperpackageonly">Set unico parametri cifratura</string>
+    <string name="controls_hint_storeencryptionparamsperpackageonly">Memorizza solo un set di parametri di cifratura per app. Ciò è destinato solo ad app per appunti, non dovrebbe essere attivato per app di comunicazione.</string>
+    <string name="tooltip_encryptionparams_simplesym_general">Cripta solo condividendo una semplice password.\nQuesto è un buon modo per provare &appname;, ma non è molto sicuro.</string>
+    <string name="tooltip_encryptionparams_sym_general">Cripta con chiavi simmetriche condivise. Dovrai condividere la chiave con il tuo amico!</string>
+    <string name="tooltip_encryptionparams_gpg_general">Cripta con chiavi PGP pubbliche/private. Ti serve OpenKeychain per questa funzione!</string>
+    <string name="tooltip_encryptionparams_fab">Tocca qui per criptare e tornare alla tua app.</string>
+    <string name="tooltip_encryptionparams_gpg_choose_own_key">Prima seleziona la tua chiave!</string>
+    <string name="onboarding_text">Sei ad un passo per usare &appname;
+        &lt;br/&gt;
+        &lt;br/&gt;&appname; deve essere attivato come servizio di accessibilità perchè possa leggere e decifrare per te il contenuto dello schermo:
+        &lt;br/&gt;&lt;b&gt;Nelle impostazioni qui sotto, tocca \"&appname;\" e mettilo su "on".&lt;/b&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;(Su alcuni telefoni, devi scorrere fino in fondo alla lista per vedere \"&appname;\".)
+    </string>
+    <string name="settings_acs_post_enable_title">&appname; è pronto!</string>
+    <string name="settings_acs_post_enable_msg">Ora semplicemente inizia ad usare una delle tue app attivate con &appname;:</string>
+    <string name="settings_acs_post_enable_btn_configure">Attiva altre app</string>
+    <string name="onboarding_title">Benvenuto su &appname;</string>
+    <string name="checkbox_add_oversec_link">Aggiungi un link all\'app &appname;</string>
+    <string name="action_clear_ignored_keys">svuota %1$d testi ignorati</string>
+    <string name="settings_upgrade">\"Stai usando la versione base di &appname;.\nAggiorna ora per attivare funzioni aggiuntive!\"</string>
+    <string name="iab_header">Aggiorna &appname;</string>
+    <string name="iab_body">Aggiornare sostiene lo sviluppo in corso ed attiva queste funzioni aggiuntive:\n\n* Personalizza i colori\n* Contenuto esca personalizzato\n* Decifra foto e immagini</string>
+    <string name="iab_noiab">Spiacenti, non abbiamo trovato alcun appstore supportato per acquisti su questo telefono, quindi sfortunatamente non è possibile aggiornare in questo momento.\n\nStiamo lavorando sodo per supportare metodi di acquisto aggiuntivi!\n\nRiprova con una versione successiva.</string>
+    <string name="iab_listheader">Seleziona ciò che preferisci:</string>
+    <string name="toast_panicmode_disabled">&appname; è uscito dalla modalità Panico!</string>
+    <string name="secretdialer_code">Il tuo codice tastierino segreto è *#*#%1$s#*#*</string>
+    <string name="secretdialer_code_too_short">Il codice deve essere di almeno %1$s numeri!</string>
+    <string name="secretdialer_code_initial_confirm">Digita questo codice una volta per confermare!</string>
+    <string name="secretdialer_code_initial_confirm_samsung">Hai un telefono Samsung noto per avere un problema con il meccanismo del codice tastierino.\nPuoi comunque tentare ma non incolparci se non funziona!</string>
+    <string name="action_show_dialer">Apri Telefono</string>
+    <string name="secretdialer_code_initial_confirmed">Urrà! Il codice tastierino segreto funziona.\nOra 
+puoi attivare \"Nascondi icona launcher in modalità Panico\"</string>
+    <string name="secretdialer_code_needs_to_be_set_up">Prima imposta il codice tastierino segreto!</string>
+
+    <string name="overlaypermissionswarning_title">Autorizzazione richiesta</string>
+    <string name="overlaypermissionswarning_text">&appname; attualmente non ha l\'autorizzazione di disegno sopra altre app.\n\n&appname; non può funzionare senza questa autorizzazione!\n\nTocca \"Impostazioni\" e poi permetti di disegnare sopra altre app.</string>
+    <string name="action_settings">Impostazioni</string>
+    <string name="tooltip_app_issues">Ci sono altre informazioni per usare &appname; con %1$s nell\'aiuto online</string>
+    <string name="tooltip_buttoncompose">Tocca qui per inserire e criptare un testo negli appunti</string>
+    <string name="activity_compose_title">Componi testo per appunti</string>
+    <string name="compose_text_hint">Inserisci il testo da criptare e mettilo negli appunti</string>
+    <string name="tooltip_compose_fab">Tocca qui per criptare e metti il testo cifrato negli appunti.</string>
+    <string name="tooltip_paste_clipboard">Cripta il testo negli appunti!\n\nOra tocca a lungo il campo di destinazione e seleziona INCOLLA per inserire il testo cifrato.</string>
+    <string name="action_show_onlinehelp">Mostra aiuto</string>
+
+    <string name="action_later">Più tardi</string>
+
+    <string name="warning_app_with_serious_issues_enabled">L\'app %s ha gravi problemi e non funziona bene con &appname;.\n\nControlla le ultime informazioni nel nostro aiuto online per maggiori dettagli!</string>
+
+    <string name="question_ignore_text">Vuoi ignorare questo testo da adesso in poi?</string>
+    <string name="action_ignore_text">Ignora questo testo</string>
+
+    <string name="actionaccessibilitysettingsnotresolvable_text">&appname; deve essere attivato come servizio di accessibilità nel tuo telefono, ma non riusciamo ad aprire automaticamente la pagina \"Accessibilità\" delle impostazioni Android.\n\nTrova manualmente e apri la pagina \"Accessibilità\" nelle impostazioni del telefono, poi trova \"&appname;\" ed attivalo.\n\n&appname; non può funzionare a meno che non sia attivato come servizio di accessibilità!</string>
+
+
+    <string name="tooltip_encryptionparams_simplesym_general_appsec">Per iniziare, aggiungi una o più password!</string>
+    <string name="settings_acs_post_enable_msg_appsec">\nGoditi i messaggi segreti in %1$s con &appname;!</string>
+    <string name="settings_acs_post_enable_msg_appsec_target_package_not_installed">\n...ma non hai «%1$s» installato!</string>
+    <string name="donate_body">Per favore, considera di fare una donazione per sostenere lo sviluppo di &appname;</string>
+    <string name="donate_btn_btc" translatable="false">Bitcoin</string>
+    <string name="donate_btn_eth" translatable="false">Ethereum</string>
+    <string name="donate_btn_iota" translatable="false">IOTA</string>
+    <string name="donate_btn_dash" translatable="false">Dash</string>
+    <string name="donate_clip_label">Indirizzo donazione</string>
+    <string name="donate_toast_copied">Indirizzo copiato negli appunti!</string>
+</resources>

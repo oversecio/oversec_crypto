@@ -101,7 +101,7 @@
     <string name="action_share">分享</string>
     <string name="action_save">保存</string>
     <string name="action_generate">继续</string>
-    <string name="action_suggest_password">建议强密码</string>
+    <string name="action_suggest_password">建议使用强密码</string>
 
     <plurals name="notification_cachedkeys_title">
         <item quantity="one">1 个缓存密码</item>
@@ -193,14 +193,13 @@
     <string name="error_simplesym_password_doesnt_match">输入的密码无法解密！</string>
     <string name="action_save_shared_passphrase">保存</string>
     <string name="error_simplesym_encryption_password_cleared">不再缓存加密密码！</string>
-    <string name="bytes_size" translatable="false">%1$s 字节</string>
     <string name="error_cannot_show_inner_data_of_type">错误！无法显示 %1$s 类型的内部数据</string>
     <string name="error_cannot_show_inner_data">错误！无法显示已加密数据</string>
     <string name="error_image_decrypt_generic">解密图片时发生意外错误！</string>
     <string name="error_image_decrypt_nomatchingkey">未找到匹配的密钥解密此图片。</string>
     <string name="error_image_decrypt_noencodeddata">源图片中未找到已加密数据。</string>
     <string name="warning_image_encoding_no_method">请首先选择编码方式！</string>
-    <string name="error_image_encode_generic">尝试编码此图片是出错。</string>
+    <string name="error_image_encode_generic">尝试编码此图片时出错。</string>
     <string name="error_image_encode_source_not_found">无法读取源图片！\n注意在 &appname; 中拍摄的照片将在拍摄后短时间内自动删除！</string>
     <string name="intent_chooser_share_unencrypted_image">分享未加密图片...</string>
     <string name="warning_image_resized">输入图片太大，自动调整到百分之 %1$d 大小</string>
@@ -218,11 +217,9 @@
     <string name="action_help">帮助</string>
     <string name="accept_insecure_password">我明白此密码较弱，但我无论如何想要使用它！</string>
     <string name="notification_cachedkeys_touch_to_clear">点击清除密码</string>
-    <string name="okc_install_googleplay" translatable="false">Play Store</string>
-    <string name="okc_install_fdroid" translatable="false">F-Droid</string>
     <string name="tooltip_keys_fragment">这些是你的对称密钥。\n如果你使用简单密码或 PGP 加密则不需要这些。</string>
     <string name="warning">警告</string>
-    <string name="warning_pgp_messages_are_big">PGP 编码的消息每条添加约 3 kb 或更多的额外开销。当你的数据计划有限时请考虑或可以使用对称加密代替！</string>
+    <string name="warning_pgp_messages_are_big">PGP 编码的消息每条添加约 3 kb 或更多的额外开销。如果你的流量计划有限并且可以使用对称加密，请考虑这一点！</string>
     <string name="tooltip_padders_fragment">这是代替不可见已加密文字显示的伪装内容。</string>
     <string name="title_activity_padder_detail">伪装</string>
     <string name="label_padder_name">名称：</string>

@@ -207,4 +207,8 @@
     <string name="donate_body">请考虑捐赠以支持 &appname; 的进一步开发</string>
     <string name="donate_clip_label">捐赠地址</string>
     <string name="donate_toast_copied">地址已复制到剪贴板！</string>
+
+    <string name="main_tab_apps__sort">順序</string>
+    <string name="main_tab_apps__sortbyname">名</string>
+    <string name="main_tab_apps__sortbychecked">活性</string>
 </resources>

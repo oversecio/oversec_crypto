@@ -196,4 +196,9 @@
     <string name="donate_body">Bitte erwägen Sie eine Spende, um die Weiterentwicklung von &appname; zu unterstützen</string>
     <string name="donate_clip_label">Spenden-Adresse</string>
     <string name="donate_toast_copied">Adresse in Zwischenablage kopiert</string>
+
+    <string name="main_tab_apps__sort">Sortierung:</string>
+    <string name="main_tab_apps__sortbyname">Name</string>
+    <string name="main_tab_apps__sortbychecked">Aktiv</string>
+
 </resources>

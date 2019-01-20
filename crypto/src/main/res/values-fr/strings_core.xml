@@ -205,4 +205,8 @@ Le service d\'accessibilité ne fonctionne pas"
  <string name="donate_body">Veuillez envisager de faire un don pour soutenir le développement ultérieur d’&appname;</string>
  <string name="donate_clip_label">Adresse de donation</string>
  <string name="donate_toast_copied">Adresse copiée dans le presse-papier</string>
+
+ <string name="main_tab_apps__sort">Ordre:</string>
+ <string name="main_tab_apps__sortbyname">nom</string>
+ <string name="main_tab_apps__sortbychecked">actif</string>
  </resources>

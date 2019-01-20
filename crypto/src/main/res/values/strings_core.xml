@@ -223,4 +223,8 @@
     <string name="donate_btn_dash" translatable="false">Dash</string>
     <string name="donate_clip_label">Donation Address</string>
     <string name="donate_toast_copied">Address copied to clipboard!</string>
+
+    <string name="main_tab_apps__sort">Sort by </string>
+    <string name="main_tab_apps__sortbyname">Name</string>
+    <string name="main_tab_apps__sortbychecked">Checked</string>
 </resources>

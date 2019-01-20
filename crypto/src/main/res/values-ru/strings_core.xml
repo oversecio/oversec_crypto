@@ -211,4 +211,8 @@
     <string name="donate_body">Пожалуйста, подумайте о том, чтобы сделать пожертвование для поддержки дальнейшей разработки &appname;</string>
     <string name="donate_clip_label">Адрес пожертвования</string>
     <string name="donate_toast_copied">Адрес скопирован в буфер обмена</string>
+
+    <string name="main_tab_apps__sort">сортировка:</string>
+    <string name="main_tab_apps__sortbyname">имя</string>
+    <string name="main_tab_apps__sortbychecked">активный</string>
 </resources>

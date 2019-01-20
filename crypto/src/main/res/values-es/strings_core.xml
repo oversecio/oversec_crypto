@@ -211,4 +211,8 @@
     <string name="donate_body">Por favor, considere hacer una donación para apoyar un mayor desarrollo de &appname;</string>
     <string name="donate_clip_label">Dirección de la donación</string>
     <string name="donate_toast_copied">Dirección copiada al portapapeles</string>
+
+    <string name="main_tab_apps__sort">Clasificación:</string>
+    <string name="main_tab_apps__sortbyname">nombre</string>
+    <string name="main_tab_apps__sortbychecked">activo</string>
 </resources>

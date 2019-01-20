@@ -181,6 +181,10 @@
     <string name="donate_clip_label">Bağış Adresi</string>
     <string name="donate_toast_copied">Adres panoya kopyalandı</string>
 
+    <string name="main_tab_apps__sort">sınıflandırma</string>
+    <string name="main_tab_apps__sortbyname">isim</string>
+    <string name="main_tab_apps__sortbychecked">aktif</string>
+
     <!-- pending -->
     <!--
     <string name="controls_checkbox_spreadinvisibleencoding" translatable="false">Spread Invisible Encoding</string>

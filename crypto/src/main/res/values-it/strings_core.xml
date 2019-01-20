@@ -224,4 +224,10 @@ puoi attivare \"Nascondi icona launcher in modalità Panico\"</string>
     <string name="donate_btn_dash" translatable="false">Dash</string>
     <string name="donate_clip_label">Indirizzo donazione</string>
     <string name="donate_toast_copied">Indirizzo copiato negli appunti!</string>
+
+
+    <string name="main_tab_apps__sort">Ordine:</string>
+    <string name="main_tab_apps__sortbyname">nome</string>
+    <string name="main_tab_apps__sortbychecked">attivo</string>
+
 </resources>

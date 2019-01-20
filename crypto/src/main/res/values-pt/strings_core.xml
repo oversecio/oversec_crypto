@@ -214,5 +214,9 @@
     <string name="donate_body">Por favor, considere fazer uma doação para apoiar o desenvolvimento de &appname;</string>
     <string name="donate_clip_label">Endereço de Doação</string>
     <string name="donate_toast_copied">Endereço copiado para a área de transferência</string>
+
+    <string name="main_tab_apps__sort">classificação</string>
+    <string name="main_tab_apps__sortbyname">nome</string>
+    <string name="main_tab_apps__sortbychecked">ativo</string>
 </resources>
 

@@ -280,6 +280,9 @@ class KeyImportCreateActivity : SecureBaseActivity(), QRCodeReaderView.OnQRCodeR
 
                     qrdecoderview.stopCamera()
                     showError(e.message!!, Runnable { finish() })
+                } catch (e: Exception) {
+                    qrdecoderview.stopCamera()
+                    showError(e.message!!, Runnable { finish() })
                 }
 
             } else {

@@ -5,13 +5,13 @@ import java.util.Date
 class SymmetricKeyEncrypted {
 
     var cost: Int = 0
-    var iv: ByteArray? = null
+    lateinit var iv: ByteArray
     var id: Long = 0
-    var salt: ByteArray? = null
-    var ciphertext: ByteArray? = null
-    var createdDate: Date? = null
+    lateinit var salt: ByteArray
+    lateinit var ciphertext: ByteArray
+    lateinit var createdDate: Date
+    lateinit var name: String
     var confirmedDate: Date? = null
-    var name: String? = null
 
     /*emtpy constructor needed for WaspDb*/
     constructor()

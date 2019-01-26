@@ -2,6 +2,7 @@ package io.oversec.one.crypto.sym
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import com.google.protobuf.ByteString
 import com.google.protobuf.InvalidProtocolBufferException
 import io.oversec.one.crypto.proto.Kex
@@ -18,6 +19,7 @@ import java.io.IOException
 import java.security.NoSuchAlgorithmException
 import java.security.Security
 import java.util.*
+import kotlin.collections.HashMap
 
 class OversecKeystore2 private constructor(private val mCtx: Context) {
     private val mKeyCache = KeyCache.getInstance(mCtx)
@@ -40,6 +42,31 @@ class OversecKeystore2 private constructor(private val mCtx: Context) {
             val allKeys = mSymmetricEncryptedKeys.getAllKeys<Any>()
             return allKeys == null || allKeys.isEmpty()
         }
+
+    init {
+        if (!isEmpty) {
+            //cleanup databases of users that may have ended up with a null key in it.
+            var allIds = mSymmetricEncryptedKeys.getAllKeys<Any>();
+            var zombieFound = false;
+            for (id in allIds) {
+                if (mSymmetricEncryptedKeys.get<SymmetricKeyEncrypted>(id)==null) {
+                    Ln.w("found a null key entry int the database id="+id)
+                   zombieFound = true;
+                }
+            }
+            if (zombieFound) {
+                Ln.w("rewriting database")
+                var allData = HashMap(mSymmetricEncryptedKeys.getAllData<Any, SymmetricKeyEncrypted>());
+                mSymmetricEncryptedKeys.flush();
+                for (id in allData.keys) {
+                    if (allData.get(id)!=null) {
+                        mSymmetricEncryptedKeys.put(id,allData.get(id));
+                    }
+                }
+            }
+
+        }
+    }
 
 
     fun clearAllCaches() {
@@ -85,6 +112,10 @@ class OversecKeystore2 private constructor(private val mCtx: Context) {
 @Synchronized
 fun confirmKey(id: Long?) {
     val k = getSymmetricKeyEncrypted(id)
+    if (k==null) {
+        //hard bail out, quick! This would insert a *null* key into the database
+        throw java.lang.Exception("key to be confirmed was not found anymore.")
+    }
     k?.confirmedDate = Date()
     mSymmetricEncryptedKeys.put(id, k)
 }

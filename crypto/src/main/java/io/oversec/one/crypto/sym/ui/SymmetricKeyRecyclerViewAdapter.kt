@@ -29,19 +29,18 @@ open class SymmetricKeyRecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val ctx = holder.mTv2.context
 
-        val key : SymmetricKeyEncrypted? = mKeys[position]
+        val key : SymmetricKeyEncrypted = mKeys[position]
 
-
-        val confirmDate = key?.confirmedDate
+        val confirmDate = key.confirmedDate
 
         holder.mIvConfirmed.visibility = if (confirmDate == null) View.GONE else View.VISIBLE
         holder.mIvUnconfirmed.visibility = if (confirmDate == null) View.VISIBLE else View.GONE
 
-        holder.mTv1.text = key?.name
+        holder.mTv1.text = key.name
 
-        val cDate = key?.createdDate
+        val cDate = key.createdDate
         val now = Date()
-        val diff = now.time - cDate!!.time
+        val diff = now.time - cDate.time
         val days = (diff / (24 * 60 * 60 * 1000)).toInt()
 
 
@@ -61,7 +60,7 @@ open class SymmetricKeyRecyclerViewAdapter(
         )
 
 
-        SymUtil.applyAvatar(holder.mTvAvatar, key?.name)
+        SymUtil.applyAvatar(holder.mTvAvatar, key.name)
     }
 
     override fun getItemCount(): Int {

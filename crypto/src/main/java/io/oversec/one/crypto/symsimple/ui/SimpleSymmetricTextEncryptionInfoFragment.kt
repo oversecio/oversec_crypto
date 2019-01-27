@@ -95,7 +95,7 @@ class SimpleSymmetricTextEncryptionInfoFragment : AbstractTextEncryptionInfoFrag
 
     companion object {
 
-        fun newInstance(packagename: String): SimpleSymmetricTextEncryptionInfoFragment {
+        fun newInstance(packagename: String?): SimpleSymmetricTextEncryptionInfoFragment {
             val fragment = SimpleSymmetricTextEncryptionInfoFragment()
             fragment.setArgs(packagename)
             return fragment

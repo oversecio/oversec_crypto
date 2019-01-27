@@ -195,11 +195,11 @@ class GpgCryptoHandler(ctx: Context) : AbstractCryptoHandler(ctx) {
     }
 
 
-    override fun getTextEncryptionInfoFragment(packagename: String): AbstractTextEncryptionInfoFragment {
+    override fun getTextEncryptionInfoFragment(packagename: String?): AbstractTextEncryptionInfoFragment {
         return GpgTextEncryptionInfoFragment.newInstance(packagename)
     }
 
-    override fun getBinaryEncryptionInfoFragment(packagename: String): AbstractBinaryEncryptionInfoFragment {
+    override fun getBinaryEncryptionInfoFragment(packagename: String?): AbstractBinaryEncryptionInfoFragment {
         return GpgBinaryEncryptionInfoFragment.newInstance(packagename)
     }
 

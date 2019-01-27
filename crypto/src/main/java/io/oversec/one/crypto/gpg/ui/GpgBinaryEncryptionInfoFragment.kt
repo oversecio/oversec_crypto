@@ -283,7 +283,7 @@ class GpgBinaryEncryptionInfoFragment : AbstractBinaryEncryptionInfoFragment() {
 
     companion object {
 
-        fun newInstance(packagename: String): GpgBinaryEncryptionInfoFragment {
+        fun newInstance(packagename: String?): GpgBinaryEncryptionInfoFragment {
             val fragment = GpgBinaryEncryptionInfoFragment()
             fragment.setArgs(packagename)
             return fragment

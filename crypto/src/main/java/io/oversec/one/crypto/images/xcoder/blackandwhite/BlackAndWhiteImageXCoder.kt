@@ -20,7 +20,7 @@ import java.io.IOException
  * While this approach may seem to be quite naive,
  * it is surprisingly robust and surivives JPEG comression well!
  */
-class BlackAndWhiteImageXCoder(private val mCtx: Context) : ImageXCoder {
+class BlackAndWhiteImageXCoder(private val mCtx: Context, val pixels: Int) : ImageXCoder {
 
     @Throws(IOException::class)
     override fun parse(uri: Uri): Outer.Msg {
@@ -30,7 +30,7 @@ class BlackAndWhiteImageXCoder(private val mCtx: Context) : ImageXCoder {
         val bm = BitmapFactory.decodeStream(inputStream, null, options)
         inputStream.close()
 
-        val bis = BitmapInputStream(bm!!)
+        val bis = BitmapInputStream(bm!!,pixels)
         return Outer.Msg.parseDelimitedFrom(bis)
     }
 
@@ -41,7 +41,8 @@ class BlackAndWhiteImageXCoder(private val mCtx: Context) : ImageXCoder {
         baos.close()
         val plain = baos.toByteArray()
 
-        val wh = Math.ceil(Math.sqrt((plain.size * 8).toDouble())).toInt()
+        var wh = Math.ceil(Math.sqrt((plain.size * 8 * pixels * pixels).toDouble())).toInt()
+        wh = wh+wh%pixels
 
         if (wh >= MAX_OUT_WH) {
             throw ContentNotFullyEmbeddedException()
@@ -72,16 +73,19 @@ class BlackAndWhiteImageXCoder(private val mCtx: Context) : ImageXCoder {
         var aoffset = offset
 
         for (i in 0..7) {
-            val y = aoffset / wh
-            val x = aoffset - y * wh
+            val y = aoffset / (wh / pixels)
+            val x = aoffset - y * (wh / pixels)
             var color = Color.BLACK
             val vxi = v.toInt() and 0xFF
             val b = vxi shr 7 - i and 0x01
             if (b > 0) {
                 color = Color.WHITE
             }
-            bm.setPixel(x, y, color)
-
+            for (xx in 0..pixels-1) {
+                for (yy in 0..pixels-1) {
+                    bm.setPixel(x * pixels+xx, y * pixels+yy, color)
+                }
+            }
             aoffset++
         }
         return aoffset

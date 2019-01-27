@@ -28,6 +28,7 @@ abstract class AbstractTextEncryptionInfoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         mGrid = mView.findViewById<View>(R.id.grid) as ViewGroup
         val bundle = this.arguments
         mPackageName = bundle?.getString(EXTRA_PACKAGENAME)
@@ -246,7 +247,7 @@ abstract class AbstractTextEncryptionInfoFragment : Fragment() {
         activity.startActivity(Intent.createChooser(intent2, title))
     }
 
-    fun setArgs(packageName: String) {
+    fun setArgs(packageName: String?) {
         val bundle = Bundle()
         bundle.putString(EXTRA_PACKAGENAME, packageName)
         arguments = bundle

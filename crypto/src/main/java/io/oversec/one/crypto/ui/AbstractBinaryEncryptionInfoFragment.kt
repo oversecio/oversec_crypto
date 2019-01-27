@@ -16,8 +16,8 @@ abstract class AbstractBinaryEncryptionInfoFragment : Fragment() {
     protected var mPackageName: String? = null
     protected lateinit var mGrid: ViewGroup
 
-    protected lateinit var mView: View
 
+    protected lateinit var mView: View
     private var mTmpMsg: Outer.Msg? = null
     private var mTmpRes: BaseDecryptResult? = null
     private var mTmpCoder: ImageXCoder? = null
@@ -60,7 +60,7 @@ abstract class AbstractBinaryEncryptionInfoFragment : Fragment() {
 
     //TODO move to a clean fragment impl with  args and state
     fun setData(msg: Outer.Msg, tdr: BaseDecryptResult, coder: ImageXCoder) {
-        if (mView != null) {
+        if (view != null) {
             handleSetData(msg, tdr, coder)
         } else {
             mTmpMsg = msg
@@ -79,7 +79,7 @@ abstract class AbstractBinaryEncryptionInfoFragment : Fragment() {
         }
     }
 
-    fun setArgs(packageName: String) {
+    fun setArgs(packageName: String?) {
         val bundle = Bundle()
         bundle.putString(EXTRA_PACKAGENAME, packageName)
         arguments = bundle

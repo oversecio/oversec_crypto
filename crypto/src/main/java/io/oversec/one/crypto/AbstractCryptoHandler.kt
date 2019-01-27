@@ -43,9 +43,9 @@ abstract class AbstractCryptoHandler(protected val mCtx: Context) {
         encryptedText: String?
     ): BaseDecryptResult?
 
-    abstract fun getTextEncryptionInfoFragment(packagename: String): AbstractTextEncryptionInfoFragment
+    abstract fun getTextEncryptionInfoFragment(packagename: String?): AbstractTextEncryptionInfoFragment
 
-    abstract fun getBinaryEncryptionInfoFragment(packagename: String): AbstractBinaryEncryptionInfoFragment
+    abstract fun getBinaryEncryptionInfoFragment(packagename: String?): AbstractBinaryEncryptionInfoFragment
 
     abstract fun buildDefaultEncryptionParams(tdr: BaseDecryptResult): AbstractEncryptionParams
 }

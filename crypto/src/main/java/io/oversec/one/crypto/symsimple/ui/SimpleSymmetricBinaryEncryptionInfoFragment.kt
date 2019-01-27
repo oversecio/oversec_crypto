@@ -68,7 +68,7 @@ class SimpleSymmetricBinaryEncryptionInfoFragment : AbstractBinaryEncryptionInfo
 
     companion object {
 
-        fun newInstance(packagename: String): SimpleSymmetricBinaryEncryptionInfoFragment {
+        fun newInstance(packagename: String?): SimpleSymmetricBinaryEncryptionInfoFragment {
             val fragment = SimpleSymmetricBinaryEncryptionInfoFragment()
             fragment.setArgs(packagename)
             return fragment

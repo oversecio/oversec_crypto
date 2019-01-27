@@ -42,12 +42,12 @@ class SymmetricCryptoHandler(ctx: Context) : BaseSymmetricCryptoHandler(ctx) {
         return tryDecrypt(msg.msgTextSymV0, encryptedText)
     }
 
-    override fun getTextEncryptionInfoFragment(packagename: String): AbstractTextEncryptionInfoFragment {
+    override fun getTextEncryptionInfoFragment(packagename: String?): AbstractTextEncryptionInfoFragment {
         return SymmetricTextEncryptionInfoFragment.newInstance(packagename)
     }
 
 
-    override fun getBinaryEncryptionInfoFragment(packagename: String): AbstractBinaryEncryptionInfoFragment {
+    override fun getBinaryEncryptionInfoFragment(packagename: String?): AbstractBinaryEncryptionInfoFragment {
         return SymmetricBinaryEncryptionInfoFragment.newInstance(packagename)
     }
 

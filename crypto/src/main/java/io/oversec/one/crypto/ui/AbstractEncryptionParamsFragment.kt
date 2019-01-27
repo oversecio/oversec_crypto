@@ -13,7 +13,7 @@ abstract class AbstractEncryptionParamsFragment : Fragment(), WithHelp {
 
     protected var mPackageName: String? = null
     protected var mIsForTextEncryption: Boolean = false
-    protected var mView: View? = null
+    protected lateinit var mView: View
     protected var mTooltip: StandaloneTooltipView? = null
     protected var mArrowPosition: Int = 0
 
@@ -39,7 +39,7 @@ abstract class AbstractEncryptionParamsFragment : Fragment(), WithHelp {
     }
 
 
-    fun setArgs(packageName: String, isForTextEncryption: Boolean, state: Bundle?) {
+    fun setArgs(packageName: String?, isForTextEncryption: Boolean, state: Bundle?) {
         val bundle = state ?: Bundle()
         bundle.putString(EXTRA_PACKAGENAME, packageName)
         bundle.putBoolean(EXTRA_ISFORTEXT, isForTextEncryption)

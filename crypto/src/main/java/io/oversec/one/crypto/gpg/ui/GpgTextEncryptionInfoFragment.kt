@@ -354,7 +354,7 @@ class GpgTextEncryptionInfoFragment : AbstractTextEncryptionInfoFragment() {
 
     companion object {
 
-        fun newInstance(packagename: String): GpgTextEncryptionInfoFragment {
+        fun newInstance(packagename: String?): GpgTextEncryptionInfoFragment {
             val fragment = GpgTextEncryptionInfoFragment()
             fragment.setArgs(packagename)
             return fragment

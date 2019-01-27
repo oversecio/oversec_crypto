@@ -9,8 +9,13 @@ import io.oversec.one.crypto.TemporaryContentProvider
 import io.oversec.one.crypto.images.xcoder.ContentNotFullyEmbeddedException
 import io.oversec.one.crypto.images.xcoder.ImageXCoder
 import io.oversec.one.crypto.proto.Outer
+import java.io.ByteArrayInputStream
+
 import java.io.ByteArrayOutputStream
 import java.io.IOException
+import java.io.InputStream
+import java.nio.channels.Channels
+import java.nio.channels.ReadableByteChannel
 
 
 /**
@@ -18,9 +23,10 @@ import java.io.IOException
  *
  *
  * While this approach may seem to be quite naive,
- * it is surprisingly robust and surivives JPEG comression well!
+ * it is surprisingly robust and survives JPEG compression well!
  */
-class BlackAndWhiteImageXCoder(private val mCtx: Context) : ImageXCoder {
+class BlackAndWhiteImageXCoder(private val mCtx: Context, val enableErrorcorrection: Boolean ) : ImageXCoder {
+
 
     @Throws(IOException::class)
     override fun parse(uri: Uri): Outer.Msg {
@@ -30,7 +36,16 @@ class BlackAndWhiteImageXCoder(private val mCtx: Context) : ImageXCoder {
         val bm = BitmapFactory.decodeStream(inputStream, null, options)
         inputStream.close()
 
-        val bis = BitmapInputStream(bm!!)
+        var bis: InputStream = BitmapInputStream(bm!!)
+
+        if (enableErrorcorrection)
+        {
+
+            TODO
+
+
+        }
+
         return Outer.Msg.parseDelimitedFrom(bis)
     }
 
@@ -39,7 +54,13 @@ class BlackAndWhiteImageXCoder(private val mCtx: Context) : ImageXCoder {
         val baos = ByteArrayOutputStream()
         msg.writeDelimitedTo(baos)
         baos.close()
-        val plain = baos.toByteArray()
+        var plain = baos.toByteArray()
+
+        if (enableErrorcorrection) {
+
+           TODO
+
+        }
 
         val wh = Math.ceil(Math.sqrt((plain.size * 8).toDouble())).toInt()
 

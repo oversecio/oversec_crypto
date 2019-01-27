@@ -7,6 +7,9 @@ import java.util.ArrayList
 object ImageXCoderFacade {
 
     fun getAll(ctx: Context): List<ImageXCoder> {
-        return ArrayList<ImageXCoder>().also { it.add(BlackAndWhiteImageXCoder(ctx)) }
+        return ArrayList<ImageXCoder>().also {
+            it.add(BlackAndWhiteImageXCoder(ctx,true))
+            it.add(BlackAndWhiteImageXCoder(ctx,false))
+        }
     }
 }

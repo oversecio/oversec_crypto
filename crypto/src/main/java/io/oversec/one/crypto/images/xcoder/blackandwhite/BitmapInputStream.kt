@@ -22,7 +22,7 @@ class BitmapInputStream internal constructor(private val mBm: Bitmap) : InputStr
         var x = mPixelOffset - y * mW
         var res = 0
         for (k in 0..7) {
-            if (x > mW || y > mH) {
+            if (x >= mW || y >= mH) {
                 return -1
             }
 

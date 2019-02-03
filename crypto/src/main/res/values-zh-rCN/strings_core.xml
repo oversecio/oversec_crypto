@@ -208,7 +208,7 @@
     <string name="donate_clip_label">捐赠地址</string>
     <string name="donate_toast_copied">地址已复制到剪贴板！</string>
 
-    <string name="main_tab_apps__sort">順序</string>
-    <string name="main_tab_apps__sortbyname">名</string>
-    <string name="main_tab_apps__sortbychecked">活性</string>
+    <string name="main_tab_apps__sort">排序</string>
+    <string name="main_tab_apps__sortbyname">名称</string>
+    <string name="main_tab_apps__sortbychecked">已选</string>
 </resources>

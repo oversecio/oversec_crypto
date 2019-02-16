@@ -76,7 +76,7 @@ class KeyImportCreateActivity : SecureBaseActivity(), QRCodeReaderView.OnQRCodeR
         fab.visibility = View.GONE
 
         if (savedInstanceState != null) {
-            mImportedKey = savedInstanceState.getSerializable(EXTRA_KEY) as SymmetricKeyPlain
+            mImportedKey =  savedInstanceState.getSerializable(EXTRA_KEY) as? SymmetricKeyPlain
             mTempPbkdfInput = savedInstanceState.getCharArray(EXTRA_PBKDF_INPUT)
             val title = savedInstanceState.getString(EXTRA_TITLE)
             if (title != null) {

@@ -13,7 +13,7 @@ abstract class AbstractEncryptionParamsFragment : Fragment(), WithHelp {
 
     protected var mPackageName: String? = null
     protected var mIsForTextEncryption: Boolean = false
-    protected lateinit var mView: View
+    protected var mView: View? = null;
     protected var mTooltip: StandaloneTooltipView? = null
     protected var mArrowPosition: Int = 0
 
